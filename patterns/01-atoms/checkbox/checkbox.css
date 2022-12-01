@@ -1,0 +1,99 @@
+.checkbox:hover input {
+  @apply bg-primary-100 border-stroke-borderFocused;
+}
+/* :checked - resize and apply checked image */
+[type='checkbox']:checked {
+  @apply bg-white border-stroke-borderFocused;
+  background-image: url('images/checkbox-checked.svg');
+  background-size: 0.5rem 0.313rem;
+}
+[type='checkbox']:checked:hover,
+[type='checkbox']:checked:focus {
+  /* @apply bg-white border-stroke-borderFocused; */
+  @apply bg-primary-100 border-stroke-borderFocused;
+  background-image: url('images/checkbox-checked.svg');
+  background-size: 0.5rem 0.313rem;
+  outline: 0 none;
+  box-shadow: none;
+}
+input[type='checkbox']:focus,
+input[type='checkbox']:hover {
+  outline: 0 none;
+  box-shadow: none;
+}
+/* Indeterminate size state */
+.checkbox {
+  &.indeterminate-state {
+    [type='checkbox'] {
+      background-image: url('images/checkbox-indeterminate.svg');
+      background-position: 0.25rem 0.438rem;
+      background-size: 0.5rem;
+      background-repeat: no-repeat;
+      &:checked {
+        @apply bg-primary-100 border-stroke-borderFocused;
+        background-image: url('images/checkbox-checked.svg');
+        background-size: 0.5rem 0.313rem;
+        background-position: 0.25rem;
+      }
+    }
+    &.medium {
+      [type='checkbox'] {
+        background-position: 0.344rem 0.563rem;
+        background-size: 0.563rem;
+        &:checked {
+          background-size: 0.75rem 0.5rem;
+          background-position: 0.25rem 0.375rem;
+        }
+      }
+    }
+  }
+}
+.checkbox {
+  &.rounded-state {
+    [type='checkbox'] {
+      background-image: url('images/white-arrow.svg');
+      background-size: 0.5rem 0.313rem;
+      &:checked {
+        @apply bg-primary-400 border-stroke-borderFocused;
+        background-image: url('images/white-arrow.svg');
+        background-size: 0.5rem 0.313rem;
+        background-position: 0.25rem;
+      }
+    }
+  }
+}
+/* Medium size state */
+.checkbox {
+  &.medium {
+    @apply text-base;
+    [type='checkbox'] {
+      @apply h-5 w-5 mr-3;
+      &:checked {
+        background-size: 0.75rem 0.5rem;
+      }
+    }
+  }
+}
+/* Disabled state */
+.checkbox {
+  &.disabled {
+    .checkbox-label {
+      @apply text-neutral-400;
+    }
+    [type='checkbox'] {
+      @apply bg-white border-neutral-200;
+      background-image: none !important;
+      &:hover,
+      &:focus {
+        @apply bg-white border-neutral-200;
+      }
+    }
+    [type='checkbox']:checked {
+      @apply bg-white border-neutral-200;
+      &:hover,
+      &:focus {
+        @apply bg-white border-neutral-200;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * block-navigation
+ *
+ * See block-navigation.space.yaml for documentation.
+ */
+#}
+
+{# Default #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set heading_id = attributes.id|clean_id %}
+
+{# Classes #}
+{% set classes = [
+  'block-navigation block-sub-menu',
+  menu_size,
+  icon_type,
+  menu_layout_type,
+  menu_color,
+  description_color,
+  menu_alignment,
+  extra_classes
+] %}
+
+{# Template #}
+{% block header_submenu_navigation_block %}
+  <div {{ attributes|without('role', 'aria-labelledby').addClass(classes | sort | join(' ') | trim) }} aria-labelledby="{{ heading_id }}" role="navigation">
+    {{ title_suffix }}
+    {% if heading|render|striptags|trim is not empty %}
+      <h2 class="block-title textSm-medium w-full text-text-primaryDark mb-6 lg:mb-8">{{ heading }}</h2>
+    {% endif %}
+    {% if content|render|trim is not empty %}
+      <div class="block-navigation-content">{{ content }}</div>
+    {% endif %}
+  </div>
+{% endblock %}

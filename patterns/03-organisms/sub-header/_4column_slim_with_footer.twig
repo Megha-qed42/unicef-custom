@@ -1,0 +1,22 @@
+{{ attach_library('unicef_vf/header-styling') }}
+
+{# Template #}
+<div class="_4column-slim-with-footer">
+	<div class="menu-link-contentmain">
+    <div class="{{ layout_width == 'boxed_width' ? 'container' : 'w-full' }} mx-auto flex flex-col">
+			<div class="menu-wrapper">
+				<ul class="flex flex-col lg:flex-row">
+					{% for navigation_item_1 in navigation_items_1 %}
+						{{ navigation_item_1 }}
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+		<div class="slim-footer bg-backgroundPrimary-primaryExtraLight">
+			<div class="container mx-auto text-center">
+				{{ footer_data }}
+			</div>
+		</div>
+	</div>
+</div>

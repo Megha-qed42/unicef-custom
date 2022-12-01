@@ -1,0 +1,29 @@
+image_link:
+  use: "@atoms/image-link/image-link.twig"
+  label: Image link
+  description: Image with link
+  fields:
+    url:
+      type: text
+      label: Url
+      description: The action url of app.
+      preview: 'https://www.qed42.com/contact'
+    image:
+      type: pattern
+      label: Image
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          url: space-assets://images/avatar.png
+          style: 160x220_xs_sc
+  settings:
+    target:
+      type: select
+      label: Target
+      default_value: 'self'
+      options:
+        self: Self
+        blank: Blank
+        parent: Parent
+        top: Top

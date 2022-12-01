@@ -1,0 +1,206 @@
+pagination:
+  use: "@molecules/pagination/pagination.twig"
+  namespace: "Molecules/Pagination"
+  label: Pagination
+  description: Simple and functional pagination for Drupal views.
+  fields:
+    items:
+      type: object
+      label: Items
+      preview:
+        pages:
+          -
+            href: "#"
+            in_active_trail: true
+          -
+            href: "#"
+          -
+            href: "#"
+          -
+            href: "#"
+          -
+            href: "#"
+          -
+            href: "#"
+        previous:
+          text: "‹ Previous"
+          href: "#"
+        next:
+          text: "Next ›"
+          href: "#"
+        first:
+          text: "« First"
+          href: "#"
+        last:
+          text: "Last »"
+          href: "#"
+  configuration:
+    shapes:
+      rounded-full: 'rounded-full'
+      square: 'rounded-lg'
+  settings:
+    color:
+      type: select
+      required: true
+      preview: lightColor
+      options:
+        lightColor: Light
+        darkColor: Dark
+    type:
+      type: select
+      required: true
+      preview: card-default
+      options:
+        card-default: Card default
+        card-minimal: Card minimal
+    shape:
+      type: select
+      required: true
+      preview: rounded-full
+      options:
+        rounded-full: Circle
+        square: Square
+  visibility: storybook
+
+carousal-arrow:
+  use: "@molecules/pagination/_carousal-arrow.twig"
+  namespace: "Molecules/Pagination"
+  label: Carousal Arrow
+  description: Simple slider arrow
+  configuration:
+    colors:      
+      dark: 'bg-neutral-800 text-white'
+      light: 'bg-primary-100 text-neutral-800'
+      black: 'bg-black text-white'
+      white: 'bg-white text-black'
+      none: 'bg-transparent'
+    shapes:      
+      full-rounded: 'rounded-full'
+      partial-rounded: 'rounded-md'
+      square: 'rounded-none'
+  settings:
+    color:
+      type: select
+      required: true
+      preview: dark
+      options:
+        dark: Dark
+        light: Light
+        white: White
+        black: Black
+        none: Transparent
+    shape:
+      type: select
+      required: true
+      preview: partial-rounded
+      options:
+        partial-rounded: Partial Rounded
+        full-rounded: Full Rounded
+        square: Square
+    border:
+      type: boolean
+      label: Border
+      default_value: false
+    arrowtext:
+      type: boolean
+      label: Arrow Text
+      default_value: true
+    arrows:
+      type: select
+      label: Arrows
+      required: true
+      default: directional
+      options:
+        directional: Directional
+        traingle: Traingle
+    size:
+      type: select
+      label: Size
+      required: true
+      default: large
+      options:
+        large: Large
+        medium: Medium
+    previous_url:
+      type: link
+      label: Previous url
+    next_url:
+      type: link
+      label: Next url
+  visibility: storybook
+ 
+carousal-pagination:
+  use: "@molecules/pagination/_carousal-pagination.twig"
+  namespace: "Molecules/Pagination"
+  label: Carousal Pagination
+  description: Simple and functional carousal pagination.
+  fields:
+    items:
+      type: object
+      label: Items
+      preview:
+        - title: 
+          link: "#"
+          in_active_trail: true
+        - title: 
+          link: "#"
+        - title: 
+          link: "#"
+        - title: 
+          link: "#"
+  configuration:
+    colors:           
+      primaryLight: 'bg-primary-200'
+      primaryDark: 'bg-primary-400'
+      grayDark: 'bg-neutral-600'
+      grayLight: 'bg-neutral-200'
+    activecolors:           
+      primaryLight: 'bg-primary-600'
+      primaryDark: 'bg-white'
+      grayDark: 'bg-white'
+      grayLight: 'bg-primary-800'
+    shapes:      
+      full-rounded: 'rounded-full'
+      partial-rounded: 'rounded-md'
+      square: 'rounded-none'
+  settings:
+    color:
+      type: select
+      required: true
+      preview: primaryLight
+      options:
+        primaryLight: primaryLight
+        primaryDark: primaryDark
+        grayDark: grayDark
+        grayLight: grayLight
+    activecolor:
+      type: select
+      required: true
+      preview: primaryLight
+      options:
+        primaryLight: primaryLight
+        primaryDark: primaryDark
+        grayDark: grayDark
+        grayLight: grayLight
+    shape:
+      type: select
+      required: true
+      preview: full-rounded
+      options:
+        partial-rounded: Partial Rounded
+        full-rounded: Full Rounded
+        square: Square
+    size:
+      type: select
+      required: true
+      preview: small
+      options:
+        small: Small
+        large: Large
+    previous_url:
+      type: link
+      label: Previous url
+    next_url:
+      type: link
+      label: Next url
+  visibility: storybook

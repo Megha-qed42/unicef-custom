@@ -1,0 +1,25 @@
+/* Email form */
+
+.email-form .input-icon {
+  @apply absolute top-3.5 left-3.5;
+}
+
+.email-form.with-icon .wrapper {
+  @apply flex;
+}
+
+.email-form.with-icon .input-wrapper {
+  @apply flex-1 flex;
+}
+
+.email-form.with-icon .form-input {
+  @apply pl-10 mb-0;
+
+  max-width: calc(100% - 16px);
+}
+
+@media (min-width: 768px) {
+  .email-form .form-input {
+    max-width: calc(100% - 16px);
+  }
+}

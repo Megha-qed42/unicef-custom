@@ -1,0 +1,85 @@
+{#
+/**
+ * @file
+ * category list
+ *
+ * See sidebar.space.yaml for documentation.
+ */
+#}
+
+{# Attach Library #}
+{{ attach_library('unicef_vf/sidebar') }}
+
+{# Default #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set wrap_nav = wrap_nav|default(false) %}
+
+{# Template #}
+{% block sidebar_link_list_menu_block %}
+  {% import _self as menus %}
+
+  {{ menus.menu_links(items, attributes, 0, wrap_nav, category_style) }}
+
+  {% macro menu_links(items, attributes, menu_level, wrap_nav, category_style) %}
+    {% import _self as menus %}
+    {% if items %}
+
+      {% set wrap_nav = wrap_nav|default(false) %}
+
+      {% if wrap_nav %}
+        <nav role="navigation">
+      {% endif %}
+
+      {% if menu_level == 0 %}
+        <ul class="sidebar__menu sidebar-links-list w-52 sidebar cursor-pointer">
+      {% else %}
+        <ul class="sub-menu">
+      {% endif %}
+
+        {% for item in items %}
+          {%
+            set classes = ([
+              'navigation__item links-list-item',
+              category_style,
+              menu_level ? 'menu__level-' ~ menu_level : 'menu__level-0',
+              item.is_expanded ? 'menu-item--expanded',
+              item.is_collapsed ? 'menu-item--collapsed',
+              item.in_active_trail ? 'menu-item--active-trail',
+              item.is_active ? 'is-active',
+              item.below ? ' navigation__item--has-children',
+              loop.last ? ' navigation__item--last'
+            ]| sort | join(' ') | trim) %}
+
+          {% set item_attributes =  item.attributes|default(create_attribute()) %}
+
+          <li{{ item_attributes }} {{ item_attributes.addClass(classes) }}>
+            {% include "@atoms/link/link.twig" with item|merge({
+              custom_style: true,
+              url: item.url|render,
+              content: item.title,
+              target: item.url.options.attributes.target,
+              extra_classes: 'sidebar-link-element text-text-primaryDark textSm-medium hover:bg-backgroundNeutral-neutralMedium active:bg-backgroundPrimary-primaryLight px-4 py-3 rounded',
+            }) %}
+
+            {% if item.below|length  %}
+
+              {# Menu Level 0 Icon #}
+              <div class="icon1">
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: 'chevronRight',
+                  size:	'w-6 h-6'
+                } only %}
+              </div>
+
+            {{ menus.menu_links(item.below, attributes, menu_level + 1, wrap_nav) }}
+          {% endif %}	
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% if wrap_nav %}
+        </nav>
+      {% endif %}
+    {% endif %}
+  {% endmacro %}
+{% endblock %}

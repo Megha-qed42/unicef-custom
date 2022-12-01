@@ -1,0 +1,170 @@
+{#
+/**
+ * @file
+ * cta-banner
+ *
+ * See cta-banner.space.yaml for documentation.
+ * @todo: Email form and Info text below email form input.
+ */
+#}
+
+{{ attach_library('unicef_vf/cta-banner') }}
+
+{# Settings #}
+{% set element = element|default('section') %}
+
+{# Template #}
+{% if cta_banner_type == 'type_1' %}
+  {% set classes = ([
+    "cta-banner type-1",
+    width,
+  ] | sort | join(' ') | trim ) %}
+
+  {% set attributes = attributes|default(create_attribute()).addClass(classes).setAttribute('role', 'banner') %}
+
+  {% block cta_banner_type_1_block %}
+    <{{ element }} {{ attributes }}>
+      <div class="container relative mx-auto">
+        <div class="container-inner grid grid-cols-1 lg:grid-cols-2 items-start {{ alignment }}">
+          <div class="banner-content">
+            {% if title|render|striptags|trim is not empty %}
+              <div class="banner-title">
+                {{ title }}
+              </div>
+            {% endif %}
+
+            {% if description|render|striptags|trim is not empty %}
+              <div class="banner-description textXL-regular">
+                {{ description }}
+              </div>
+            {% endif %}
+          </div>
+
+          {% if link_1|render|striptags|trim is not empty or link_2|render|striptags|trim is not empty or email_form is not empty %}
+            <div class="banner-cta flex lg:justify-end">
+              {% if cta_type == 'button' %}
+                {% if link_1|render|striptags|trim is not empty or link_2|render|striptags|trim is not empty %}
+                  <div class="cta-button flex flex-col md:flex-row md:justify-start">
+                    {% if link_1|render|striptags|trim is not empty %}
+                      <div{{ region_attributes.link_1|default(create_attribute()).addClass('mb-3 md:mb-0 md:mr-3') }}>{{ link_1 }}</div>
+                    {% endif %}
+
+                    {% if link_2|render|striptags|trim is not empty %}
+                      <div{{ region_attributes.link_2 }}>{{ link_2 }}</div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              {% endif %}
+
+              {% if cta_type == 'email' %}
+                <div class="banner-email-form">{{ email_form }}</div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </{{ element }}>
+  {% endblock %}
+
+{% elseif cta_banner_type == 'type_2' %}
+  {% set classes = ([
+    "cta-banner type-2",
+    image_type
+  ] | sort | join(' ') | trim ) %}
+
+  {% set attributes = attributes|default(create_attribute()).addClass(classes).setAttribute('role', 'banner') %}
+
+  {% block cta_banner_type_2_block %}
+    <{{ element }} {{ attributes }}>
+      <div class="container relative mx-auto">
+        <div class="container-inner">
+          <div class="banner-content">
+            {% if title|render|striptags|trim is not empty %}
+              <div class="banner-title">
+                {{ title }}
+              </div>
+            {% endif %}
+
+            {% if description|render|striptags|trim is not empty %}
+              <div class="banner-description textLG-regular">
+                {{ description }}
+              </div>
+            {% endif %}
+
+            {% if link_1|render|striptags|trim is not empty or link_2|render|striptags|trim is not empty %}
+              <div class="cta-button flex flex-col md:flex-row">
+                {% if link_1|render|striptags|trim is not empty %}
+                  <div{{ region_attributes.link_1|default(create_attribute()).addClass('mb-3 md:mb-0 md:mr-3') }}>{{ link_1 }}</div>
+                {% endif %}
+
+                {% if link_2|render|striptags|trim is not empty %}
+                  <div{{ region_attributes.link_2 }}>{{ link_2 }}</div>
+                {% endif %}
+              </div>
+              {% endif %}
+          </div>
+
+          <div class="banner-image">
+            {{ image }}
+          </div>
+        </div>
+      </div>
+    </{{ element }}>
+  {% endblock %}
+
+{% elseif cta_banner_type == 'type_3' %}
+  {% set classes = ([
+    "cta-banner type-3",
+    width,
+  ] | sort | join(' ') | trim ) %}
+
+  {% set attributes = attributes|default(create_attribute()).addClass(classes).setAttribute('role', 'banner') %}
+
+  {% block cta_banner_type_3_block %}
+    <{{ element }} {{ attributes }}>
+      <div class="container relative mx-auto">
+        <div class="container-inner">
+          <div class="banner-content">
+            {% if title|render|striptags|trim is not empty %}
+              <div class="banner-title">
+                {{ title }}
+              </div>
+            {% endif %}
+
+            {% if description|render|striptags|trim is not empty %}
+              <div class="banner-description textLG-regular">
+                {{ description }}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="banner-image">
+            {{ image }}
+          </div>
+        </div>
+
+        {% if link_1|render|striptags|trim is not empty or link_2|render|striptags|trim is not empty or email_form is not empty %}
+          <div class="banner-cta flex lg:justify-start">
+            {% if cta_type == 'button' %}
+              {% if link_1|render|striptags|trim is not empty or link_2|render|striptags|trim is not empty %}
+                <div class="cta-button flex flex-col md:flex-row md:justify-start">
+                  {% if link_1|render|striptags|trim is not empty %}
+                    <div{{ region_attributes.link_1|default(create_attribute()).addClass('mb-3 md:mb-0 md:mr-3') }}>{{ link_1 }}</div>
+                  {% endif %}
+
+                  {% if link_2|render|striptags|trim is not empty %}
+                    <div{{ region_attributes.link_2 }}>{{ link_2 }}</div>
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endif %}
+
+            {% if cta_type == 'email' %}
+              <div class="banner-email-form">{{ email_form }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </{{ element }}>
+  {% endblock %}
+{% endif %}

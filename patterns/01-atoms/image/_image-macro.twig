@@ -1,0 +1,22 @@
+
+{% macro get_image_width(image_style) %}
+  {% set width = image_style.width %}
+  {{ width }}
+{% endmacro %}
+
+{% macro get_image_height(image_style) %}
+  {% if not image_style.height %}
+    {% set height = random(range(image_style.width * 0.75, image_style.width * 1.25, 10)) %}
+  {% endif %}
+  {% set height = image_style.height %}
+	{{ height }}
+{% endmacro %}
+
+{% macro image(style, image_url, image_classes, extra_classes) %}
+	{% set imageConfig = pattern_configuration('image_atom', 'image', 'image_config') %}
+  {% import _self as self %}
+  {% set image_styles = imageConfig.styles %}
+  {% set image_style = image_styles[style] %}
+
+   <img class="{{ extra_classes }} {{image_classes}}" src="{{ file_url(image_url) }}"  width="{{- self.get_image_width(image_style)|trim -}}" height="{{- self.get_image_height(image_style)|trim -}}"  alt="A placeholder image">
+{% endmacro %}   

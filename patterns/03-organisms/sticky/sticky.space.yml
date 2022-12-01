@@ -1,0 +1,189 @@
+sticky_image:
+  use: "@organisms/sticky/_sticky-image.twig"
+  namespace: 'Organisms/Sticky'
+  label: Sticky vertical - Single image
+  description: Sticky component with single image and with multiple content etc.
+  fields:
+    image:
+      type: pattern
+      label: Image
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/2x_592x592.png
+          style: scale_592w
+          default: false
+    items:
+      type: pattern
+      label: Items
+      description: 'The content of the Sticky component.'
+      preview: 
+        - id: sticky_item_vertical_single
+  settings:
+    alignment:
+      type: select
+      label: Alignment
+      required: true
+      default: left-align
+      options:
+        left-align: Image left of text
+        right-align: Image right of text
+
+sticky_image_vertical_multiple:
+  use: "@organisms/sticky/_sticky-vertical-multiple.twig"
+  namespace: 'Organisms/Sticky'
+  label: Sticky vertical - Multiple image and data
+  description: Sticky component with multiple image and with multiple content.
+  fields:
+    items_image:
+      type: pattern
+      label: Items image
+      description: 'The image of the Sticky component.'
+      preview: 
+        - id: sticky_item_vertical_multiple_image
+    items_data:
+      type: pattern
+      label: Items data
+      description: 'The content of the Sticky component.'
+      preview: 
+        - id: sticky_item_vertical_multiple_data
+  settings:
+    alignment:
+      type: select
+      label: Alignment
+      description: 'Alignment of image left of text OR right of text.'
+      required: true
+      default: left-align
+      options:
+        left-align: Image left of text
+        right-align: Image right of text
+    sticky_arrows_color:
+      type: select
+      label: Arrows color
+      description: 'Component will become slider on mobile so to navigate arrows will be there. In that case arrows colors can be change as per requirement.'
+      default_value: primary-dark-arrows
+      options:
+        primary-dark-arrows: Primary Dark
+        primary-light-arrows: Primary Light
+        primary-grey-arrows: Primary Grey
+        primary-white-arrows: White
+        transparent-arrows: Transparent
+    sticky_arrows_alignment:
+      type: select
+      label: Arrows alignment
+      description: 'Component will become slider on mobile so to navigate arrows will be there. In that case arrows alignment can be change as per requirement.'
+      default_value: left-align-arrows
+      options:
+        left-align-arrows: Left
+        right-align-arrows: Right
+        center-align-arrows: Center
+
+sticky_image_horizontal:
+  use: "@organisms/sticky/_sticky-horizontal.twig"
+  namespace: 'Organisms/Sticky'
+  label: Sticky - Horizontal
+  description: Sticky component with multiple image and content.
+  fields:
+    items:
+      type: pattern
+      label: Items
+      description: 'The content of the Sticky component.'
+      preview: 
+        - id: sticky_item_horizontal
+
+sticky_image_slim_thumbnails:
+  use: "@organisms/sticky/_sticky-slim-thumbnails.twig"
+  namespace: 'Organisms/Sticky'
+  label: Sticky - Slim thumbnails
+  description: Sticky component with multiple image and with multiple content.
+  fields:
+    items_image:
+      type: pattern
+      label: Items image
+      description: 'The image of the Sticky component.'
+      preview: 
+        - id: sticky_item_slim_thumbnails_image
+    items_data:
+      type: pattern
+      label: Items data
+      description: 'The content of the Sticky component.'
+      preview: 
+        - id: sticky_item_slim_thumbnails_data
+  settings:
+    alignment:
+      type: select
+      label: Alignment
+      required: true
+      default: left-align
+      options:
+        left-align: Image left of text
+        right-align: Image right of text
+    sticky_arrows_color:
+      type: select
+      label: Arrows color
+      description: 'Component will become slider on mobile so to navigate arrows will be there. In that case arrows colors can be change as per requirement.'
+      default_value: primary-dark-arrows
+      options:
+        primary-dark-arrows: Primary Dark
+        primary-light-arrows: Primary Light
+        primary-grey-arrows: Primary Grey
+        primary-white-arrows: White
+        transparent-arrows: Transparent
+    sticky_arrows_alignment:
+      type: select
+      label: Arrows alignment
+      description: 'Component will become slider on mobile so to navigate arrows will be there. In that case arrows alignment can be change as per requirement.'
+      default_value: left-align-arrows
+      options:
+        left-align-arrows: Left
+        right-align-arrows: Right
+        center-align-arrows: Center
+
+sticky_image_vertical_multiple_fraction:
+  use: "@organisms/sticky/_sticky-vertical-multiple-fraction.twig"
+  namespace: 'Organisms/Sticky'
+  label: Sticky vertical - Multiple fraction image and data
+  description: Sticky component with multiple image and with multiple content.
+  fields:
+    items_image:
+      type: pattern
+      label: Items image
+      description: 'The image of the Sticky component.'
+      preview: 
+        - id: sticky_item_vertical_multiple_fraction_image
+    items_data:
+      type: pattern
+      label: Items data
+      description: 'The content of the Sticky component.'
+      preview: 
+        - id: sticky_item_vertical_multiple_fraction_data
+  settings:
+    alignment:
+      type: select
+      label: Alignment
+      required: true
+      default: left-align
+      options:
+        left-align: Image left of text
+        right-align: Image right of text
+    sticky_arrows_color:
+      type: select
+      label: Arrows color
+      description: 'Component will become slider on mobile so to navigate arrows will be there. In that case arrows colors can be change as per requirement.'
+      default_value: primary-dark-arrows
+      options:
+        primary-dark-arrows: Primary Dark
+        primary-light-arrows: Primary Light
+        primary-grey-arrows: Primary Grey
+        primary-white-arrows: White
+        transparent-arrows: Transparent
+    sticky_arrows_alignment:
+      type: select
+      label: Arrows alignment
+      description: 'Component will become slider on mobile so to navigate arrows will be there. In that case arrows alignment can be change as per requirement.'
+      default_value: left-align-arrows
+      options:
+        left-align-arrows: Left
+        right-align-arrows: Right
+        center-align-arrows: Center

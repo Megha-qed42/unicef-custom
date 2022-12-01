@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * image-link
+ *
+ * See image-link.space.yaml for documentation.
+ */
+#}
+
+{# Classes #}
+{% set classes = [
+  'image-link'
+] %}
+
+{# Template #}
+{% block image_link_block %}
+  <a href="{{ url }}" {{ attributes.addClass(classes | sort | join(' ') | trim) }} target="{{ target }}">
+    {{ image }}
+  </a>
+{% endblock %}

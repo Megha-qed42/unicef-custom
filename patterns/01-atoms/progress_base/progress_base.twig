@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * progress
+ *
+ * See progress_base.space.yaml for documentation.
+ */
+#}
+
+{# Default #}
+{% set icon_size = 'w-6 h-6' %}
+
+{# Template #}
+{% block progress_base_block %}
+  <li class="progress_item {{ extra_classes }}">
+    {% if icon_type == 'circle' %}
+      <div class="progress_circle_icon line_icon">
+        <span class="dot"></span>
+      </div>
+    {% else %}
+      <div class="progress_tick_icon line_icon">
+        {% include '@atoms/svg/_svg--icon.twig' with {
+          icon: icon_type,
+          size: icon_size,
+        } %}
+      </div>
+    {% endif %}
+    
+    <div class="progress_text">
+      {% if title|render|striptags|trim %}
+        <h6 class="progress_title textSm-medium mb-0">
+          {{ title }}
+        </h6>
+      {% endif %}
+
+      {% if desc|render|striptags|trim %}
+        <div class="progress_decs textSm-regular">
+          <p class="textSm-regular">{{ desc }}</p>
+        </div>
+      {% endif %}
+    </div>
+  </li>
+{% endblock %}

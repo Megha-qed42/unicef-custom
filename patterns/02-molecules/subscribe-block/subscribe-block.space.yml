@@ -1,0 +1,69 @@
+subscribe_block:
+  use: "@molecules/subscribe-block/subscribe-block.twig"
+  namespace: "Molecules/Subscribe Block"
+  label: Subscribe Block
+  description: Subscribe Block Components.
+  fields:
+    headline:
+      type: pattern
+      label: Heading text
+      description: Heading of the Subscribe Block.
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: Stay up to date
+          classes: 'mb-6 md:mb-6'
+    text:
+      type: pattern
+      label: Body text
+      description: Body text of the Subscription Block.
+      preview:
+        id: paragraph
+        settings:
+          text: 'Body text of the Subscription Block.'
+          size: 'secondary'
+    email_form:
+      type: pattern
+      label: Subscribe Email Form
+      description: The Email form of the Subscribe Block
+      preview:
+        id: email_form
+        settings:
+          icon: false
+
+subscribe_block_icon:
+  use: "@molecules/subscribe-block/subscribe-block-icon.twig"
+  namespace: "Molecules/Subscribe Block"
+  label: Subscribe Block with Icon
+  description: Subscribe Block with icon Components.
+  fields:
+    headline:
+      type: pattern
+      label: Heading text
+      description: Heading of the Subscribe Block.
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: Stay up to date
+          classes: 'mb-6 md:mb-6'
+    text:
+      type: pattern
+      label: Body text
+      description: Body text of the Subscription Block.
+      preview:
+        id: paragraph
+        settings:
+          text: 'Body text of the Subscription Block.'
+          size: 'secondary'
+    email_form:
+      type: pattern
+      label: Subscribe Email Form
+      description: The Email form of the Subscribe Block
+      preview:
+        id: email_form
+        settings:
+          icon: true

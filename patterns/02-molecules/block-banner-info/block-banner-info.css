@@ -1,0 +1,29 @@
+/* Banner info block */
+
+.block-banner-info {
+  @apply py-6 lg:px-6 lg:py-0;
+
+  .block-title {
+    @apply font-bold mb-4;
+
+    &.size-36 {
+      @apply leading-44 text-36 font-bold tracking-closed;
+    }
+
+    &.size-30 {
+      @apply leading-32 text-24 md:leading-40 md:text-30 font-bold tracking-closed;
+    }
+  }
+
+  .block-content {
+    @apply font-normal;
+  }
+
+  .link-element {
+    @apply text-text-primaryDark;
+
+    svg {
+      @apply visible md:hidden;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{{ attach_library('unicef_vf/header-styling') }}
+
+{# Template #}
+<div class="_4column-with-footer">
+  <div class="menu-link-contentmain">
+    <div class="{{ layout_width == 'boxed_width' ? 'container' : 'w-full' }} mx-auto">
+      <div class="menu-wrapper flex flex-col lg:flex-row">
+        <div class="nav-col col_1 w-full lg:w-1/4">
+          <div class="nav-col-title textSm-medium w-full">
+            {{ column1_title }}
+          </div>
+
+          <ul>
+            {% for navigation_item_1 in navigation_items_1 %}
+              {{ navigation_item_1 }}
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="nav-col col_2 w-full lg:w-1/4">
+          <div class="nav-col-title textSm-medium w-full">
+            {{ column2_title }}
+          </div>
+
+          <ul>
+            {% for navigation_item_2 in navigation_items_2 %}
+            {{ navigation_item_2 }}
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="nav-col col_3 w-full lg:w-1/4">
+          <div class="nav-col-title textSm-medium w-full">
+            {{ column3_title }}
+          </div>
+
+          <ul>
+            {% for navigation_item_3 in navigation_items_3 %}
+            {{ navigation_item_3 }}
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="nav-col col_4 w-full lg:w-1/4">
+          <div class="nav-col-title textSm-medium w-full">
+            {{ column4_title }}
+          </div>
+
+          <ul>
+            {% for navigation_item_4 in navigation_items_4 %}
+            {{ navigation_item_4 }}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {% if footer_data_left or footer_data_right %}
+      <div class="slim-footer bg-backgroundPrimary-primaryExtraLight">
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-8">
+          {% if footer_data_left %}
+            <div class="footer-left">{{ footer_data_left }}</div>
+          {% endif %}
+
+          {% if footer_data_right %}
+            <div class="footer-right">{{ footer_data_right }}</div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>

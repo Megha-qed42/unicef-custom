@@ -1,0 +1,16 @@
+block_app:
+  use: "@molecules/block-app/block-app.twig"
+  label: Footer Get the app
+  description: Footer Get the app
+  fields:
+    title:
+      type: text
+      label: Title
+      description: The block title.
+      preview: 'Get the app'
+    items:
+      type: pattern
+      label: Items
+      preview:
+        - id: image_link
+        - id: image_link

@@ -1,0 +1,343 @@
+.simplelogin-form,
+.simple-signup-form,
+.simple-and-social-login-form,
+.simple-and-social-signup-form,
+.user-pass {
+  @apply lg:max-w-[22.5rem] mx-auto;
+
+  .social-button {
+    @apply w-full justify-center;
+  }
+
+  .field-label {
+    @apply text-text-heading;
+  }
+
+  &__btn-wrapper {
+    .simplelogin-form__signin-btn,
+    .simple-signup-form__signin-btn {
+      a {
+        @apply w-full text-center py-[0.625rem];
+      }
+    }
+
+    .simplelogin-form__social-btn,
+    .simple-signup-form__social-btn {
+      .social-button {
+        @apply w-full justify-center pb-[0.625rem] mb-0;
+
+        .svg {
+          @apply inline-block;
+        }
+      }
+    }
+  }
+
+  input[type='file'] {
+    @apply text-14;
+  }
+
+  #edit-submit {
+    @apply w-full mt-0;
+  }
+
+  &__logo {
+    @apply mb-6;
+  }
+
+  .email-input-wrapper {
+    .form-input {
+      @apply mr-0;
+    }
+  }
+
+  .form-item {
+    @apply font-secondary;
+    
+    .form-input {
+      &::placeholder {
+        @apply pt-px;
+      }
+    }
+  }
+
+  .field--type-image {
+    @apply mb-5;
+  }
+
+  &__link-auth-wrapper {
+    .form-item__email {
+      @apply text-text-heading leading-5 font-secondary pb-6 text-sm;
+
+      .form-checkbox {
+        @apply border-stroke-borderDefault rounded;
+      }
+    }
+
+    a {
+      @apply text-text-primaryDark font-secondary leading-5 text-sm font-medium;
+    }
+  }
+
+  &__signup-link-wrapper {
+    @apply leading-5 font-secondary text-sm;
+
+    a,
+    #user-register-form {
+      @apply font-medium text-text-primaryDark border-none inline bg-white text-sm;
+    }
+  }
+  label.form-item {
+    &.form-item__checkbox {
+      @apply inline-block relative mb-5 w-[49%] text-sm font-medium font-secondary text-text-heading;
+    }
+
+    .form-item__description {
+      @apply hidden;
+    }
+  }
+
+  .forgot-password {
+    @apply inline-block relative mb-5 w-[49%] text-right text-sm font-medium font-secondary text-text-primaryDark;
+  }
+
+  .button--primary {
+    @apply w-full;
+  }
+
+  .form-item__email {
+    @apply block mb-0 pb-0;
+  }
+}
+
+.simplelogin-form {
+  .form-item__email {
+    @apply mb-0;
+  }
+
+  .simplelogin-form__signin-btn {
+    .form-item__email {
+      @apply mb-4;
+    }
+  }
+}
+
+.split-quote-signup-form__signupform {
+  .form-item__email {
+    @apply mb-0;
+  }
+}
+
+.simple-and-social-login-form,
+.simple-and-social-signup-form {
+  .field--name-field-full-name {
+    @apply hidden;
+  }
+
+  .social-button-group-wrapper {
+    & > div {
+      @apply mb-3;
+    }
+  }
+
+  &__signin-btn {
+    a {
+      @apply w-full py-[0.625rem] border-0;
+    }
+
+    .btn {
+      @apply text-center;
+    }
+  }
+
+  &__seperator-wrapper {
+    @apply flex items-center justify-center;
+
+    .separator-border {
+      @apply border-solid border w-[45%];
+    }
+  }
+}
+
+.simple-and-social--signup-form__seperator-wrapper,
+.simple-and-social-login-form__seperator-wrapper {
+  @apply font-secondary leading-5 text-text-body flex items-center justify-center text-sm;
+
+  .seperator-border {
+    @apply border-stroke-dividerLight border w-[45%];
+    flex-basis: 100%;
+  }
+}
+
+.split-quote-form,
+.split-quote-signup-form {
+  &__quote-wrapper,
+  &__signupform {
+    flex-basis: 100%;
+
+    @media (min-width: 1024px) {
+      flex-basis: 50%;
+    }
+  }
+
+  .simplelogin-form__social-btn,
+  .simplelogin-form__signin-btn,
+  .simple-signup-form__social-btn {
+    a,
+    a.form-item__email,
+    button {
+      @apply py-2.5 px-4 text-base mb-0;
+    }
+  }
+
+  .form-item {
+    @apply maxMd:mb-5; 
+
+    .form-input {
+      @apply maxMd:mb-0;
+    }
+  }
+
+  &__carousel-wrapper {
+    .splide__container {
+      #splide {
+        @apply pt-0;
+      }
+    }
+    .testimony-company-logo-avatar {
+      .splide__slide {
+        .top-section {
+          @apply hidden;
+        }
+        .card_text {
+          @apply mt-0;
+        }
+        .card_text,
+        .avatar-name {
+          @apply text-white;
+        }
+        .avatar-designation {
+          @apply text-text-neutralMedium;
+        }
+      }
+    }
+  }
+
+  &__signup-link-wrapper {
+    a {
+      @apply text-sm p-0 text-text-primaryDark border-none inline bg-white font-medium;
+    }
+  }
+}
+
+.split-image-form,
+.split-image-signup-form {
+  &__right-wrapper,
+  &__signupform {
+    flex-basis: 100%;
+    @media (min-width: 1024px) {
+      flex-basis: 50%;
+    }
+  }
+
+  &__imagewrapper {
+    @apply h-full;
+
+    img {
+      @apply h-full w-full;
+    }
+  }
+
+  .simplelogin-form__social-btn,
+  .simplelogin-form__signin-btn {
+    a,
+    a.form-item__email,
+    button {
+      @apply py-2.5 px-4 text-base mb-0;
+    }
+  }
+
+  .form-item {
+    .form-input {
+      @apply maxMd:mb-0;
+    }
+  }
+}
+
+.simple-signup-form {
+  .simple-signup-form__signin-btn {
+    .form-item__email {
+      @apply mb-4;
+    }
+  }
+
+  .email-input-wrapper {
+    @apply mb-0;
+
+    &::placeholder {
+      @apply pt-px;
+    }
+  }
+
+  &__btn-wrapper {
+    @apply mt-1;
+  }
+}
+
+.split-quote-signup-form {
+  .email-input-wrapper {
+    @apply mb-0;
+
+    &::placeholder {
+      @apply pt-px;
+    }
+  }
+  .simple-signup-form {
+    &__btn-wrapper {
+      @apply mt-1;
+    }
+  }
+
+  .testimonial-carousel {
+    .splide-slider {
+      .body {
+        @apply text-white;
+      }
+    }
+  }
+}
+
+.split-quote-signup-copyright,
+.split-image-signup-copyright {
+  p {
+    @apply text-sm m-4 text-text-primaryLight border-none bg-transparent;
+  }
+}
+
+.split-image-signup-copyright {
+  p {
+    @apply bg-transparent border-0 text-text-body m-0 hover:bg-transparent;
+  }
+}
+
+.splide__arrow {
+	@apply bg-text-primaryDark;
+}
+
+.split-image-footer-wrapper {
+  .split-quote-signup-copyright {
+    p {
+      @apply text-text-body text-sm;
+    }
+  }
+}
+
+.split-image-form__imagewrapper {
+  & > div {
+    @apply h-full;
+  }
+}
+
+.signup-and-login-title {
+  @apply lg:leading-10 !important;
+}

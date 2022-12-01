@@ -1,0 +1,112 @@
+{#
+/**
+ * @file
+ * sidebar menu
+ *
+ * See sidebar.space.yaml for documentation.
+ */
+#}
+
+{# Attach Library #}
+{{ attach_library('unicef_vf/sidebar') }}
+
+{# Default #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set wrap_nav = wrap_nav|default(false) %}
+
+{# Template #}
+{% block sidebar_menu_block %}
+  {% import _self as menus %}
+
+  {{ menus.menu_links(items, attributes, 0, wrap_nav, category_style) }}
+
+  {% macro menu_links(items, attributes, menu_level, wrap_nav, category_style) %}
+  
+  {% import _self as menus %}
+  {% if items %}
+
+    {% set wrap_nav = wrap_nav|default(false) %}
+
+    {% set classes = [] %}
+
+    {% if wrap_nav %}
+      <nav role="navigation">
+    {% endif %}
+
+    {% if menu_level == 0 %}
+      <ul class="sidebar__menu-item sidebar__menu w-full sm:w-[17.5rem] cursor-pointer">
+    {% else %}
+      <ul class="sub-menu">
+    {% endif %}
+
+      {% for item in items %}
+        {%
+          set classes = ([
+            'navigation__item list-none bg-backgroundPrimary-primaryDark hover:bg-backgroundPrimary-primaryExtraDark rounded-lg mb-4',
+            category_style,
+            'menu' ~ variant,
+            'menu' ~ variant ~ '--item',
+            menu_level ? 'menu__level-' ~ menu_level : 'menu__level-0',
+            item.is_expanded ? 'menu-item--expanded',
+            item.is_collapsed ? 'menu-item--collapsed',
+            item.in_active_trail ? 'menu-item--active-trail',
+            item.is_active ? 'is-active',
+            item.below ? ' navigation__item--has-children',
+            loop.last ? ' navigation__item--last'
+          ]| sort | join(' ') | trim) %}
+
+        {% set item_attributes =  item.attributes|default(create_attribute()) %}
+
+        <li{{ item_attributes }} {{ item_attributes.addClass(classes) }}>
+          {% include "@atoms/link/link.twig" with item|merge({
+            custom_style: true,
+            url: item.url|render,
+            content: item.title,
+            target: item.url.options.attributes.target,
+            extra_classes: 'text-white textLG-bold px-4 py-3 block',
+          }) %}
+          
+          {% if item.below|length  %}
+            
+            {% if item.below|length  %}
+              
+              {% if menu_level == 0 %}
+                <div class="plus">
+                  {% include "@atoms/svg/_svg--icon.twig" with {
+                    icon: 'plus',
+                    size:	'w-[0.729rem] h-[0.729rem]'
+                  } only %}
+                </div>
+
+                <div class="minus hidden">
+                  {% include "@atoms/svg/_svg--icon.twig" with {
+                    icon: 'minus',
+                    size:	'w-[0.729rem] h-[0.729rem]'
+                  } only %}
+                </div>        
+              {% endif %}
+
+              {# Menu Level 1 Icon #}
+              {% if menu_level == 1 %}
+                <div class="arrow">
+                  {% include "@atoms/svg/_svg--icon.twig" with {
+                    icon: 'chevronRight',
+                    size:	'w-4 h-4'
+                  } only %}
+                </div>
+              {% endif %}
+
+            {{ menus.menu_links(item.below, attributes, menu_level + 1, wrap_nav) }}
+
+            {% endif %}	
+          {% endif %}	
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% if wrap_nav %}
+        </nav>
+      {% endif %}
+    {% endif %}
+  {% endmacro %}
+{% endblock %}

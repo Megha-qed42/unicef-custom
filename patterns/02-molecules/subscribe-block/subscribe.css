@@ -1,0 +1,60 @@
+/* Subscribe block */
+.subscribe__block--title > h3,
+.subscribe__block--title {
+  @apply text-sm text-text-heading font-bold mb-4;
+}
+
+.subscribe__block--description {
+  @apply mb-[6px];
+}
+
+.subscribe__block--description p {
+  @apply text-sm text-text-heading;
+}
+
+.subscribe__block:not(.subscribe__block--icon) .webform-submission-form,
+.subscribe__block:not(.subscribe__block--icon) form,
+.subscribe__block:not(.subscribe__block--icon) .webform-submission-form .form-actions {
+  @apply block w-full md:flex md:w-auto;
+}
+
+.subscribe__block:not(.subscribe__block--icon) .webform-submission-form .form-actions,
+.subscribe__block:not(.subscribe__block--icon) form .form-actions {
+  @apply mt-16 md:mt-0;
+}
+
+.subscribe__block .webform-submission-form,
+.subscribe__block form,
+.subscribe__block .webform-submission-form .form-actions {
+  @apply block md:flex md:w-auto;
+}
+
+.subscribe__block.subscribe__block--icon .email-icon-show .form-input {
+  @apply py-[0.5625rem];
+
+  max-width: calc(100% - 1rem);
+}
+
+.subscribe__block .email-icon-show .form-input {
+  @apply mb-0;
+
+  max-width: 100%;
+}
+
+.subscribe__block--email-form .email-icon-show .form-email {
+  &::placeholder {
+    @apply pt-px;
+  }
+}
+
+.subscribe__block--email-form {
+  .form-submit {
+    @apply py-2.5 px-4 mt-0;
+  }
+}
+
+@media (min-width: 768px) {
+  .subscribe__block .email-icon-show .form-input {
+    max-width: calc(100% - 1rem);
+  }
+}

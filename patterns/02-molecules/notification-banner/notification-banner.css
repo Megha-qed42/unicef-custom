@@ -1,0 +1,148 @@
+.notification_wrapper {
+
+  .notification-bar {
+
+    .notification-bar_innerwrapper {
+      .content {
+        flex: 0 0 90%;
+
+        span,
+        div,
+        a {
+          @apply inline-block;
+        }
+
+        span {
+          @apply relative text-white font-bold;
+
+          &.icon-span {
+            @apply top-0;
+          }
+        }
+
+        a .svg {
+          @apply inline-block;
+        }
+      }
+
+      .headline {
+        @apply text-white mb-0;
+      }
+    }
+  }
+
+  &.large {
+    .notification-bar {
+      .notification-bar_innerwrapper {
+        .content {
+          span .svg {
+            @apply font-bold w-5 h-5;
+          }
+
+          div {
+            @apply text-lg font-bold;
+          }
+        }
+      }
+    }
+  }
+
+  &.left {
+    .notification-bar {
+      .notification-bar_innerwrapper {
+        .content {
+          @apply text-left;
+        }
+      }
+    }
+  }
+
+  &.center {
+    .notification-bar {
+      .notification-bar_innerwrapper {
+        .content {
+          @apply justify-center;
+
+          .headline {
+            @apply flex-initial;
+          }
+        }
+      }
+    }
+  }
+
+  &.light {
+    .notification-bar {
+      .notification-bar_innerwrapper {
+        .content {
+          span,
+          div {
+            @apply text-text-heading;
+          }
+          a {
+            @apply text-text-primaryDark;
+          }
+        }
+      }
+    }
+  }
+
+  &.twoline {
+    .notification-bar {
+      .notification-bar_innerwrapper {
+        .content {
+          a {
+            @apply w-full pl-0;
+          }
+        }
+      }
+    }
+  }
+
+  &.active {
+    span.colse {
+      @apply rotate-180;
+    }
+  }
+}
+
+/* Mobile View */
+@media all and (max-width: 767px) {
+  .notification_wrapper {
+    .notification-bar {
+      .notification-bar_innerwrapper {
+        .content {
+          @apply text-left;
+          flex: 0 0 90%;
+          span {
+            @apply p-0;
+            .svg {
+              @apply p-0;
+            }
+          }
+          a {
+            @apply p-0;
+
+            flex: 0 0 100%;
+          }
+        }
+        span.close {
+          .svg {
+            @apply h-3.5 w-3.5;
+          }
+        }
+      }
+    }
+    &.large {
+      .notification-bar {
+        .notification-bar_innerwrapper {
+          .content {
+            div {
+              @apply text-sm font-normal;
+            }
+          }
+        }
+      }
+    }
+  }
+}

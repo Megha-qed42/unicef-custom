@@ -1,0 +1,53 @@
+{# Default #}
+{% set tag_name = tag_name|default('div') %}
+{% set attributes = attributes|default(create_attribute()) %}
+
+{# Classes #}
+{% set classes = [
+  'carousel-item',
+] %}
+
+{# Template #}
+{% block carousel_item_image_video_main %}
+  {% spaceless %}
+    <{{ tag_name }} {{ attributes.addClass(classes | sort | join(' ') | trim) }}>
+      <div class="container h-full mx-auto">
+        <div class="item-images-and-video-slideshow-main relative">
+          <div class="image-col flex items-center justify-center">
+            <div class="media-wrapper col-span-12">
+              {% if (video is not empty and image is not empty) %}
+                <div {{ region_attributes.video|default(create_attribute()).addClass('carousel-video') }}>{{ video }}</div>
+              {% endif %}
+              
+              {% if image|render|trim is not empty %}
+                {{ image }}
+              {% endif %}
+            </div>
+
+            <div class="data-col lg:col-start-2 lg:col-span-10">
+              {% if title|render|striptags|trim is not empty %}
+                {% block title %}
+                  {{ title }}
+                {% endblock %}
+              {% endif %}
+    
+              {% if description|render|striptags|trim is not empty %}
+                <div class="description textMd-regular">
+                  {% block description %}
+                    {{ description }}
+                  {% endblock %}
+                </div>
+              {% endif %}
+    
+              {% if button_1|render|striptags|trim is not empty %}
+                <div class="cta-button flex flex-col md:flex-row md:justify-start">
+                  <div{{ region_attributes.button_1|default(create_attribute()).addClass('mb-3 md:mb-0 md:mr-3') }}>{{ button_1 }}</div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </{{ tag_name }}>
+  {% endspaceless %}
+{% endblock %}

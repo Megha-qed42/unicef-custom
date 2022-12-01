@@ -1,0 +1,23 @@
+email_form:
+  use: "@atoms/email-form/email-form.twig"
+  label: Email Form
+  description: The Form That Sends You an Email.
+  fields:
+    action:
+      type: text
+      label: Action
+      preview: mailto:contact@yourdomain.com
+    label:
+      type: text
+      label: Email Label
+      preview: Request engagment model
+    placeholder:
+      type: text
+      label: Email Placeholder
+      description: The Email tag.
+      preview: Enter your email
+  settings:
+    icon:
+      type: boolean
+      label: Icon
+      default_value: true

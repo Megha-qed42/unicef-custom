@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * carousel
+ *
+ * See carousel.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/slider') }}
+{{ attach_library('unicef_vf/hero-banner-carousel') }}
+
+{# Classes #}
+{% set thumbnail_slider_classes = ([
+  'carousel carousel-thumbnail-slider'
+] | sort | join(' ') | trim ) %}
+
+{# Template #}
+{% block carousel_image_video_thumbnail_block %}
+  <div class="thumbnail-slider">
+    {% include '@organisms/slider/slider.twig' with {
+      variant: 1,
+      arrows: true,
+      arrows_color: 'primary-dark-arrows',
+      items: image_items,
+      autoplay: autoplay,
+      extra_classes: thumbnail_slider_classes,
+      pagination_style: 'thumbnail-slider',
+    } only %}
+  </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Card carousel
+ *
+ * See card-carousel.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/card-carousel') }}
+
+{# Settings #}
+{% if carousel_layout == "small-quicklink-card-carousel" %}
+  {% set items = items_small %}
+{% elseif carousel_layout == "medium-quicklink-card-carousel" %}
+  {% set items = items_medium %}
+{% elseif carousel_layout == "large-quicklink-card-carousel" %}
+  {% set items = items_large %}
+{% endif %}
+
+{# Classes #}
+{% set classes = ([
+  'carousel carousel-quicklink-card'
+] | sort | join(' ') | trim ) %}
+
+{# Template #}
+{% block quicklink_card_carousel_block %}
+  <div class="quicklink-card-carousel-wrapper quicklink-card-carousel {{ carousel_layout }}">
+    <div class="container mx-auto">
+      {% include '@organisms/slider/slider.twig' with {
+        slides_type: slides_type,
+        slide_focus: slide_focus,
+        slides_per_view: slides_per_view,
+        slides_on_tablet: slides_on_tablet,
+        slides_on_mobile: slides_on_mobile,
+        slide_padding_right: slide_padding_right,
+        slide_padding_left: slide_padding_left,
+        arrows: arrows,
+        arrows_color: arrows_color,
+        items: items,
+        counter: counter,
+        autoplay: autoplay,
+        extra_classes: classes,
+        pagination_style: pagination_style,
+        pagination_color: pagination_color,
+        pagination_alignment: pagination_alignment
+      } only %}
+    </div>
+  </div>
+{% endblock %}

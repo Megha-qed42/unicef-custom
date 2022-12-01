@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * icon card
+ *
+ * See card.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/card') }}
+
+{# Default #}
+{% set element = element|default('article') %}
+
+{# Classes #}
+{% set classes = [
+  alignment == 'center' ? 'text-center center-layout': '',  
+  'icon__card w-full overflow-hidden p-0',
+  card_layout,
+  full_box_link ? 'full_box_link' : '',
+  extra_classes ? extra_classes
+] %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes| sort | join(' ') | trim) %}
+
+{# Template #}
+{% block icon_card_block %}
+  <{{ element }} {{ attributes }}>
+    {% if card_layout == "withicon" or card_layout == "withiconbackground" %}
+      {% if icon|render|striptags|trim %}
+        <span class="inline-block mb-0 icon">{% include "@atoms/svg/_svg--icon.twig" with {
+          icon: icon,
+          size: "h-5 w-5",
+      } only %}</span>
+      {% endif %}
+    {% endif %}
+
+    {% if headline|render|striptags|trim %}
+      <div class="text-text-heading">
+        {{ headline }}
+      </div>
+    {% endif %}
+
+    {% if text|render|striptags|trim %}
+      <div {{ region_attributes.text|default(create_attribute()).addClass('description-txt textMd-regular text-text-body mt-2') }}>
+        {{ text }}
+      </div>
+    {% endif %}
+
+    {% if link|render|striptags|trim %}
+      <div {{ region_attributes.text|default(create_attribute()).addClass('cta mt-3.5') }}>
+        {{ link }}
+      </div>
+    {% endif %}
+  </{{ element }}>
+{% endblock %}

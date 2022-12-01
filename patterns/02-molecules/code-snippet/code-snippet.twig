@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * code-snippet
+ * See code-snippet.space.yaml for documentation.
+ */
+#}
+
+{# Classes #}
+{% set classes = [
+  'code-snippet py-2 px-5 md:px-8 md:w-[50rem] w-[100%] text-text-body bg-backgroundNeutral-neutralLight rounded-lg',
+  background,
+  background == 'colour' ? 'bg-backgroundPrimary-primaryExtraLight',
+  background == 'dark' ? 'text-white bg-backgroundNeutral-neutralExtraDark'
+]| sort | join(' ') | trim %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% block code_snippet_block %}
+  <div {{ attributes }}>
+    <pre class="leading-[0]">
+      <code>
+        <xmp class="textMd-medium whitespace-pre-wrap">{{ text }}</xmp>
+      </code>
+    </pre>
+  </div>
+{% endblock %}

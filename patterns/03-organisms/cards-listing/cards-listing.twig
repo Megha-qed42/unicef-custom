@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Card-listing
+ *
+ * See blog-listing.space.yaml for documentation.
+ */
+#}
+{% set classes = ([
+  'card-listing-block grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4'
+] | sort | join(' ') | trim ) %}
+
+{# TEMPLATE #}
+<div class="{{ classes }}">
+    {% for item in items %}
+        {{ item }}
+    {% endfor %}
+</div>

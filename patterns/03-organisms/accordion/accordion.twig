@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * accordion
+ *
+ * See accordion.space.yaml for documentation.
+ */
+#}
+{{ attach_library('unicef_vf/accordion') }}
+
+{% set classes = ([
+  container_width == 'box_width_800' ? 'container-800 mx-auto w-full' : '',
+] | sort | join(' ') | trim ) %}
+
+{# TEMPLATE #}
+{% block accordion_block %}
+  <div class="accordion {{ classes }}">
+    {{ items }}
+  </div>
+{% endblock %}

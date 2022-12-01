@@ -1,0 +1,11 @@
+logo:
+  use: "@atoms/logo/logo.twig"
+  label: Logo
+  description: Simple component to display the site logo.
+  variants:
+    only_logo:
+      label: Only Logo
+    logo_with_text_dark:
+      label: Logo with text
+    logo_with_text_light:
+      label: Logo with text light  

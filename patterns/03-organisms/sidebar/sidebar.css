@@ -1,0 +1,165 @@
+/* Sidebar Menu Links List */
+.sidebar-links-list {
+  .is-active {
+     a {
+       @apply active:bg-backgroundPrimary-primaryLight;
+     }
+  }
+
+  .navigation__item--has-children {
+    .sub-menu {
+      .navigation__item {
+        a {
+          @apply block;
+        }
+      }
+    }
+  }
+}
+
+/* Category Sidebar Menu Css */
+.sidebar__menu {
+ 
+  .navigation__item--has-children {
+    @apply flex flex-wrap justify-between items-center;
+
+    ul {
+      @apply w-full;
+
+      .sidebar-submenu-link-element {
+        @apply text-text-primaryDark font-normal;
+      }
+    }
+  }
+  
+  /* On Active  */
+  .active {
+    a {
+      @apply text-text-heading font-bold;
+    }
+    
+    .icon1 {
+      @apply -rotate-90;
+    }
+    
+    > .sub-menu {
+      @apply block pt-6;
+
+      li {                    
+        @apply mb-0 py-2 px-4 mb-2;
+ 
+        a {
+          @apply font-secondary text-text-primaryDark font-medium text-sm;
+        }
+      }
+    }
+  }
+  
+  /* Category Sidebar Menu Underline Style */
+  .underline_style {
+    @apply border-b border-solid border-stroke-dividerLight rounded-none pb-4;
+  }
+
+  /* Category Sidebar Menu Filled Style */
+  .filled_style {
+    @apply bg-backgroundNeutral-neutralLight rounded-lg p-3; 
+
+    ul {
+      li {
+        @apply active:bg-backgroundPrimary-primaryLight rounded;
+      }
+    }
+  }
+  
+  /* Sub Menu */
+  .sub-menu {
+    @apply hidden;
+  }
+}
+
+/* Sidebar Menu Css */
+.sidebar__menu-item {
+  
+  .navigation__item--has-children {
+    @apply flex flex-wrap justify-between items-center;
+
+    svg {
+      @apply mr-3;
+    }
+
+    .sub-menu {
+      @apply bg-white border border-solid	border-stroke-borderLight pt-5;
+
+      .navigation__item {
+        @apply bg-transparent;
+
+        a {
+          @apply p-0;
+        }
+
+        .sub-menu {
+          @apply border-none;
+        }
+      }
+    }
+
+    ul {
+      @apply w-full;
+      
+      li {
+        .sidebar-submenu-link-element {
+          @apply text-text-primaryDark font-normal;
+        }
+
+        .sub__menu {
+          li {
+            @apply active:bg-backgroundPrimary-primaryLight rounded;
+          }
+        }
+      }
+    }
+  }
+
+  /* Sidebar Menu Filled Style */
+  .navigation__item--has-children.filled {
+    .sub-menu {
+      @apply bg-backgroundNeutral-neutralLight border-t-0;
+
+      ul {
+        li {
+          @apply active:bg-backgroundPrimary-primaryLight rounded;
+        }
+      }
+    }
+  }
+
+  .active {
+    .plus {
+      @apply hidden;
+    }
+
+    ul {
+      .arrow {
+        svg {
+          @apply m-0;
+        }
+      }
+
+      .active {
+        .arrow {
+          svg {
+            @apply -rotate-90;
+          }
+        }
+      }
+    }
+    
+    .minus {
+      @apply block;
+    }
+    
+    a {
+      @apply text-white font-bold;
+    }
+  }  
+} 

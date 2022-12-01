@@ -1,0 +1,36 @@
+{# Classes #}
+{% set classes = ([
+	'form-checkbox mr-2 rounded border-stroke-borderDefault my-1 h-4 w-4',
+	state == 'rounded' ? 'rounded-full',
+ 	size
+]) %}
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% block checkbox_variations_block %}
+	{% if state == 'indeterminate-state' %}
+		<label class="checkbox inline-flex items-center cursor-pointer text-sm font-secondary font-medium {{ size }} {% if (disabled) %}disabled{% endif %} indeterminate-state">		
+			<input {{ attributes }} {% if (disabled) %}disabled{% endif %} indeterminate="true">
+			{% if text is not empty -%}
+			<span class='checkbox-label text-neutral-700'>{{ text }}</span>
+			{%- endif %}
+			<span class="checkmark"></span>
+		</label>
+	{% elseif state == "rounded" %}
+		<label class="checkbox inline-flex items-center cursor-pointer text-sm font-secondary font-medium {{ size }} {% if (disabled) %}disabled{% endif %} rounded-state">		
+			<input {{ attributes }} {% if (disabled) %}disabled{% endif %} rounded="true">
+			{% if text is not empty -%}
+			<span class='checkbox-label text-neutral-700'>{{ text }}</span>
+			{%- endif %}
+			<span class="checkmark"></span>
+		</label>
+	{% else %}
+		<label class="checkbox inline-flex items-center cursor-pointer text-sm font-secondary font-medium {{ size }} {% if (disabled) %}disabled{% endif %}">		
+			<input {{ attributes }} {% if (disabled) %}disabled{% endif %}>
+			{% if text is not empty -%}
+			<span class='checkbox-label text-neutral-700'>{{ text }}</span>
+			{%- endif %}
+			<span class="checkmark"></span>
+		</label>	
+	{%- endif %}
+{% endblock %}

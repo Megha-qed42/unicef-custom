@@ -1,0 +1,158 @@
+modal_type_search:
+  use: "@molecules/search/_modal-type-search.twig"
+  namespace: "Molecules/Search"
+  label: Modal search
+  description: The search pattern.
+  fields:
+    modal_search:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        -
+          id: input
+          settings:
+            input_type: 'inputput_field'
+            placeholder: 'Search for Anything'
+            tooltip_icon: false
+            input_icon: 'search'
+            corner_style: 'rounded-3xl'
+            hint_text: ''
+            input_label: ''
+
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        -
+          id: mediacard
+          settings:
+            layout: "withoutcontainer"  
+            cardsize: "small"
+            full_box_link: true
+            preheadline: "Lorem ipsum"
+            headline: "Molestiae itaque earum"
+            text: "Molestiae itaque earum quidem doloremque voluptatem eos dolore. Nemo dolores excepturi hic illo"
+            link: false
+            cells_1: false
+        -
+          id: mediacard
+          settings:
+            layout: "withoutcontainer"  
+            cardsize: "small"
+            full_box_link: true
+            preheadline: "Molestiae itaque earum"
+            headline: "Lorem ipsum"
+            text: "Molestiae itaque earum quidem doloremque voluptatem eos dolore."
+            link: false
+            cells_1: false
+        -
+          id: mediacard
+          settings:
+            layout: "withoutcontainer"  
+            cardsize: "small"
+            full_box_link: true
+            preheadline: "Lorem ipsum"
+            headline: "Molestiae itaque earum"
+            text: "Molestiae itaque earum quidem doloremque voluptatem eos dolore. Nemo dolores excepturi hic illo"
+            link: false
+            cells_1: false
+        -
+          id: mediacard
+          settings:
+            layout: "withoutcontainer"  
+            cardsize: "small"
+            full_box_link: true
+            preheadline: "Lorem ipsum"
+            headline: "Molestiae itaque earum"
+            text: "Molestiae itaque earum quidem doloremque voluptatem eos dolore. Nemo dolores excepturi hic illo"  
+            link: false
+            cells_1: false 
+        -
+          id: mediacard
+          settings:
+            layout: "withoutcontainer"  
+            cardsize: "small"
+            full_box_link: true
+            preheadline: "Lorem ipsum"
+            headline: "Molestiae itaque earum"
+            text: "Molestiae itaque earum quidem doloremque voluptatem eos dolore. Nemo dolores excepturi hic illo"
+            link: false
+            cells_1: false
+        -
+          id: mediacard
+          settings:
+            layout: "withoutcontainer"  
+            cardsize: "small"
+            full_box_link: true
+            preheadline: "Lorem ipsum"
+            headline: "Molestiae itaque earum"
+            text: "Molestiae itaque earum quidem doloremque voluptatem eos dolore. Nemo dolores excepturi hic illo"
+            link: false
+            cells_1: false
+        -
+          id: mediacard
+          settings:
+            layout: "withoutcontainer"  
+            cardsize: "small"
+            full_box_link: true
+            preheadline: "Lorem ipsum"
+            headline: "Molestiae itaque earum"
+            text: "Molestiae itaque earum quidem doloremque voluptatem eos dolore. Nemo dolores excepturi hic illo"
+            link: false
+            cells_1: false
+        -
+          id: mediacard
+          settings:
+            layout: "withoutcontainer"  
+            cardsize: "small"
+            full_box_link: true
+            preheadline: "Lorem ipsum"
+            headline: "Molestiae itaque earum"
+            text: "Molestiae itaque earum quidem doloremque voluptatem eos dolore. Nemo dolores excepturi hic illo"  
+            link: false
+            cells_1: false
+
+dropdown-type-search:
+  use: "@molecules/search/_dropdown-type-search.twig"
+  namespace: "Molecules/Search"
+  label: Dropdown search
+  description: The search pattern.
+  fields:
+    dropdown_search:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        -
+          id: input
+          settings:
+            input_type: 'inputput_field'
+            placeholder: 'Search for Anything'
+            tooltip_icon: false
+            input_icon: 'search'
+            hint_text: ''
+            input_label: ''   
+
+integrated-type-search:
+  use: "@molecules/search/_integrated-type-search.twig"
+  namespace: "Molecules/Search"
+  label: Integrated search
+  description: The search pattern.
+  fields:
+    search_input_field:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        -
+          id: input
+          settings:
+            input_type: 'inputput_field'
+            placeholder: 'Search for Anything'
+            tooltip_icon: false
+            input_icon: 'search'
+            corner_style: 'rounded-3xl'
+            hint_text: ''
+            input_label: ''

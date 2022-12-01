@@ -1,0 +1,86 @@
+{#
+/**
+* @file
+* Theme override for a 'Dropdown list'.
+*
+* Available variables
+* - dropdown_type: Dropdown types available are text, text with icon, text with checkbox.
+* - list_text_items: Dropdown text list multiple items.
+* - list_text_with_icon_items: Dropdown list with icon multiple items.
+* - list_text_with_checkbox_items: Dropdown list with checkbox multiple items.
+*/
+#}
+
+{# Classes #}
+{% set dropdown_list_classes = ([
+	'dropdown-list list-none shadow-xs rounded hover:shadow-none border border-StrokeButton-buttonSecondaryGreyDefault hover:border-0',
+	list_heading,
+	dropdown_button_type,
+]) %}
+
+{# Template #}
+{% block dropdown_list %}
+	<div class="dropdown-wrapper">
+		<ul {{ attributes.addClass( dropdown_list_classes) }}>
+			{% if dropdown_button_type == 'text-button' %}
+				<li class="first-list-item list-item px-4 py-2.5">
+					{{ text_header }}
+				</li>
+			{% elseif dropdown_button_type == 'avatar-button' and list_heading != 'header'  %}
+				<li class="first-list-item list-item px-4 py-2.5">
+					{{ avatar_header}}
+				</li>
+			{% else %} 
+					<li class="first-list-item list-item">
+						{% if dropdown_list_type == 'text' %}
+							{{ list_text_items[0] }}
+						{% elseif dropdown_list_type == 'text-with-icon' %}	
+							{{ list_text_with_icon_items[0] }}
+						{% elseif dropdown_list_type == 'text-with-checkbox' %}
+							{{ list_text_with_checkbox_items[0] }}				
+						{% endif %}
+					</li>
+			{% endif %}
+			<ul class="list-item-wrapper shadow-xs rounded">
+				{% if list_heading == 'avatar' %}
+					<li class="list-item avatar-content">
+						{% include "@atoms/avatar/avatar.twig" with {
+							"variant": "avatar_label",
+							"full_name": "Mrs. Steve Reilly",
+							"link_text": "sunt debitis nobis",
+							"image_url": "space-assets://images/avatar-12.jpg",
+							"corners": 'rounded',
+							"icon": false,
+							"image_style": "40x40_xxs_sc"
+						} %}
+					</li>
+				{% endif %}
+				{% if dropdown_list_type == 'text' %}
+					{% for list_text_item in list_text_items %}
+						<li class="list-item">
+							{{ list_text_item }}
+						</li>
+					{%- endfor -%}	
+				{% elseif dropdown_list_type == 'text-with-icon' %}	
+					{% for list_text_with_icon_item in list_text_with_icon_items %}
+						<li class="list-item">
+							{{ list_text_with_icon_item }}
+						</li>
+					{%- endfor -%}
+				{% elseif dropdown_list_type == 'text-with-checkbox' %}
+					{% for list_text_with_checkbox_item in list_text_with_checkbox_items %}
+						<li class="list-item">
+							{{ list_text_with_checkbox_item }}
+						</li>
+					{%- endfor -%}
+			{% elseif dropdown_list_type == 'text-with-avatar' %}
+					{% for list_text_with_avatar_item in list_text_with_avatar_items %}
+						<li class="list-item">
+							{{ list_text_with_avatar_item }}
+						</li>
+					{%- endfor -%}	
+				{% endif %}	
+			</ul>
+		</ul>
+	</div>
+{% endblock %}

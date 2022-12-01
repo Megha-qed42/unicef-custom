@@ -1,0 +1,58 @@
+cards_listing:
+  use: "@organisms/cards-listing/cards-listing.twig"
+  label: Cards Listing
+  description: Card Listing Structure.
+  fields:    
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        -
+          id: quicklinkcard
+          settings:
+            layout: "withbackground"  
+            cardsize: "small"
+            full_box_link: true
+            headline: "Molestiae itaque earum"
+            text: "Molestiae itaque earum quidem doloremque voluptatem eos dolore. Nemo dolores excepturi hic illo"
+        -
+          id: quicklinkcard
+          settings:
+            layout: "withbackground"  
+            cardsize: "small"
+            full_box_link: true
+            headline: "Dignissimos et assumenda"
+            text: "Dignissimos et assumenda odit rerum itaque eum magni aut eignissimos et assumenda"
+        -
+          id: quicklinkcard
+          settings:
+            layout: "withbackground"  
+            cardsize: "small"
+            full_box_link: true
+            headline: "Excepturi hic illo"
+            text: "Nulla velit in. Praesentium est distinctio. Est aut consequatur illum unde sit incidunt. Dolorem quas nihil."
+        -
+          id: quicklinkcard
+          settings:
+            layout: "withbackground"  
+            cardsize: "small"
+            full_box_link: true
+            headline: "Molestiae itaque earum"
+            text: "Molestiae itaque earum quidem doloremque voluptatem eos dolore. Nemo dolores excepturi hic illo"
+        -
+          id: quicklinkcard
+          settings:
+            layout: "withbackground"  
+            cardsize: "small"
+            full_box_link: true
+            headline: "Dignissimos et assumenda"
+            text: "Dignissimos et assumenda odit rerum itaque eum magni aut eignissimos et assumenda"
+        -
+          id: quicklinkcard
+          settings:
+            layout: "withbackground"  
+            cardsize: "small"
+            full_box_link: true
+            headline: "Excepturi hic illo"
+            text: "Nulla velit in. Praesentium est distinctio. Est aut consequatur illum unde sit incidunt. Dolorem quas nihil."

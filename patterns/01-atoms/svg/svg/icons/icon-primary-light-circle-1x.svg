@@ -1,0 +1,13 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="24" height="24" fill="#F4F5F7"/>
+<g id="Featured icon">
+<rect x="-15.5" y="-15.5" width="359" height="1455" rx="4.5" fill="white"/>
+<g id="size=xs, color=primary, theme=lightCircle">
+<path d="M0 12C0 5.37258 5.37258 0 12 0V0C18.6274 0 24 5.37258 24 12V12C24 18.6274 18.6274 24 12 24V24C5.37258 24 0 18.6274 0 12V12Z" fill="#F5FCFC"/>
+<g id="baseIcons">
+<path id="Icon" d="M12.5 7L7.5 13H12L11.5 17L16.5 11H12L12.5 7Z" stroke="#17494D" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<rect x="-15.5" y="-15.5" width="359" height="1455" rx="4.5" stroke="#7B61FF" stroke-dasharray="10 5"/>
+</g>
+</svg>

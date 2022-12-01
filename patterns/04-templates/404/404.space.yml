@@ -1,0 +1,116 @@
+simple404:
+  use: "@templates/404/_simple404.twig"
+  namespace: "Templates/404"
+  label: Simple 404
+  description: Simple 404 component titles, body and link.
+  fields:
+    error:
+      type: text
+      label: Error
+      preview: 404-error
+    heading:
+      type: text
+      label: Heading
+      preview: We can't find that page
+    text:
+      type: text
+      label: Text
+      preview: Sorry, the page you are looking for doesn't exist or has been moved.
+    back_link:
+      type: pattern
+      label: Link
+      description: An optional button at the bottom of the card.
+      preview:
+        id: link
+        settings:          
+          url: "https://eldon.info"
+          content: "Go back"
+          title_text: ""
+          icon_size: 4
+          icon_position: "left"
+          icon: "arrowLeft"
+          extra_classes: "font-secondary border border-stroke-borderLight rounded-md no-underline hover:text-defaultGray-500 focus:text-defaultGray-500 text-lg font-medium relative justify-center flex flex-row"
+    home_link:
+      type: pattern
+      label: Link
+      description: An optional button at the bottom of the card.
+      preview:
+        id: link
+        settings:          
+          url: "https://eldon.info"
+          content: "Take me home"
+          title_text: ""
+          extra_classes: "font-secondary rounded-md bg-primary-600 text-background-white no-underline hover:text-background-white focus:text-background-white text-lg font-medium justify-center"
+  settings:
+    alignment_type:
+      type: select
+      required: true
+      label: Alignment type
+      preview: left
+      options:
+        left: left
+        center: center
+
+# Text Image 404 fileds
+textimage404:
+  use: "@templates/404/_textimage404.twig"
+  namespace: "Templates/404"
+  label: Text Image 404
+  description: Text image component with image, titles, body and link.
+  fields:
+    error:
+      type: text
+      label: Error 
+    heading:
+      type: text
+      label: Heading
+      preview: We can't find that page
+    text:
+      type: text
+      label: Text
+      preview: Sorry, the page you are looking for doesn't exist or has been moved.
+    back_link:
+      type: pattern
+      label: Link
+      description: An optional button at the bottom of the card.
+      preview:
+        id: link
+        settings:          
+          url: "https://eldon.info"
+          content: "Go back"
+          title_text: ""
+          icon_size: 4
+          icon_position: "left"
+          icon: "arrowLeft"
+          extra_classes: "font-secondary border border-stroke-borderLight rounded-md no-underline hover:text-defaultGray-500 focus:text-defaultGray-500 text-lg font-medium relative justify-center flex flex-row"
+    home_link:
+      type: pattern
+      label: Link
+      description: An optional button at the bottom of the card.
+      preview:
+        id: link
+        settings:          
+          url: "https://eldon.info"
+          content: "Take me home"
+          title_text: ""
+          extra_classes: "font-secondary rounded-md bg-primary-600 text-background-white no-underline hover:text-background-white focus:text-background-white text-lg font-medium justify-center"
+    image:
+      type: pattern
+      label: Error image
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: "./images/Image.png"
+          style: 16x9_md_sc
+          default: false  
+          extra_classes: 'object-cover'
+  settings:
+    image_type:
+      type: select
+      required: true
+      label: Alignment type
+      preview: large
+      options:
+        large_image: large
+        center_image: center_image

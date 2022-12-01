@@ -1,0 +1,41 @@
+{% block simple_social_signup_block %}
+	<div class="simple-and-social-signup-form px-4 lg:px-0 mt-[4rem]">
+		<div class="simple-and-social-login-form__logo text-center">
+			{% include "@atoms/logo/logo.twig" with { variant: "only_logo" } %}
+		</div>
+		<h2 class="signup-and-login-title text-2xl lg:text-3xl leading-10 font-semibold text-text-heading text-center mb-0">
+			{{ form_title }}
+		</h2>
+		<h5 class="signup-and-login-subtitle text-base font-secondary text-text-body text-center mt-3 mb-8">
+			{{ form_subtitle }}
+		</h5>
+		{% include "@atoms/forms/_form-element.twig" with {
+			"variant": "email",
+			"description_text": "Enter email address.",
+			"label_display": "empty",
+			"label": email_label,
+			"children": children1
+		} %}
+		<div class="simple-and-social-signup-form__signin-btn w-full mb-5">
+			{% include "@atoms/button/button.twig" with {
+				"variant": "primary",
+				"text": signin_button_text,
+				"button_type": "only_text",
+				"size": "large",
+				"url": signin_url,
+				"icon": "whiteCircle",
+				"icon_alignment": "right"
+			} %}
+		</div>
+		<div class="simple-and-social--signup-form__seperator-wrapper my-6">
+			<span class="seperator-border mr-[10px]"></span> OR <span class="seperator-border ml-[10px]"></span>
+		</div>
+		<div class="simple-and-social-signup-form__btn-wrapper flex flex-wrap flex-col-reverse">
+			{{ social_buttons }}
+		</div>
+		<div class="simple-and-social-signup-form__signup-link-wrapper text-center mt-8">
+			<span class="signup-linklabel text-text-body mr-1">{{ signup_label }}</span>
+			{{ signup_link }}
+		</div>
+	</div>
+{% endblock %}

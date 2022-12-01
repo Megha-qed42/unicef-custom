@@ -1,0 +1,28 @@
+social_button_groups:
+  use: "@molecules/social-button-groups/social-button-groups.twig"
+  label: Social Button Groups
+  description: Social button groups.
+  fields:
+    social_buttons:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        -
+          id: social_button
+          fields:
+           text: 'Sign in with Google'
+          settings:
+            social_button_type: google
+        -
+          id: social_button
+          fields:
+           text: 'Sign in with Facebook'
+          settings:
+            social_button_type: facebook
+        -
+          id: social_button
+          fields:
+           text: 'Sign in with Apple'
+          settings:
+            social_button_type: apple

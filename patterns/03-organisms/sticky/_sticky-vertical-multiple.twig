@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * _sticky-vertical-multiple
+ *
+ * See sticky.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/sticky-component') }}
+
+{# Default #}
+{% set element = element|default('section') %}
+
+{# Classes #}
+{% set classes = [
+  'sticky-component', 
+  'sticky-vertical-multiple-image-container',
+  alignment,
+  sticky_arrows_color,
+  sticky_arrows_alignment
+] %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes| sort | join(' ') | trim) %}
+
+{# Template #}
+{% block sticky_image_vertical_multiple_block %}
+  <{{ element }} {{ attributes }}>
+    <div class="container mx-auto sticky-wrapper">
+      <div class="row-outer">
+        <div class="row-inner sticky-row">
+          <div class="col sticky-media-wrapper">
+            {{ items_image }}
+          </div>
+
+          <div class="col scroll-text-wrapper">
+            {{ items_data }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </{{ element }}>
+{% endblock %}

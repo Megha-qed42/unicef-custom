@@ -1,0 +1,23 @@
+{# Default #}
+{% set tag_name = tag_name|default('div') %}
+{% set attributes = attributes|default(create_attribute()) %}
+
+{# Classes #}
+{% set classes = [
+  'carousel-item',
+] %}
+
+{# Template #}
+{% block carousel_item_image_video_thumbnail %}
+  {% spaceless %}
+    <{{ tag_name }} {{ attributes.addClass(classes | sort | join(' ') | trim) }}>
+      <div class="item-images-and-video-slideshow-thumbnail relative">
+        <div class="image-col">
+          {% if image|render|trim is not empty %}
+            {{ image }}
+          {% endif %}
+        </div>
+      </div>
+    </{{ tag_name }}>
+  {% endspaceless %}
+{% endblock %}

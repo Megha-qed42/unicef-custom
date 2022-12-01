@@ -1,0 +1,50 @@
+{# Classes #}
+{% set classes = ([
+  "text-md font-primary m-2 flex",
+  pattern_configuration('carousal-arrow', '', 'colors')[color],
+  pattern_configuration('carousal-arrow', '', 'shapes')[shape],
+] | sort | join(' ') | trim )%}
+
+{% set border = ([
+  border == true ? 'border border-stroke-focused border-2',
+]) | sort | join(' ') | trim %}
+
+{% set arrow_prev = ([
+  arrows == 'directional' ? 'arrowLeft',
+  arrows == 'traingle' ? 'chevronLeft',
+]) | sort | join(' ') | trim %}
+
+{% set arrow_next = ([
+  arrows == 'directional' ? 'arrowRight',
+  arrows == 'traingle' ? 'chevronRight',
+]) | sort | join(' ') | trim %}
+
+{% set size = ([
+  size == 'large' ? 'px-4 py-4',
+  size == 'medium' ? 'px-2 py-2',
+]) | sort | join(' ') | trim %}
+
+{# Template #}
+{% block carousel_arrow_block %}
+  <nav class="flex flex-col bg-white" role="navigation">
+    <ul class="flex flex-row justify-between">
+      <li class="">
+        <a class="{{ classes }} {{border}} {{size}}" href="{{ previous_url }}">
+        {% include "@atoms/svg/svg.twig" with {
+        "icon": ""~ arrow_prev,
+        "size": "w-5 h-5"
+      } only %}
+      </a>
+      </li>
+      <li class="">
+        <a class="{{ classes }} {{border}} {{size}}" href="{{ next_url }}">
+      </span>
+        {% include "@atoms/svg/svg.twig" with {
+        "icon": ""~ arrow_next,
+        "size": "w-5 h-5"
+      } only %}
+        </a>
+      </li>
+    </ul>
+  </nav>
+{% endblock %}

@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * _sticky-item-horizontal
+ *
+ * See sticky-item.space.yaml for documentation.
+ */
+#}
+
+<section role="sticky-horizontal" class="sticky-cards hidden lg:flex">
+  {% for key, item in items %}
+    {{ item }}
+  {% endfor %}
+</section>
+
+<div class="sticky-slider-mobile lg:hidden">
+  {% include '@organisms/slider/slider.twig' with {
+    slides_type: slides_type,
+    slide_focus: slide_focus,
+    slides_per_view: slides_per_view,
+    slides_on_tablet: slides_on_tablet,
+    slides_on_mobile: slides_on_mobile,
+    slide_padding_right: slide_padding_right,
+    slide_padding_left: slide_padding_left,
+    arrows: arrows,
+    arrows_color: arrows_color,
+    items: items,
+    counter: counter,
+    autoplay: autoplay,
+    extra_classes: classes,
+    pagination_style: pagination_style,
+    pagination_color: pagination_color,
+    pagination_alignment: pagination_alignment
+  } only %}
+</div>

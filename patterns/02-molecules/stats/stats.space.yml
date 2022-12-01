@@ -1,0 +1,30 @@
+stats_unicef_vf:
+  use: "@molecules/stats/stats.twig"
+  label: Stats
+  description: Stats value , title and description .
+  fields:
+    stats_numeric_value:
+      type: pattern
+      label: Numeric Value
+      description: 'Regular heading'
+      preview:
+        id: headline
+        variant: h4
+        settings:
+          tag_name: h4
+          headline: '30'
+    stats_title:
+      type: text
+      label: Stats Title
+      preview: '<p>COMMITS </p>'
+    stats_desc: 
+      type: pattern
+      label: Stats Description
+      description: 'Regular heading'
+      preview:
+        id: headline
+        variant: h4
+        settings:
+          tag_name: h4
+          headline: INVESTMENTS MADE IN EMERGING ECONOMICS  
+        

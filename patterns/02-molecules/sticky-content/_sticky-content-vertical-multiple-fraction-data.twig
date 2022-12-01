@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * _sticky-content-vertical-multiple-fraction-data
+ *
+ * See sticky-content.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/sticky-component') }}
+
+<div class="scroll-text-block">
+  <div class="scroll-text-div">
+    <div class="scroll-animation-box">
+      {% if pre_heading|render|striptags|trim is not empty %}
+        <div class="sticky-pre-heading">
+          {{ pre_heading }}
+        </div>
+      {% endif %}
+
+      {% if heading|render|striptags|trim is not empty %}
+        <div class="sticky-heading">
+          {{ heading }}
+        </div>
+      {% endif %}
+
+      {% if description|render|striptags|trim is not empty %}
+        <div class="sticky-description">
+          {{ description }}
+        </div>
+      {% endif %}
+
+      {% if button_1|render|striptags|trim is not empty or button_2|render|striptags|trim is not empty %}
+        <div class="sticky-button flex flex-col md:flex-row">
+          {% if button_1|render|striptags|trim is not empty %}
+            <div{{ region_attributes.button_1|default(create_attribute()).addClass('mb-3 md:mb-0 md:mr-3') }}>{{ button_1 }}</div>
+          {% endif %}
+
+          {% if button_2|render|striptags|trim is not empty %}
+            <div{{ region_attributes.button_2 }}>{{ button_2 }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

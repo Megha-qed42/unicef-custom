@@ -1,0 +1,49 @@
+{# Include this template inside the page.html.twig in drupal. #}
+
+
+{% block secondary_header_block %}
+  {% if secondary_header_menu %}
+    {% include '@organisms/header/_secondaryheader.twig' with {
+      menu: secondary_header_menu,
+      secondary_header_position: secondary_header_position,
+    } only %}
+  {% endif %}
+{% endblock %}
+
+{% block header_block %}
+  {% include '@organisms/header/_primaryheader.twig' with {
+    menu: primary_menu,
+    search: search_block,
+    login: login_block,
+    signup: sign_up_block,
+    position: header_position,
+    hamburger_type: header_navigation_type,
+  } only %}
+{% endblock %}
+
+
+
+{{ highlighted }}
+
+{% if breadcrumb %}
+  {{ breadcrumb }}
+{% endif %}
+
+<main class="main-content bg-white">
+  {% block main %}
+    <p>Main content</p>
+  {% endblock %}
+</main>
+
+{% block footer_block %}
+  {% include "@organisms/footer/footer.twig" with {
+    footer_top_left: footer_top_left,
+    footer_top_right: footer_top_right,
+    footer_middle_left: footer_middle_left,
+    footer_middle_right: footer_middle_right,
+    footer_bottom_left: footer_bottom_left,
+    footer_bottom_right: footer_bottom_right,
+    colour: colour,
+    type: footer_type,
+  } only %}
+{% endblock %}

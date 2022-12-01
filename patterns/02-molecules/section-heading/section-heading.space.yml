@@ -1,0 +1,41 @@
+section_heading:
+  use: "@molecules/section-heading/section-heading.twig"
+  label: Section heading
+  description: 'Section Headings can be used with various sections on webpages to define/assign a meaning or context for the sections.'
+  fields:
+    label:
+      type: text
+      label: Label
+      description: 'The label of the section.'
+      preview: 'Launch faster'
+    title:
+      type: pattern
+      label: Title
+      description: 'The title of the section.'
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'A Fully integrated digital agency'
+          font: displayMd-semibold
+    icon:
+      type: text
+      label: Icon name
+      description: 'Icon beside title.'
+      preview: ''
+    description:
+      type: text
+      label: Description
+      description: 'The description of the section.'
+      preview: '<p>We understand human needs through empathy to design experiences that improve conversion through practical strategies. We create integrated design-driven digital solutions where form follows function across an entire web product or through individual products and services.</p>'
+  settings:
+    alignment:
+      type: select
+      label: Alignment
+      required: true
+      default: left
+      options:
+        left: Left
+        center: Center
+        split: Split

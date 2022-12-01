@@ -1,0 +1,135 @@
+sticky_item_vertical_single:
+  use: "@molecules/sticky-item/_sticky-item.twig"
+  namespace: 'Molecules/Sticky item'
+  label: Sticky item - Vertical single image
+  description: 'Sticky item component which will used in sticky component.'
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      description: 'The items of the Sticky.'
+      multi_value_type: items
+      preview: 
+        - id: sticky_content_vertical_single
+        - id: sticky_content_vertical_single
+        - id: sticky_content_vertical_single
+        - id: sticky_content_vertical_single
+
+sticky_item_vertical_multiple_image:
+  use: "@molecules/sticky-item/_sticky-item-vertical-multiple-image.twig"
+  namespace: 'Molecules/Sticky item'
+  label: Sticky item - Vertical multiple image
+  description: 'Sticky item component which will used in sticky component.'
+  fields:
+    items:
+      type: pattern
+      label: Items
+      description: 'The items of the Sticky.'
+      multi_value_type: items
+      preview: 
+        - id: sticky_content_vertical_multiple_image
+        - id: sticky_content_vertical_multiple_image
+        - id: sticky_content_vertical_multiple_image
+
+sticky_item_vertical_multiple_data:
+  use: "@molecules/sticky-item/_sticky-item-vertical-multiple-data.twig"
+  namespace: 'Molecules/Sticky item'
+  label: Sticky item - Vertical multiple data
+  description: 'Sticky item component which will used in sticky component.'
+  fields:
+    items:
+      type: pattern
+      label: Items
+      description: 'The items of the Sticky.'
+      multi_value_type: items
+      preview: 
+        - id: sticky_content_vertical_multiple_data
+        - id: sticky_content_vertical_multiple_data
+        - id: sticky_content_vertical_multiple_data
+
+sticky_item_horizontal:
+  use: "@molecules/sticky-item/_sticky-item-horizontal.twig"
+  namespace: 'Molecules/Sticky item'
+  label: Sticky item - Horizontal
+  description: 'Sticky item component which will used in sticky component.'
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      description: 'The items of the Sticky.'
+      multi_value_type: items
+      preview: 
+        - id: sticky_content_horizontal
+        - id: sticky_content_horizontal
+        - id: sticky_content_horizontal
+        - id: sticky_content_horizontal
+
+sticky_item_slim_thumbnails_image:
+  use: "@molecules/sticky-item/_sticky-item-slim-thumbnails-image.twig"
+  namespace: 'Molecules/Sticky item'
+  label: Sticky item - Slim thumbnails image
+  description: 'Sticky item component which will used in sticky component.'
+  fields:
+    items:
+      type: pattern
+      label: Items
+      description: 'The items of the Sticky.'
+      multi_value_type: items
+      preview: 
+        - id: sticky_content_slim_thumbnails_image
+        - id: sticky_content_slim_thumbnails_image
+        - id: sticky_content_slim_thumbnails_image
+
+sticky_item_slim_thumbnails_data:
+  use: "@molecules/sticky-item/_sticky-item-slim-thumbnails-data.twig"
+  namespace: 'Molecules/Sticky item'
+  label: Sticky item - Slim thumbnails data
+  description: 'Sticky item component which will used in sticky component.'
+  fields:
+    items:
+      type: pattern
+      label: Items
+      description: 'The items of the Sticky.'
+      multi_value_type: items
+      preview: 
+        - id: sticky_content_slim_thumbnails_data
+        - id: sticky_content_slim_thumbnails_data
+        - id: sticky_content_slim_thumbnails_data
+
+sticky_item_vertical_multiple_fraction_image:
+  use: "@molecules/sticky-item/_sticky-item-vertical-multiple-fraction-image.twig"
+  namespace: 'Molecules/Sticky item'
+  label: Sticky item - Vertical multiple fraction image
+  description: 'Sticky item component which will used in sticky component.'
+  fields:
+    items:
+      type: pattern
+      label: Items
+      description: 'The items of the Sticky.'
+      multi_value_type: items
+      preview: 
+        - id: sticky_content_vertical_multiple_fraction_image
+        - id: sticky_content_vertical_multiple_fraction_image
+        - id: sticky_content_vertical_multiple_fraction_image
+        - id: sticky_content_vertical_multiple_fraction_image
+
+sticky_item_vertical_multiple_fraction_data:
+  use: "@molecules/sticky-item/_sticky-item-vertical-multiple-fraction-data.twig"
+  namespace: 'Molecules/Sticky item'
+  label: Sticky item - Vertical multiple fraction data
+  description: 'Sticky item component which will used in sticky component.'
+  fields:
+    items:
+      type: pattern
+      label: Items
+      description: 'The items of the Sticky.'
+      multi_value_type: items
+      preview: 
+        - id: sticky_content_vertical_multiple_fraction_data
+        - id: sticky_content_vertical_multiple_fraction_data
+        - id: sticky_content_vertical_multiple_fraction_data
+        - id: sticky_content_vertical_multiple_fraction_data

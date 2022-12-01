@@ -1,0 +1,22 @@
+toggles:
+  use: "@atoms/toggles/toggles.twig"
+  label: Toggles
+  fields:
+    text:
+      type: text
+      label: Toggles Label
+      preview: Toggle Label
+  settings:
+    attributes:
+      type: attributes
+      label: Attributes
+      preview: "type=\"checkbox\""
+    size:
+      type: select
+      required: true
+      label: Size
+      preview: small
+      options:
+        small: Small
+        medium: Medium
+  visibility: storybook

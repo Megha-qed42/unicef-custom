@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * accordion-item
+ *
+ * See accordion-item.space.yaml for documentation.
+ */
+#}
+
+{# Default #}
+{% set id = uuid() %}
+
+{# Classes #}
+{% set icon_position = ([
+  alignment == 'right' ? 'icon-right',
+  alignment == 'left' ? 'icon-left',
+]) | sort | join(' ') | trim %}
+
+{% set border = ([
+  border == true ? 'with-border',
+]) | sort | join(' ') | trim %}
+
+{# Template #}
+{% block accordion_item_block %}
+  <div class="accordion-item w-full overflow-hidden {{ icon_position }} {{ border }} {{ icon_collapsed }} {{ icon_expanded }}" data-children-count="{{ instance }}">
+    <div class="accordion-item-inner">
+      <a href="javascript:void(0)" class="ac-title block px-0 p-3 leading-normal text-xl cursor-pointer flex">
+        <span class="sr-only ac-accessibilty-txt">{{ 'click to open accordion' }}</span> {{ label }}
+        
+        <span class="icons ml-auto">
+          {% if icon_type == "chevronDown" %}
+            <span class="icon icon-type {{ icon_type }} closed">
+              {% include "@atoms/svg/_svg--icon.twig" with {
+                icon: icon_type
+              } only %}
+            </span>
+          {% elseif icon_type == "PlusMinus" %}
+            <div class="circle-plus closed">
+              <div class="circle">
+                <div class="horizontal"></div>
+                <div class="vertical"></div>
+              </div>
+            </div>
+          {% endif %}
+        </span>
+      </a>
+
+      <div class="accordion-content overflow-hidden leading-normal">
+        <div class="ac-content">{{ content }}</div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

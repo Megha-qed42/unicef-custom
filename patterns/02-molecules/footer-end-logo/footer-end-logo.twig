@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * footer-end-logo
+ *
+ * See footer-end-logo.space.yaml for documentation.
+ *
+ * @todo: image twig drupal implementation, right now only image rendering * with drupal default twig.
+ */
+#}
+
+{{ attach_library('unicef_vf/footer-end-logo') }}
+
+{# Template #}
+{% block footer_end_logo_block %}
+  <div class="fel h-full flex flex-col justify-between">
+    {% if image|render|trim is not empty %}
+      <div class="fel--image">
+        {{ image }}
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

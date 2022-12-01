@@ -1,0 +1,34 @@
+{# SETTINGS #}
+{% set element = element|default('article') %}
+{% set headline__element = headline__element|default('h2') %}
+
+{# SECTION CLASSES #}
+{% set link_classes = ([
+  alignment == 'center' ? 'mx-auto': '',
+  'text-indigo-500', 'inline-flex', 'md:mb-2', 'lg:mb-0', 'items-center', 'underline',
+]) | sort | join(' ') | trim %}
+
+{% set classes = ([
+  alignment == 'center' ? 'text-center rounded': '',
+  'w-full flex  max-w-xl',
+  'overflow-hidden w-full',
+  variant == 'horizontal' ? 'flex-col md:flex-row' : 'flex-col'
+] | sort | join(' ') | trim ) %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# TEMPLATE #}
+<{{ element }} {{ attributes }}>
+  <div class="p-6 flex-1">
+    <{{ headline__element }}{{ region_attributes.headline|default(create_attribute()).addClass('font-bold text-l md:text-5xl headline dark:text-gray-50 text-5xl font-primaryBold mb-2.5 md:mb-3.5') }}>
+      {% block headline %}
+        {{ headline }}
+      {% endblock %}
+    </{{ headline__element }}>
+    <div{{ region_attributes.text|default(create_attribute()).addClass('leading-normal font-secondary mb-3') }}>
+      {% block text %}
+        {{ text }}
+      {% endblock %}
+    </div>
+  </div>
+</{{ element }}>

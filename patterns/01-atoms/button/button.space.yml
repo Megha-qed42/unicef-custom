@@ -1,0 +1,126 @@
+button:
+  use: "@atoms/button/button.twig"
+  label: Button
+  description: Regular or outline buttons with different colors.
+  fields:
+    text:
+      type: text
+      label: Text
+      preview: Contact Us
+    url:
+      type: url
+      label: Url
+      description: The action url of your button
+      preview: 'https://www.qed42.com/contact'
+  variants:
+    primary:
+      label: Primary
+    secondary:
+      label: Secondary
+    tertiary:
+      label: Tertiary
+    ghost:
+      label: Ghost
+    link: 
+      label: Link
+  configuration:
+    size:
+      text:
+        small: 'textSm-medium py-[0.4375rem] px-3.5'
+        medium: 'textSm-medium py-[0.5625rem] px-4'
+        large: 'textMd-medium py-[0.5625rem] px-[1.125rem]'
+        xlarge: 'textMd-medium py-[0.6875rem] px-5'
+        xxlarge: 'maxMd:textMd-medium textLG-medium maxMd:py-[0.6875rem] maxMd:px-5 py-[0.9375rem] px-7'
+        xxxlarge: 'maxMd:textMd-medium textXL-bold maxMd:py-[0.6875rem] maxMd:px-5 py-[0.9375rem] px-8'
+      icon:
+        small: w-4 h-4
+        medium: w-4 h-4
+        large: w-4 h-4
+        xlarge: w-4 h-4
+        xxlarge: w-5 h-5
+        xxxlarge: w-[1.6875rem] h-[1.6875rem]
+  settings:
+    button_state:
+      type: select
+      label: Button state
+      options:
+        focused: focused
+        disabled: disabled
+    button_type: 
+      type: select
+      required: true
+      label: Button type
+      preview: only_text
+      options:
+        only_icon: Only icon button
+        text_with_icon: Text with icon
+        only_text: Only text
+    size:
+      type: select
+      required: true
+      label: Size
+      preview: medium
+      options:
+        small: Small
+        medium: Medium
+        large: Large
+        xlarge: Xlarge
+        xxlarge: 2xlarge
+        xxxlarge: 3xlarge
+    expanded:
+      type: boolean
+      label: Expanded
+    icon:
+      type: select
+      label: Icon
+      description: Go with an icon alongside your text.
+      preview: whiteCircle
+      options:
+        plus: Plus
+        search: Search
+        right-arrow: Right-arrow
+        whiteCircle: Circle
+        play-video: Play video
+        link: link
+        coffee: Coffee
+        arrowRight: Arrow right
+        chevronRight: Chevron Right
+        dollar: Dollar
+        chat: Chat
+        arrowUpRight: Arrow up right
+        button-arrow: Button Arrow
+        video-play-grey: Video Play Grey
+        twitter-grey: Twitter Grey
+        linkedin-grey: Linkedin Grey
+        facebook-grey: Facebook Grey
+        facebook: Facebook
+        globe: Globe
+    icon_alignment:
+      type: select
+      label: Icon alignment
+      description: Left or right your text.
+      default_value: right
+      options:
+        only-icon: Only icon
+        left: Left
+        right: Right
+    button_corners:
+      type: select
+      label: Button corners
+      options:
+        rectangle_corner: Rectangle corner
+        rounded_half_circle: Rounded half circle
+    classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''
+    button_animation:
+      type: select
+      label: Animation
+      description: 'Animation when hover on button.'
+      options:
+        slide_up: Slide Up
+        slide_right: Slide Right
+        slide_bg_text_up: Slide Bg and Text Up
+        pop_up: Pop Up
+        bottom_line: Bottom Line

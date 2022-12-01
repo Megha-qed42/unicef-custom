@@ -1,0 +1,207 @@
+{#
+/**
+ * @file
+ * people card
+ *
+ * See card.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/card') }}
+
+{# Default #}
+{% set element = element|default('article') %}
+
+{# Classes #}
+{% set classes = [
+  alignment,
+  card_layout,
+  card_size,
+  'people__card w-full overflow-hidden flex flex-col flex-wrap items-start',
+  card_corner == "rounded" ? 'rounded-xl' : 'rounded-none',
+  full_box_link ? 'full_box_link' : '',
+  extra_classes ? extra_classes
+] %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes| sort | join(' ') | trim) %}
+
+{# Template #}
+{% if card_layout == "testimony-with-avatar" %}
+  {% block testimony_with_avatar_card %}
+    <{{ element }} {{ attributes.addClass("bg-primary-100 p-6") }}>
+      <div class="flex justify-center">
+        {{ image }}
+      </div>
+
+      {% if rating %}
+        <div class="star-rating mt-6">
+          {{ rating }}
+        </div>
+      {% endif %}
+
+      <div class="bottom-section">
+        {% if text|render|striptags|trim %}
+          <div {{ region_attributes.text|default(create_attribute()).addClass('card_text textMd-regular text-text-body') }}>
+            {{ text }}
+          </div> 
+        {% endif %}
+
+        {% if headline|render|striptags|trim %}
+          {{ headline }}
+        {% endif %}
+
+        {% if job_description|render|striptags|trim %}
+          <div {{ region_attributes.job_description|default(create_attribute()).addClass('job_description textSm-medium text-text-body') }}>
+            {{ job_description }}
+          </div> 
+        {% endif %}
+      </div>
+    </{{ element }}>
+  {% endblock %}
+
+{% elseif card_layout == "testimony-with-image" %}
+  {% block testimony_with_image_card %}
+    <{{ element }} {{ attributes.addClass("border border-solid border-stroke-dividerLight") }}>    
+      <div class="top-section w-full">
+        {% if image|render|trim is not empty %}
+          <div {{ region_attributes.image|default(create_attribute()).addClass('card_image') }}>
+            {{ image }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="bottom-section p-6">
+        <div class="mt-0.5 mb-4">
+          {% include "@atoms/svg/svg.twig" with {
+          "icon": "quote-shadow-green",
+          "size": "w-10 h-10"
+          } only %}
+        </div>  
+
+        {% if text|render|striptags|trim %}
+          <div {{ region_attributes.text|default(create_attribute()).addClass('card_text textMd-regular text-text-body') }}>
+            {{ text }}
+          </div> 
+        {% endif %}
+
+        {% if headline|render|striptags|trim %}
+          {{ headline }}
+        {% endif %}
+
+        {% if job_description|render|striptags|trim %}
+          <div {{ region_attributes.job_description|default(create_attribute()).addClass('job_description textSm-medium text-text-body') }}>
+            {{ job_description }}
+          </div> 
+        {% endif %}
+      </div>
+    </{{ element }}>
+  {% endblock %}
+
+{% elseif card_layout == "people-with-avatar" %}
+  {% block people_with_avatar_card %}
+    <{{ element }} {{ attributes }}>
+      <div class="flex justify-center">
+        {{ image }}
+      </div>
+
+      {% if headline|render|striptags|trim %}
+        {{ headline }} 
+      {% endif %}
+
+      {% if role|render|striptags|trim %}
+        <div {{ region_attributes.text|default(create_attribute()).addClass('people_role textMd-regular text-text-primaryDark') }}>
+          {{ role }}
+        </div>
+      {% endif %}
+    </{{ element }}>
+  {% endblock %}
+
+{% elseif card_layout == "people-with-avatar-bio" %}
+  {% block people_with_avatar_bio_card %}
+    <{{ element }} {{ attributes }}>
+      <div class="flex justify-center">
+        {{ image }}
+      </div>
+
+      {% if headline|render|striptags|trim %}
+        {{ headline }}
+      {% endif %}
+
+      {% if role|render|striptags|trim %}
+        <div {{ region_attributes.text|default(create_attribute()).addClass('people_role textMd-regular text-text-primaryDark') }}>
+          {{ role }}
+        </div> 
+      {% endif %}
+
+      {% if text|render|striptags|trim %}
+        <div {{ region_attributes.text|default(create_attribute()).addClass('card_text textMd-regular text-text-body pt-2 pb-4') }}>
+          {{ text }}
+        </div> 
+      {% endif %}
+
+      {% if social_media %}
+        <div {{ region_attributes.text|default(create_attribute()).addClass('social-media-wraper') }}>
+          {{ social_media }}
+        </div> 
+      {% endif %}
+    </{{ element }}>
+  {% endblock %}
+
+{% elseif card_layout == "people-with-image" %}
+  {% block people_with_image_card %}
+    <{{ element }} {{ attributes }}>
+      <div class="top-section w-full">
+        {% if image|render|trim is not empty %}
+          <div {{ region_attributes.image|default(create_attribute()).addClass('card_image') }}>
+            {{ image }}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if headline|render|striptags|trim %}
+        {{ headline }}
+      {% endif %}
+
+      {% if role|render|striptags|trim %}
+        <div {{ region_attributes.text|default(create_attribute()).addClass('people_role textMd-regular text-text-primaryDark') }}>
+          {{ role }}
+        </div>
+      {% endif %}
+    </{{ element }}>
+  {% endblock %}
+
+{% elseif card_layout == "people-with-image-bio" %}
+  {% block people_with_image_bio_card %}
+    <{{ element }} {{ attributes }}>
+      <div class="top-section w-full">
+        {% if image|render|trim is not empty %}
+          <div {{ region_attributes.image|default(create_attribute()).addClass('card_image') }}>
+            {{ image }}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if headline|render|striptags|trim %}
+        {{ headline }}
+      {% endif %}
+
+      {% if role|render|striptags|trim %}
+        <div {{ region_attributes.text|default(create_attribute()).addClass('people_role textMd-regular text-text-primaryDark') }}>
+          {{ role }}
+        </div> 
+      {% endif %}
+
+      {% if text|render|striptags|trim %}
+        <div {{ region_attributes.text|default(create_attribute()).addClass('card_text textMd-regular text-text-body pt-2 pb-4') }}>
+          {{ text }}
+        </div> 
+      {% endif %}
+
+      {% if social_media %}
+        <div {{ region_attributes.text|default(create_attribute()).addClass('social-media-wraper') }}>
+          {{ social_media }}
+        </div> 
+      {% endif %}
+    </{{ element }}>
+  {% endblock %}
+{% endif %}

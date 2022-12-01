@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * avatar
+ */
+#}
+
+{# Template #}
+{% block avatar_block %}
+  {% if variant == 'avatar_groups' %}
+    {% include'@atoms/avatar/_avatar-group-atom.twig' %}
+  {% elseif variant == 'avatar_label' %}
+    {% include'@atoms/avatar/_avatar-label-group.twig' %}
+  {% endif %}
+{% endblock %}

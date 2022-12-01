@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * progress
+ *
+ * See progress.space.yaml for documentation.
+ */
+#}
+
+{# Default #}
+{% set icon_size = 'w-6 h-6' %}
+
+{# Template #}
+{% block progress_steps %}
+  <div class="container mx-auto">
+    {% if layout_type == "horizontal" %}
+      <div class="layout_type">
+        <ul class="horizontal">
+          {% for item in progress_items %}
+            {{ item }}
+          {% endfor %}
+        <div>
+      </ul>
+    {% elseif layout_type == "vertical" %}
+      <div class="layout_type">
+        <ul class="vertical">
+          {% for item in progress_items %}
+            {{ item }}
+          {% endfor %}
+        <div>
+      </ul>
+    {% endif %}
+  </div>
+{% endblock %}

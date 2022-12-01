@@ -1,0 +1,67 @@
+{# Default #}
+{% set custom_wrapper_classes = custom_wrapper_classes|default('') %}
+
+{# Classes #}
+{% set menu_item_wrapper_classes = [
+	custom_wrapper_classes ? custom_wrapper_classes,
+	'ul-wrapper font-secondary flex flex-col lg:flex-row ',
+]
+%}
+
+{# Template #}
+{% block nlevel_menu_block %}
+  <ul {{ attributes.addClass(menu_item_wrapper_classes) }}>
+    {% for item in items %}
+      {% if item.below|length %}
+        {% set menu_type_class = 'expand' %}
+      {% else %}
+        {% set menu_type_class = '' %}
+      {% endif %} 
+
+      {% set link_classes = ([
+        'nlevel-menu-default-wrapper menu-level-1 mr-8',      
+        item.in_active_trail ? 'active-trail',
+        item.is_active ? 'is-active',
+      ] | sort | join(' ') | trim ) %}
+
+      <li class="{{ link_classes }} {{ menu_type_class }}">
+          {% set url = item.url %}
+              {% include "@atoms/link/link.twig" with {
+              "url": url,
+              "title_text": item.title,
+              "content": item.title,
+              "custom_style": true,
+              "extra_classes": 'header-menu--item hover:text-defaultRed-800 no-underline font-medium text-text-body'
+          } %}
+
+          {% if item.below|length  %}
+            {% include "@atoms/svg/_svg--icon.twig" with {
+              icon: 'chevronDown',
+              size:	'w-5 h-5'
+            } only %}
+
+            <ul class='level2'>
+              {% for level in item.below %}
+
+              {% set sub_link_classes = ([
+                level.in_active_trail ? 'active-trail',
+                level.is_active ? 'is-active',              
+                'menu-level-2'
+              ] | sort | join(' ') | trim ) %}
+
+              <li class="{{ sub_link_classes }}">            
+                {% include "@atoms/link/link.twig" with {
+                  "url": level.url,
+                  "title_text": level.title,
+                  "content": level.title,
+                  "custom_style": true,
+                  "extra_classes": 'header-menu--item hover:text-defaultRed-800 no-underline font-medium text-text-body'
+                } %}
+              </li>
+              {% endfor %}	
+            </ul>
+          {% endif %}		            
+      </li>
+    {% endfor %}	
+  </ul>
+{% endblock %}

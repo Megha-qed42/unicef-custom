@@ -1,0 +1,47 @@
+block_banner_info:
+  use: "@molecules/block-banner-info/block-banner-info.twig"
+  label: Block Banner info
+  description: Text block for Hero banner having extra information section at bottom with title, description and link.
+  fields:
+    title:
+      type: text
+      label: Title
+      required: true
+      description: The block title.
+      preview:
+        'Migrate to Drupal 9'
+    content:
+      type: text
+      label: Content
+      description: The block content.
+      preview:
+        '<p>Projects completed</p>'
+    link:
+      type: pattern
+      label: Link
+      description: An optional link.
+      preview:
+        id: link
+        settings:
+          url: "https://eldon.info"
+          content: "Discover"
+          title_text: 'Discover'
+          custom_style: true
+          target: blank
+          icon: arrowUpRight
+          icon_position: right
+  settings:
+    title_font_size:
+      type: select
+      label: Title font size
+      default_value: size-30
+      options:
+        size-36: Large - 36
+        size-30: Medium - 30
+    title_color:
+      type: select
+      label: Text color
+      default_value: 'text-text-heading'
+      options:
+        text-text-heading: Heading
+        text-text-primaryDark: Primary Dark

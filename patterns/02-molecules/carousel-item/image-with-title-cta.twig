@@ -1,0 +1,49 @@
+{# Default #}
+{% set tag_name = tag_name|default('div') %}
+{% set attributes = attributes|default(create_attribute()) %}
+
+{# Classes #}
+{% set classes = [
+  'carousel-item',
+] %}
+
+{# Template #}
+{% block carousel_item_image_title_cta %}
+  {% spaceless %}
+    <{{ tag_name }} {{ attributes.addClass(classes | sort | join(' ') | trim) }}>
+      <div class="container h-full mx-auto">
+        <div class="item-image-with-title-cta grid grid-cols-1 lg:grid-cols-12 gap-y-2.5 md:gap-x-8">
+          <div class="data-col lg:col-start-2 lg:col-span-4">
+            {% if title|render|striptags|trim is not empty %}
+              {% block title %}
+                {{ title }}
+              {% endblock %}
+            {% endif %}
+
+            {% if description|render|striptags|trim is not empty %}
+              <div class="description textLG-bold lg:textXL-bold">
+                {% block description %}
+                  {{ description }}
+                {% endblock %}
+              </div>
+            {% endif %}
+
+            {% if button_1|render|striptags|trim is not empty %}
+              <div class="cta-button flex flex-col md:flex-row md:justify-start">
+                <div{{ region_attributes.button_1|default(create_attribute()).addClass('mb-3 md:mb-0 md:mr-3') }}>{{ button_1 }}</div>
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="image-col lg:col-span-7">
+            {% if image|render|trim is not empty %}
+              {% block image %}
+                {{ image }}
+              {% endblock %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </{{ tag_name }}>
+  {% endspaceless %}
+{% endblock %}

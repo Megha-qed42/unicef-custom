@@ -1,0 +1,21 @@
+{#
+  Classes
+#}
+{% set classes = ([
+	'error-block',
+	alignment_type == 'center' ? 'text-center center',
+]) %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+<div {{ attributes }}>
+  {% block content %}
+    <span class="font-secondary text-text-primaryDark text-base font-bold"> {{ error }}</span>
+    <h1 class="font-primaryBold font-semibold pt-4 pb-8 text-gray-700">{{ heading }}</h1>
+    <p class="font-secondary leading-8 text-xl text-text-body">{{ text }}</p>
+    <div class="buttons">
+      {{ back_link }}
+      {{ home_link }}
+    </div>
+  {% endblock %}
+</div>

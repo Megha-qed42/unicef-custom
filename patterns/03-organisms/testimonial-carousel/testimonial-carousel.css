@@ -1,0 +1,145 @@
+/* Testimonial Carousel - Cards */
+
+.testimonial-card-carousel-wrapper {
+  @apply px-0 md:px-3.5 lg:pr-0 xl:px-0;
+
+  > .container {
+    @apply xl:max-w-full 2xl:max-w-screen-2xl;
+  }
+
+  .splide__track {
+    @apply xl:overflow-visible 2xl:overflow-hidden xl:ml-[7rem] 2xl:ml-0;
+  }
+
+  .splide__list {
+    .splide__slide {
+      @apply flex px-4 md:px-4 lg:px-4 pb-10;
+
+      .people__card {
+        &.medium,
+        &.small {
+          @apply maxLg:max-w-full;
+        }
+      }
+    }
+  }
+
+  .splide__arrows {
+    @apply mt-0 px-4 md:px-3.5 lg:px-[1.875rem] xl:px-0;
+
+    .container {
+      @apply justify-end;
+
+      flex-direction: /*rtl: row-reverse*/ ;
+      justify-content: /*rtl: flex-start*/ ;
+    }
+  }
+}
+
+/* Testimonial Carousel - Avatar Center */
+.testimonial-carousel-avatar-center-wrapper {
+  @apply px-4 md:px-[1.875rem] xl:px-0;
+
+  .splide__list {
+    .splide__slide {
+      @apply px-0 pb-10;
+    }
+  }
+
+  .splide__arrows {
+    @apply mt-0;
+
+    .container {
+      @apply justify-center;
+
+      flex-direction: /*rtl: row-reverse*/ ;
+    }
+  }
+}
+
+/* Testimonial Carousel - Company logo and Avatar */
+.testimonial-carousel-company-logo-and-avatar-wrapper {
+  @apply bg-backgroundNeutral-neutralLight py-10 px-4 md:px-[1.875rem] xl:px-0;
+
+  .splide__list {
+    .splide__slide {
+      @apply px-0 pb-10;
+    }
+  }
+
+  .splide__arrows {
+    @apply mt-0;
+
+    .container {
+      @apply justify-center;
+    }
+  }
+}
+
+/* Testimonial Carousel - Large avatar */
+.testimonial-carousel-large-avatar-wrapper {
+  @apply px-4 md:px-[1.875rem] xl:px-0;
+
+  .splide__list {
+    .splide__slide {
+      @apply px-0 pb-0;
+    }
+  }
+
+  .splide__arrows {
+    @apply relative;
+
+    @media screen and (min-width: 1024) {
+      margin-top: -2.8125rem;
+    }
+
+    .container {
+      @apply justify-end;
+
+      flex-direction: /*rtl: row-reverse*/ ;
+      justify-content: /*rtl: flex-start*/ ;
+    }
+  }
+}
+
+/* Testimonial Carousel - Simple avatar */
+.testimonial-carousel-simple-avatar-wrapper {
+  @apply px-4 md:px-[1.875rem] xl:px-0;
+
+  .splide__list {
+    .splide__slide {
+      @apply px-0 pb-10;
+    }
+  }
+
+  .splide__arrows {
+    @apply mt-0;
+
+    .container {
+      @apply justify-start;
+
+      flex-direction: /*rtl: row-reverse*/ ;
+      justify-content: /*rtl: flex-end*/ ;
+    }
+
+    .splide__arrow--prev {
+      @apply ml-0;
+    }
+  }
+}
+
+/* Testimonial Carousel - Login logo and Avatar */
+.testimonial-carousel-login-logo-and-avatar {
+  .testimonial-carousel-company-logo-and-avatar-wrapper {
+    @apply bg-transparent pt-0;
+  }
+
+  .card_text,
+  .headline {
+    @apply text-white px-[4.5rem];
+  }
+
+  .card_text {
+    @apply mt-0;
+  }
+}

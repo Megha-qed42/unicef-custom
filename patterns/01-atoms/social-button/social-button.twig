@@ -1,0 +1,73 @@
+{#
+/**
+ * @file
+ * Social Buttons
+ *
+ * See social-button.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/social-button') }}
+
+{# Default #}
+{% set attributes = attributes|default(create_attribute()) %}
+
+{# Classes #}
+{% set classes = [
+  'social-button flex rounded-lg py-2.5 px-4 shadow-xs hover:bg-backgroundNeutral-neutralLight hover:text-text-heading',
+  social_button_type == 'google' ? 'border border-solid border-stroke-borderDefault text-text-heading',
+  social_button_type == 'facebook' ? 'bg-facebookBlue text-white hover:border-stroke-borderDefault hover:border',
+  social_button_type == 'apple' ? 'bg-black text-white hover:border hover:border-stroke-borderDefault',
+  ]
+%}  
+{% set icon_size = 'w-6 h-6' %}
+{% if social_button_link is not empty %}
+  {% set attributes = attributes.setAttribute('href', social_button_link) %}
+{% endif %}
+
+{# Template #}
+{% block social_btn_block %}
+  <a {{ attributes.addClass(classes | sort | join(' ') | trim) }}>
+    {% if social_button_type == 'google' %}
+      {% include "@atoms/svg/_svg--icon.twig" with {
+        icon: 'google-brand',
+        size: icon_size,
+        fill_color: 'text-white'
+      } only %}
+    {% elseif social_button_type == 'facebook' %}
+      <span class="default-icon">
+        {% include "@atoms/svg/_svg--icon.twig" with {
+          icon: 'facebook-grey',
+          size: icon_size,
+          fill_color: 'text-white'
+        } only %}
+      </span>
+      <span class="hover-icon">
+        {% include "@atoms/svg/_svg--icon.twig" with {
+          icon: 'facebook-blue',
+          size: icon_size,
+          fill_color: 'text-white'
+        } only %}
+      </span>
+    {% elseif social_button_type == 'apple' %} 
+      <span class="default-icon">
+        {% include "@atoms/svg/_svg--icon.twig" with {
+          icon: 'apple-white',
+          size: icon_size,
+          fill_color: 'text-white'
+        } only %}
+      </span>  
+      <span class="hover-icon">
+        {% include "@atoms/svg/_svg--icon.twig" with {
+          icon: 'apple-black',
+          size: icon_size,
+          fill_color: 'text-white'
+        } only %}
+      </span>
+    {% endif %}
+    
+    <span class="ml-2.5">
+      {{ text }}  
+    </span>
+  </a>
+{% endblock %}

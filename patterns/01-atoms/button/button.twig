@@ -1,0 +1,114 @@
+{#
+/**
+ * @file
+ * button
+ *
+ * See button.space.yaml for documentation.
+ */
+#}
+
+{# Attach Library #}
+{{ attach_library('unicef_vf/button') }}
+
+{# Default #}
+{% set tag_name = tag_name|default('div') %}
+{% set color = color|default('primaryDark') %}
+{% set size = size|default('default') %}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set icon_size = icon_size|default('default') %}
+{% set icon_alignment = icon_alignment|default('right') %}
+
+{# Classes #}
+{% set classes = [
+  button_type,
+  'btn flex items-center justify-center inline-flex capitalize focus:outline-none transition-colors duration-500 rounded-lg',
+  expanded ? 'w-full',
+  variant == 'primary' ? 'btn-primary border-text-primaryDark bg-backgroundButtonPrimary-buttonPrimaryActive text-white hover:bg-backgroundButtonPrimary-buttonPrimaryHover focus:bg-backgroundButtonPrimary-buttonPrimaryDefault disabled:bg-textButtonSecondary-buttonSecondaryDisabled disabled:text-primaryLight border',
+  variant == 'primary' and button_state == 'disabled' ? 'bg-backgroundPrimary-primaryLight text-white disabled pointer-events-none cursor-default border-transparent shadow-extralarge',
+  variant == 'primary' and button_state == 'focused' ? 'shadow-extralarge',
+  variant == 'primary' and button_corners == 'rectangle_corner' ? 'rounded-none',
+  variant == 'primary' and button_corners == 'rounded_half_circle' ? 'rounded-full',
+  variant == 'primary' and button_animation == 'slide_up' ? 'up',
+  variant == 'primary' and button_animation == 'slide_up' and button_corners == 'rectangle_corner' ? 'rectangle_corner',
+  variant == 'primary' and button_animation == 'slide_up' and button_corners == 'rounded_half_circle' ? 'rounded_half_circle',
+  variant == 'primary' and button_animation == 'slide_right',
+  variant == 'primary' and button_animation == 'slide_bg_text_up',
+  variant == 'primary' and button_animation == 'pop_up',
+  variant == 'secondary' and button_state == 'focused' ? 'text-textButtonSecondary-buttonSecondaryDefault border-StrokeButton-buttonSecondaryGreyActive shadow-xxxl',
+  variant == 'secondary' ? 'btn-secondary border bg-white text-text-heading hover:text-text-heading hover:bg-backgroundButtonSecondary-buttonSecondaryHover focused:bg-white disabled:bg-white disabled:text-textButtonSecondary-buttonSecondaryDisabled disabled:border-stroke-borderLight border-textButtonLink-buttonLinkDisabled',
+  variant == 'secondary' and button_state == 'disabled' ? 'bg-white text-textButtonSecondary-buttonSecondaryDisabled border-stroke-borderLight shadow-xs disabled pointer-events-none cursor-default shadow-extralarge',
+  variant == 'secondary' and button_corners == 'rectangle_corner' ? 'rounded-none',
+  variant == 'secondary' and button_corners == 'rounded_half_circle' ? 'rounded-full',
+  variant == 'secondary' and button_animation == 'slide_up' ? 'up',
+  variant == 'secondary' and button_animation == 'slide_up' and button_corners == 'rectangle_corner' ? 'rectangle_corner',
+  variant == 'secondary' and button_animation == 'slide_up' and button_corners == 'rounded_half_circle' ? 'rounded_half_circle',
+  variant == 'secondary' and button_animation == 'slide_right',
+  variant == 'secondary' and button_animation == 'slide_bg_text_up',
+  variant == 'secondary' and button_animation == 'pop_up',
+  variant == 'tertiary' ? 'btn-tertiary border-none bg-white text-textButtonTertiary-buttonTertiaryDefault hover:textButtonTertiary-buttonTertiaryDefault hover:bg-backgroundButtonTertiary-buttonTertiaryHover focused:bg-white disabled:bg-white disabled:text-textButtonTertiary-buttonTertiaryDisabled',
+  variant == 'tertiary' and button_state == 'focused' ? 'text-textButtonTertiary-buttonTertiaryDefault bg-white',
+  variant == 'tertiary' and button_state == 'disabled' ? 'text-textButtonTertiary-buttonTertiaryDisabled bg-white disabled pointer-events-none cursor-default',
+  variant == 'tertiary' and button_corners == 'rectangle_corner' ? 'rounded-none',
+  variant == 'tertiary' and button_corners == 'rounded_half_circle' ? 'rounded-full',
+  variant == 'tertiary' and button_animation == 'slide_up' ? 'up',
+  variant == 'tertiary' and button_animation == '' ? 'hover:bg-backgroundButtonPrimary-buttonPrimaryHover',
+  variant == 'tertiary' and button_animation == 'slide_up' and button_corners == 'rectangle_corner' ? 'rectangle_corner',
+  variant == 'tertiary' and button_animation == 'slide_up' and button_corners == 'rounded_half_circle' ? 'rounded_half_circle',
+  variant == 'tertiary' and button_animation == 'slide_right',
+  variant == 'tertiary' and button_animation == 'slide_bg_text_up' ? 'hover:bg-white',
+  variant == 'tertiary' and button_animation == 'pop_up',
+  variant == 'link' ? 'btn-link border-none text-text-primaryDark hover:text-textButtonLink-buttonLinkHover focused:bg-white focused:text-primaryDark disabled:text-textButtonLink-buttonLinkDisabled',
+  variant == 'link' and button_corners == 'rounded_half_circle' ? 'rounded-none pl-0 pr-0',
+  variant == 'link' and button_animation == 'bottom_line',
+  variant == 'ghost' ? 'btn-ghost border-none text-text-primaryDark hover:text-textButtonLink-buttonLinkHover focused:bg-white focused:text-primaryDark disabled:text-textButtonLink-buttonLinkDisabled',
+  variant == 'ghost' and button_state == 'disabled' ? 'text-textButtonLink-buttonLinkDisabled disabled pointer-events-none cursor-default',
+  variant == 'ghost' and button_state == 'focused' ? 'text-textButtonLink-buttonLinkDefault',
+  variant == 'ghost' and button_corners == 'rounded_half_circle' ? 'rounded-none pl-0 pr-0',
+  variant == 'ghost' and button_animation == 'bottom_line',
+  icon_alignment == 'left' ? 'flex-row-reverse' : 'flex-row',
+  icon_alignment == 'only-icon' ? '',
+  pattern_configuration('button', variant, 'colors')[color],
+  pattern_configuration('button', variant, 'size')['text'][size],
+  round ? 'rounded-2xl',
+  classes,
+  size,
+  button_animation,
+] %}
+
+{% set icon_size = ([
+  icon_alignment == 'left' ? 'mr-2.5' : 'ml-2.5',
+  button_type == 'only_icon' ? 'ml-0',
+  icon_alignment == 'only-icon' ? 'ml-0',
+  pattern_configuration('button', variant, 'size')['icon'][size],
+]) | sort | join(' ') | trim %}
+
+{% if url is not empty %}
+  {% set attributes = attributes.setAttribute('href', url) %}
+  {% set tag_name = 'a' %}
+{% endif %}
+
+{# Template #}
+{% block button_block %}
+  <{{ tag_name }} {{ attributes.addClass(classes | sort | join(' ') | trim) }}>
+    {% if button_type == 'only_text' %}
+      <span>{{ text }}</span>
+    {% elseif button_type == 'only_icon' %}  
+      {% if icon is not empty %}
+        {% include "@atoms/svg/_svg--icon.twig" with {
+          icon: icon,
+          size: icon_size,
+          fill_color: 'text-white'
+        } only %}
+      {% endif %}
+    {% else %}  
+      <span>{{ text }}</span>
+      {% if icon is not empty %}
+        {% include "@atoms/svg/_svg--icon.twig" with {
+          icon: icon,
+          size: icon_size,
+          fill_color: 'text-white'
+        } only %}
+      {% endif %}
+    {% endif %}  
+  </{{ tag_name }}>
+{% endblock %}

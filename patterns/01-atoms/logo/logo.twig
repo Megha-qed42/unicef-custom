@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * logo
+ *
+ * See logo.space.yaml for documentation.
+ */
+#}
+
+{# Template #}
+{% block logo_block %}
+  {% if variant == 'only_logo' %}
+    <a class="site-logo inline-block" href="/">
+      <img src="{{ file_url('space-assets://images/only-logo.svg') }}" alt="Brand Logo" class="w-full max-w-7xl">
+    </a>
+
+  {% elseif variant == 'logo_with_text_dark' %}
+    <a class="site-logo inline-block" href="/">
+      <img src="{{ file_url('space-assets://images/logo-dark.svg') }}" alt="Brand Logo" class="w-full max-w-7xl">
+    </a>
+
+  {% elseif variant == 'logo_with_text_light' %}
+    <a class="site-logo inline-block" href="/">
+      <img src="{{ file_url('space-assets://images/logo-light.svg') }}" alt="Brand Logo" class="w-full max-w-7xl">
+    </a>
+  {% endif %}
+{% endblock %}

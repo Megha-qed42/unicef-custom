@@ -1,0 +1,65 @@
+{#
+/**
+ * @file
+ * breadcrumb 
+ */
+#}
+
+{# Default #}
+{% set breadcrumb_style_options = breadcrumb_style_options|default('primary-fill') %}
+{% set breadcrumb_variation_options = breadcrumb_variation_options|default('expanded') %}
+
+{# Classes #}
+{% set breadcrumb_home = ([
+ breadcrumb_homepage_option == 0 ? 'hidden',
+  breadcrumb_homepage_option == 1 ? '',
+]) | sort | join(' ') | trim %}
+
+{% set classes = ['breadcrumb flex items-center flex-wrap leading-5', breadcrumb_variation_options] %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% block breadcrumb_block %}
+  <div class="{{ breadcrumb_style_options }} {{ breadcrumb_home }}">
+    <div class="container relative mx-auto">
+      <ul {{ attributes }}>
+        {% for item in items %}
+          {% if item.text == 'Home' %}
+            <li class="menu-home">
+              {% set homeicon %}
+                {% include '@atoms/svg/_svg--icon.twig' with {
+                  icon: 'home',
+                  size: 'h-5 w-5'
+                } only %}
+              {% endset %}
+
+              {% include '@atoms/link/link.twig' with item|merge({
+                url: '/',
+                content: homeicon,
+                extra_classes: 'textSm-medium font-normal capitalize',
+                title_text: 'Home Icon',
+              }) only %}
+            </li>
+          {% else %}
+            <li class="menu-items capitalize">
+              {% include '@atoms/svg/_svg--icon.twig' with {
+                icon: 'chevronRight',
+                size: 'h-4 w-4 mx-2'
+              } only %}
+              {% if loop.last %}
+                <span class="textSm-bold">{{ item.text }}</span>
+              {% else %}
+                {% include '@atoms/link/link.twig' with item|merge({
+                  url: item.url,
+                  content: item.text,
+                  extra_classes: 'breadcrumb__link no-underline textSm-medium font-normal capitalize'
+                }) only %}
+              {% endif %}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}

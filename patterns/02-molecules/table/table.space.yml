@@ -1,0 +1,57 @@
+table:
+  use: "@molecules/table/table.twig"
+  label: Table
+  description: Table includes items with color label on them.
+  fields:
+    rows:
+      label: Rows
+      type: object
+      preview:
+        - cells:
+            - <strong>Value 1</strong><br> some text
+            - Value 2
+            - Value 3
+            - The Earth is the third<br> planet from the sun.
+            - Value 5
+        - cells:
+            - Value 1
+            - Value 2
+            - Value 3
+            - Value 4
+            - Value 5
+        - cells:
+            - Value 1
+            - Value 2
+            - Value 3
+            - Value 4
+            - Value 5
+        - cells:
+            - Value 1
+            - Value 2
+            - Value 3
+            - Value 4
+            - Value 5
+    columns:
+      type: object
+      label: Columns
+      preview:
+        - heads:
+            - Company
+            - Distance from the Sun<br>(millions of Kilometres)
+            - Period of Revolution
+            - Company
+            - Cell 4
+  settings:
+    strip:
+      type: boolean
+      label: strip
+      default_value: false
+    color:
+      type: select
+      label: Color
+      required: true
+      default: dark
+      options:
+        dark: Dark
+        light: Light
+        black: Black       

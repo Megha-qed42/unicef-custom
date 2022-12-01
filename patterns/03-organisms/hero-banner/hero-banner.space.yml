@@ -1,0 +1,562 @@
+hero_banner_style_1:
+  use: '@organisms/hero-banner/hero-banner-style-1.twig'
+  namespace: 'Organisms/Hero Banner'
+  label: Hero Banner Style 1
+  description: Hero banner component, for all your presentation needs.
+  fields:
+    headline:
+      type: pattern
+      label: Headline
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'SPACE is the Complete Team Collaboration Solution'
+          font: display2XL-bold
+    sub_headline:
+      type: text
+      label: Sub Headline
+      preview: '<p>From automation of people processes to creating an engaged and driven culture.</p>'
+    email_form:
+      type: pattern
+      label: Subscribe Email Form
+      description: The Email form of the Subscribe Block
+      preview:
+        id: email_form
+        fields:
+          label: 'Email'
+        settings:
+          icon: true
+    items:
+      type: pattern
+      label: Block Banner info items
+      preview:
+        - id: block_banner_info
+          settings:
+            title: 'Migrate to Drupal 9'
+            title_font_size: 'size-30'
+            title_color: ''
+            content: ''
+        - id: block_banner_info
+          settings:
+            title: 'Already on Drupal?'
+            title_font_size: 'size-30'
+            title_color: ''
+            content: ''
+    background_image:
+      type: pattern
+      label: Background image
+      preview:
+        id: image_atom
+        variant: background
+        settings:
+          image_url: space-assets://images/2x_1440x900.png
+          style: 'scale_1440w'
+          background_style: 'backgroundImage w-full h-full xl:h-screen absolute top-0 left-0 bg-cover bg-no-repeat bg-center'
+
+hero_banner_style_2:
+  use: '@organisms/hero-banner/hero-banner-style-2.twig'
+  namespace: 'Organisms/Hero Banner'
+  label: Hero Banner Style 2
+  description: Hero banner component, for all your presentation needs.
+  fields:
+    headline:
+      type: pattern
+      label: Headline
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'SPACE is the Complete Team Collaboration Solution'
+          font: display2XL-bold
+    sub_headline:
+      type: text
+      label: Sub Headline
+      preview: '<p>From automation of people processes to creating an engaged and driven culture.</p>'
+    email_form:
+      type: pattern
+      label: Subscribe Email Form
+      description: The Email form of the Subscribe Block
+      preview:
+        id: email_form
+        fields:
+          label: ''
+        settings:
+          icon: true
+    items:
+      type: pattern
+      label: Block Banner info items
+      preview:
+        - id: block_banner_info
+          settings:
+            title: '400+'
+            title_font_size: 'size-36'
+            title_color: 'text-text-primaryDark'
+            content: 'Projects completed'
+            link: ''
+        - id: block_banner_info
+          settings:
+            title: '28%'
+            title_font_size: 'size-36'
+            title_color: 'text-text-primaryDark'
+            content: 'Efficiency Increase'
+            link: ''
+        - id: block_banner_info
+          settings:
+            title: '10 years'
+            title_font_size: 'size-36'
+            title_color: 'text-text-primaryDark'
+            content: 'Combined Experience'
+            link: ''
+    background_image:
+      type: pattern
+      label: Background image
+      preview:
+        id: image_atom
+        variant: background
+        settings:
+          image_url: space-assets://images/2x_1440x900.png
+          style: 'scale_1440w'
+          background_style: 'backgroundImage w-full h-full xl:h-screen absolute top-0 left-0 bg-cover bg-no-repeat bg-center'
+
+hero_banner_style_3:
+  use: '@organisms/hero-banner/hero-banner-style-3.twig'
+  namespace: 'Organisms/Hero Banner'
+  label: Hero Banner Style 3
+  description: Hero banner component, for all your presentation needs.
+  fields:
+    headline:
+      type: pattern
+      label: Headline
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Product Engineering'
+          font: display2XL-bold
+    sub_headline:
+      type: text
+      label: Sub Headline
+      preview: '<p>Scale your business with robust, and high-performing applications.</p>'
+    description:
+      type: text
+      label: Description
+      preview: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut molestie eu tortor et. Condimentum sit felis sed sed varius tincidunt enim. Orci tincidunt ultrices justo, egestas lacus, praesent lectus molestie. Convallis interdum tortor leo eu purus. Vivamus tortor massa quam consectetur nisl proin. Molestie consequat faucibus ut diam. Enim massa nisi, pellentesque volutpat et elementum ultrices nunc. ortor et. Condimentum sit felis sed sed varius tincidunt enim. Orci tincidunt ultrices justo, egestas lacus, praesent lectus molestie. Convallis interdum tortor leo eu purus. Vivamus tortor massa quam consectetur nisl proin. Mole</p>'
+    image_1:
+      type: pattern
+      label: Image 1
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/2x_592x444.png
+          style: scale_592w
+
+hero_banner_style_4:
+  use: '@organisms/hero-banner/hero-banner-style-4.twig'
+  namespace: 'Organisms/Hero Banner'
+  label: Hero Banner Style 4
+  description: Hero banner component, for all your presentation needs.
+  fields:
+    headline:
+      type: pattern
+      label: Headline
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Beautiful analytics to grow smarter'
+          font: displayXL-semibold
+    sub_headline:
+      type: text
+      label: Sub Headline
+      preview: '<p>Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users. Trusted by over 4,000 startups.</p>'
+    button_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: Demo
+        settings:
+          button_type: text_with_icon
+          icon: play-video
+          icon_alignment: left
+          size: xxlarge
+    button_2:
+      type: pattern
+      label: Button 2
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Sign up
+        settings:
+          icon: ''
+          size: xxlarge
+    image_1:
+      type: pattern
+      label: Image 1
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/2x_800x450.png
+          style: scale_800w
+
+hero_banner_style_5:
+  use: '@organisms/hero-banner/hero-banner-style-5.twig'
+  namespace: 'Organisms/Hero Banner'
+  label: Hero Banner Style 5
+  description: Hero banner component, for all your presentation needs.
+  fields:
+    headline:
+      type: pattern
+      label: Headline
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Space is the complete Team Collaboration solution'
+          font: display2XL-bold
+    sub_headline:
+      type: text
+      label: Sub Headline
+      preview: '<p>From automation of people processes to creating an engaged and driven culture.</p>'
+    button_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: Try For Free
+        settings:
+          icon: ''
+          size: medium
+    button_2:
+      type: pattern
+      label: Button 2
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Book a Demo
+        settings:
+          icon: ''
+          size: medium
+    image_1:
+      type: pattern
+      label: Image 1
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/2x_592x592.png
+          style: scale_592w
+
+hero_banner_style_6:
+  use: '@organisms/hero-banner/hero-banner-style-6.twig'
+  namespace: 'Organisms/Hero Banner'
+  label: Hero Banner Style 6
+  description: Hero banner component, for all your presentation needs.
+  fields:
+    headline:
+      type: pattern
+      label: Headline
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'We Build Websites that Excel Today & Evolve for Tomorrows'
+          font: displayXL-semibold
+    sub_headline:
+      type: text
+      label: Sub Headline
+      preview: '<p>Nous travaillons avec des clients du monde entier pour des utilisateurs du monde entier. Tout ça depuis la belle ville de Lyon, en France.</p>'
+    button_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: Try For Free
+        settings:
+          icon: ''
+          size: large
+    button_2:
+      type: pattern
+      label: Button 2
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Book a Demo
+        settings:
+          icon: ''
+          size: large
+    image_1:
+      type: pattern
+      label: Image 1
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/2x_384x508.png
+          style: scale_384w
+
+hero_banner_style_7:
+  use: '@organisms/hero-banner/hero-banner-style-7.twig'
+  namespace: 'Organisms/Hero Banner'
+  label: Hero Banner Style 7
+  description: Hero banner component, for all your presentation needs.
+  fields:
+    headline:
+      type: pattern
+      label: Headline
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Beautiful analytics to grow smarter'
+          font: displayXL-semibold
+    sub_headline:
+      type: text
+      label: Sub Headline
+      preview: '<p>Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users. Trusted by over 4,000 startups.</p>'
+    button_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: Demo
+        settings:
+          button_type: text_with_icon
+          icon: play-video
+          icon_alignment: left
+          size: xxlarge
+    button_2:
+      type: pattern
+      label: Button 2
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Sign up
+        settings:
+          icon: ''
+          size: xxlarge
+    image_1:
+      type: pattern
+      label: Image 1
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/2x_1024x768.png
+          style: scale_1024w
+
+hero_banner_style_8:
+  use: '@organisms/hero-banner/hero-banner-style-8.twig'
+  namespace: 'Organisms/Hero Banner'
+  label: Hero Banner Style 8
+  description: Hero banner component, for all your presentation needs.
+  fields:
+    headline:
+      type: pattern
+      label: Headline
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Driving Business Performance'
+          font: displayXL-bold
+    sub_headline:
+      type: text
+      label: Sub Headline
+      preview: '<p>Digitawise is a full-service digital marketing agency. We connect brands with people and we have the tools to make every interaction count.</p>'
+    button_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: link
+        fields:
+          text: Book a Demo
+        settings:
+          button_type: text_with_icon
+          icon: arrowRight
+          icon_alignment: right
+          size: large
+    image_1:
+      type: pattern
+      label: Image 1
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/2x_280x280.png
+          style: scale_280w
+
+hero_banner_style_9:
+  use: '@organisms/hero-banner/hero-banner-style-9.twig'
+  namespace: 'Organisms/Hero Banner'
+  label: Hero Banner Style 9
+  description: Hero banner component, for all your presentation needs.
+  fields:
+    headline:
+      type: pattern
+      label: Headline
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'We Design Websites that Excel Today & Evolve for Tomorrows'
+          font: display2XL-bold
+    sub_headline:
+      type: text
+      label: Sub Headline
+      preview: '<p>En combinant stratégie, design et technologie, nous concevons des expériences qui font le pont entre vous et vos utilisateurs.</p>'
+    description:
+      type: text
+      label: Description
+      preview: '<p>Nous travaillons avec des clients du monde entier pour des utilisateurs du monde entier. Tout ça depuis la belle ville de Lyon, en France.</p>'
+    button_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Talk to Us
+        settings:
+          button_type: text_with_icon
+          icon: coffee
+          icon_alignment: right
+          size: large
+
+hero_banner_style_10:
+  use: '@organisms/hero-banner/hero-banner-style-10.twig'
+  namespace: 'Organisms/Hero Banner'
+  label: Hero Banner Style 10
+  description: Hero banner component, for all your presentation needs.
+  fields:
+    headline:
+      type: pattern
+      label: Headline
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Space is the complete Team Collaboration solution'
+          font: displayXL-semibold
+    sub_headline:
+      type: text
+      label: Sub Headline
+      preview: '<p>From automation of people processes to creating an engaged and driven culture.</p>'
+    button_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: Try For Free
+        settings:
+          icon: ''
+          size: large
+    button_2:
+      type: pattern
+      label: Button 2
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Book a Demo
+        settings:
+          icon: ''
+          size: large
+    image_1:
+      type: pattern
+      label: Image 1
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/2x_384x508.png
+          style: scale_384w
+    image_2:
+      type: pattern
+      label: Image 2
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/2x_280x560.png
+          style: scale_280w
+
+hero_banner_style_11:
+  use: '@organisms/hero-banner/hero-banner-style-11.twig'
+  namespace: 'Organisms/Hero Banner'
+  label: Hero Banner Style 11
+  description: Hero banner component, for all your presentation needs.
+  fields:
+    headline:
+      type: pattern
+      label: Headline
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'We Build Websites that Excel Today & Evolve for Tomorrows'
+          font: displayXL-bold
+    sub_headline:
+      type: text
+      label: Sub Headline
+      preview: '<p>Nous travaillons avec des clients du monde entier pour des utilisateurs du monde entier. Tout ça depuis la belle ville de Lyon, en France.</p>'
+    button_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: Try For Free
+        settings:
+          icon: ''
+          size: xlarge
+    button_2:
+      type: pattern
+      label: Button 2
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Book a Demo
+        settings:
+          icon: ''
+          size: xlarge
+    image_1:
+      type: pattern
+      label: Image 1
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/2x_488x488.png
+          style: scale_560w

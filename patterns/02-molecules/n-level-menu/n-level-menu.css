@@ -1,0 +1,66 @@
+li.menu-level-1 {    
+    @apply flex items-center relative pt-1.5 pb-5 top-[8px];
+    &:last-of-type {
+        @apply mr-0;
+    }
+    &.hovered {
+        .svg {
+            @apply rotate-180;
+        }
+    }
+}
+li.menu-level-1.expand:hover > ul.level2 {
+    @apply block;
+}
+li.menu-level-1 .svg {
+    @apply ml-2;
+}
+li.menu-level-1 > ul.level2 {
+    @apply absolute top-[40px] bg-white w-max hidden z-10 border border-solid border-text-neutralLight rounded shadow-sm pt-8 py-2;
+    -moz-column-count: 2;
+    -moz-column-gap: 0px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 0px;
+    column-count: 2;
+    column-gap: 0;
+}
+li.menu-level-1 > ul.level2 li.menu-level-2 {
+    @apply block;
+}
+li.menu-level-1 > ul.level2 li.menu-level-2 > a {
+    @apply px-6 inline-block text-lg max-w-[264px] mb-8 font-normal;
+}
+li.menu-level-1 > ul.level2 > li:last-child {
+    @apply border-0;
+}
+
+ /* Mobile View */
+ @media all and (max-width: 992px) {
+    li.menu-level-1 {
+        @apply flex-wrap mb-0 py-2.5 px-4 border-0 mr-0;        
+    }
+    li.menu-level-1 > a {
+        @apply text-xl;
+    }
+    li.menu-level-1 .svg {
+        @apply absolute right-[15px] top-[11px] h-[30px] w-[30px] cursor-pointer z-30;        
+        &.active {
+            @apply rotate-180;
+        }
+    }
+    li.menu-level-1 > ul.level2 {
+        @apply relative hidden top-0 m-0 border-0;        
+        flex: 0 0 100%;
+        box-shadow: none;
+        column-count: auto;
+    }
+    li.menu-level-1.expand:hover > ul.level2 {        
+        @apply hidden;
+    }
+    li.menu-level-1 > ul.level2 li.menu-level-2 > a {        
+        @apply block pl-0;
+    }
+    li.menu-level-1 > ul.level2 li.menu-level-2:last-child {
+        @apply mb-0;
+    }
+}

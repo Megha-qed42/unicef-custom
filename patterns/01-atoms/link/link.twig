@@ -1,0 +1,57 @@
+{#
+/**
+ * @file
+ * link
+ * we can use this link with icon for Ex. in cards at the bottom as more info link.
+ * See link.space.yaml for documentation.
+ */
+#}
+
+{# Default #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set icon_position = icon_position|default('right') %}
+{% set custom_style = custom_style|default(false) %}
+{% set extra_classes = extra_classes|default('') %}
+
+{% set tag_name = 'a' %}
+{% if target is not empty %}
+  {% set attributes = attributes.setAttribute('target', '_' ~ target)  %}
+{% endif %}
+
+{% if title_text is not empty %}
+  {% set attributes = attributes.setAttribute('aria-label', title_text)  %}
+{% endif %}
+
+{# Classes #}
+{% set link_classes = [
+  'link-element inline-flex items-center',
+  icon_position == "left",
+  not custom_style ? 'text-defaultGray-500 font-bold',
+  not custom_style ? 'hover:text-defaultGray-200 focus:text-defaultGray-200 disabled:text-defaultGray-200 md:mb-2 lg:mb-0 rounded-none',
+  extra_classes ? extra_classes
+] %}
+
+{% if icon is not empty %}
+  {% set iconview %}
+    {% set icon_size = icon_size|default('4') %}
+    {% set icon_space = icon_position == "left" ? 'mr-2' : 'ml-2' %}
+    {% set icon_size_final = 'w-' ~ icon_size ~ ' ' ~ 'h-' ~ icon_size ~ ' ' ~ icon_space %}
+    {% include "@atoms/svg/_svg--icon.twig" with {
+      icon: icon,
+      size: icon_size_final
+    } only %}
+  {% endset %}
+{% endif %}
+
+{# Template #}
+{% block link_block %}
+  <{{ tag_name }} href="{{ url }}" {{ attributes.addClass(link_classes|join(' ')|trim) }}>
+    {% if icon_position == 'left' and iconview is not empty %}
+      <span class="icon-span">{{ iconview }}</span>
+    {% endif %}
+    {{ content }}
+    {% if icon_position == 'right' and iconview is not empty %}
+      <span class="icon-span">{{ iconview }}</span>
+    {% endif %}
+  </{{ tag_name }}>
+{% endblock %}

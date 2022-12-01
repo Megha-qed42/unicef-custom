@@ -1,0 +1,65 @@
+{{ attach_library('unicef_vf/header-styling') }}
+
+{# Template #}
+{% block primary_mega_menu_block %}
+  {% import _self as menus %}
+
+  {{ menus.menu_links(items, attributes, 0) }}
+
+  {% macro menu_links(items, attributes, menu_level) %}
+    {# Classes #}
+    {% set custom_wrapper_classes = custom_wrapper_classes|default('') %}
+    {% set menu_item_wrapper_classes = [
+      custom_wrapper_classes ? custom_wrapper_classes,
+      'ul-wrapper mega-menu-primary navigation__menu flex flex-col lg:flex-row',
+    ] %}
+
+    {% import _self as menus %}
+    {% if items %}
+      {% if menu_level == 0 %}
+        <ul{{ attributes.addClass(menu_item_wrapper_classes) }}>
+      {% else %}
+        <ul class="navigation__sub-menu navigation--level-{{ menu_level + 1 }}">
+      {% endif %}
+      {% for item in items %}
+
+        {% set menu_type_class = item.original_link.pluginDefinition.options.attributes.class.0 %}
+
+        <li class="{{ menu_type_class }} navigation__item mega-menu-default-wrapper menu-dropdown navigation__item--level-{{- menu_level + 1 -}}
+          {{- item.in_active_trrail ? ' navigation__item--active-trail' -}}
+          {{- item.below ? ' navigation__item--has-children' -}}
+          {{- loop.last ? ' navigation__item--last' -}}">
+
+        {% if item['is_nolink'] == true %}
+          {% spaceless %}
+            <span class="header-menu-item textXL-medium lg:textMd-medium"><a href="#">{{ item.title }}</a>
+              <a href="#">{% include "@atoms/svg/_svg--icon.twig" with {
+                icon: 'chevronDown',
+                size:	'w-5 h-5'
+              } only %}</a>
+            </span>
+          {% endspaceless %}
+        {% else %}
+          {% set url = item.url %}
+            {% include "@atoms/link/link.twig" with {
+            "url": url,
+            "title_text": item.title,
+            "content": item.title,
+            "custom_style": true,
+            "extra_classes": 'navigation__link header-menu-item textXL-medium lg:textMd-medium'
+          } only %}
+        {% endif %}
+
+        {{ item.content }}
+
+        {# If list items havr submenus, run the menu_links macro again
+        to the repeat the process all over. #}
+        {% if item.below %}				
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% endif %}
+          </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endmacro %}
+{% endblock %}

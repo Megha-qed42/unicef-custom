@@ -1,0 +1,415 @@
+/* CSS only for Storybook */
+
+.space-body {
+
+  /* Featured card */
+  .featured__card {
+    @apply h-full;
+
+    &.large {
+      @apply md:max-w-[21.4375rem] h-[16.125rem] lg:max-w-[37rem] lg:h-[27.5rem];
+    }
+
+    &.medium {
+      @apply md:max-w-[21.4375rem] h-[16.125rem] lg:max-w-[24rem] lg:h-[18rem];
+    }
+
+    &.vertical {
+
+      &.large {
+        @apply md:max-w-[21.4375rem] h-[28.625rem] lg:max-w-[37rem] lg:h-[37rem];
+      }
+
+      &.medium {
+        @apply md:max-w-[21.4375rem] h-[28.625rem] lg:max-w-[24rem] lg:h-[32rem];
+      }
+
+      &.small {
+        @apply md:max-w-[21.4375rem] h-[28.625rem] lg:max-w-[17.5rem] lg:h-[23.5rem];
+      }
+
+      &.large,
+      &.medium,
+      &.small {
+        @apply maxLg:h-[23.5rem];
+      }
+    }
+
+    .item-wrapper {
+      @apply w-full h-full;
+
+      .card_image {
+        @apply w-full h-full;
+      }
+
+      img {
+        @apply object-cover;
+
+        width: inherit;
+        height: inherit;
+      }
+    }
+
+    &.small {
+      @apply md:max-w-[21.4375rem] h-[16.125rem] lg:max-w-[17.5rem] lg:h-[13rem];
+    }
+
+    &.large,
+    &.medium,
+    &.small {
+      @apply maxLg:h-[16.125rem];
+    }
+  }
+
+  /* Icon card */
+  .icon__card {
+    @apply max-w-[24rem];
+  }
+
+  /* Image card */
+  .media__card {
+
+    .card_image {
+
+      img {
+        @apply w-full object-cover;
+
+        aspect-ratio: 16 / 9;
+      }
+    }
+
+    &.large {
+      @apply md:max-w-[37rem];
+
+      .card_image {
+
+        img {
+          @apply md:max-h-[20.75rem];
+        }
+      }
+    }
+
+    &.medium {
+      @apply md:max-w-[24rem];
+
+      .card_image {
+
+        img {
+          @apply md:max-h-[13.5rem];
+        }
+      }
+    }
+
+    &.small {
+      @apply md:max-w-[17.5rem];
+
+      .card_image {
+
+        img {
+          @apply md:max-h-[10rem];
+        }
+      }
+    }
+
+    &.horizontal {
+
+      .top-section {
+        @apply lg:w-50/100 lg:max-w-50/100;
+      }
+
+      &.large {
+        @apply w-full max-w-full lg:items-center;
+
+        .card_image {
+
+          img {
+            @apply md:max-h-[27.75rem];
+
+            aspect-ratio: 4 / 3;
+          }
+        }
+      }
+
+      &.medium,
+      &.small {
+        @apply lg:w-[37rem] lg:max-w-[37rem];
+
+        .top-section {
+          @apply lg:max-w-[17.5rem];
+        }
+
+        .card_image {
+
+          img {
+            @apply md:max-h-[17.5rem];
+
+            aspect-ratio: 1;
+          }
+        }
+      }
+    }
+  }
+  /* Mobile View */
+  @media screen(maxMd) {
+    .media__card {
+
+      &.horizontal {
+
+        &.large,
+        &.medium,
+        &.small {
+
+          .card_image {
+
+            img {
+              @apply h-auto w-auto;
+
+              aspect-ratio: 16 / 9;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Quick link card */
+  .quicklink__card {
+
+    .card_image {
+
+      img {
+        @apply w-full object-cover;
+
+        aspect-ratio: 3 / 2;
+      }
+    }
+
+    &.large {
+      @apply md:max-w-[37rem];
+
+      .card_image {
+
+        img {
+          @apply md:max-h-[24.5rem];
+        }
+      }
+    }
+
+    &.medium {
+      @apply md:max-w-[24rem];
+
+      .card_image {
+
+        img {
+          @apply md:max-h-[16rem];
+        }
+      }
+    }
+
+    &.small {
+      @apply md:max-w-[17.5rem];
+
+      .card_image {
+
+        img {
+          @apply md:max-h-[11.75rem];
+        }
+      }
+    }
+  }
+
+  /* People card */
+  .people__card {
+
+    &.testimony-with-avatar {
+
+      .avatar-label-image-wrapper {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+
+    &.testimony-with-image {
+
+      figure {
+        @apply rounded-none;
+      }
+
+      .avatar-label-image-wrapper {
+        width: 100%;
+        height: 100%;
+
+        img {
+          @apply rounded-none;
+
+          aspect-ratio: 3 / 2;
+        }
+      }
+
+      &.medium {
+
+        .avatar-label-image-wrapper {
+
+          img {
+            @apply md:max-h-[16rem];
+          }
+        }
+      }
+
+      &.small {
+
+        .avatar-label-image-wrapper {
+
+          img {
+            @apply md:max-h-[11.75rem];
+          }
+        }
+      }
+    }
+
+    &.people-with-image,
+    &.people-with-image-bio {
+
+      figure {
+        @apply rounded-none;
+      }
+
+      .avatar-label-image-wrapper {
+        @apply w-full h-full;
+
+        img {
+          @apply rounded-none;
+
+          aspect-ratio: 1;
+        }
+      }
+
+      &.medium {
+
+        .avatar-label-image-wrapper {
+
+          img {
+            @apply md:max-h-[24rem];
+          }
+        }
+      }
+
+      &.small {
+
+        .avatar-label-image-wrapper {
+
+          img {
+            @apply md:h-[17.5rem];
+          }
+        }
+      }
+    }
+
+    &.people-with-image-bio {
+
+      img {
+        @apply md:max-h-[24rem];
+      }
+    }
+
+    &.medium {
+      @apply max-w-sm;
+    }
+
+    &.small {
+      @apply md:max-w-[17.5rem];
+    }
+
+    &.horizontal {
+
+      &.large {
+        @apply max-w-full;
+      }
+
+      &.medium,
+      &.small {
+        @apply max-w-xl;
+
+        .card_image {
+
+          img {
+            height: 17.5rem;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
+  /* Pricing card */
+  .pricing__card {
+    @apply relative max-w-full md:max-w-360 w-full h-full;
+
+    &.featuredlist {
+      @apply md:max-w-[37rem] p-0;
+
+      .top-section {
+
+        .left {
+          @apply md:max-w-[50%];
+
+          > div {
+            flex: 0 0 100%;
+          }
+        }
+      }
+
+      .middle-section {
+
+        .features-listing-wrapper {
+
+          > div {
+            flex: 0 0 50%;
+          }
+        }
+      }
+    }
+  }
+  /* Mobile View */
+  @media screen(maxMd) {
+    .pricing__card {
+
+      &.featuredlist {
+
+        .top-section {
+
+          .left,
+          .right {
+            flex: 0 0 100%;
+          }
+        }
+
+        .middle-section {
+
+          .features-listing-wrapper {
+
+            > div {
+              flex: 0 0 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Testimonial card */
+  .testimonial-card {
+
+    &.company-logo-and-avatar {
+
+      .company-logo-and-avatar-image-wrapper {
+        @apply w-[64px] h-[64px] mb-2;
+
+        img {
+          @apply rounded-full w-full h-full object-cover;
+        }
+      }
+    }
+  }
+}

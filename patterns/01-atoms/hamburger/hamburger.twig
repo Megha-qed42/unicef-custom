@@ -1,0 +1,10 @@
+{# Template #}
+{% block hamburger_block %}
+  <div class="block" @click="menuIsOpen = !menuIsOpen">
+    <button class="ui-hamburger-02 btn-hamburger" :class="{'is-active': menuIsOpen}" aria-label="Hamburger Menu Icon">
+      <span class="first"></span>
+      <span class="second"></span>
+      <span class="third"></span>
+    </button>
+  </div>
+{% endblock %}

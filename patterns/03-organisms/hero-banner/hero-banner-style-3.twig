@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * hero-banner-style 3
+ *
+ * See hero-banner.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/hero-banner') }}
+
+{# Template #}
+{% block hero_banner_style_3_block %}
+  <section class="hero-banner body-font style-3" role="banner">
+    <div class="container relative h-full mx-auto">
+      {% if headline|render|striptags|trim is not empty %}
+        <div class="heading">
+          {{ headline }}
+        </div>
+      {% endif %}
+
+      {% if sub_headline|render|striptags|trim is not empty %}
+        <div{{ region_attributes.sub_headline|default(create_attribute()).addClass('sub-headline displayXs-regular lg:displaySm-bold text-text-body w-full mb-10 lg:mb-60') }}>{{ sub_headline }}</div>
+      {% endif %}
+
+      <div class="banner-content gap-y-10 gap-x-10 sm:gap-x-4 md:gap-x-5 lg:gap-x-8 xl:gap-x-[8.5rem] flex flex-col lg:flex-row lg:justify-between">
+        {% if image_1|render|trim is not empty %}
+          <div {{ region_attributes.image_1|default(create_attribute()).addClass('image-container lg:w-50/100 lg:max-w-50/100') }}>
+            {{ image_1 }}
+          </div>
+        {% endif %}
+
+        {% if description|render|striptags|trim is not empty %}
+          <div{{ region_attributes.description|default(create_attribute()).addClass('content-container lg:w-50/100 lg:max-w-50/100 md:textXL-regular text-text-body') }}>{{ description }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

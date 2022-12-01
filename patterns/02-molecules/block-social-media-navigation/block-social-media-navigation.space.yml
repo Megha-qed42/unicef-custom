@@ -1,0 +1,11 @@
+block_social_media_navigation:
+  use: "@molecules/block-social-media-navigation/block-social-media-navigation.twig"
+  label: Block Social media navigation
+  description: Example description
+  fields:
+    content:
+      type: pattern
+      label: Content
+      preview:
+        id: social_media_navigation
+        variant: default

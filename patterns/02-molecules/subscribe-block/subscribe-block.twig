@@ -1,0 +1,30 @@
+{{ attach_library('unicef_vf/block-subscribe') }}
+
+{# Default #}
+{% set element = element|default('div') %}
+
+{# Classes #}
+{% set classes = ([
+  'subscribe__block',
+] | sort | join(' ') | trim ) %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% block subscribe_block %}
+  <{{ element }} {{ attributes }}>
+    {% if headline|render|striptags|trim is not empty %}
+      <div class="subscribe__block--title">
+        {{ headline }}
+      </div>
+    {% endif %}
+    {% if text|render|striptags|trim is not empty %}
+      <div class="subscribe__block--description text-defaultGray-500 mb-12">
+        {{ text }}
+      </div>
+    {% endif %}
+    <div class="subscribe__block--email-form">
+      {{ email_form }}
+    </div>
+  </{{ element }}>
+{% endblock %}

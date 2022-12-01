@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * quick link card
+ *
+ * See card.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/card') }}
+
+{# Default #}
+{% set element = element|default('article') %}
+
+{# Classes #}
+{% set classes = [
+  card_layout,
+  card_size,
+  vertical_column_alignment|render|striptags|trim,
+  'quicklink__card relative w-full overflow-hidden flex flex-col flex-wrapp items-start shadow-lg rounded-xl',
+  card_layout == 'withbackground' ? 'bg-primary-800',
+  full_box_link ? 'full_box_link' : '',
+  extra_classes ? extra_classes
+] %}
+
+{% set hover_classes = [
+  'card_image overflow-hidden',
+  image_hover|render|striptags|trim == 'On' ? 'hover_on' : 'hover_off',
+] %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes| sort | join(' ') | trim) %}
+
+{# Template #}
+{% block quicklink_card_block %}
+  <{{ element }} {{ attributes }} data-aos={{ on_scroll_animation }} data-aos-duration={{ on_scroll_animation_duration }}>
+    <div class="top-section overflow-hidden">
+      {% if image|render|trim is not empty %}
+        <div {{ region_attributes.image|default(create_attribute()).addClass(hover_classes| sort | join(' ') | trim) }}>
+          {{ image }}
+        </div>
+      {% endif %}
+    </div>
+
+      <div class="bottom-section px-6 pt-6 pb-8 md:pt-7 md:px-7 md:pb-10">    
+        {% if headline|render|striptags|trim %}
+          {{ headline }}
+        {% endif %}
+
+        {% if text|render|striptags|trim %}
+          <div {{ region_attributes.text|default(create_attribute()).addClass('card_text textMd-regular text-text-body mt-2') }}>
+            {{ text }}
+          </div> 
+        {% endif %}
+        
+        {% if link|render|striptags|trim %}
+          <div class="botton-cta mt-6">
+            {{ link }}
+          </div>
+        {% endif %}
+      </div>
+  </{{ element }}>
+{% endblock %}

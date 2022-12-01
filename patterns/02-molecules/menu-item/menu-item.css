@@ -1,0 +1,321 @@
+/* Menu item - For Primary & Sub menu */
+
+.sub-menu-item {
+  @apply lg:px-4 py-3 w-full lg:max-w-[20rem] relative;
+
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    @apply lg:bg-backgroundNeutral-neutralLight;
+
+    > a {
+      @apply text-textButtonLink-buttonLinkHover;
+    }
+  }
+
+  > a {
+    @apply text-text-heading static;
+
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+
+    &.active {
+      @apply text-textButtonLink-buttonLinkHover;
+    }
+  }
+
+  .menu-item-description {
+    @apply mt-1;
+  }
+}
+
+.block-sub-menu {
+
+  /* Below all modifier classes will be available 
+  on block template level from drupal end directly 
+  while adding/updating any menu block on layout section. 
+  Template: docroot/themes/contrib/space/apps/drupal/templates/block/block--system-menu-block--layout.html.twig */
+
+  /* Menu size */
+  &.menu-normal {
+
+    .sub-menu-item,
+    ul.menu > li {
+      > a {
+        @apply text-16 leading-24 font-medium font-secondary;
+      }
+    }
+  }
+
+  &.menu-small {
+
+    .sub-menu-item,
+    ul.menu > li {
+      > a {
+        @apply text-18 leading-28 font-medium font-secondary;
+      }
+    }
+  }
+
+  &.menu-large {
+
+    .sub-menu-item,
+    ul.menu > li {
+      > a {
+        @apply text-24 leading-32 font-primaryBold;
+      }
+    }
+  }
+
+  /* Icon size */
+  &.icon-false {
+
+    .sub-menu-item,
+    ul.menu > li {
+      > a {
+
+        .icon-span {
+          @apply hidden;
+        }
+      }
+    }
+  }
+
+  &.icon-small,
+  &.icon-featured {
+
+    .sub-menu-item,
+    ul.menu > li {
+      > a {
+
+        .icon-span {
+          @apply absolute left-0 mt-1 mr-4 lg:mx-4;
+
+          svg {
+            @apply w-[1.125rem] h-5 m-0;
+          }
+        }
+      }
+    }
+  }
+
+  &.icon-small {
+
+    .sub-menu-item,
+    ul.menu > li {
+      @apply pl-80;
+
+      > a {
+
+        .icon-span {
+          @apply mt-0 w-48 h-48 flex items-center justify-center;
+        }
+      }
+    }
+  }
+
+  &.icon-featured {
+
+    .sub-menu-item,
+    ul.menu > li {
+      @apply pl-80;
+
+      > a {
+
+        .icon-span {
+          @apply w-48 h-48 flex items-center justify-center bg-backgroundPrimary-primaryExtraLight rounded-full;
+        }
+      }
+    }
+  }
+
+  /* Menu layout type */
+  &.horizontal-menu {
+
+    .menu {
+      @apply flex flex-wrap flex-col lg:flex-row;
+  
+      .sub-menu-item,
+      > li {
+        @apply py-2 lg:py-0 px-0 lg:px-3 m-0 !important;
+  
+        max-width: fit-content;
+  
+        &:hover {
+          @apply bg-transparent;
+        }
+  
+        .icon-span {
+          @apply w-4 h-4 static ml-0 mr-3;
+        }
+      }
+    }
+
+    /* Alignment */
+    &.right-align-menu {
+
+      ul.menu {
+        @apply justify-end;
+      }
+    }
+
+    &.center-align-menu {
+
+      ul.menu {
+        @apply justify-center;
+      }
+    }
+  }
+
+  /* Menu color */
+  &.menu-text-text-heading {
+
+    .menu_link_content,
+    .link-element {
+      @apply text-text-heading;
+    }
+  }
+
+  &.menu-text-text-body {
+    
+    .menu_link_content,
+    .link-element {
+      @apply text-text-body;
+    }
+  }
+
+  &.menu-text-text-primarydark {
+    
+    .menu_link_content,
+    .link-element {
+      @apply text-text-primaryDark;
+    }
+  }
+
+  &.menu-text-text-primarylight {
+    
+    .menu_link_content,
+    .link-element {
+      @apply text-text-primaryLight;
+    }
+  }
+
+  &.menu-text-text-primarymedium {
+    
+    .menu_link_content,
+    .link-element {
+      @apply text-text-primaryMedium;
+    }
+  }
+
+  &.menu-text-text-danger {
+    
+    .menu_link_content,
+    .link-element {
+      @apply text-text-danger;
+    }
+  }
+
+  &.menu-text-text-success {
+    
+    .menu_link_content,
+    .link-element {
+      @apply text-text-success;
+    }
+  }
+
+  &.menu-text-text-warning {
+    
+    .menu_link_content,
+    .link-element {
+      @apply text-text-warning;
+    }
+  }
+
+  &.menu-text-text-neutrallight {
+    
+    .menu_link_content,
+    .link-element {
+      @apply text-text-neutralLight;
+    }
+  }
+
+  &.menu-text-text-neutralmedium {
+    
+    .menu_link_content,
+    .link-element {
+      @apply text-text-neutralMedium;
+    }
+  }
+
+  /* Description color */
+  &.desc-text-text-heading {
+
+    .menu-item-description {
+      @apply text-text-heading;
+    }
+  }
+  
+  &.desc-text-text-body {
+    
+    .menu-item-description {
+      @apply text-text-body;
+    }
+  }
+  
+  &.desc-text-text-primarydark {
+    
+    .menu-item-description {
+      @apply text-text-primaryDark;
+    }
+  }
+  
+  &.desc-text-text-primarylight {
+    
+    .menu-item-description {
+      @apply text-text-primaryLight;
+    }
+  }
+  
+  &.desc-text-text-primarymedium {
+    
+    .menu-item-description {
+      @apply text-text-primaryMedium;
+    }
+  }
+  
+  &.desc-text-text-danger {
+    
+    .menu-item-description {
+      @apply text-text-danger;
+    }
+  }
+  
+  &.desc-text-text-success {
+    
+    .menu-item-description {
+      @apply text-text-success;
+    }
+  }
+  
+  &.desc-text-text-warning {
+    
+    .menu-item-description {
+      @apply text-text-warning;
+    }
+  }
+  
+  &.desc-text-text-neutrallight {
+    
+    .menu-item-description {
+      @apply text-text-neutralLight;
+    }
+  }
+  
+  &.desc-text-text-neutralmedium {
+    
+    .menu-item-description {
+      @apply text-text-neutralMedium;
+    }
+  }
+}

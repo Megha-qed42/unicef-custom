@@ -1,0 +1,75 @@
+{% block split_quote_signup_block %}
+	<div class="split-quote-signup-form flex flex-wrap lg:flex-nowrap">
+		<div class="split-quote-signup-form__quote-wrapper bg-backgroundPrimary-primaryExtraDark hidden lg:block max-w-[50%]">
+			<div class="split-quote-signup-form__carousel-wrapper lg:py-[15rem]">
+				{{ split_carousel }}
+			</div>
+			<div class="split-quote-signup-copyright">
+				{% include "@atoms/paragraph/paragraph.twig" with {
+					"text": signup_copyright,
+				} %}
+			</div>
+		</div>
+		<div class="simplelogin-form_logo lg:hidden block w-full pl-4 pt-[3rem]">
+			{% include "@atoms/logo/logo.twig" with {} %}
+		</div>
+		<div class="split-quote-signup-form__signupform lg:pt-[10rem]">
+			<div class="simple-signup-form px-4 lg:px-0">
+				<div class="simple-signup-form__logo text-left">
+					{% include "@atoms/logo/logo.twig" with { variant: "only_logo" } %}
+				</div>
+				<h2 class="signup-and-login-title mb-0 text-2xl lg:text-3xl leading-10 font-semibold text-text-heading text-left md:text-center">					{{ form_title }}
+				</h2>
+				<h5 class="signup-and-login-subtitle font-secondary text-base text-text-body text-left md:text-center mt-3 mb-8 ">
+					{{ form_subtitle }}
+				</h5>
+				{% include "@atoms/forms/_form-element.twig" with {
+					"variant": "textfield",
+					"description_text": "Enter your name",
+					"label_display": "before",
+					"label": user_name_label,
+					"children": children4
+				} %}
+				{% include "@atoms/forms/_form-element.twig" with {
+					"variant": "email",
+					"description_text": "Enter email address.",
+					"label_display": "before",
+					"label": email_label,
+					"children": children1
+				} %}
+				{% include "@atoms/forms/_form-element.twig" with {
+					"variant": "textfield",
+					"description_text": "create password.",
+					"label_display": "before",
+					"label": password,
+					"children": children5
+				} %}
+				<div class="simple-signup-form__btn-wrapper flex flex-wrap flex-col-reverse">
+					<div class="simplelogin-form__social-btn w-full">
+						{% include "@atoms/social-button/social-button.twig" with {
+							"text": social_button_text,
+							"social_button_link": social_button_link,
+							"social_button_type": "google"
+						} %}
+					</div>
+					<div class="simplelogin-form__signin-btn w-full mb-5">
+						{% include "@atoms/button/button.twig" with {
+							"variant": "primary",
+							"text": signin_button_text,
+							"button_type": "only_text",
+							"size": "large",
+							"url": signin_url,
+							"icon": "whiteCircle",
+							"icon_alignment": "right",
+							"extra_classes": "text-base mb-0"
+						} %}
+					</div>
+				</div>
+				<div class="simple-signup-form__signup-link-wrapper text-center mt-8">
+					<span class="signup-linklabel text-text-body">{{ signup_label }}</span>
+					{{ signup_link }}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

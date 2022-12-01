@@ -1,0 +1,80 @@
+logo_grid:
+  use: "@molecules/logo-grid/logo-grid.twig"
+  label: Logo Grid
+  description: Logo grid.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: './images/Acquia.svg'
+            style: 160x160_xs_sc
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: './images/Ashoka.svg'
+            style: 160x160_xs_sc
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: './images/GSB.svg'
+            style: 160x160_xs_sc
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: './images/Here.svg'
+            style: 160x160_xs_sc
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: './images/Nestle.svg'
+            style: 160x160_xs_sc
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: './images/Sony.svg'
+            style: 160x160_xs_sc
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: './images/Ashoka.svg'
+            style: 160x160_xs_sc
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: './images/Ashoka.svg'
+            style: 160x160_xs_sc
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: './images/Here.svg'
+            style: 160x160_xs_sc
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: './images/GSB.svg'
+            style: 160x160_xs_sc
+  settings:
+    layout_type:
+      type: select
+      required: true
+      label: Layout
+      preview: columns-4
+      options:
+        columns-4: Grid with 4 cloumn
+        columns-5: Grid with 5 cloumn
+        columns-6: Grid with 6 cloumn
+        slider: Slider view
+    background_color:
+      type: select
+      label: Background color
+      preview: transparent
+      options:
+        transparent: Transparent
+        primaryExtraLight: Primary extra light

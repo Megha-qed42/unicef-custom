@@ -1,0 +1,134 @@
+/* Modal Box */
+.modal-box {
+  @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+
+  /* Modal Header */
+  .modal-header {
+    svg {
+      @apply w-[3rem] h-[3rem];
+    }
+  }
+
+  /* Headline */
+  .headline {
+    @apply m-0 pb-2 text-text-heading;
+  }
+
+  /* Stacked Left Aligned */
+  &.stacked_left_aligned {
+    @apply md:w-[25rem] w-[90%];
+  }
+
+  /* Stacked Center Aligned */
+  &.stacked_centered {
+    @apply md:w-[25rem] w-[90%];
+  }
+
+  /* Horizontal */
+  &.horizontal {
+    @apply md:w-[34rem] w-[90%];
+  }
+
+  /* Password Prompt */
+  &.password_prompt {
+    @apply md:w-[25.5rem] w-[90%];
+
+    .modal_form {
+      input {
+        @apply max-w-none mt-1.5 mr-0 font-secondary font-normal text-text-heading;
+
+        &[type='email'] {
+          @apply mb-4 pl-3;
+        }
+      }
+
+      span {
+        @apply block p-0 font-secondary text-sm font-medium text-text-heading;
+      }
+
+      .input-icon {
+        @apply hidden;
+      }
+    }
+  }
+
+  /* Basic Plan */
+  &.plan {
+    @apply md:w-[30rem] w-[90%];
+
+    .plan-block {
+      .plan-list {
+        li {
+          @apply border border-StrokeButton-buttonSecondaryGreyDefault;
+
+          svg {
+            @apply w-[2rem] h-[2rem];
+          }
+          .checkbox {
+            @apply items-start;
+          }
+        }
+      }
+    }
+  }
+
+  /* Modal Footer */
+  .modal-footer {
+    .btn {
+      @apply w-full;
+    }
+  }
+}
+
+/* Mobile Responsive  View */
+@media all and (max-width: 40em) {
+  .modal-box {
+    /* Stacked Left Aligned */
+    &.stacked_left_aligned {
+      .modal-header {
+        @apply text-left;
+      }
+
+      .modal-body {
+        @apply text-left;
+      }
+    }
+
+    /* Password Prompt Mobile View */
+    @media all and (max-width: 40em) {
+      &.password_prompt {
+        .modal_form {
+          span {
+            @apply sm:p-0 md:pr-4 text-left;
+          }
+        }
+      }
+    }
+
+    /* Plan Mobile View */
+    @media all and (max-width: 40em) {
+      &.plan {
+        @apply h-[80%] overflow-auto;
+
+        .modal-content {
+          .modal-body {
+            @apply text-left;
+          }
+        }
+      }
+    }
+
+    /* Modal Footer Mobile View */
+    @media all and (max-width: 40em) {
+      .modal-footer {
+        a {
+          @apply w-full;
+
+          &:first-child {
+            @apply mb-3;
+          }
+        }
+      }
+    }
+  }
+}

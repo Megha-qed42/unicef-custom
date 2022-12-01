@@ -1,0 +1,78 @@
+{#
+/**
+ * @file
+ * avatar atom
+ * Available variables:
+ * - image_url: Avatar image url
+ * - corner_style: Image with border radius setting.
+ * - image_style: Describes the width and height of image.
+ * - full_name: Full name of user.
+ * - link_text: Description or email link of user. 
+ */
+#}
+
+{{ attach_library('unicef_vf/avatar') }}
+
+{# Classes #}
+{% set avatar_label_classes = [
+  'capitalize flex',
+  text_align == 'center' ? 'text-center',
+  'overflow-hidden no-underline text-text-body',
+  corner_style,
+  image_style
+] %}
+
+{# Template #}
+{% block avatar_label_group_block %}
+  <figure{{ attributes.addClass(avatar_label_classes) }} >
+    <div class="avatar-label-image-wrapper">
+      {{ image }}
+    </div>
+
+    <div class="avatar-label-content-wrapper ml-2.5">
+      {% if full_name|render|striptags|trim is not empty -%}
+        <div class="space-y-4 flex-1">
+          <figcaption>
+            {% if image_style == 'xs-24-x-24' or image_style == 'sm-32-x-32' or image_style == 'md-40-x-40' %}
+              <p class="text-text-heading text-sm">
+                {{ full_name }}
+              </p>
+            {% elseif image_style == 'lg-48-x-48' %}
+              <p class="text-text-heading text-base">
+                {{ full_name }}
+              </p>
+            {% elseif image_style == 'xl-56-x-56' %}
+              <p class="text-text-heading text-lg">
+                {{ full_name }}
+              </p>
+            {% else %}
+              <p class="text-text-heading text-xl">
+                {{ full_name }}
+              </p>
+            {% endif %}
+          </figcaption>
+        </div>
+      {% endif %}
+
+      {% if link|render|striptags|trim is not empty -%}
+        {% if image_style == 'xs-24-x-24' or image_style == 'sm-32-x-32' or image_style == 'md-40-x-40' %}
+          <div class="avatar-link text-sm">
+            {{ link }}
+          </div>
+        {% elseif image_style == 'lg-48-x-48' %}
+          <div class="avatar-link text-base">
+            {{ link }}
+          </div>
+        {% elseif image_style == 'xl-56-x-56' %}
+          <div class="avatar-link text-lg">
+            {{ link }}
+          </div>
+        {% else %}
+          <div class="avatar-link text-xl">
+            {{ link}}
+          </div>
+        {% endif %} 
+      {% endif %}
+    </div>
+  </figure>
+{% endblock %}

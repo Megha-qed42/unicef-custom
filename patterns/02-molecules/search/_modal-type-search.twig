@@ -1,0 +1,45 @@
+<div class="modal-search-block">
+  {% for input in modal_search %}
+    {{ input }}
+  {% endfor %}
+	<section class="search-filter-block">
+    <header class="tabs-nav">
+      <ul>
+        <li class="active"><a href="#tab1">All</a></li>
+        <li><a href="#tab2">Articles</a></li>
+        <li><a href="#tab3">Event</a></li>
+        <li><a href="#tab4">Videos</a></li>
+      </ul>
+    </header>
+    <div class="tabs-content">
+      <div id="tab1" class="cards-block">
+        <div class="grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {% for item in items %}
+            {{ item }}
+         {% endfor %}
+        </div>
+      </div>
+      <div id="tab2" class="cards-block">
+        <div class="grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {% for item in items %}
+            {{ item }}
+         {% endfor %}
+        </div>
+      </div>
+       <div id="tab3" class="cards-block">
+        <div class="grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {% for item in items %}
+            {{ item }}
+         {% endfor %}
+        </div>
+      </div>
+      <div id="tab4" class="cards-block">
+        <div class="grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {% for item in items %}
+            {{ item }}
+         {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

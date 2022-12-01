@@ -1,0 +1,96 @@
+mega_menu_primary:
+  use: "@molecules/mega-menu/_mega-menu--primary.twig"
+  namespace: 'Molecules/Mega menu'
+  label: Primary
+  description: Primary and footer menu component.
+  fields:
+    items:
+      type: object
+      label: Items
+      preview:
+        1:
+          title: Home
+          url: "#"
+          in_active_trail: false
+          link_class: []
+          cta_extra_classes:
+            - footer-link
+        2:
+          title: Resources
+          url: "#"
+          in_active_trail: false
+          link_class: []
+          cta_extra_classes:
+            - footer-link
+          below:
+            - title: Child 1
+              url: "#"
+              in_active_trail: false
+            - title: Child 2
+              url: "#"
+              in_active_trail: false
+        3:
+          title: Blog
+          url: "#"
+          in_active_trail: false
+          link_class: []
+          cta_extra_classes:
+            - footer-link
+        4:
+          title: About
+          url: "#"
+          in_active_trail: false
+          link_class: []
+          cta_extra_classes:
+            - footer-link
+        5:
+          title: Contact
+          url: "#"
+          in_active_trail: true
+          link_class: []
+          cta_extra_classes:
+            - footer-link
+          below:
+            - title: Child 1
+              url: "#"
+              in_active_trail: false
+            - title: Child 2
+              url: "#"
+              in_active_trail: false
+  settings:
+    custom_wrapper_classes: 
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''
+
+mega_menu_secondary:
+  use: "@molecules/mega-menu/_mega-menu--secondary.twig"
+  namespace: 'Molecules/Mega menu'
+  label: Secondary
+  description: "Secondary header with Menu items."
+  fields:
+    menu_items:
+      type: pattern
+      label: Menu items
+      multi_value_type: items
+      preview:
+        - id: menu_item_secondary
+          settings:
+            menu_title: 'Notifications'
+            icon: ''
+        - id: menu_item_secondary
+          settings:
+            menu_title: 'Messages'
+            icon: ''
+        - id: menu_item_secondary
+          settings:
+            menu_title: 'Blog'
+            icon: ''
+        - id: menu_item_secondary
+          settings:
+            menu_title: 'About'
+            icon: ''
+        - id: menu_item_secondary
+          settings:
+            menu_title: 'Settings'
+            icon: 'settings'

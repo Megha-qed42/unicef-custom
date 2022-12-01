@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * block-app
+ *
+ * See block-app.space.yaml for documentation.
+ * @todo: Drupal integration of block.
+ */
+#}
+{{ attach_library('unicef_vf/block-get-the-app') }}
+
+{# Default #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set heading_id = attributes.id|clean_id %}
+
+{# Classes #}
+{% set classes = [
+  'block-get-the-app'
+] %}
+
+{# Template #}
+{% block get_the_app_block %}
+  <div {{ attributes|without('role', 'aria-labelledby').addClass(classes | sort | join(' ') | trim) }} aria-labelledby="{{ heading_id }}" role="block get the app">
+    {{ title_suffix }}
+    {% if title is not empty %}
+      <h2 class="block-title text-text-neutralMedium textSm-bold mb-4">{{ title }}</h2>
+    {% endif %}
+    <div class="block-content flex flex-row md:flex-col pb-4">
+      {{ items }}
+    </div>
+  </div>
+{% endblock %}

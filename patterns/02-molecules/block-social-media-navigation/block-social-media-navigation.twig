@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * block-social-media-navigation
+ *
+ * See block-social-media-navigation.space.yaml for documentation.
+ */
+#}
+
+{# Default #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set heading_id = attributes.id|clean_id %}
+
+{# Classes #}
+{% set classes = [
+  'block-social-media-navigation',
+] %}
+
+{# Template #}
+{% block social_media_navigation_block %}
+  <div {{ attributes|without('role', 'aria-labelledby').addClass(classes | sort | join(' ') | trim) }} aria-labelledby="{{ heading_id }}" role="navigation">
+    {{ title_suffix }}
+    {% if content|render|trim is not empty %}
+      <div class="block-social-media-navigation-content">{{ content }}</div>
+    {% endif %}
+  </div>
+{% endblock %}

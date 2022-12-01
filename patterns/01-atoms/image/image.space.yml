@@ -1,0 +1,184 @@
+image_atom:
+  use: "@atoms/image/image.twig"
+  label: Image
+  description: "Image with caption component."
+  variants:
+    image:
+      label: Image
+      description: Use variant "image" for drupal images or theme images. Use space-assets:// for theme images. E.g. "space-assets://images/logo.svg"
+    background:
+      label: Background image
+      description: Set the image url with setting "url" and control the display with setting "background_style"
+  settings:
+    image_url:
+      label: Url
+      type: textfield
+      description: Use "Url" if you don't have the rendered image tag. The component will generate an image tag.
+      preview: "./images/logo.svg"
+      required: true
+    background_style:
+      label: Background style
+      description: Classes applied to background image container.
+      type: textfield
+      preview: w-full h-20 bg-cover
+    corners:
+      label: Image corners
+      type: select
+      options:
+        rounded: Round
+    style:
+      label: Image style
+      type: select
+      preview: 16x9_md_sc
+      options:
+        1x1_xxs_sc: XXSmall 1x1
+        24x24_xxs_sc: XS 24x24
+        32x32_xxs_sc: SM 32x32
+        40x40_xxs_sc: MD 40x40
+        48x48_xxs_sc: LG 48x48
+        56x56_xxs_sc: XL 56x56
+        64x64_xxs_sc: 2XL 64x64
+        96x96_xs_sc: 3XL 96x96
+        160x160_xs_sc: 4XL 160x160
+        8x7_xxs_sc: XSmall 8x7
+        8x7_xs_sc: Small 8x7
+        160x220_xs_sc: Small 160x220
+        16x9_xxxs_sc: XXXSmall 16x9
+        16x9_xxs_sc: XXSmall 16x9
+        16x9_xs_sc: XSmall 16x9
+        16x9_sm_sc: SM 16x9
+        16x9_md_sc: MD 16x9
+        16x9_l_sc: LG 16x9
+        16x9_xl_sc: XL 16x9
+        16x9_xxl_sc: XXLL 16x9
+        scale_248w: Scale 248
+        scale_280w: Scale 280
+        scale_352w: Scale 352
+        scale_384w: Scale 384
+        scale_560w: Scale 560
+        scale_590w: Scale 590
+        scale_592w: Scale 592
+        scale_800w: Scale 800
+        scale_1024w: Scale 1024
+        scale_1216w: Scale 1216
+        scale_1440w: Scale 1440
+    extra_classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''    
+  configuration:
+    image_config:
+      styles:
+        1x1_xxs_sc:
+          label: Small 1x1
+          width: 80
+          height: 80
+        24x24_xxs_sc:
+          label: XS 24x24 
+          width: 24
+          height: 24
+        32x32_xxs_sc:
+          label: SM 32x32  
+          width: 32
+          height: 32
+        40x40_xxs_sc:
+          label: MD 40x40  
+          width: 40
+          height: 40
+        48x48_xxs_sc:
+          label: LG 48x48  
+          width: 48
+          height: 48
+        56x56_xxs_sc:
+          label: XL 56x56 
+          width: 56
+          height: 56
+        64x64_xxs_sc:
+          label: 2XL 64x64 
+          width: 64
+          height: 64 
+        96x96_xs_sc:
+          label: 3XL 96x96 
+          width: 96
+          height: 96 
+        160x160_xs_sc:
+          label: 4XL 160x160
+          width: 160
+          height: 160  
+        8x7_xxs_sc:
+          label: XSmall 8x7
+          width: 460
+          height: 402
+        160x220_xs_sc:
+          label: Small 160x220
+          width: 160
+          height: 220  
+        8x7_xs_sc:
+          label: Small 8x7
+          width: 640
+          height: 560
+        16x9_xxxs_sc:
+          label: XXXSmall 16x9 ()
+          width: 220
+          height: 124
+        16x9_xxs_sc:
+          label: XXSmall 16x9
+          width: 460
+          height: 258
+        16x9_xs_sc:
+          label: XSmall 16x9
+          width: 640
+          height: 359
+        16x9_sm_sc:
+          label: SM 16x9
+          width: 768
+          height: 432
+        16x9_md_sc:
+          label: MD 16x9
+          width: 1024
+          height: 576
+        16x9_l_sc:
+          label: L 16x9
+          width: 1280
+          height: 720
+        16x9_xl_sc:
+          label: XL 16x9
+          width: 1600
+          height: 900
+        16x9_xxl_sc:
+          label: XXL 16x9
+          width: 1900
+          height: 1068
+        scale_248w:
+          label: Scale 248
+          width: 248
+        scale_280w:
+          label: Scale 280
+          width: 280
+        scale_352w:
+          label: Scale 352
+          width: 352
+        scale_384w:
+          label: Scale 384
+          width: 384
+        scale_560w:
+          label: Scale 560
+          width: 560
+        scale_590w:
+          label: Scale 590
+          width: 590
+        scale_592w:
+          label: Scale 592
+          width: 592
+        scale_800w:
+          label: Scale 800
+          width: 800
+        scale_1024w:
+          label: Scale 1024
+          width: 1024
+        scale_1216w:
+          label: Scale 1216
+          width: 1216
+        scale_1440w:
+          label: Scale 1440
+          width: 1440

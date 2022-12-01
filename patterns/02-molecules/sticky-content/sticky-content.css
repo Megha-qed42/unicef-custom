@@ -1,0 +1,24 @@
+/* Sticky component */
+
+.list-item-sticky {
+  @apply list-none;
+}
+
+.sticky-image-wrapper {
+  @apply mb-6;
+}
+
+.sticky-pre-heading {
+  @apply font-secondary text-14 leading-5 font-bold tracking-widest uppercase text-text-primaryDark mb-2;
+}
+
+.sticky-heading {
+
+  .headline {
+    @apply m-0 mb-3 maxMd:text-3xl text-text-heading;
+  }
+}
+
+.sticky-description {
+  @apply m-0 mb-10 text-16 leading-24 text-text-body;
+}

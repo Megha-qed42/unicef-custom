@@ -1,0 +1,30 @@
+/* Pager */
+
+/* Type */
+.pager .card-default,
+.pager .card-minimal {
+  @apply justify-between;
+}
+
+/* Color - Light & Dark */
+.card-default .pager__item a.lightColor:hover {
+  @apply text-text-primaryDark bg-primary-100;
+}
+
+.card-default .pager__item a.lightColor:focus {
+  @apply text-text-primaryDark shadow-focusRing;
+}
+
+.card-default .pager__item a.lightColor.is-active {
+  @apply text-text-primaryDark bg-backgroundPrimary-primaryLight;
+}
+
+.card-default .pager__item a.lightColor.is-active:focus {
+  box-shadow: none;
+}
+
+.card-default .pager__item a.darkColor:hover,
+.card-default .pager__item a.darkColor:focus,
+.card-default .pager__item a.darkColor.is-active {
+  @apply text-white bg-backgroundPrimary-primaryDark;
+}

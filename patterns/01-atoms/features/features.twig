@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Features 
+ */
+#}
+
+{# Default #}
+{% set icon = icon|default('icon-primary-1x') %}
+
+{# Template #}
+{% block features_list_block %}
+  {% if content|render|striptags|trim is not empty %}
+    <div class="flex flex-1 font-normal mb-4">
+      {% if icon|render|striptags|trim is not empty %}
+        <div>
+          {% include '@atoms/svg/svg.twig' with {
+            icon: icon,
+            size: 'w-6 h-6 mr-3'
+          } only %}
+        </div>
+      {% endif %}
+
+      <div>
+        <span class="text-text-body textMd-regular">{{ content }}</span>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

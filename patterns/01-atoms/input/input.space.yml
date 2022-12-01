@@ -1,0 +1,71 @@
+input:
+  use: "@atoms/input/input.twig"
+  namespace: "Atoms/Input"
+  label: Input
+  fields:
+    placeholder:
+      type: text
+      label: Input Label
+      preview: olivia@space.com
+    input_label:
+      type: text
+      label: Input label
+      preview: Email
+    hint_text:
+      type: text
+      label: Hint text
+      preview: This is a hint text to help user.  
+  settings:
+    input_type: 
+      type: select
+      required: true
+      label: Input type
+      options:
+        inputput_field: Input field
+        inputput_textarea: Input text Area
+        errorinput_field: Error Input Field
+        error_textarea: Error Text Area
+    input_state:
+      type: select
+      label: Input state
+      options:
+        hover: hover
+        active: active
+        disabled: disabled
+    attributes:
+      type: attributes
+      label: Attributes
+      preview: "type=\"input\""
+    size:
+      type: select
+      required: true
+      label: Size
+      preview: medium
+      options:
+        small: Small
+        medium: Medium
+    tooltip_icon:
+      type: boolean
+      label: Icon
+      default_value: true    
+    icon:
+      type: boolean
+      label: Icon
+      default_value: true
+    input_icon:
+      type: select
+      label: Icon
+      description: Go with an icon alongside your text.
+      preview: plus
+      options:
+        plus: Plus
+        search: Search
+        right-arrow: Right-arrow
+        tooltip: Tooltip
+    corner_style:
+      type: select
+      label: input style
+      description: input with rounded corners.
+      options:
+        rounded-3xl: Round
+  visibility: storybook

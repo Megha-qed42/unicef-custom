@@ -1,0 +1,19 @@
+{# Default #}
+{% set tag_name = tag_name|default('p') %}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set text_alignment = text_alignment|default('') %}
+
+{# Classes #}
+{% set classes = [
+  'paragraph',
+  text_alignment != 'left' ? 'text-' ~ text_alignment,
+] %}
+
+{# Template #}
+{% block paragraph_block %}
+  {% spaceless %}
+    <{{ tag_name }} {{ attributes.addClass(classes | sort | join(' ') | trim) }}>
+      {{ text }}
+    </{{ tag_name }}>
+  {% endspaceless %}
+{% endblock %}

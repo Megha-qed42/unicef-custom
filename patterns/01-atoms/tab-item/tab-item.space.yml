@@ -1,0 +1,9 @@
+tab-item:
+  use: '@atoms/tab-item/tab-item.twig'
+  label: Tab Item
+  description: Individual Tab item without variants or styling. The varinats are availe in the 'Tab' molecule.
+  fields:
+    text:
+      type: text
+      label: Tab Item content
+      preview: Item

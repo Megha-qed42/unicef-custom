@@ -1,0 +1,27 @@
+radio:
+  use: "@atoms/radio/radio.twig"
+  namespace: "Atoms/Radio"
+  label: Radio
+  fields:
+    text:
+      type: text
+      label: radio Label
+      preview: Remember me        
+  settings:
+    attributes:
+      type: attributes
+      label: Attributes
+      preview: "type=\"radio\""
+    size:
+      type: select
+      required: true
+      label: Size
+      preview: medium
+      options:
+        small: Small
+        medium: Medium
+    disabled:
+      type: boolean
+      label: Disabled state
+      default_value: false
+  visibility: storybook

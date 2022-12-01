@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * notification-banner
+ *
+ * See notification-banner.space.yaml for documentation.
+ */
+#}
+
+{# Classes #}
+{% set classes = ([
+  "notification_wrapper w-full top-0 left-0 clear-both bg-backgroundPrimary-primaryDark",
+  size,
+  align,
+  background,
+  layout,
+  background == "light" ? "bg-backgroundNeutral-neutralMedium",
+  background == "black" ? "bg-backgroundNeutral-neutralExtraDark",
+] | sort | join(' ') | trim )%}
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% block notification_banner_block %}
+  <div {{ attributes }}>
+    <div class="notification-bar relative">
+      <div class="notification-bar_innerwrapper mx-auto p-3.5 flex content-center items-center justify-center">
+        <div class="content text-center flex items-center">
+          {% if icon_visibility %}
+            <span class="inline-block mr-2">{% include "@atoms/svg/_svg--icon.twig" with {
+              icon: icon,
+              size: "h-4 w-4",
+            } only %}</span>
+          {% endif %}
+          {% if headline %}
+            {{ headline }}
+          {% endif %}        
+          {% if link %}
+            {{ link }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

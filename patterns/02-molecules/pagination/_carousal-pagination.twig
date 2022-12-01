@@ -1,0 +1,32 @@
+{# Classes #}
+{% set size = ([
+  size == 'small' ? 'px-2 py-2',
+  size == 'large' ? 'px-4 py-1',
+]) | sort | join(' ') | trim %}
+
+{# Template #}
+{% block carousel_pagination_block %}
+  <nav class="flex flex-col bg-white items-center carousal-pagination" role="navigation">
+    <ul class="flex flex-row">
+      {% for item in items %}
+      {% if (item.in_active_trail) %}
+        {% set classes = ([
+          "text-md font-primary m-2 flex is-active",
+          pattern_configuration('carousal-pagination', '', 'activecolors')[activecolor],
+          pattern_configuration('carousal-pagination', '', 'shapes')[shape],
+        ] | sort | join(' ') | trim )%}
+        {% else %}
+        {% set classes = ([
+          "text-md font-primary m-2 flex",
+          pattern_configuration('carousal-pagination', '', 'colors')[color],
+          pattern_configuration('carousal-pagination', '', 'shapes')[shape],
+        ] | sort | join(' ') | trim )%}
+        {% endif %}
+        <li>
+          <a class=" {{ classes }} {{size}}"
+            href="{{ item.link }}">{{ item.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endblock %}

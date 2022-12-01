@@ -1,0 +1,160 @@
+{#
+/**
+ * @file
+ * testimony card
+ *
+ * See card.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/card') }}
+
+{# Default #}
+{% set element = element|default('article') %}
+
+{# Classes #}
+{% set classes = [
+  'testimonial-card',
+  card_layout,
+  alignment == 'center' ? 'text-center center_aligned flex items-center flex-col m-auto',
+  alignment == 'simple' ? 'left_aligned',
+  full_box_link ? 'full_box_link' : '',
+  extra_classes ? extra_classes 
+] %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes| sort | join(' ') | trim) %}
+
+{# Template #}
+{% if card_layout == "large-avatar" %}
+  {% block testimonial_large_avatar_card %}
+    <{{ element }} {{ attributes.addClass() }}>
+      <div class="container mx-auto flex">
+        {% if image|render|trim %}
+          <div class="large-avatar-image-wrapper">
+            {{ image }}
+          </div>  
+        {% endif %}
+
+        <div class="large-avatar-content-wrapper">
+          <div class="mb-5 lg:mb-[2.8125rem]">
+            {% include "@atoms/svg/svg.twig" with {
+            "icon": "quote-shadow-green",
+            "size": "w-10 h-10"
+            } only %}
+          </div>
+
+          {% if text|render|striptags|trim %}
+            <div {{ region_attributes.text|default(create_attribute()).addClass('body text-text-body textLG-regular mb-6') }}>
+              {{ text }}
+            </div> 
+          {% endif %}
+
+          {% if name|render|striptags|trim %}
+            <div class="name-wrapper text-text-heading">
+              {{ name }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </{{ element }}>
+  {% endblock %}
+
+{% elseif card_layout == "avatar" %}
+  {% block testimonial_avatar_card %}
+    <{{ element }} {{ attributes.addClass() }}>
+      <div class="container mx-auto">
+        <div class="container-inner">
+          {% if image|render|trim %}
+            <div class="testimonial-avatar-image-wrapper">
+              {{ image }}
+            </div>  
+          {% endif %}
+
+          {% if text|render|striptags|trim %}
+            <div {{ region_attributes.text|default(create_attribute()).addClass('body text-text-heading textXL-regular my-5') }}>
+              {{ text }}
+            </div> 
+          {% endif %}
+
+          {% if name|render|striptags|trim %}
+            <div class="name-wrapper text-text-heading">
+              {{ name }}
+            </div>
+          {% endif %}
+
+          {% if designation|render|striptags|trim %}
+            <div {{ region_attributes.designation|default(create_attribute()).addClass('text-text-body textMd-regular') }}>
+              {{ designation }}
+            </div> 
+          {% endif %}
+        </div>
+      </div>
+    </{{ element }}>
+  {% endblock %}
+
+{% elseif card_layout == "company-logo-and-avatar" %}
+  {% block testimonial_company_logo_and_avatar_card %}
+    <{{ element }} {{ attributes.addClass() }}>
+      <div class="container mx-auto flex flex-col justify-center flex-wrap text-center">
+        <div class="top-section w-full lg:w-auto flex justify-center">
+          {{ company_logo }}
+        </div>
+        
+        {% if text|render|striptags|trim %}
+          <div {{ region_attributes.text|default(create_attribute()).addClass('card_text displaySm-medium text-text-heading maxMd:my-8 my-10 mx-auto') }}>
+            {{ text }}
+          </div> 
+        {% endif %}
+
+        <div class="bottom-section flex flex-wrap justify-center">
+          <div class="company-logo-and-avatar-image-wrapper">
+            {{ image }}
+          </div>
+
+          {% if name|render|striptags|trim %}
+            <div class="avatar-name text-text-heading w-full">
+              {{ name }}
+            </div>
+          {% endif %}
+
+          {% if designation|render|striptags|trim %}
+            <div {{ region_attributes.designation|default(create_attribute()).addClass('avatar-designation text-text-body textMd-regular') }}>
+              {{ designation }}
+            </div> 
+          {% endif %}
+        </div>
+      </div>
+    </{{ element }}>
+  {% endblock %}
+
+{% elseif card_layout == "login-logo-and-avatar" %}
+  {% block testimonial_login_logo_and_avatar_card %}
+    <{{ element }} {{ attributes.addClass() }}>
+      <div class="container mx-auto flex flex-col justify-center flex-wrap text-center">        
+        {% if text|render|striptags|trim %}
+          <div {{ region_attributes.text|default(create_attribute()).addClass('card_text displaySm-medium text-text-heading maxMd:my-8 my-10 mx-auto') }}>
+            {{ text }}
+          </div> 
+        {% endif %}
+
+        <div class="bottom-section flex flex-wrap justify-center">
+          <div class="company-logo-and-avatar-image-wrapper">
+            {{ image }}
+          </div>
+
+          {% if name|render|striptags|trim %}
+            <div class="avatar-name text-text-heading w-full">
+              {{ name }}
+            </div>
+          {% endif %}
+
+          {% if designation|render|striptags|trim %}
+            <div {{ region_attributes.designation|default(create_attribute()).addClass('avatar-designation text-text-body textMd-regular') }}>
+              {{ designation }}
+            </div> 
+          {% endif %}
+        </div>
+      </div>
+    </{{ element }}>
+  {% endblock %}
+{% endif %}

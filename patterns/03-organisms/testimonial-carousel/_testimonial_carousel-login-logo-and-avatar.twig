@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * 
+ *
+ * See testimonial-carousel.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/testimonial_carousel') }}
+
+{# Classes #}
+{% set classes = ([
+  'testimonial-carousel testimonial-carousel-login-logo-and-avatar'
+] | sort | join(' ') | trim ) %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% block login_logo_and_avatar_testimonial_carousel_block %}
+  <div {{ attributes }}>
+    <div class="testimonial-carousel-company-logo-and-avatar-wrapper">
+      {% include '@organisms/slider/slider.twig' with {
+        slides_type: slides_type,
+        slide_focus: slide_focus,
+        slides_per_view: slides_per_view,
+        slides_on_tablet: slides_on_tablet,
+        slides_on_mobile: slides_on_mobile,
+        slide_padding_right: slide_padding_right,
+        slide_padding_left: slide_padding_left,
+        arrows: arrows,
+        arrows_color: arrows_color,
+        items: items,
+        counter: counter,
+        autoplay: autoplay,
+        extra_classes: classes,
+        pagination_style: pagination_style,
+        pagination_color: pagination_color,
+        pagination_alignment: pagination_alignment
+      } only %}
+    </div>
+  </div>
+{% endblock %}

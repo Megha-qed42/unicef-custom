@@ -1,0 +1,20 @@
+footer_end_logo:
+  use: "@molecules/footer-end-logo/footer-end-logo.twig"
+  label: Footer End Logo
+  description: Example description
+  fields:
+    image:
+      type: pattern
+      label: Image
+      description: The image.
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          url: 'space-assets://images/qed42-design.svg'
+          classes: 'max-h-12 w-auto'
+  libraries:
+    - pattern_footer_end_logo:
+       css:
+         component:
+           ../footer-end-logo.css: {}

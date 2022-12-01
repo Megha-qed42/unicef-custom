@@ -1,0 +1,153 @@
+/* Sticky component becomes Slider on ipad & mobile */
+.sticky-component {
+
+  .sticky-wrapper {
+
+    #splide,
+    .splide {
+      @apply maxLg:mx-[-0.625rem] visible;
+
+      .splide__track {
+        @apply maxLg:mb-10;
+
+        .splide__list {
+          @apply w-full;
+        }
+
+        .splide__slide {
+          @apply px-0 maxLg:px-[0.625rem];
+        }
+      }
+
+      .splide__arrows {
+        @apply flex bottom-0 pb-5 lg:hidden;
+    
+        z-index: 1;
+    
+        .splide__arrow {
+          @apply w-11 h-11 p-0 flex justify-center items-center p-3.5 rounded-full mx-1.5;
+    
+          &[disabled] {
+            @apply cursor-default;
+          }
+    
+          svg {
+            @apply w-5 h-5;
+          }
+    
+          &--prev {
+            @apply rotate-180;
+          }
+        }
+      }
+    }
+  }
+
+  /* Slider arrows */
+  &.primary-dark-arrows {
+    
+    .splide__arrow {
+      @apply bg-backgroundPrimary-primaryDark;
+
+      svg {
+        @apply fill-white;
+
+        stroke: #fff;
+      }
+
+      &[disabled] {
+        @apply bg-backgroundPrimary-primaryExtraLight;
+      
+        svg {
+          fill: #DAEDED;
+          stroke: #DAEDED;
+        }
+      }
+    }
+  }
+
+  &.primary-light-arrows {
+
+    .splide__arrow {
+      @apply bg-backgroundPrimary-primaryExtraLight;
+
+      svg {
+        fill: #17494D;
+        stroke: #17494D;
+      }
+
+      &[disabled] {
+        @apply opacity-60;
+      }
+    }
+  }
+
+  &.primary-grey-arrows {
+
+    .splide__arrow {
+      @apply bg-black;
+
+      svg {
+        @apply fill-white;
+
+        stroke: #fff;
+      }
+
+      &[disabled] {
+        @apply bg-neutral-100;
+      
+        svg {
+          fill: #C2C8CC;
+          stroke: #C2C8CC;
+        }
+      }
+    }
+  }
+
+  &.primary-white-arrows {
+
+    .splide__arrow {
+      @apply bg-white;
+
+      svg {
+        fill: #68737D;
+        stroke: #68737D;
+      }
+
+      &[disabled] {
+        @apply opacity-60;
+      }
+    }
+  }
+
+  &.transparent-arrows {
+
+    .splide__arrow {
+      @apply bg-transparent;
+
+      svg {
+        fill: #68737d;
+        stroke: #68737d;
+      }
+
+      &[disabled] {
+        @apply opacity-60;
+      }
+    }
+  }
+
+  /* Arrows alignment */
+  &.center-align-arrows {
+
+    .container {
+      @apply justify-center;
+    }
+  }
+
+  &.right-align-arrows {
+
+    .container {
+      @apply justify-end;
+    }
+  }
+}

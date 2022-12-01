@@ -1,0 +1,346 @@
+/* Sticky components */
+
+/* Generic */
+.sticky-component {
+
+  /* Alignment */
+  &.right-align {
+      
+    .sticky-row {
+      @apply flex-row-reverse !important;
+    }
+  }
+}
+
+/* Variation 1 - Vertical Single image */
+.sticky-single-image-container {
+  @apply maxLg:mx-auto;
+
+  @media screen(maxLg) {
+    max-width: 40.5rem;
+  }
+
+  @media screen(maxMd) {
+    max-width: 32.6875rem;
+  }
+
+  @media screen(maxSm) {
+    max-width: 100%;
+  }
+
+  .sticky-wrapper {
+
+    .sticky-row {
+      @apply lg:flex flex-col lg:flex-row justify-between;
+    }
+
+    /* Image */
+    .sticky-media-wrapper {
+      @apply lg:flex lg:flex-col lg:items-stretch lg:justify-center lg:h-screen relative lg:sticky lg:top-0 xl:w-auto xl:max-w-[37rem] 2xl:max-w-50/100 overflow-hidden;
+
+      @media screen(lg) {
+        flex: 0 0 50%;
+      }
+  
+      .sticky-single-image-wrapper {
+        @apply lg:sticky top-0;
+  
+        .image-el,
+        picture img {
+          @apply w-full;
+        }
+      }
+    }
+  
+    /* Text */
+    .scroll-text-wrapper {
+      @apply maxLg:pt-10 lg:max-w-[40.2%] relative;
+  
+      @media screen(lg) {
+        flex: 0 0 40.2%;
+      }
+  
+      .container-inner {
+        @apply lg:flex lg:items-center h-full;
+  
+        .scroll-text-block {
+          @apply w-full relative lg:flex lg:flex-col lg:justify-start lg:items-start lg:h-[150vh];
+  
+          .scroll-text-div {
+            @apply lg:h-screen lg:sticky lg:top-0 lg:flex lg:flex-col lg:justify-center lg:items-start;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Variation 1 - Vertical Multiple images */
+.sticky-vertical-multiple-image-container {
+
+  .sticky-wrapper {
+
+    .sticky-row {
+      @apply lg:justify-between lg:content-start lg:flex lg:overflow-visible;
+    }
+
+    /* Image */
+    .sticky-media-wrapper {
+      @apply xl:w-auto xl:max-w-[37rem] 2xl:max-w-50/100;
+
+      @media screen(lg) {
+        flex: 0 0 50%;
+      }
+
+      .splide__container {
+        @apply lg:sticky lg:top-0 overflow-hidden;
+      }
+
+      .splide__track {
+        @apply lg:flex lg:flex-col lg:items-stretch lg:justify-center lg:h-screen relative mb-0 !important;
+      }
+  
+      .sticky-image-wrapper {
+        @apply relative w-full h-full flex items-center;
+
+        .list-item-sticky {
+          @apply w-full lg:absolute lg:left-0 lg:right-0;
+        }
+  
+        .image-el,
+        picture img {
+          @apply w-full block lg:object-cover lg:opacity-0;
+
+          will-change: opacity;
+          transition: 1000ms ease opacity;
+        }
+      }
+    }
+  
+    /* Text */
+    .scroll-text-wrapper {
+      @apply maxLg:pt-10 lg:max-w-[40.2%] relative;
+  
+      @media screen(lg) {
+        flex: 0 0 40.2%;
+      }
+  
+      .splide__track {
+        @apply lg:flex lg:items-center h-full lg:overflow-visible;
+  
+        .scroll-text-block {
+          @apply w-full relative lg:flex lg:flex-col lg:justify-start lg:items-start lg:h-[150vh];
+  
+          .scroll-text-div {
+            @apply lg:h-screen lg:sticky lg:top-0 lg:flex lg:flex-col lg:justify-center lg:items-start;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Variation 2 - Horizontal */
+.sticky-image-horizontal-container {
+
+  .list-wrapper {
+    @apply relative w-full lg:min-h-screen;
+
+    .space-holder {
+      @apply relative w-full;
+    }
+
+    .sticky-el {
+      @apply lg:sticky lg:top-0 lg:h-screen w-full lg:overflow-x-hidden;
+    }
+
+    .horizontal-el {
+      @apply lg:absolute lg:h-full;
+  
+      will-change: transform;
+    }
+  
+    .sticky-cards {
+      @apply relative h-full lg:flex lg:justify-start lg:items-start;
+  
+      flex-flow: row nowrap;
+    }
+  }
+
+  .list-item-sticky {
+    @apply relative lg:mr-[8.5rem] lg:flex-shrink-0 lg:w-[50rem];
+  
+    &:last-child {
+      @apply mr-0;
+    }
+
+    .sticky-image-wrapper {
+
+      .image-el,
+      picture img {
+        @apply w-full;
+      }
+    }
+  }
+}
+
+/* Variation 3 - Slim thumbnails - Vertical */
+.sticky-slim-thumbnails-container {
+
+  .sticky-wrapper {
+
+    .sticky-row {
+      @apply lg:justify-between lg:content-start lg:flex lg:overflow-visible;
+    }
+
+    /* Image */
+    .sticky-media-wrapper {
+      @apply lg:flex lg:flex-col lg:items-stretch lg:justify-center lg:h-screen relative lg:sticky lg:top-0 xl:w-auto xl:max-w-[37rem] 2xl:max-w-50/100 overflow-hidden;
+
+      @media screen(lg) {
+        flex: 0 0 57%;
+      }
+
+      @media screen(xl) {
+        flex: 0 0 50%;
+      }
+
+      .splide__track {
+        @apply relative xl:w-auto lg:overflow-visible mb-0 !important;
+      }
+  
+      .sticky-image-wrapper {
+        @apply lg:sticky lg:top-0 lg:flex lg:m-0;
+  
+        .list-item-sticky {
+          @apply lg:w-[5.5rem] xl:w-[6.5rem] lg:mr-2;
+
+          @media screen(lg) {
+            transition: width 0.6s ease 0s;
+          }
+
+          &.active-image {
+            @apply lg:w-[23rem];
+          }
+
+          &:last-child {
+            @apply mr-0;
+          }
+        }
+
+        .image-el,
+        picture img {
+          @apply w-full lg:h-[31.75rem] lg:object-cover;
+
+          @media screen(lg) {
+            aspect-ratio: 3/4;
+          }
+        }
+      }
+    }
+  
+    /* Text */
+    .scroll-text-wrapper {
+      @apply maxLg:pt-10 lg:max-w-[40.2%] relative;
+  
+      @media screen(lg) {
+        flex: 0 0 38%;
+      }
+
+      @media screen(xl) {
+        flex: 0 0 40.2%;
+      }
+  
+      .splide__track {
+        @apply lg:flex lg:items-center h-full lg:overflow-visible;
+  
+        .scroll-text-block {
+          @apply w-full relative lg:flex lg:flex-col lg:justify-start lg:items-start lg:h-[150vh];
+  
+          .scroll-text-div {
+            @apply lg:h-screen lg:sticky lg:top-0 lg:flex lg:flex-col lg:justify-center lg:items-start;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Variation 4 - Vertical Multiple fraction image and data */
+.sticky-vertical-multiple-fraction-container {
+
+  .sticky-wrapper {
+
+    .sticky-row {
+      @apply lg:justify-between lg:content-start lg:flex lg:overflow-visible gap-x-[64px];
+    }
+
+    /* Image */
+    .sticky-media-wrapper {
+      @apply xl:max-w-[50rem] 2xl:max-w-70/100;
+
+      @media screen(lg) {
+        flex: 0 0 70%;
+      }
+
+      .splide__track {
+        @apply relative xl:w-auto lg:overflow-visible mb-0 !important;
+      }
+  
+      .sticky-image-wrapper {
+        @apply relative lg:flex lg:flex-col m-0;
+
+        .list-item-sticky {
+          @apply w-full;
+        }
+  
+        .image-el,
+        picture img {
+          @apply w-full block object-cover;
+        }
+
+        .scroll-text-block {
+          @apply w-full relative lg:flex lg:flex-col lg:justify-start lg:items-start lg:h-[90vh];
+  
+          .scroll-text-div {
+            @apply lg:sticky lg:top-[20%] lg:flex lg:flex-col lg:justify-start lg:items-start lg:mb-[5rem];
+          }
+        }
+      }
+    }
+  
+    /* Text */
+    .scroll-text-wrapper {
+      @apply maxLg:pt-10 lg:max-w-[29%] relative;
+  
+      @media screen(lg) {
+        flex: 0 0 29%;
+      }
+
+      .list-item-sticky {
+        @apply lg:opacity-0;
+
+        @media screen(lg) {
+          will-change: opacity;
+          transition: 500ms ease-in-out opacity;
+        }
+
+        &.active-data {
+          @apply lg:opacity-100;
+        }
+      }
+  
+      .splide__track {
+        @apply lg:flex lg:items-center h-full lg:overflow-visible;
+  
+        .scroll-text-block {
+          @apply w-full relative lg:flex lg:flex-col lg:justify-start lg:items-start lg:h-[90vh];
+  
+          .scroll-text-div {
+            @apply lg:h-[50vh] lg:sticky lg:top-[20%] lg:flex lg:flex-col lg:justify-center lg:items-start lg:mb-[5rem];
+          }
+        }
+      }
+    }
+  }
+}

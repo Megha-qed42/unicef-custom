@@ -1,0 +1,209 @@
+# Testimonial Carousel - Cards
+testimonial_cards:
+  use: '@organisms/testimonial-carousel/_testimonial_cards-carousel.twig'
+  namespace: 'Organisms/Testimonial carousel'
+  label: Testimonial Carousel - Cards
+  description: The testimonial-carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: peoplecard
+          settings:
+            card_layout: testimony-with-avatar
+            card_corner: rounded
+        - id: peoplecard
+          settings:
+            card_layout: testimony-with-avatar
+            card_corner: rounded
+        - id: peoplecard
+          settings:
+            card_layout: testimony-with-avatar
+            card_corner: rounded
+        - id: peoplecard
+          settings:
+            card_layout: testimony-with-avatar
+            card_corner: rounded
+        - id: peoplecard
+          settings:
+            card_layout: testimony-with-avatar
+            card_corner: rounded
+        - id: peoplecard
+          settings:
+            card_layout: testimony-with-avatar
+            card_corner: rounded
+
+# Testimonial Carousel - Large avatar
+testimonial_carousel_large_avatar:
+  use: '@organisms/testimonial-carousel/_testimonial_carousel-large-avatar.twig'
+  namespace: 'Organisms/Testimonial carousel'
+  label: Testimonial Carousel - Large avatar
+  description: The testimonial-carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: testimonycard
+          settings:
+            card_layout: 'large-avatar'
+        - id: testimonycard
+          settings:
+            card_layout: 'large-avatar'
+        - id: testimonycard
+          settings:
+            card_layout: 'large-avatar'
+        - id: testimonycard
+          settings:
+            card_layout: 'large-avatar'
+        - id: testimonycard
+          settings:
+            card_layout: 'large-avatar'
+        - id: testimonycard
+          settings:
+            card_layout: 'large-avatar'
+
+# Testimonial Carousel - Simple avatar
+testimonial_carousel_simple_avatar:
+  use: '@organisms/testimonial-carousel/_testimonial_carousel-simple-avatar.twig'
+  namespace: 'Organisms/Testimonial carousel'
+  label: Testimonial Carousel - Simple avatar
+  description: The testimonial-carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: testimonycard
+          settings:
+            card_layout: 'avatar'
+            alignment: 'simple'
+        - id: testimonycard
+          settings:
+            card_layout: 'avatar'
+            alignment: 'simple'
+        - id: testimonycard
+          settings:
+            card_layout: 'avatar'
+            alignment: 'simple'
+        - id: testimonycard
+          settings:
+            card_layout: 'avatar'
+            alignment: 'simple'
+        - id: testimonycard
+          settings:
+            card_layout: 'avatar'
+            alignment: 'simple'
+        - id: testimonycard
+          settings:
+            card_layout: 'avatar'
+            alignment: 'simple'
+
+# Testimonial Carousel - Avatar Center
+testimonial_carousel_avatar_center:
+  use: '@organisms/testimonial-carousel/_testimonial_carousel-avatar-center.twig'
+  namespace: 'Organisms/Testimonial carousel'
+  label: Testimonial Carousel - Avatar Center
+  description: The testimonial-carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: testimonycard
+          settings:
+            card_layout: 'avatar'
+            alignment: 'center'
+        - id: testimonycard
+          settings:
+            card_layout: 'avatar'
+            alignment: 'center'
+        - id: testimonycard
+          settings:
+            card_layout: 'avatar'
+            alignment: 'center'
+        - id: testimonycard
+          settings:
+            card_layout: 'avatar'
+            alignment: 'center'
+        - id: testimonycard
+          settings:
+            card_layout: 'avatar'
+            alignment: 'center'
+        - id: testimonycard
+          settings:
+            card_layout: 'avatar'
+            alignment: 'center'
+
+# Testimonial Carousel - Company logo and Avatar
+testimonial_carousel_company_logo_and_avatar:
+  use: '@organisms/testimonial-carousel/_testimonial_carousel-company-logo-and-avatar.twig'
+  namespace: 'Organisms/Testimonial carousel'
+  label: Testimonial Carousel - Company logo and Avatar
+  description: The testimonial-carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: testimonycard
+          settings:
+            card_layout: 'company-logo-and-avatar'
+        - id: testimonycard
+          settings:
+            card_layout: 'company-logo-and-avatar'
+        - id: testimonycard
+          settings:
+            card_layout: 'company-logo-and-avatar'
+        - id: testimonycard
+          settings:
+            card_layout: 'company-logo-and-avatar'
+        - id: testimonycard
+          settings:
+            card_layout: 'company-logo-and-avatar'
+        - id: testimonycard
+          settings:
+            card_layout: 'company-logo-and-avatar'
+
+# Testimonial Carousel - Login logo and Avatar
+testimonial_carousel_login_logo_and_avatar:
+  use: '@organisms/testimonial-carousel/_testimonial_carousel-login-logo-and-avatar.twig'
+  namespace: 'Organisms/Testimonial carousel'
+  label: Testimonial Carousel - Login logo and Avatar
+  description: The testimonial-carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: testimonycard
+          settings:
+            card_layout: 'login-logo-and-avatar'
+        - id: testimonycard
+          settings:
+            card_layout: 'login-logo-and-avatar'
+        - id: testimonycard
+          settings:
+            card_layout: 'login-logo-and-avatar'
+        - id: testimonycard
+          settings:
+            card_layout: 'login-logo-and-avatar'

@@ -1,0 +1,120 @@
+.layout_type {
+
+  .horizontal {
+    @apply flex flex-col md:flex-row md:justify-between;
+
+    .progress_item {
+      @apply relative flex-row text-left mb-4 md:flex-1 md:flex-col md:text-center;
+
+      &:after {
+        @apply absolute border-l-2 h-9 border-solid border-backgroundPrimary-primaryDark top-[3.125rem] left-[0.563rem] md:w-full md:border-b-2 md:border-l-0 md:-top-6 md:left-[50%];
+
+        content: '';
+        z-index: 2;
+      }
+
+      .progress_tick_icon,
+      .progress_circle_icon {
+        @apply relative;
+
+        z-index: 5;
+      }
+
+      .progress_text {
+        @apply ml-2.5 mt-5;
+      }
+    }
+
+    .current {
+      @apply md:ml-5;
+
+      &:after {
+        @apply border-stroke-borderDefault;
+      }
+    }
+
+    .incomplete {
+
+      &:after {
+        @apply hidden;
+      }
+    }
+  }
+
+  .vertical {
+    @apply flex flex-col;
+
+    .progress_item {
+      @apply flex flex-row text-left mb-4;
+
+      .progress_text {
+        @apply ml-2.5 mt-5;
+      }
+
+      .line_icon {
+        @apply relative;
+
+        &:after {
+          content: '';
+
+          @apply block absolute top-8 left-[0.563rem] border w-0.5 h-9 rounded-sm;
+        }
+      }
+    }
+
+    .complete {
+
+      .line_icon {
+
+        &:after {
+          content: '';
+
+          @apply border-backgroundPrimary-primaryDark;
+        }
+      }
+    }
+
+    .incomplete {
+
+      .line_icon {
+
+        &:after {
+          content: '';
+
+          @apply hidden;
+        }
+      }
+    }
+  }
+
+  .current {
+
+    .progress_title,
+    .progress_decs {
+      @apply text-text-primaryDark;
+    }
+
+    .progress_title {
+      @apply text-text-heading;
+    }
+
+    .progress_circle_icon {
+      @apply border-primary-600 bg-backgroundPrimary-primaryLight;
+
+      .dot {
+        @apply bg-backgroundPrimary-primaryDark;
+      }
+    }
+  }
+
+  .incomplete {
+
+    .progress_circle_icon {
+      @apply bg-background-white;
+    }
+
+    .progress_title {
+      @apply text-text-heading;
+    }
+  }
+}

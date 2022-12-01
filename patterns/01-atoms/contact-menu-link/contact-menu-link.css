@@ -1,0 +1,38 @@
+/* Contact menu link with icon */
+
+.link-with-icons-wrapper,
+.menu-block-sub-header-footer-menu {
+
+	.icon-link-wrapper,
+	.menu {
+		@apply flex flex-col lg:flex-row justify-end;
+
+		.sub-menu-item {
+			@apply py-2 lg:py-0 px-0 lg:px-3 m-0;
+
+			max-width: fit-content;
+
+			&:hover {
+				@apply bg-transparent;
+			}
+
+			.link-element,
+			.contact-link {
+				@apply text-text-primaryDark;
+
+				&:hover {
+					@apply text-text-heading;
+				}
+			}
+
+			.icon-span {
+				@apply w-4 h-4 static ml-0 mr-3;
+
+				svg {
+					fill: #68737D;
+					stroke: #68737D;
+				}
+			}
+		}
+	}
+}

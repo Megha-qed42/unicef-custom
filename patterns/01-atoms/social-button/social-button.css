@@ -1,0 +1,11 @@
+/* Social button styling */
+.bg-facebookBlue, .bg-black {
+	.hover-icon,
+	.default-icon.hidden {
+		display: none;
+	}
+	.hover-icon.show-icon,
+	.default-icon {
+		display: inline-block;
+	}
+}

@@ -1,0 +1,83 @@
+
+{#
+/**
+ * @file
+ * Avatar Group listing
+ */
+#}
+
+{# Default #}
+{% set count = 0 %}
+
+{# Template #}
+{% block avatar_group_block %}
+	{% if variant == 'avatar_groups' %}
+		<div class="avatar-group-wrapper">
+			<div class="avatar-group-1">
+				{% for cell in cells_1 %}
+				{% set count = count + 1 %}
+				{% if count < 10 %}
+					<span class="avatar-item h-24">
+						{{ cell }}
+					</span>
+				{% else %}
+						<span class="avatar-item">
+							{% include "@atoms/image/image.twig" with {
+								"variant": "image",
+								"image_url": "./images/avatar-111.jpg",
+								"corners": "rounded",
+								"style": "24x24_xxs_sc"
+							} %}
+						</span>
+				{% endif %} 
+			{%- endfor -%}
+			</div>
+			<div class="avatar-group-2">
+				{% for cell2 in cells_2 %}
+					{% set count2 = count2 + 1 %}
+					{% if count2 < 10 %}
+						<span class="avatar-item">
+							{{ cell2 }}
+						</span>
+					{% else %}
+							<span class="avatar-item">
+								{% include "@atoms/image/image.twig" with {
+									"variant": "image",
+									"image_url": "./images/avatar-22.jpg",
+									"corners": "rounded",
+									"style": "32x32_xxs_sc"
+								} %}
+							</span>
+					{% endif %} 
+				{%- endfor -%}
+			</div>
+			<div class="avatar-group-3">
+				{% for cell3 in cells_3 %}
+					{% set count3 = count3 + 1 %}
+					{% if count3 < 10 %}
+						<span class="avatar-item">
+							{{ cell3 }}
+						</span>
+					{% else %}
+							<span class="avatar-item">
+								{% include "@atoms/image/image.twig" with {
+									"variant": "image",
+									"image_url": "./images/avatar-34.jpg",
+									"corners": "rounded",
+									"style": "40x40_xxs_sc"
+								} %}
+							</span>
+					{% endif %} 
+				{%- endfor -%}
+			</div>
+		</div>
+		{% elseif variant == 'avatar_label' %}
+			<div class="avatar-label-group-wrapper">
+				{% for cell4 in cells_4 %}
+					<div class="avatar-label-item">
+						{{ cell4 }}
+					</div>
+				{%- endfor -%}		
+			</div>
+	{% endif %}
+{% endblock %}

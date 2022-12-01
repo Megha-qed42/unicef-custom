@@ -1,0 +1,38 @@
+/* Toggles */
+
+.toggles .slider:before {
+	@apply absolute w-4 h-4 left-0.5 bottom-0.5 bg-white transition duration-300;
+
+	content: '';
+	box-shadow: 0 0.0625rem 0.1875rem rgba(16, 24, 40, 0.1), 0 0.0625rem 0.125rem rgba(16, 24, 40, 0.06);
+}
+
+.toggles input:checked + .slider {
+	@apply bg-backgroundPrimary-primaryDark;
+}
+
+.toggles input:checked + .slider:before {
+	@apply translate-x-4;
+}
+
+/* Rounded sliders */
+.toggles .slider:before {
+	@apply rounded-full;
+}
+
+/* Size */
+.toggles.medium .slider {
+	@apply w-11 h-6;
+}
+
+.toggles.medium .slider:before {
+	@apply w-5 h-5 left-0.5 bottom-0.5;
+}
+
+.toggles.medium input:checked + .slider:before {
+	@apply translate-x-5;
+}
+
+.toggles.medium .element-label {
+	@apply text-base;
+}

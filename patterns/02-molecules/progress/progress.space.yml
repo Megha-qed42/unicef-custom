@@ -1,0 +1,51 @@
+progress:
+  use: "@molecules/progress/progress.twig"
+  label: Progress
+  description: To show the progress in three different stages
+  fields:
+    progress_items:
+      type: pattern
+      label: Progress Base Items
+      multi_value_type: items
+      description: Progress Icon with text
+      preview:
+        - id: progress_base
+          fields:
+            title: 'Your details'
+            desc: 'Name and email'
+          settings:
+            extra_classes: complete
+            icon_type: icon-primary-1x
+
+        - id: progress_base
+          fields:
+            title: 'Company details'
+            desc: 'Website and location'
+          settings:
+            extra_classes: complete
+            icon_type: icon-primary-1x
+
+        - id: progress_base
+          fields:
+            title: 'Invite your team'
+            desc: 'Start collaborating'
+          settings:
+            extra_classes: current
+            icon_type: circle
+
+        - id: progress_base
+          fields:
+            title: 'Add your socials'
+            desc: 'Automatic sharing'
+          settings:
+            extra_classes: incomplete
+            icon_type: circle
+  settings:
+    layout_type:
+      type: select
+      label: Layout
+      options:
+        vertical: Vertical
+        horizontal: Horizontal
+      preview: 'horizontal'
+      default: horizontal

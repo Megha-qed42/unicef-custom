@@ -1,0 +1,144 @@
+block_navigation:
+  use: "@molecules/block-navigation/block-navigation.twig"
+  namespace: "Molecules/Block Navigation"
+  label: Block Navigation - Light
+  description: Block Navigation with base font size, and primary light text color.
+  fields:
+    heading:
+      type: text
+      label: Content
+      preview: Quick Links
+    content:
+      type: pattern
+      label: Content
+      preview:
+        id: navigation
+        variant: default
+        settings:
+          font_size: font-small
+          text_color: on-white-background
+
+block_navigation_dark:
+  use: "@molecules/block-navigation/block-navigation-dark.twig"
+  namespace: "Molecules/Block Navigation"
+  label: Block Navigation - Dark
+  description: Block Navigation with base font size, and primary dark text color.
+  fields:
+    heading:
+      type: text
+      label: Content
+      preview: Quick Links
+    content:
+      type: pattern
+      label: Content
+      preview:
+        id: navigation
+        variant: default
+        settings:
+          font_size: font-small
+          text_color: on-white-background
+
+block_navigation_5xl:
+  use: "@molecules/block-navigation/block-navigation-5xl.twig"
+  namespace: "Molecules/Block Navigation"
+  label: Block Navigation - 5xl with arrow
+  description: Block Navigation with 5xl font size, arrow icon and body text color.
+  fields:
+    heading:
+      type: text
+      label: Content
+      preview: Quick Links
+    content:
+      type: pattern
+      label: Content
+      preview:
+        id: navigation
+        variant: with-arrow
+        settings:
+          font_size: font-large
+          text_color: on-white-background
+
+block_navigation_base:
+  use: "@molecules/block-navigation/block-navigation-base.twig"
+  namespace: "Molecules/Block Navigation"
+  label: Block Navigation - Base with arrow
+  description: Block Navigation with base font size, arrow icon and primary dark text color.
+  fields:
+    heading:
+      type: text
+      label: Content
+      preview: Quick Links
+    content:
+      type: pattern
+      label: Content
+      preview:
+        id: navigation
+        variant: with-arrow
+        settings:
+          font_size: font-small
+          text_color: on-white-background
+
+block_navigation_horizontal:
+  use: "@molecules/block-navigation/block-navigation-horizontal.twig"
+  namespace: "Molecules/Block Navigation"
+  label: Block Navigation - Horizontal
+  description: Block Navigation horizontal with base font.
+  fields:
+    heading:
+      type: text
+      label: Content
+      preview: Quick Links
+    content:
+      type: pattern
+      label: Content
+      preview:
+        id: navigation
+        variant: horizontal
+        settings:
+          font_size: font-small
+          text_color: on-white-background
+
+block_navigation_horizontal_dark:
+  use: "@molecules/block-navigation/block-navigation-horizontal-dark.twig"
+  namespace: "Molecules/Block Navigation"
+  label: Block Navigation - Horizontal Dark
+  description: Block Navigation horizontal with base font and primary dark text.
+  fields:
+    heading:
+      type: text
+      label: Content
+      preview: Quick Links
+    content:
+      type: pattern
+      label: Content
+      preview:
+        id: navigation
+        variant: horizontal
+        settings:
+          font_size: font-small
+          text_color: on-white-background
+
+block_navigation_header_sub_menu:
+  use: "@molecules/block-navigation/block-navigation-header-submenu.twig"
+  namespace: "Molecules/Block Navigation"
+  label: Block Navigation - Header Submenu
+  description: Block Navigation with base font size, and primary dark text color.
+  fields:
+    heading:
+      type: text
+      label: Content
+      preview: Quick Links
+    content:
+      type: pattern
+      label: Content
+      preview:
+        id: navigation
+        variant: default
+        settings:
+          font_size: font-small
+          text_color: on-white-background
+  settings:
+    extra_classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''

@@ -1,0 +1,153 @@
+{#
+/**
+ * @file
+ * modal
+ *
+ * See modal.space.yaml for documentation.
+ */
+#}
+
+{# Classes #}
+{% set classes = ([
+  modal_layout,
+] | sort | join(' ') | trim ) %}
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{% set icon_spacing = ([
+  icon_position == 'topleft' ? 'md:pb-5 sm:pb-4',
+  icon_position == 'topcenter' ? 'sm:pb-4',
+]) | sort | join(' ') | trim %}
+
+{% set icon_position = ([
+  icon_position == 'left' ? 'md:flex-row flex-col md:items-start items-center gap-x-6',
+  icon_position == 'topleft' ? 'flex-col sm:items-start',
+  icon_position == 'topcenter' ? 'flex-col items-center',
+]) | sort | join(' ') | trim %}
+
+{% set text_center = ([
+  text_center == true ? 'text-center',
+]) | sort | join(' ') | trim %}
+
+{# Template #}
+{% block modal_popup_block %}
+  <div class="z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+    
+      <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+
+      <!-- This element is to trick the browser into centering the modal contents. -->
+      <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+      <div {{ attributes.addClass("modal-box inline-block align-bottom bg-white rounded-xl text-left overflow-hidden shadow-xl transform transition-all") }}>
+        <div class="modal-content bg-white p-4 md:p-6">
+          <div class="flex {{ icon_position }}">
+            <div class="{{ icon_spacing }}">
+
+            {# Modal Header #}
+            <div class="modal-header">
+              {% if icon %}
+                <span class="inline-block mb-0 icon">
+                  {% include "@atoms/svg/_svg--icon.twig" with {
+                    icon: icon,
+                    size: "h-5 w-5",
+                  } only %}
+                </span>
+              {% endif %}
+            </div>
+          </div>
+
+          {# Modal Body  #}
+          <div class="modal-body mt-3 text-center sm:mt-0 sm:text-left">
+            <div class="text-lg leading-6 font-medium text-gray-900 {{ text_center }}" id="modal-title">
+              {{ headline }}
+            </div>
+            <div class="description">
+              <p class="textSm-regular text-gray-500 {{ text_center }}">
+                {{ text }}
+              </p>
+            </div>
+
+              {# Password Prompt #}
+              {% if(sign_in == true)  %}
+                <div class="modal_form mt-5">
+                  {{ email_label }}
+                  {{ email }}
+                  {{ password_label }}
+                  {{ password }}
+                </div>
+              {% endif %}
+
+              {# Basic Plan #}
+              {% if(plan == true)  %}
+                <div class="plan-block mt-5">
+                  <ul class="plan-list">
+                    <li class="plan-item flex flex-wrap rounded-lg p-3.5 mb-3">
+                      <div class="icon-text flex flex-1">
+                        {% include "@atoms/svg/_svg--icon.twig" with {
+                          icon: 'icon-primary-light-circle-outline-5x',
+                          size: 'Large',
+                          fill_color: 'text-white'
+                        } only %}
+                        <div class="pr-1 pl-3.5 flex-1">
+                          <p class="textSm-regular text-text-body"><span class="textSm-medium text-text-heading">{{ plan_title }}</span>{{ plan_month }}</p>
+                          <p class="textSm-regular text-text-body">{{ plan_description }}<p>
+                        </div>  
+                      </div>
+                      {{ select_plan }}
+                    </li>
+                    <li class="plan-item flex flex-wrap rounded-lg p-3.5 mb-3">
+                      <div class="icon-text flex flex-1">
+                        {% include "@atoms/svg/_svg--icon.twig" with {
+                          icon: 'icon-primary-light-circle-outline-5x',
+                          size: 'Large',
+                          fill_color: 'text-white'
+                        } only %}
+                        <div class="pr-1 pl-3.5 flex-1">
+                          <p class="textSm-regular text-text-body"><span class="textSm-medium text-text-heading">{{ plan_title }}</span>{{ plan_month }}</p>
+                          <p class="textSm-regular text-text-body">{{ plan_description }}<p>
+                        </div>  
+                      </div>
+                      {{ select_plan }}
+                    </li>
+                    <li class="plan-item flex flex-wrap rounded-lg p-3.5 mb-3">
+                      <div class="icon-text flex flex-1">
+                        {% include "@atoms/svg/_svg--icon.twig" with {
+                          icon: 'icon-primary-light-circle-outline-5x',
+                          size: 'Large',
+                          fill_color: 'text-white'
+                        } only %}
+                        <div class="pr-1 pl-3.5 flex-1">
+                          <p class="textSm-regular text-text-body"><span class="textSm-medium text-text-heading">{{ plan_title }}</span>{{ plan_month }}</p>
+                          <p class="textSm-regular text-text-body">{{ plan_description }}<p>
+                        </div>  
+                      </div>
+                      {{ select_plan }}
+                    </li>
+                  </ul>
+                </div>
+              {% endif %}
+
+              {# Disclaimer #}
+              {% if(enable_disclaimer == true)  %}
+                <div class="sm:flex sm:justify-between sm:items-baseline">
+                  <div class="hidden md:block">{{ disclaimer }}</div>
+                  <div class="modal-footer pt-6 sm:flex flex-row-reverse xs:flex-col gap-3">          
+                    {{ confirm_btn }}
+                    {{ cancel_btn }}
+                  </div>
+                </div>
+              {% else %}
+                
+                {# Modal Footer #}
+                <div class="modal-footer pt-6 md:pt-8 sm:flex flex-row-reverse xs:flex-col gap-3">          
+                  {{ confirm_btn }}
+                  {{ cancel_btn }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

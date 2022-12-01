@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Tooltip 
+ */
+#}
+
+{# Default #}
+{% set size = size|default('white') %}
+
+{# Classes #}
+{% set classes = ([
+  "font-secondary leading-5 text-xs py-2 px-3 drop-shadow-2xl rounded-lg inline-block bg-white text-neutral-800 invisible tooltiptext",  
+  pattern_configuration('tooltip', '', 'position')[arrowposition],
+] | sort | join(' ') | trim )%}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% block tooltip_block %}
+  <div class='tooltip'>
+    {% include "@atoms/svg/_svg--icon.twig" with {
+      icon: 'helpCircle',
+      size: 'w-3.5 h-3.5',
+      fill_color: 'text-neutral-800'
+    } only %}
+    <span {{ attributes }}>    
+      <span class="header font-medium">
+        {% block tooltip_header %}
+          {{ header }}
+        {% endblock %}
+      </span>
+      {% if content|trim is not empty %} 
+        <span class="flex-1 font-normal mt-1 content">
+        {% block content %}
+            {{ content }}
+        {% endblock %}
+        </span>
+      {% endif %}
+    </span>
+  </div>
+{% endblock %}

@@ -1,0 +1,119 @@
+{#
+/**
+ * @file
+ * pricing card
+ *
+ * See card.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/card') }}
+
+{# Default #}
+{% set element = element|default('div') %}
+
+{# Classes #}
+{% set classes = [
+  background,
+  card_layout,
+  background == "primary" ? "bg-primary-100",
+  'pricing__card border border-solid border-stroke-dividerLight rounded-2xl pt-6 md:pt-8 relative shadow-md hover:shadow-xl',
+  extra_classes ? extra_classes
+] %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes| sort | join(' ') | trim) %}
+
+{# Template #}
+{% if card_layout == "withicon" %}
+  {% block pricing_card_with_icon %}
+    <{{ element }} {{ attributes }}>
+      {% if icon_name|render|striptags|trim %}
+        <div class="mb-5 flex justify-center">
+          {% include "@atoms/svg/_svg--icon.twig" with {
+            icon: icon_name,
+            size: "h-10 w-10",
+          } only %}
+        </div>
+      {% endif %}
+
+      <div class="pricing-info px-6 md:px-8 {{ button ? 'having-cta' }}">
+        {% if plan|render|striptags|trim %}
+          <h4 class="price_plan text-center textXL-semibold leading-[1.875rem] font-medium text-text-primaryDark">
+            {{ plan }}
+          </h4>
+        {% endif %}
+
+        {% if headline|render|striptags|trim %}
+          <div class="headline-wrapper my-2 text-center">
+            {{ headline }}
+          </div>
+        {% endif %}
+
+        {% if desc|render|striptags|trim %}
+          <div class="mb-8 text-center textMd-regular text-text-body">
+            {{ desc }}
+          </div>
+        {% endif %}
+
+        {% for item in items %}
+          <div class="mb-4">
+            {{ item }}
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if button|render|striptags|trim %}
+        <div class="bottom-cta p-6 md:p-8 mt-6 md:mt-8">
+          {{ button }}
+        </div>
+      {% endif %}
+    </{{ element }}>
+  {% endblock %}
+
+{% elseif card_layout == "withouticon" %}
+  {% block pricing_card_without_icon %}
+    <{{ element }} {{ attributes }}>    
+      <div class="pricing__card__wrapper text-left">
+        <div class="top-section flex flex-wrap px-6 md:px-8">
+          {% if plan|render|striptags|trim %}
+            <div class="top">
+              <h4 class="price_plan displayXs-semibold text-text-primaryDark">
+                {{ plan }}
+              </h4>
+
+              {% if badge %}
+                {{ badge }}
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if desc|render|striptags|trim %}
+            <div class="mb-2 textMd-regular text-text-body">
+              {{ desc }}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="pricing-info px-6 md:px-8 {{ button ? 'having-cta' }}">
+          {% if headline|render|striptags|trim %}
+            <div class="headline-wrapper mb-6">
+              {{ headline }}
+            </div>
+          {% endif %}
+
+          {% for item in items %}
+            <div class="mb-4">
+              {{ item }}
+            </div>
+          {% endfor %}
+        </div>
+
+        {% if button|render|striptags|trim %}
+          <div class="bottom-cta p-6 md:p-8 mt-6 md:mt-8">
+            {{ button }}
+          </div>
+        {% endif %}
+      </div>
+    </{{ element }}>
+  {% endblock %}
+{% endif %}

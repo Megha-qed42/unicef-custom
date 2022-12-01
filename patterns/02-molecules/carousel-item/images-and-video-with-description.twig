@@ -1,0 +1,55 @@
+{# Default #}
+{% set tag_name = tag_name|default('div') %}
+{% set attributes = attributes|default(create_attribute()) %}
+
+{# Classes #}
+{% set classes = [
+  'carousel-item',
+] %}
+
+{# Template #}
+{% block carousel_item_image_video_with_description %}
+  {% spaceless %}
+    <{{ tag_name }} {{ attributes.addClass(classes | sort | join(' ') | trim) }}>
+      <div class="container h-full mx-auto">
+        <div class="item-images-and-video-with-description relative">
+          <div class="data-col grid grid-cols-1 lg:grid-cols-12 gap-y-6 md:gap-x-8">
+            <div class="col-one lg:col-span-6">
+              {% if title|render|striptags|trim is not empty %}
+                {% block title %}
+                  {{ title }}
+                {% endblock %}
+              {% endif %}
+            </div>
+
+            <div class="col-two lg:col-span-6">
+              {% if description|render|striptags|trim is not empty %}
+                <div class="description textLG-regular">
+                  {% block description %}
+                    {{ description }}
+                  {% endblock %}
+                </div>
+              {% endif %}
+
+              {% if button_1|render|striptags|trim is not empty %}
+                <div class="cta-button flex flex-col md:flex-row md:justify-start">
+                  <div{{ region_attributes.button_1|default(create_attribute()).addClass('mb-3 md:mb-0 md:mr-3') }}>{{ button_1 }}</div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="image-col">
+            {% if (video is not empty and image is not empty) %}
+              <div {{ region_attributes.video|default(create_attribute()).addClass('carousel-video') }}>{{ video }}</div>
+            {% endif %}
+            
+            {% if image|render|trim is not empty %}
+              {{ image }}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </{{ tag_name }}>
+  {% endspaceless %}
+{% endblock %}

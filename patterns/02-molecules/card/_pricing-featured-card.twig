@@ -1,0 +1,90 @@
+{#
+/**
+ * @file
+ * pricing featured card
+ *
+ * See card.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/card') }}
+
+{# Default #}
+{% set element = element|default('div') %}
+
+{# Classes #}
+{% set classes = [
+  background,
+  background == "primary" ? "bg-primary-100",
+  'pricing__card featuredlist border border-solid border-stroke-dividerLight rounded-2xl p-8 relative shadow-md hover:shadow-xl',
+  extra_classes ? extra_classes
+] %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes| sort | join(' ') | trim) %}
+
+{# Template #}
+{% block pricing_featured_card %}
+  <{{ element }} {{ attributes }}>    
+    <div class="pricing__card__wrapper text-left">
+      <div class="top-section flex items-center overflow-hidden p-6 md:p-8 border-b border-solid border-text-neutralLight">
+        <div class="left flex flex-wrap items-center">
+          {% if plan|render|striptags|trim %}
+            <div class="top ">
+              <h4 class="price_plan text-center displayXs-semibold text-text-heading">
+                {{ plan }}
+              </h4>
+
+              {% if badge %}
+                {{ badge }}
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if desc|render|striptags|trim %}
+            <div class="bottom"> 
+              <div class="text-left textMd-regular text-text-body">
+                {{ desc }}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="right flex flex-wrap items-center">
+          {% if headline|render|striptags|trim %}
+            <div class="headline-wrapper my-0 text-center">
+              <span class="price-sign displayMd-semibold text-text-heading">{{ price }}</span> {{ headline }} <span class="plan-package textMd-medium text-text-body">{{ plan_package }}</span>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="middle-section flex flex-wrap p-6 md:p-8 {{ button ? 'having-cta' }}">
+        <div class="features-list-content-wrapper flex flex-wrap mb-6">
+          {% if features_list_title|render|striptags|trim %}
+            <h2 class="features-list-title uppercase textMd-bold text-text-heading mb-1 w-full">
+              {{ features_list_title }}
+            </h2>
+          {% endif %}
+
+          {% if features_list_description|render|striptags|trim %} 
+            <div class="features-list-description textMd-regular text-text-body w-full">
+              {{ features_list_description }}
+            </div>
+          {% endif %}
+        </div>
+
+        {% if details %}
+          <div class="features-listing-wrapper">      
+            {{ details }}  
+          </div>        
+        {% endif %}
+      </div>
+
+      {% if button|render|striptags|trim %}
+        <div class="bottom-cta mt-10 p-6 md:p-8 border-t border-solid border-text-neutralLight">
+          {{ button }}
+        </div>
+      {% endif %}
+    </div>
+  </{{ element }}>
+{% endblock %}

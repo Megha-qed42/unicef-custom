@@ -1,0 +1,48 @@
+/* Newsletter form - Drupal */
+
+[id^="simplenews-subscriptions-block"] {
+  @apply md:flex;
+
+  .form-item {
+
+    .field-label,
+    .form-item__description {
+      @apply hidden;
+    }
+
+    .email-input-wrapper {
+      @apply mb-3 md:mb-0;
+
+      .form-input {
+        @apply text-text-body py-[0.6875rem];
+
+        &::placeholder {
+          @apply pt-px;
+        }
+      }
+    }
+  }
+
+  label[id^="edit-message"] {
+    @apply mb-4 mr-4;
+  }
+
+  .field--widget-simplenews-subscription-select {
+    @apply hidden;
+  }
+
+  .form-actions {
+    @apply flex md:inline-flex;
+
+    input {
+      @apply w-full md:w-auto py-[0.6875rem];
+    }
+  }
+}
+
+.email-form,
+.subscribe__block {
+  .email-input-wrapper {
+    @apply pb-0;
+  }
+}

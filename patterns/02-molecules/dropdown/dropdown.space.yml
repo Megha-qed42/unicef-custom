@@ -1,0 +1,253 @@
+dropdown:
+  use: "@molecules/dropdown/dropdown.twig"
+  label: Dropdown
+  description: Dropdown component with variants of listing, avatar with header.
+  fields:
+    avatar_header:
+      type: pattern
+      label: Dropdown with avatar heading
+      preview: 
+        -
+          id: avatar
+          variant: avatar_label
+          settings:
+            image_url: "space-assets://images/avatar-12.jpg"
+            image_style: 40x40_xxs_sc
+            corner_style: rounded
+            full_name: ''
+            link_text: ''
+            icon: ''
+    text_header:
+      type: text
+      label: Dropdown with text header
+      preview : Account menu
+    list_text_items:
+      type: pattern
+      label: List Items
+      multi_value_type: items
+      preview:
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'View profile'
+            dropdown_type: text
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Settings'
+            dropdown_type: text
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Keyboard shortcuts'
+            dropdown_type: text
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Company profile'
+            dropdown_type: text
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'View profile'
+            dropdown_type: text
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Team'
+            dropdown_type: text
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Invite colleagues'
+            dropdown_type: text
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Changelog'
+            dropdown_type: text  
+
+    list_text_with_icon_items:
+      type: pattern
+      label: List with icon items
+      multi_value_type: items
+      preview:
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'View profile'
+            dropdown_type: text-with-icon
+            icon: 'user'
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Settings'
+            dropdown_type: text-with-icon
+            icon: 'settings'
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Keyboard shortcuts'
+            dropdown_type: text-with-icon
+            icon: 'zap'
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Company profile'
+            dropdown_type: text-with-icon
+            icon: 'home'
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Team'
+            dropdown_type: text-with-icon
+            icon: 'users'
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Invite colleagues'
+            dropdown_type: text-with-icon
+            icon: 'userPlus'
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Changelog'
+            dropdown_type: text-with-icon
+            icon: '2Layers'
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Slack Community'
+            dropdown_type: text-with-icon
+            icon: 'slack'
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Support'
+            dropdown_type: text-with-icon
+            icon: 'drupal-support-staff'
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'API'
+            dropdown_type: text-with-icon
+            icon: 'code'
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Log out'
+            dropdown_type: text-with-icon
+            icon: 'logout'            
+    list_text_with_checkbox_items:
+      type: pattern
+      label: List with checkbox Items
+      multi_value_type: items
+      preview:
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'View profile'
+            dropdown_type: text-with-checkbox
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Settings'
+            dropdown_type: text-with-checkbox
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Keyboard shortcuts'
+            dropdown_type: text-with-checkbox
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Company profile'
+            dropdown_type: text-with-checkbox
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'View profile'
+            dropdown_type: text-with-checkbox
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Team'
+            dropdown_type: text-with-checkbox
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Invite colleagues'
+            dropdown_type: text-with-checkbox
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Changelog'
+            dropdown_type: text-with-checkbox
+    list_text_with_avatar_items:
+      type: pattern
+      label: List with Avatar Items
+      multi_value_type: items
+      preview:
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'View profile'
+            dropdown_type: text-with-avatar
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Settings'
+            dropdown_type: text-with-avatar
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Keyboard shortcuts'
+            dropdown_type: text-with-avatar
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Company profile'
+            dropdown_type: text-with-avatar
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'View profile'
+            dropdown_type: text-with-avatar
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Team'
+            dropdown_type: text-with-avatar
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Invite colleagues'
+            dropdown_type: text-with-avatar
+        -
+          id: dropdown_item
+          settings:
+            list_text: 'Changelog'
+            dropdown_type: text-with-avatar          
+  settings:
+    dropdown_list_type:
+      type: select
+      label: Dropdown type
+      preview: text
+      options:
+        text: Text only
+        text-with-icon: Text with icon
+        text-with-checkbox: Text with checkbox
+        text-with-avatar: Text with avatar
+    list_heading:
+      type: select
+      label: Dropdown heading
+      options:
+        header: Text header
+        avatar: Avatar header
+    dropdown_button_type:
+      type: select
+      label: Button type
+      preview: text-button
+      options:
+        text-button: Text Button
+        avatar-button: Avatar Button

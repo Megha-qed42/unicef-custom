@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * tabs
+ *
+ * See tabs.space.yaml for documentation.
+ */
+#}
+
+{# Defaults #}
+{% set count = 1 %}
+
+{# Template #}
+{% block tabs_items_list %}
+	<nav class="tabs__container">
+		<ul id="blocktabs__nav" class='flex tabs__box'>
+			{% for tab in tab_1 %}
+				{% include "@atoms/tab-item/tab-item.twig" with {
+					"text": "Item"~ count,
+					"tab_item_size": tab_item_size,
+					"tab_item_type": tab_item_type,
+					"icon": icon,
+				} %}
+				{% set count = count + 1 %}
+			{% endfor %}
+		</ul>
+	</nav>
+{% endblock %}

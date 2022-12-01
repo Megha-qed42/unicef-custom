@@ -1,0 +1,70 @@
+nlevel_menu:
+  use: "@molecules/n-level-menu/_n-level-menu.twig"
+  label: N-Level menu
+  description: Default N-Level menu.
+  fields:
+    items:
+      type: object
+      label: Items
+  settings:
+    custom_wrapper_classes: 
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''
+  variants:
+    default:
+      label: Default
+      fields:
+        items:
+          1:
+            title: Legal Resources
+            url: "#"
+            in_active_trail: true
+            below:
+              10:
+                title: Housing Resources
+                url: "#"
+              11:
+                title: Foreclosure Prevention
+                url: "#"
+              12:
+                title: Unemployment Insurance
+                url: "#"
+              13:
+                title: Public Benefits
+                url: "#"
+              14:
+                title: Social Security
+                url: "#"
+              15:
+                title: Domestic Violence & Family Law Resources
+                url: "#"
+              16:
+                title: Tax and Stimulus Information
+                url: "#"
+              17:
+                title: Debt Collection
+                url: "#"  
+              18:
+                title: Appeals
+                url: "#"
+              19:
+                title: Criminal Records
+                url: "#"
+              20:
+                title: Other Legal Organizations
+                url: "#"                            
+          2:
+            title: What We Do
+            url: "<nolink>"
+            below:
+              10:
+                title: What We Do 1
+                url: "#"
+              11:
+                title: What We Do 5
+                url: "#"                 
+          3:
+            title: Donate
+            url: "#"
+  visibility: storybook

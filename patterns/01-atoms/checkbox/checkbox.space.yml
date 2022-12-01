@@ -1,0 +1,33 @@
+checkbox:
+  use: '@atoms/checkbox/checkbox.twig'
+  namespace: 'Atoms/Checkbox'
+  label: Checkbox
+  fields:
+    text:
+      type: text
+      label: Checkbox Label
+      preview: Remember me
+  settings:
+    attributes:
+      type: attributes
+      label: Attributes
+      preview: 'type="checkbox"'
+    state:
+      type: select
+      label: Checkbox State
+      options:
+        indeterminate-state: Indeterminate
+        rounded: rounded
+    size:
+      type: select
+      required: true
+      label: Size
+      preview: medium
+      options:
+        small: Small
+        medium: Medium
+    disabled:
+      type: boolean
+      label: Disabled state
+      default_value: false
+  visibility: storybook

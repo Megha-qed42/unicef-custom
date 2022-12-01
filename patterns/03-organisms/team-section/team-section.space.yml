@@ -1,0 +1,440 @@
+# Simple 1
+team_section_simple_1:
+  use: '@organisms/team-section/_team_section_simple_1.twig'
+  namespace: 'Organisms/Team sections'
+  label: Team sections - Simple 1
+  description: 'The team section simple 1 pattern - people-with-avatar.'
+  fields:
+    intro_section:
+      type: pattern
+      label: Intro section
+      preview:
+        - id: section_heading
+          fields:
+            label: 'We’re hiring!'
+            title: '<h3 class="displayMd-semibold headline">Meet our team</h3>'
+            description: '<p>Our philosophy is simple — hire a team of diverse, passionate people and foster a culture that empowers you to do you best work.</p>'
+          settings:
+            alignment: center
+    team_member:
+      type: pattern
+      label: Team member
+      preview:
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar
+            card_size: small
+  settings:
+    background_color:
+      type: select
+      label: Background color
+      required: true
+      default: bg-default
+      options:
+        bg-default: Default
+        bg-grey-light: Grey light
+
+# Simple 2
+team_section_simple_2:
+  use: '@organisms/team-section/_team_section_simple_2.twig'
+  namespace: 'Organisms/Team sections'
+  label: Team sections - Simple 2
+  description: 'The team section simple 2 pattern - people-with-avatar-bio.'
+  fields:
+    intro_section:
+      type: pattern
+      label: Intro section
+      preview:
+        - id: section_heading
+          fields:
+            label: 'Our team'
+            title: '<h3 class="displayMd-semibold headline">Some of the people you’ll be working with</h3>'
+            description: '<p>We’re a 100% remote team spread all across the world. Join us!</p>'
+          settings:
+            alignment: left
+    team_member:
+      type: pattern
+      label: Team member
+      preview:
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar-bio
+            card_size: small
+  settings:
+    background_color:
+      type: select
+      label: Background color
+      required: true
+      default: bg-default
+      options:
+        bg-default: Default
+        bg-grey-light: Grey light
+
+# Simple 3
+team_section_simple_3:
+  use: '@organisms/team-section/_team_section_simple_3.twig'
+  namespace: 'Organisms/Team sections'
+  label: Team sections - Simple 3
+  description: 'The team section simple 3 pattern - people-with-avatar-bio.'
+  fields:
+    intro_section:
+      type: pattern
+      label: Intro section
+      preview:
+        - id: section_heading
+          fields:
+            label: 'Our team'
+            title: '<h3 class="displayMd-semibold headline">Leadership team</h3>'
+            description: '<p>We’re a cross-disciplinary team that loves to create great experiences for our customers.</p>'
+          settings:
+            alignment: left
+    link_1:
+      type: pattern
+      label: Link 1
+      description: An optional button at the bottom of the card.
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: About us
+        settings:
+          size: xlarge
+          button_type: only_text
+    link_2:
+      type: pattern
+      label: Link 2
+      description: An optional button at the bottom of the card.
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Open positions
+        settings:
+          size: xlarge
+          button_type: only_text
+    team_member:
+      type: pattern
+      label: Team member
+      preview:
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-avatar-bio
+            card_size: small
+  settings:
+    background_color:
+      type: select
+      label: Background color
+      required: true
+      default: bg-default
+      options:
+        bg-default: Default
+        bg-grey-light: Grey light
+
+# Image card 1
+team_section_image_card_1:
+  use: '@organisms/team-section/_team_section_image_card_1.twig'
+  namespace: 'Organisms/Team sections'
+  label: Team sections - Image card 1
+  description: 'The team section image card 1 pattern - people-with-image-bio.'
+  fields:
+    intro_section:
+      type: pattern
+      label: Intro section
+      preview:
+        - id: section_heading
+          fields:
+            label: 'We’re hiring!'
+            title: '<h3 class="displayMd-semibold headline">Meet our team</h3>'
+            description: '<p>Our philosophy is simple — hire a team of diverse, passionate people and foster a culture that empowers you to do you best work.</p>'
+          settings:
+            alignment: center
+    link_1:
+      type: pattern
+      label: Link 1
+      description: An optional button at the bottom of the card.
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: About us
+        settings:
+          size: xlarge
+          button_type: only_text
+    link_2:
+      type: pattern
+      label: Link 2
+      description: An optional button at the bottom of the card.
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Open positions
+        settings:
+          size: xlarge
+          button_type: only_text
+    team_member:
+      type: pattern
+      label: Team member
+      preview:
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image-bio
+            card_size: small
+  settings:
+    background_color:
+      type: select
+      label: Background color
+      required: true
+      default: bg-default
+      options:
+        bg-default: Default
+        bg-grey-light: Grey light
+
+# Image card 2
+team_section_image_card_2:
+  use: '@organisms/team-section/_team_section_image_card_2.twig'
+  namespace: 'Organisms/Team sections'
+  label: Team sections - Image card 2
+  description: 'The team section image card 2 pattern - people-with-image.'
+  fields:
+    intro_section:
+      type: pattern
+      label: Intro section
+      preview:
+        - id: section_heading
+          fields:
+            label: 'Our team'
+            title: '<h3 class="displayMd-semibold headline">Some of the people you’ll be working with</h3>'
+            description: '<p>We’re a 100% remote team spread all across the world. Join us!</p>'
+          settings:
+            alignment: left
+    link_1:
+      type: pattern
+      label: Link 1
+      description: An optional button at the bottom of the card.
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: About us
+        settings:
+          size: xlarge
+          button_type: only_text
+    link_2:
+      type: pattern
+      label: Link 2
+      description: An optional button at the bottom of the card.
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Open positions
+        settings:
+          size: xlarge
+          button_type: only_text
+    team_member:
+      type: pattern
+      label: Team member
+      preview:
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image
+            card_size: small
+  settings:
+    background_color:
+      type: select
+      label: Background color
+      required: true
+      default: bg-default
+      options:
+        bg-default: Default
+        bg-grey-light: Grey light
+
+# Image card 3
+team_section_image_card_3:
+  use: '@organisms/team-section/_team_section_image_card_3.twig'
+  namespace: 'Organisms/Team sections'
+  label: Team sections - Image card 3
+  description: 'The team section image card 3 pattern - people-with-image-bio.'
+  fields:
+    intro_section:
+      type: pattern
+      label: Intro section
+      preview:
+        - id: section_heading
+          fields:
+            label: ''
+            title: '<h3 class="displayMd-semibold headline">We’re a fast-growing team</h3>'
+            description: '<p>We’re always on the lookout for passionate, dynamic, and talented individuals.</p>'
+          settings:
+            alignment: left
+    link_1:
+      type: pattern
+      label: Link 1
+      description: An optional button at the bottom of the card.
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: About us
+        settings:
+          size: xlarge
+          button_type: only_text
+    link_2:
+      type: pattern
+      label: Link 2
+      description: An optional button at the bottom of the card.
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Open positions
+        settings:
+          size: xlarge
+          button_type: only_text
+    team_member:
+      type: pattern
+      label: Team member
+      preview:
+        - id: peoplecard_carousel
+  settings:
+    background_color:
+      type: select
+      label: Background color
+      required: true
+      default: bg-default
+      options:
+        bg-default: Default
+        bg-grey-light: Grey light

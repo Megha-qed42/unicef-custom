@@ -1,0 +1,11 @@
+<svg width="46" height="32" viewBox="0 0 46 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 6C0 2.68629 2.68629 0 6 0H40C43.3137 0 46 2.68629 46 6V26C46 29.3137 43.3137 32 40 32H6C2.68629 32 0 29.3137 0 26V6Z" fill="white"/>
+<ellipse cx="22.58" cy="15.9133" rx="10.58" ry="10.58" fill="#6481E7"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17.958 16.3438L22.7038 19.1493V8.46906L17.958 16.3438Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.7041 8.46906V19.1493L27.4499 16.3438L22.7041 8.46906Z" fill="#C1CCF5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.7041 14.1868L17.958 16.3437L22.7038 19.1492L27.4499 16.344L22.7041 14.1868Z" fill="#8299EC"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.7041 14.1868L17.958 16.3437L22.7038 19.1492L22.7041 14.1868Z" fill="#C1CCF5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17.958 17.2439L22.7038 23.9318V20.0479L17.958 17.2439Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.7041 20.0479V23.9322L27.453 17.2439L22.7041 20.0479Z" fill="#C1CCF5"/>
+<path d="M6 1H40V-1H6V1ZM45 6V26H47V6H45ZM40 31H6V33H40V31ZM1 26V6H-1V26H1ZM6 31C3.23858 31 1 28.7614 1 26H-1C-1 29.866 2.13401 33 6 33V31ZM45 26C45 28.7614 42.7614 31 40 31V33C43.866 33 47 29.866 47 26H45ZM40 1C42.7614 1 45 3.23858 45 6H47C47 2.13401 43.866 -1 40 -1V1ZM6 -1C2.13401 -1 -1 2.13401 -1 6H1C1 3.23858 3.23858 1 6 1V-1Z" fill="#F8F9F9"/>
+</svg>

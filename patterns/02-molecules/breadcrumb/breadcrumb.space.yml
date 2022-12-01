@@ -1,0 +1,50 @@
+breadcrumb:
+  use: "@molecules/breadcrumb/breadcrumb.twig"
+  label: Breadcrumb
+  description: breadcrumb with text and link.
+  fields:
+    items:
+      type: object
+      label: "Breadcrumb items"
+      multi_value_type: items
+      preview:
+        -
+          text: 'Home'
+          url: '/'
+        -
+          text: 'Sub page'
+          url: 'https://qed42.com/services'
+        -
+          text: 'Sub page 1'
+          url: 'https://qed42.com/services'
+        -
+          text: 'Sub page 1'
+          url: 'https://qed42.com/services'
+        -
+          text: 'Sub page 1'
+          url: 'https://qed42.com/services'
+        -
+          text: 'Sub page 1'
+          url: 'https://qed42.com/services'
+        -
+          text: 'Current page'
+          url: 'https://qed42.com/services'
+    breadcrumb_homepage_option:
+      type: checkbox
+      label: bredcrumb home
+      preview: true
+  settings:
+    breadcrumb_style_options:
+      type: select
+      label: Breadcrumb Styles
+      default: primary-fill
+      options:
+        no-fill: No Fill
+        primary-fill: Primary Fill 
+        edge-lines: Edge lines
+    breadcrumb_variation_options:
+      label: Breadcrumb Variation
+      default: expanded
+      options:
+        expanded: Expanded
+        collapse: Collapse

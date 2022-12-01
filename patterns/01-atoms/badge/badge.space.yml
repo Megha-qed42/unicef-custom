@@ -1,0 +1,41 @@
+badge:
+  use: "@atoms/badge/badge.twig"
+  label: Badge
+  description: Badge labels with different types like only text, text with icon , only icon.
+  fields:
+    text:
+      type: text
+      label: Text
+      preview: Label
+  configuration:
+    size:
+      text:
+        small: 'text-xs leading-5 py-1.5 px-2.5'
+        medium: 'text-sm leading-5 py-1.5 px-3'
+        large: 'text-sm leading-5 py-2 px-3.5'
+  settings:
+    size:
+      type: select
+      required: true
+      label: Size
+      preview: medium
+      options:
+        small: Small
+        medium: Medium
+        large: Large
+    icon:
+      type: select
+      required: true
+      label: Icon
+      description: Go with an icon alongside your text.
+      options:
+        xcross: Cross
+        plus-badge: Plus 
+    type:
+      type: select
+      required: true
+      preview: text-only
+      options: 
+        text-only: Text Only
+        text-plus-icon: Text + icon
+        only-icon: Only icon

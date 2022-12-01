@@ -1,0 +1,122 @@
+@tailwind components;
+
+.tabs__box {
+  @apply lg:flex-row lg:justify-center maxLg:flex-col maxLg:leading-loose;
+}
+
+/* common re-used classes */
+@layer components {
+  .active_class_colors {
+    @apply text-textButtonLink-buttonLinkDefault border-textButtonLink-buttonLinkDefault;
+  }
+
+  .container_padding {
+    @apply py-2.5 px-5;
+  }
+
+  .container-tab-item {
+    @apply inline-block maxLg:min-w-[17.5rem] min-w-[12.5rem] border;
+  }
+
+  .underline_variant_common {
+    @apply text-text-body border-b-2 border-text-neutralLight hover:text-text-heading hover:border-text-primaryMedium;
+  }
+
+  .filled_variant_common {
+    @apply text-text-body hover:text-text-heading hover:bg-backgroundPrimary-primaryExtraLight hover:rounded;
+  }
+
+  .container_text {
+    @apply text-text-body hover:text-text-heading;
+  }
+}
+
+#blocktabs__nav {
+  .default_size_padding {
+    @apply p-2 px-5 maxLg:pr-[12.5rem];
+  }
+
+  .large_size_padding {
+    @apply p-2 px-[5rem] maxLg:pl-5 maxLg:pr-[12.5rem];
+  }
+}
+
+.flex-properties {
+  @apply flex items-center;
+}
+
+/* Underlined Variant */
+.underlined {
+  @apply underline_variant_common;
+
+  &_active {
+    @apply border-b-2 active_class_colors;
+  }
+
+  &_filled {
+    @apply underline_variant_common
+    hover:bg-backgroundPrimary-primaryExtraLight;
+
+    &_active {
+      @apply bg-text-primaryLight border-b-2 active_class_colors;
+    }
+  }
+}
+
+/* Filled Variant */
+.filled {
+  &_light {
+    @apply filled_variant_common;
+
+    &_active {
+      @apply text-text-primaryDark bg-text-primaryLight rounded;
+    }
+  }
+
+  &_dark {
+    @apply filled_variant_common;
+
+    &_active {
+      @apply text-white bg-text-primaryDark rounded;
+    }
+  }
+}
+
+/* container 1 variant */
+.container_1 {
+  &_light {
+    @apply container-tab-item hover:bg-backgroundPrimary-primaryExtraLight container_padding container_text text-left;
+
+    &_active {
+      @apply container-tab-item bg-text-primaryLight text-text-primaryDark;
+    }
+  }
+
+  &_dark {
+    @apply container-tab-item hover:bg-backgroundPrimary-primaryExtraLight container_padding container_text text-left;
+
+    &_active {
+      @apply container-tab-item bg-text-primaryDark text-white;
+    }
+  }
+}
+
+/* container 2 variant */
+.container_2 {
+  @apply container-tab-item container_padding container_text text-left;
+
+  &_active {
+    @apply border-l-4 border-l-text-primaryDark text-text-primaryDark;
+  }
+}
+
+/* Page edit menu tabs*/
+.blocktabs__nav_edit {
+  li {
+    @apply px-3 py-4;
+
+    a {
+      @apply px-3 py-4 hover:bg-primary-200 rounded-md;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+stats_kpi:
+  use: "@molecules/stats-kpi/stats-kpi.twig"
+  label: Stats KPI
+  description: This molecule contain stats-kpi with description
+  fields:
+    icon:
+      type: text
+      label: Icon name
+      description: A short headline above the headline.
+      preview: 'icon-primary-light-circle-outline-4x'
+    keynumber:
+      type: pattern
+      label: Key number
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: '400+'
+          font: displayLG-semibold
+    subheading:
+      type: text
+      label: Sub headline
+      preview: 'Projects completed'
+    description:
+      type: text
+      label: Content
+      preview: '<p>We have helped build over 400 projects and have worked with some amazing companies.</p>'
+    link:
+      type: pattern
+      label: Link
+      description: An optional button at the bottom of the card.
+      preview:
+        id: button
+        variant: link
+        fields:
+          text: 'Learn more'
+        settings:
+          button_type: text_with_icon
+          icon: 'arrowRight'
+          icon_alignment: right
+          size: large
+  settings:
+    alignment:
+      type: select
+      label: Alignment
+      required: true
+      default: left
+      options:
+        left: Left
+        center: Center
+    layout_type:
+      type: select
+      label: Layout of the Stat
+      required: true
+      default: default
+      options:
+        default: Default
+        accentlineleft: Accent line left
+        accentlinetop: Accent line top
+        withbackground: With Background
+        withicon: With Icon
+    extra_classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''

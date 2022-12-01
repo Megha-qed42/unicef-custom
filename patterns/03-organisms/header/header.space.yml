@@ -1,0 +1,132 @@
+primaryheader:
+  use: "@organisms/header/_primaryheader.twig"
+  namespace: 'Organisms/Header'
+  label: Primary Header
+  description: The header pattern with logo and menu.
+  fields:
+    menu:
+      type: pattern
+      label: Menu
+      preview:
+        id: mega_menu_primary
+    login:
+      type: pattern
+      label: login
+      preview:
+        id: button
+        variant: secondary
+        settings:
+          text: Log in
+          size: large
+          url: '#'
+          button_type: only_text
+    signup:
+      type: pattern
+      label: signup
+      preview:
+        id: button
+        variant: primary
+        settings:
+          text: Sign up
+          size: large
+          url: '#'
+          button_type: only_text
+    search:
+      type: pattern
+      label: search
+      preview:
+        id: button
+        variant: tertiary
+        settings:
+          button_type: only_icon
+          icon: search
+          size: large
+          url: '#'      
+  settings:
+    position:
+      type: select
+      preview: left
+      options:
+        left: Left
+        center: Center
+        right: Right
+        with-hamburger: With hamburger
+    hamburger_type: 
+      type: select
+      preview: search_and_cta
+      options:
+        only_search: Only Search
+        no_search: No Search
+        search_and_cta: Search + CTA
+        logo_and_hamburger: Hamburger
+        search_and_hamburger: Search + Hamburger
+        search_hamburger_and_menu: Search + Hamburger + Menu
+
+secondaryheader:
+  use: "@organisms/header/_secondaryheader.twig"
+  namespace: 'Organisms/Header'
+  label: Secondary Header
+  description: 'Secondary header with navigation.'
+  fields:
+    menu:
+      type: pattern
+      label: Menu
+      preview:
+        - id: mega_menu_secondary
+  settings:
+    secondary_header_position:
+      type: select
+      preview: left
+      default_value: left
+      options:
+        left: Left
+        center: Center
+        right: Right
+
+nlevelmenuheader:
+  use: "@organisms/header/_nlevelmenuheader.twig"
+  namespace: 'Organisms/Header'
+  label: N-level menu Header
+  description: The header pattern with logo and simple n-level menu.
+  fields:
+    menu:
+      type: pattern
+      label: Menu
+      preview:
+        id: nlevel_menu
+        variant: default
+    searchbtn:
+      type: pattern
+      label: search
+      preview:
+        id: button
+        variant: tertiary
+        settings:
+          button_type: only_icon
+          icon: search
+          size: large
+          url: '#'
+    signup:
+      type: pattern
+      label: Get Legal Help
+      preview:
+        id: button
+        variant: primary
+        settings:
+          text: Get Legal Help
+          size: large
+          url: '#'
+          button_type: only_text
+          classes: lg:w-auto
+    search:
+      type: pattern
+      label: search
+      preview:
+        id: input        
+        settings:
+          input_type: inputput_field
+          hint_text: ''
+          input_label: ''
+          placeholder: 'Search a keyword'
+          input_icon: search
+          tooltip_icon: false

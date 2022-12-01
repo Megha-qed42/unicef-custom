@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * avatar atom
+ * Available variables:
+ * - image_url: Avatar image url
+ * - corner_style: Image with border radius setting.
+ * - image_style: Describes the width and height of image.
+ * - full_name: Full name of user.
+ * - link_text: Description or email link of user. 
+ */
+#}
+
+{{ attach_library('unicef_vf/avatar') }}
+
+{# Classes #}
+{% set avatar_group_classes = [
+  'capitalize',
+  text_align == 'center' ? 'text-center',
+  'overflow-hidden no-underline text-text-body',
+  variant == 'horizontal' ? 'flex flex-row',
+  corner_style,
+  image_style
+] %}
+
+{# Template #}
+{% block avatar_group_atom_block %}
+  <figure{{ attributes.addClass(avatar_group_classes) }} >
+    <div class="avatar-image-wrapper">
+      {{ image }}
+    </div>
+    
+    {% if full_name|render|striptags|trim is not empty -%}
+      <div class="space-y-4 flex-1 pt-4 pb-2.5">
+        <figcaption>
+          <p class="text-text-heading text-lg pt-1.8">
+            {{ full_name }}       
+          </p>
+        </figcaption>
+      </div>
+    {% endif %}
+
+    {% if link|render|striptags|trim is not empty -%}
+      <div class="avatar-link">
+        {{ link }}
+      </div>
+    {% endif %}
+  </figure>
+{% endblock %}

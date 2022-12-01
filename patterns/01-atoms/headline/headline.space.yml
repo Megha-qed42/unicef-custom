@@ -1,0 +1,127 @@
+headline:
+  use: "@atoms/headline/headline.twig"
+  label: Headline
+  description: Flexible headline with options to choose size and tags.
+  fields:
+    headline:
+      type: text
+      label: Headline
+      preview: 'SPACE is the Complete Team Collaboration Solution'
+  variants:
+    h1:
+      label: h1
+      configuration:
+        spacing_bottom:
+          small: mb-10
+          default: mb-12
+    h2:
+      label: h2
+      configuration:
+        spacing_bottom:
+          small: mb-8
+          default: mb-10
+    h3:
+      label: h3
+      configuration:
+        spacing_bottom:
+          small: mb-6
+          default: mb-8
+    h4:
+      label: h4
+      configuration:
+        spacing_bottom:
+          small: mb-5
+          default: mb-6
+    h5:
+      label: h5
+      configuration:
+        spacing_bottom:
+          small: mb-4
+          default: mb-5
+    h6:
+      label: h6
+      configuration:
+        spacing_bottom:
+          small: mb-3
+          default: mb-4
+  settings:
+    tag_name:
+      type: select
+      label: Tag name
+      default_value: h1
+      options:
+        h1: H1
+        h2: H2
+        h3: H3
+        h4: H4
+        h5: H5
+        h6: H6
+        div: DIV
+    font:
+      type: select
+      label: Font
+      description: 'Select font for heading levels. Values taken from token.css file.'
+      required: true
+      default_value: display2XL-semibold
+      options:
+        display3XL-regular: display3XL-regular
+        display3XL-medium: display3XL-medium
+        display3XL-semibold: display3XL-semibold
+        display3XL-bold: display3XL-bold
+        display2XL-regular: display2XL-regular
+        display2XL-medium: display2XL-medium
+        display2XL-semibold: display2XL-semibold
+        display2XL-bold: display2XL-bold
+        displayXL-regular: displayXL-regular
+        displayXL-medium: displayXL-medium
+        displayXL-semibold: displayXL-semibold
+        displayXL-bold: displayXL-bold
+        displayLG-regular: displayLG-regular
+        displayLG-medium: displayLG-medium
+        displayLG-semibold: displayLG-semibold
+        displayLG-bold: displayLG-bold
+        displayMd-regular: displayMd-regular
+        displayMd-medium: displayMd-medium
+        displayMd-semibold: displayMd-semibold
+        displayMd-bold: displayMd-bold
+        displaySm-regular: displaySm-regular
+        displaySm-medium: displaySm-medium
+        displaySm-semibold: displaySm-semibold
+        displaySm-bold: displaySm-bold
+        displayXs-regular: displayXs-regular
+        displayXs-medium: displayXs-medium
+        displayXs-semibold: displayXs-semibold
+        displayXs-bold: displayXs-bold
+        textXL-regular: textXL-regular
+        textXL-medium: textXL-medium
+        textXL-semibold: textXL-semibold
+        textXL-bold: textXL-bold
+        textLG-regular: textLG-regular
+        textLG-medium: textLG-medium
+        textLG-semibold: textLG-semibold
+        textLG-bold: textLG-bold
+        textMd-regular: textMd-regular
+        textMd-medium: textMd-medium
+        textMd-semibold: textMd-semibold
+        textMd-bold: textMd-bold
+        textSm-regular: textSm-regular
+        textSm-medium: textSm-medium
+        textSm-semibold: textSm-semibold
+        textSm-bold: textSm-bold
+        textXs-regular: textXs-regular
+        textXs-medium: textXs-medium
+        textXs-semibold: textXs-semibold
+        textXs-bold: textXs-bold
+    spacing_bottom:
+      type: select
+      label: Spacing bottom
+      required: true
+      default_value: default
+      options:
+        none: None
+        small: Small
+        default: Default
+    url:
+      type: token
+      label: Url
+      preview: ''

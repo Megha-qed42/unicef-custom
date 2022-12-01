@@ -1,0 +1,75 @@
+{#
+/**
+ * @file
+ * tab-item
+ *
+ * See tab-item.space.yaml for documentation.
+ */
+#}
+
+{# Default #}
+{% set icon_size = tab_item_size == 'default_size' ? 'w-4 h-4': 'w-5 h-5' %}
+
+{% set font_size = [
+  tab_item_size == 'default_size' and active_state ? 'textSm-bold',
+  tab_item_size == 'default_size' and not active_state ? 'textSm-regular',
+
+  tab_item_size == "large_size" and active_state ? 'textMd-bold',
+  tab_item_size == "large_size" and not active_state ? 'textMd-regular',
+  ]
+%}
+
+{# Classes #}
+{% set font_class = attributes.addClass(font_size) %}
+
+{% set classes = [
+  tab_item_type == 'underlined' ? 'underlined '~ tab_item_size ~ '_padding',
+
+  tab_item_type == 'underline_filled' ? 'underlined_filled '~ tab_item_size ~ '_padding',
+
+  tab_item_type == 'filled_light' ? 'filled_light w-fit '~ tab_item_size ~ '_padding',
+
+  tab_item_type == 'filled_dark' ? 'filled_dark w-fit '~ tab_item_size ~ '_padding',
+
+  tab_item_type == 'container_1_light' or tab_item_type == 'container_1_light_icon' ? 'container_1_light w-fit '~ tab_item_size,
+
+  tab_item_type == 'container_1_dark' or tab_item_type == 'container_1_dark_icon' ? 'container_1_dark w-fit '~ tab_item_size,
+
+  tab_item_type == 'container_2' or tab_item_type == 'container_2_icon'? 'container_2 w-fit '~ tab_item_size,
+  ]
+%}
+
+{% set attributes = attributes|default(create_attribute()) %}
+
+{# Template #}
+{% block tab_item_block %}
+  {% spaceless %}
+    {% if 'icon' in tab_item_type %}
+      {# Variants with Icon #}
+      <li class="list-none">
+      <a href="#" id="single_tab" {{ attributes.addClass(classes | sort | join(' ') | trim) }}>
+        <div class="flex-properties">
+          <span class="mr-3">
+            {% include "@atoms/svg/svg.twig" with {
+              "icon": icon,
+              "size": icon_size,
+              } only 
+            %}
+          </span>
+          {{ text }}
+        </div>
+      </a>
+    </li>
+    
+    {# Varaints without icon #}
+    {% else %}
+      <li class="list-none tab">
+        <a href="#" id="single_tab" {{ attributes.addClass(classes | sort | join(' ') | trim) }}>
+          <span>
+            {{ text }}
+          </span>
+        </a>
+      </li>
+    {% endif %}
+  {% endspaceless %}
+{% endblock %}

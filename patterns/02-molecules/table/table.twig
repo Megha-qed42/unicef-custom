@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * table
+ * 
+ */
+#}
+
+{# Classes #}
+{% set extra_classess = ([
+  "table-list",  
+] | sort | join(' ') | trim )%}
+{% set attributes = attributes|default(create_attribute()).addClass(extra_classess) %}
+
+{% set strip = ([
+  strip == true ? 'odd:bg-neutral-100',
+]) | sort | join(' ') | trim %}
+
+{% set color = ([
+  color == 'dark' ? 'bg-backgroundPrimary-primaryDark text-white',
+  color == 'light' ? 'bg-neutral-200 text-neutral-800',
+  color == 'black' ? 'bg-text-heading text-white',
+]) | sort | join(' ') | trim %}
+
+{# Template #}
+{% block table_block %}
+  <div {{ attributes }}>
+    <table class="w-full text-gray-900 text-xs rounded-xl border-separate overflow-hidden">
+      <thead class="{{ color }}">
+        {% for column in columns %}
+          <tr class="">
+            {% for head in column.heads %}
+              <th class="border-t border-solid border-text-neutralMedium text-left {% if head is empty %} pb-4 pt-6 {% else %} p-5 py-4{% endif %}">{{ head }}</th>
+            {% endfor %}
+            <th class="border-t border-solid border-text-neutralMedium text-left {% if head is empty %} pb-4 pt-6 {% else %} p-5 py-4{% endif %}"></th>
+          </tr>
+        {% endfor %}
+      </thead>
+      <tbody >
+        {% for row in rows %}
+          <tr class="{{ strip }}">
+              {% for cell in row.cells %}
+                <td class="font-primary text-center md:text-left py-4 p-5">
+                  {{ cell }}
+                </td>
+              {% endfor %}
+              <td class="font-primary text-center py-4 p-5">
+                {% include "@atoms/button/button.twig" with {
+                  "variant": "primary",
+                  "text": "Priview",
+                  "size": "medium",
+                  "url": "https://www.qed42.com/contact",
+                } %}
+              </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

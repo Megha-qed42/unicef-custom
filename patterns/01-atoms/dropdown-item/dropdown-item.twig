@@ -1,0 +1,67 @@
+{#
+/**
+ * @file
+ * Theme override for a 'Dropdown item'.
+ *
+ * Available variables
+ * - dropdown_type: Dropdown types available are text, text with icon, text with checkbox.
+ * - list_text: Dropdown link text
+ *
+ */
+#}
+
+{# Classes #}
+{% set dropdown_classes = ([
+	'flex items-center dropdown-item',
+	dropdown_type,
+	])
+%}
+
+{# Template #}
+{% block dropdown_item_block %}
+	<span {{ attributes.addClass(dropdown_classes) }}>
+		{% if dropdown_type == 'text' %}
+			<span class="text-only w-full">
+				{% include "@atoms/link/link.twig" with {
+					"url": "#",
+					"title_text": list_text,
+					"icon_position": "left",
+					"custom_style": false,
+					"icon": "empty",
+					"extra_classes": "font-secondary font-normal text-text-heading hover:text-text-heading"
+				} %}
+			</span>
+
+		{% elseif dropdown_type == 'text-with-icon' %}
+			{% if icon is not empty %}
+				{% include "@atoms/link/link.twig" with {
+					"url": "#",
+					"title_text": list_text,
+					"icon_size": 4,
+					"icon_position": "left",
+					"custom_style": false,
+					"icon": icon,
+					"extra_classes": "font-secondary font-normal text-text-heading hover:text-text-heading md:flex-row justify-start"			  
+				} %}
+			{% endif %}
+
+		{% elseif dropdown_type == 'text-with-checkbox' %}
+			{% include "@atoms/checkbox/checkbox.twig" with {
+				"text": list_text,
+				"size": "medium",
+				"attributes": checkbox_attribute
+			} %}
+			
+		{% elseif dropdown_type == 'text-with-avatar' %}
+			{% include "@atoms/avatar/avatar.twig" with {
+				"variant": "avatar_label",
+				"full_name": list_text,
+				"link_text": "",
+				"image_url": "./images/image.png",
+				"image_style": "24x24_xxs_sc",	
+				"icon": false,
+				"link": null		
+			} %}
+		{% endif %}	
+	</span>
+{% endblock %}

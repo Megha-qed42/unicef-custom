@@ -1,0 +1,12 @@
+.avatar-item {
+	display: inline-block;
+}
+.avatar-item:not(:first-child) {
+	margin-left: -0.75rem;
+}
+.avatar-label-group-wrapper {
+	display: flex;
+}
+.avatar-label-item:not(:first-child) {
+	margin-left: 3.75rem;
+}

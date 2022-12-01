@@ -1,0 +1,69 @@
+.tooltip{
+    @apply relative inline-block;
+    .svg{
+        @apply cursor-pointer;       
+        &:hover + .tooltiptext{
+            @apply visible opacity-100;
+        }        
+        &:hover + .tooltiptext.left:after,
+        &:hover + .tooltiptext.right:after,
+        &:hover + .tooltiptext.top:after, 
+        &:hover + .tooltiptext.bottom:after,
+        &:hover + .tooltiptext.bottomleft:after,
+        &:hover + .tooltiptext.bottomright:after{
+            @apply visible opacity-100;
+        }
+    }
+    .tooltiptext{
+        @apply w-40 absolute -translate-x-1/2 bottom-[125%] left-1/2 opacity-0 transition-opacity duration-300;
+        &:after{
+            @apply absolute invisible transform rotate-45 opacity-0 transition-opacity duration-300;
+            content: '';
+            height: 0.75rem;
+            width: 0.75rem;
+            background-color: inherit;
+        }    
+        &.top{
+            @apply top-[140%] bottom-auto;  
+            &:after{            
+                @apply -translate-x-1/2 -top-1.5 left-1/2;
+            }
+        }
+        &.bottom{
+            @apply bottom-[140%];
+            &:after{
+                @apply -translate-x-1/2 top-auto -bottom-1.5 left-1/2;
+            }
+        }
+        &.bottomleft{
+            @apply bottom-[140%] -left-6 translate-x-0;
+            &:after{
+                @apply top-auto -bottom-1.5 left-6;            
+            }
+        }
+        &.bottomright{
+            @apply bottom-[140%] left-auto -right-6 translate-x-0;
+            &:after{
+                @apply top-auto left-auto -bottom-1.5 right-6;
+            }
+        }
+        &.right{
+            @apply -translate-y-1/2 translate-x-0 bottom-auto top-1/2 left-7;
+            &:after{
+                @apply -translate-y-1/2 top-1/2 -left-1.5;
+            }
+        }
+        &.left{
+            @apply -translate-y-1/2 translate-x-0 bottom-auto top-1/2 left-auto right-7;
+            &:after{
+                @apply -translate-y-1/2 top-1/2 left-auto -right-1.5;
+            }
+        }        
+        .content{
+            @apply text-neutral-600;
+        }        
+        .header{
+            @apply block;
+        }
+    }
+}

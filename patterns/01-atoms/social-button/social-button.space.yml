@@ -1,0 +1,23 @@
+social_button:
+  use: "@atoms/social-button/social-button.twig"
+  label: Social Button
+  description: Social button with its hover state.
+  fields:
+    text:
+      type: text
+      label: Text
+      preview: Sign in with Google.
+    social_button_link:
+      type: url
+      label: Social button link
+      preview: "#"  
+  settings:
+    social_button_type: 
+      type: select
+      required: true
+      label: Social Button type
+      preview: google
+      options:
+        google: Google
+        facebook: Facebook
+        apple: Apple   

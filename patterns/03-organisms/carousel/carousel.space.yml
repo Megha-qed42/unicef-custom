@@ -1,0 +1,254 @@
+image_with_asymmetric_text:
+  use: '@organisms/carousel/_image-with-asymmetric-text.twig'
+  namespace: 'Organisms/Carousel'
+  label: Carousel - Image with Asymmetric text
+  description: The carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: item_image_with_asymmetric_text
+        - id: item_image_with_asymmetric_text
+        - id: item_image_with_asymmetric_text
+        - id: item_image_with_asymmetric_text
+
+images_and_colour_blocked_background:
+  use: '@organisms/carousel/_images-and-colour-blocked-background.twig'
+  namespace: 'Organisms/Carousel'
+  label: Carousel - Images and Colour blocked background
+  description: The carousel pattern.
+  fields:
+    title:
+      type: pattern
+      label: Title
+      description: A title for the carousel.
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Caring for your body and spirit'
+          font: display2XL-regular
+    button_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: See our Products
+        settings:
+          button_type: text_with_icon
+          icon: arrowRight
+          icon_alignment: right
+          size: xxxlarge
+    background_image:
+      type: pattern
+      label: Background image
+      preview:
+        id: image_atom
+        variant: background
+        settings:
+          image_url: space-assets://images/big-leaf.png
+          style: 'scale_1440w'
+          background_style: 'backgroundImage w-full h-full absolute top-0 left-0 bg-cover bg-no-repeat bg-center'
+    items:
+      type: pattern
+      label: Items
+      preview:
+        - id: item_images_and_colour_blocked_background
+
+images_and_video_with_description:
+  use: '@organisms/carousel/_images-and-video-with-description.twig'
+  namespace: 'Organisms/Carousel'
+  label: Carousel - Images & Video with description
+  description: The carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: item_images_and_video_with_description
+        - id: item_images_and_video_with_description
+        - id: item_images_and_video_with_description
+        - id: item_images_and_video_with_description
+
+image_fullwidth_left:
+  use: '@organisms/carousel/_image-fullwidth-left.twig'
+  namespace: 'Organisms/Carousel'
+  label: Carousel - Images full width left aligned
+  description: The carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: item_image_fullwidth_left
+        - id: item_image_fullwidth_left
+        - id: item_image_fullwidth_left
+        - id: item_image_fullwidth_left
+
+image_with_title_description:
+  use: '@organisms/carousel/_image-with-title-description.twig'
+  namespace: 'Organisms/Carousel'
+  label: Carousel - Images with Title and Description
+  description: The carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: item_image_with_title_description
+        - id: item_image_with_title_description
+        - id: item_image_with_title_description
+        - id: item_image_with_title_description
+
+image_with_title_cta:
+  use: '@organisms/carousel/_image-with-title-cta.twig'
+  namespace: 'Organisms/Carousel'
+  label: Carousel - Images with Title and CTA
+  description: The carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: item_image_with_title_cta
+        - id: item_image_with_title_cta
+        - id: item_image_with_title_cta
+        - id: item_image_with_title_cta
+
+image_fullwidth_center:
+  use: '@organisms/carousel/_image-fullwidth-center.twig'
+  namespace: 'Organisms/Carousel'
+  label: Carousel - Images full width center aligned
+  description: The carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: item_image_fullwidth_center
+        - id: item_image_fullwidth_center
+        - id: item_image_fullwidth_center
+        - id: item_image_fullwidth_center
+
+item_images_and_video_slideshow:
+  use: '@organisms/carousel/_images-and-video-slideshow.twig'
+  namespace: 'Organisms/Carousel'
+  label: Carousel - Images & Video slideshow
+  description: The carousel pattern.
+  fields:
+    content_items:
+      type: pattern
+      label: Content items
+      description: Title, Description and Image.
+      multi_value_type: items
+      preview:
+        - id: item_images_and_video_slideshow_main
+        - id: item_images_and_video_slideshow_main
+        - id: item_images_and_video_slideshow_main
+        - id: item_images_and_video_slideshow_main
+        - id: item_images_and_video_slideshow_main
+        - id: item_images_and_video_slideshow_main
+    image_items:
+      type: pattern
+      label: Image items
+      multi_value_type: items
+      preview:
+        - id: item_images_and_video_slideshow_thumbnail
+        - id: item_images_and_video_slideshow_thumbnail
+        - id: item_images_and_video_slideshow_thumbnail
+        - id: item_images_and_video_slideshow_thumbnail
+        - id: item_images_and_video_slideshow_thumbnail
+        - id: item_images_and_video_slideshow_thumbnail
+  settings:
+    autoplay:
+      type: boolean
+      label: Autoplay
+      default_value: true
+  visibility: storybook
+
+images_and_video_slideshow_main:
+  use: '@organisms/carousel/_images-and-video-slideshow-main.twig'
+  namespace: 'Organisms/Carousel'
+  label: Carousel - Images & Video slideshow - Main
+  description: The carousel pattern.
+  fields:
+    content_items:
+      type: pattern
+      label: Content items
+      description: Title, Description and Image.
+      multi_value_type: items
+      preview:
+        - id: item_images_and_video_slideshow_main
+        - id: item_images_and_video_slideshow_main
+        - id: item_images_and_video_slideshow_main
+        - id: item_images_and_video_slideshow_main
+        - id: item_images_and_video_slideshow_main
+        - id: item_images_and_video_slideshow_main
+  settings:
+    autoplay:
+      type: boolean
+      label: Autoplay
+      default_value: true
+
+images_and_video_slideshow_thumbnail:
+  use: '@organisms/carousel/_images-and-video-slideshow-thumbnail.twig'
+  namespace: 'Organisms/Carousel'
+  label: Carousel - Images & Video slideshow - Thumbnail
+  description: The carousel pattern.
+  fields:
+    image_items:
+      type: pattern
+      label: Image items
+      multi_value_type: items
+      preview:
+        - id: item_images_and_video_slideshow_thumbnail
+        - id: item_images_and_video_slideshow_thumbnail
+        - id: item_images_and_video_slideshow_thumbnail
+        - id: item_images_and_video_slideshow_thumbnail
+        - id: item_images_and_video_slideshow_thumbnail
+        - id: item_images_and_video_slideshow_thumbnail
+  settings:
+    autoplay:
+      type: boolean
+      label: Autoplay
+      default_value: true
+
+text_only:
+  use: '@organisms/carousel/_text-only.twig'
+  namespace: 'Organisms/Carousel'
+  label: Carousel - Text only
+  description: The carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: item_text_only
+        - id: item_text_only
+        - id: item_text_only
+        - id: item_text_only

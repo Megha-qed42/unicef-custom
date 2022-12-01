@@ -1,0 +1,18 @@
+{{ attach_library('unicef_vf/header-styling') }}
+
+{# classes #}
+{% set url = link_url %}
+
+{# Template #}
+{% block menu_item_secondary_block %}
+	{% include "@atoms/link/link.twig" with {
+		"url": url,
+		"title_text": menu_title,
+		"content": menu_title,
+		"custom_style": true,
+		"icon": icon,
+		"icon_position": 'left',
+		"icon_size": '4',
+		"extra_classes": 'header-menu-item hover:text-text-primaryDark no-underline textMd-medium text-text-heading flex mr-0 md:mr-10'
+	} only %}
+{% endblock %}

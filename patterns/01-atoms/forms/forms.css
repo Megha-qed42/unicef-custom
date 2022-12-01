@@ -1,0 +1,146 @@
+form {
+  div[id^='ajax-wrapper'] {
+    @apply mb-5;
+  }
+
+  .CodeMirror {
+    @apply mb-5;
+
+    height: fit-content;
+
+  }
+
+  label {
+    .field-label {
+      @apply text-text-heading;
+    }
+  }
+
+  legend {
+    @apply text-text-heading text-sm font-secondary;
+  }
+
+  .form-submit {
+    @apply py-3 px-4 mt-10;
+  }
+}
+
+.email-input-wrapper {
+  .form-email {
+    @apply mr-0;
+  }
+}
+
+.email-icon-show .input-icon {
+  @apply absolute top-3.5 left-3.5;
+}
+
+.email-icon-show.email-input-wrapper {
+  @apply flex-1 flex;
+}
+
+.email-icon-show .form-input {
+  @apply pl-10;
+}
+
+.form-item {
+  .form-input,
+  .form-text,
+  .form-tel,
+  .form-url,
+  .form-search,
+  .form-number {
+    @apply w-full;
+
+    &::placeholder {
+      @apply pt-px;
+    }
+  }
+
+  input,
+  select,
+  textarea {
+    @apply rounded-lg border-stroke-borderDefault mb-5;
+  }
+
+  input[type='file'] {
+    @apply mb-0 pl-0;
+
+    &::file-selector-button {
+      @apply rounded-lg bg-white border border-solid border-neutral-300 py-2.5 pl-8 pr-4 text-text-heading;
+
+      box-shadow: 0px 1px 4px rgba(16, 24, 40, 0.05);
+    }
+  }
+
+  .form-checkbox {
+    @apply rounded-md border-stroke-borderDefault;
+  }
+
+  .form-radio,
+  .form-checkbox {
+    @apply mb-1;
+  }
+
+  .js-webform-checkboxes {
+    @apply mb-5;
+  }
+
+  .form-item__checkbox,
+  .form-item__radio,
+  .webform-element-more,
+  .webform-element-more--content,
+  .webform-table,
+  .webform-table-sort {
+    @apply font-secondary;
+  }
+
+  .webform-table-sort {
+    .table-sort-weight {
+      @apply mb-0;
+    }
+  }
+
+  .file-input-wrapper {
+    .upload-icon {
+      @apply absolute top-[-0.188rem] left-[-22.75rem] md:top-[-2.625rem] md:left-[0.7rem];
+    }
+  }
+}
+
+.webform-type-radios,
+.webform-type-webform-height {
+  @apply my-5;
+}
+
+.webform-type-webform-height {
+  .form-item {
+    .form-number {
+      @apply mb-0;
+    }
+  }
+}
+
+.webform-mapping-table {
+  tbody {
+    td {
+      &:nth-child(1) {
+        @apply pl-7;
+      }
+    }
+  }
+}
+
+.webform-message {
+  .notification_wrapper {
+    .notification-bar_innerwrapper {
+      @apply mx-auto max-w-6xl;
+    }
+  }
+}
+
+.webform-entity-checkboxes--wrapper {
+  .form-item__checkbox {
+    @apply text-text-heading text-sm;
+  }
+}

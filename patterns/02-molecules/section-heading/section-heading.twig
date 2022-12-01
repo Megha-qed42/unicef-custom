@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * section heading
+ *
+ * See section-heading.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/section-heading') }}
+
+{# Default #}
+{% set element = element|default('section') %}
+
+{# Classes #}
+{% set classes = ([
+  'section-heading px-4 md:px-[1.875rem] xl:px-0',
+  alignment == 'left' ? 'text-left left-alignment': '',
+  alignment == 'center' ? 'text-center center-alignment': '',
+	alignment == 'split' ? 'split-section': '',
+  description == '' ? 'no-description',
+] | sort | join(' ') | trim ) %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% block section_heading_block %}
+  <{{ element }} {{ attributes }}>
+    <div class="container mx-auto">
+      <div class="intro-section">
+        {% if label|render|striptags|trim is not empty %}
+          <span class="intro-section__label textMd-bold">{{ label }}</span>
+        {% endif %}
+
+        {% if title|render|striptags|trim is not empty %}
+          <div class="intro-section__title flex">
+            {% if icon|render|trim|striptags %}
+              <span class="inline-block mb-0 icon mt-2 mr-6">
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: icon,
+                  size: "h-5 w-5",
+                } only %}
+              </span>
+            {% endif %}
+
+            {{ title }}
+          </div>
+        {% endif %}
+      </div>
+      
+      {% if description|render|striptags|trim is not empty %}
+        <div class="data-section">
+          <div class="data-section__description textXL-regular text-text-body">
+            {{ description }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </{{ element }}>
+{% endblock %}

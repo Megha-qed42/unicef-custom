@@ -1,0 +1,56 @@
+{{ attach_library('unicef_vf/header-styling') }}
+
+{# Template #}
+<div class="_3-column-large-text-with-card">
+	<div class="menu-link-contentmain">
+		<div class="{{ layout_width == 'boxed_width' ? 'container' : 'w-full' }} mx-auto flex flex-col lg:flex-row">
+			<div class="nav-col col_1 w-full lg:w-1/4 flex flex-col">
+				<div class="nav-col-title displayXs-bold w-full">
+					{{ column1_title }}
+				</div>
+
+				<ul>
+					{% for navigation_only_link_item_1 in navigation_only_link_items_1 %}
+						{{ navigation_only_link_item_1 }}
+					{% endfor %}
+				</ul>
+			</div>
+
+			<div class="nav-col col_2 w-full lg:w-1/4 flex flex-col">
+				<div class="nav-col-title displayXs-bold w-full">
+					{{ column2_title }}
+				</div>
+
+				<ul>
+					{% for navigation_only_link_item_2 in navigation_only_link_items_2 %}
+						{{ navigation_only_link_item_2 }}
+					{% endfor %}
+				</ul>	
+			</div>
+
+			<div class="nav-col col_3 w-full lg:w-1/4 flex flex-col">
+				<div class="nav-col-title displayXs-bold w-full">
+					{{ column3_title }}
+				</div>
+
+				<ul>
+					{% for navigation_only_link_item_3 in navigation_only_link_items_3 %}
+						{{ navigation_only_link_item_3 }}
+					{% endfor %}
+				</ul>
+			</div>
+
+			<div class="nav-col col_4 w-full lg:w-1/4 flex flex-col">
+				<div class="inner">
+          <div class="content-wrap">
+						{% if navigation_card_title %}
+							{{ navigation_card_title }}
+						{% endif %}
+
+						{{ navigation_card_item }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

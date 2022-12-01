@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * featured card
+ *
+ * See card.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/card') }}
+
+{# Default #}
+{% set element = element|default('article') %}
+
+{# Classes #}
+{% set classes = [
+  card_layout,
+  card_size,
+  'featured__card relative w-full overflow-hidden shadow-lg rounded-3xl',
+  extra_classes ? extra_classes
+] %}
+
+{% set hover_classes = [
+  'card_image',
+  image_hover|render|striptags|trim == 'On' ? 'hover_on' : 'hover_off',
+] %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes| sort | join(' ') | trim) %}
+
+{# Template #}
+{% block featured_card_block %}
+  <{{ element }} {{ attributes }} data-aos={{ on_scroll_animation }} data-aos-duration={{ on_scroll_animation_duration }}>
+    <div class="item-wrapper">
+      {% if image|render|trim is not empty %}
+        <div {{ region_attributes.image|default(create_attribute()).addClass(hover_classes| sort | join(' ') | trim) }}>
+          {{ image }}
+        </div>
+      {% endif %}
+
+      <div class="item-content-wrapper">
+        {% if card_label|render|striptags|trim is not empty %}
+          <h4 {{ region_attributes.card_label|default(create_attribute()).addClass('card_label textMd-bold text-white mb-0') }}>
+            {{ card_label }}
+          </h4>
+        {% endif %}
+
+        {% if headline|render|striptags|trim is not empty %}
+          <div class="card_title text-white mb-0">
+            {{ headline }}
+          </div>
+        {% endif %}
+
+        {% if link|render|striptags|trim %}
+          {{ link }}
+        {% endif %}
+      </div>
+    </div>
+  </{{ element }}>
+{% endblock %}

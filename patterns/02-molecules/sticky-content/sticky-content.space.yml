@@ -1,0 +1,310 @@
+sticky_content_vertical_single:
+  use: "@molecules/sticky-content/_sticky-content-vertical-single.twig"
+  namespace: 'Molecules/Sticky content'
+  label: Sticky content - Vertical single image
+  description: 'Sticky content component which will used in sticky item component.'
+  fields:
+    pre_heading:
+      type: text
+      label: Pre heading
+      description: A short pre heading of Sticky component.
+      preview: 'Travel'
+    heading:
+      type: pattern
+      label: Heading
+      description: 'The heading of the Sticky component.'
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'A bayside bustling with life'
+          font: displayMd-bold
+    description:
+      type: text
+      label: Description
+      description: 'The description of the Sticky component.'
+      preview: '<p>Rose Bay is Sydneys most idyllic prestige neighbourhood, nestled between the harbour and the eastern beaches. Combining a cosmopolitan buzz with village character, its a place of unrivalled pedigree, where the lifestyle is cherished by the fortunate few.</p>'
+    button_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Button CTA
+        settings:
+          icon: ''
+          size: xlarge
+    button_2:
+      type: pattern
+      label: Button 2
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: Button CTA
+        settings:
+          icon: ''
+          size: xlarge
+
+sticky_content_vertical_multiple_image:
+  use: "@molecules/sticky-content/_sticky-content-vertical-multiple-image.twig"
+  namespace: 'Molecules/Sticky content'
+  label: Sticky content - Vertical multiple image
+  description: 'Sticky content component which will used in sticky item component.'
+  fields:
+    image:
+      type: pattern
+      label: Image
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/2x_592x592.png
+          style: scale_592w
+          default: false
+
+sticky_content_vertical_multiple_data:
+  use: "@molecules/sticky-content/_sticky-content-vertical-multiple-data.twig"
+  namespace: 'Molecules/Sticky content'
+  label: Sticky content - Vertical multiple data
+  description: 'Sticky content component which will used in sticky item component.'
+  fields:
+    pre_heading:
+      type: text
+      label: Pre heading
+      description: A short pre heading of Sticky component.
+      preview: 'Travel'
+    heading:
+      type: pattern
+      label: Heading
+      description: 'The heading of the Sticky component.'
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'A bayside bustling with life'
+          font: displayMd-bold
+    description:
+      type: text
+      label: Description
+      description: 'The description of the Sticky component.'
+      preview: '<p>Rose Bay is Sydneys most idyllic prestige neighbourhood, nestled between the harbour and the eastern beaches. Combining a cosmopolitan buzz with village character, its a place of unrivalled pedigree, where the lifestyle is cherished by the fortunate few.</p>'
+    button_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Button CTA
+        settings:
+          icon: ''
+          size: xlarge
+    button_2:
+      type: pattern
+      label: Button 2
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: Button CTA
+        settings:
+          icon: ''
+          size: xlarge
+
+sticky_content_horizontal:
+  use: "@molecules/sticky-content/_sticky-content-horizontal.twig"
+  namespace: 'Molecules/Sticky content'
+  label: Sticky content - Horizontal
+  description: 'Sticky content component which will used in sticky item component.'
+  fields:
+    image:
+      type: pattern
+      label: Image
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/2x_800x400.png
+          style: scale_800w
+          default: false
+    pre_heading:
+      type: text
+      label: Pre heading
+      description: A short pre heading of Sticky component.
+      preview: 'Travel'
+    heading:
+      type: pattern
+      label: Heading
+      description: 'The heading of the Sticky component.'
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'A bayside bustling with life'
+          font: displayMd-bold
+    description:
+      type: text
+      label: Description
+      description: 'The description of the Sticky component.'
+      preview: '<p>Rose Bay is Sydneys most idyllic prestige neighbourhood, nestled between the harbour and the eastern beaches. Combining a cosmopolitan buzz with village character, its a place of unrivalled pedigree, where the lifestyle is cherished by the fortunate few.</p>'
+    button_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Button CTA
+        settings:
+          icon: ''
+          size: xlarge
+    button_2:
+      type: pattern
+      label: Button 2
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: Button CTA
+        settings:
+          icon: ''
+          size: xlarge
+
+sticky_content_slim_thumbnails_image:
+  use: "@molecules/sticky-content/_sticky-content-slim-thumbnails-image.twig"
+  namespace: 'Molecules/Sticky content'
+  label: Sticky content - Slim thumbnails image
+  description: 'Sticky content component which will used in sticky item component.'
+  fields:
+    image:
+      type: pattern
+      label: Image
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/slim_thumb.png
+          style: scale_384w
+          default: false
+
+sticky_content_slim_thumbnails_data:
+  use: "@molecules/sticky-content/_sticky-content-slim-thumbnails-data.twig"
+  namespace: 'Molecules/Sticky content'
+  label: Sticky content - Slim thumbnails data
+  description: 'Sticky content component which will used in sticky item component.'
+  fields:
+    pre_heading:
+      type: text
+      label: Pre heading
+      description: A short pre heading of Sticky component.
+      preview: 'Travel'
+    heading:
+      type: pattern
+      label: Heading
+      description: 'The heading of the Sticky component.'
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'A bayside bustling with life'
+          font: displayMd-bold
+    description:
+      type: text
+      label: Description
+      description: 'The description of the Sticky component.'
+      preview: '<p>Rose Bay is Sydneys most idyllic prestige neighbourhood, nestled between the harbour and the eastern beaches. Combining a cosmopolitan buzz with village character, its a place of unrivalled pedigree, where the lifestyle is cherished by the fortunate few.</p>'
+    button_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Button CTA
+        settings:
+          icon: ''
+          size: xlarge
+    button_2:
+      type: pattern
+      label: Button 2
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: Button CTA
+        settings:
+          icon: ''
+          size: xlarge
+
+sticky_content_vertical_multiple_fraction_image:
+  use: "@molecules/sticky-content/_sticky-content-vertical-multiple-fraction-image.twig"
+  namespace: 'Molecules/Sticky content'
+  label: Sticky content - Vertical multiple fraction image
+  description: 'Sticky content component which will used in sticky item component.'
+  fields:
+    image:
+      type: pattern
+      label: Image
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/2x_800x448.png
+          style: scale_800w
+          default: false
+
+sticky_content_vertical_multiple_fraction_data:
+  use: "@molecules/sticky-content/_sticky-content-vertical-multiple-fraction-data.twig"
+  namespace: 'Molecules/Sticky content'
+  label: Sticky content - Vertical multiple fraction data
+  description: 'Sticky content component which will used in sticky item component.'
+  fields:
+    pre_heading:
+      type: text
+      label: Pre heading
+      description: A short pre heading of Sticky component.
+      preview: 'Travel'
+    heading:
+      type: pattern
+      label: Heading
+      description: 'The heading of the Sticky component.'
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'A bayside bustling with life'
+          font: displayMd-bold
+    description:
+      type: text
+      label: Description
+      description: 'The description of the Sticky component.'
+      preview: '<p>Rose Bay is Sydneys most idyllic prestige neighbourhood, nestled between the harbour and the eastern beaches.</p>'
+    button_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Button CTA
+        settings:
+          icon: ''
+          size: xlarge
+    button_2:
+      type: pattern
+      label: Button 2
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: Button CTA
+        settings:
+          icon: ''
+          size: xlarge

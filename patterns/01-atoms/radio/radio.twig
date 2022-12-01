@@ -1,0 +1,19 @@
+{# Classes #}
+{% set classes = ([
+  'form-radio mr-2 border-stroke-borderDefault my-1 h-4 w-4', 
+  size
+ ])
+%}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% block radio_btn_block %}
+  <label class="radio inline-flex items-center cursor-pointer text-sm font-secondary font-medium {{ size }} {% if (disabled) %}disabled{% endif %}">		
+    <input {{ attributes }} {% if (disabled) %}disabled{% endif %}>
+    {% if text is not empty -%}
+    <span class='radio-label text-neutral-700'>{{ text }}</span>
+    {%- endif %}
+    <span class="checkmark"></span>
+  </label>
+{% endblock %}

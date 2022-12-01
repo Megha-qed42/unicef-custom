@@ -1,0 +1,43 @@
+/* Footer text block */
+
+.block-footer-text .block-title {
+  @apply font-bold mb-4;
+}
+
+.block-footer-text .block-content {
+  @apply mb-0;
+}
+
+.block-footer-text .block-title.size-96,
+.block-footer-text .block-content.size-96 {
+  @apply leading-72 text-60 md:leading-96 md:text-96 font-bold tracking-closed;
+}
+
+.block-footer-text .block-title.size-72,
+.block-footer-text .block-content.size-72 {
+  @apply leading-44 text-36 md:leading-72 md:text-72 font-bold tracking-closed;
+}
+
+.block-footer-text .block-title.size-30,
+.block-footer-text .block-content.size-30 {
+  @apply leading-40 text-30 font-bold tracking-closed;
+}
+
+.block-footer-text .block-title.size-20,
+.block-footer-text .block-content.size-20 {
+  @apply leading-32 text-20 font-bold tracking-closed;
+}
+
+.block-footer-text .block-title.size-18,
+.block-footer-text .block-content.size-18 {
+  @apply leading-28 text-18 font-bold tracking-closed;
+}
+
+.block-footer-text .block-title.size-14,
+.block-footer-text .block-content.size-14 {
+  @apply leading-22 text-14 font-bold tracking-closed;
+}
+
+.block-footer-text .block-content {
+  @apply font-normal tracking-default;
+}

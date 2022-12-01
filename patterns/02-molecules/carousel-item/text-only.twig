@@ -1,0 +1,35 @@
+{# Default #}
+{% set tag_name = tag_name|default('div') %}
+{% set attributes = attributes|default(create_attribute()) %}
+
+{# Classes #}
+{% set classes = [
+  'carousel-item',
+] %}
+
+{# Template #}
+{% block carousel_item_text_only %}
+  {% spaceless %}
+    <{{ tag_name }} {{ attributes.addClass(classes | sort | join(' ') | trim) }}>
+      <div class="container h-full mx-auto">
+        <div class="item-text-only relative grid grid-cols-1 lg:grid-cols-12 gap-y-8 md:gap-x-8">
+          <div class="data-col lg:col-span-8">
+            {% if title|render|striptags|trim is not empty %}
+              {% block title %}
+                {{ title }}
+              {% endblock %}
+            {% endif %}
+
+            {% if description|render|striptags|trim is not empty %}
+              <div class="description displayXs-regular lg:displaySm-regular">
+                {% block description %}
+                  {{ description }}
+                {% endblock %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </{{ tag_name }}>
+  {% endspaceless %}
+{% endblock %}

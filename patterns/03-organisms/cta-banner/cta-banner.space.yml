@@ -1,0 +1,104 @@
+cta_banner:
+  use: "@organisms/cta-banner/cta-banner.twig"
+  label: CTA Banner
+  description: CTA Banner component with image, title and text.
+  fields:
+    title:
+      type: pattern
+      label: Title
+      description: 'The title of the CTA Banner.'
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Start your 30-day free trial.'
+          font: displayMd-semibold
+    description:
+      type: text
+      label: Description
+      description: 'The description of the CTA Banner.'
+      preview: '<p>Join over 4,000+ startups already growing with SPACE.</p>'
+    image:
+      type: pattern
+      label: Banner image
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: "space-assets://images/2x_1216x608.png"
+          style: scale_1216w
+          default: false  
+          extra_classes: 'object-cover'
+    link_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: Learn more
+        settings:
+          icon: ''
+          size: xlarge
+    link_2:
+      type: pattern
+      label: Button 2
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Get Started
+        settings:
+          icon: ''
+          size: xlarge
+    email_form:
+      type: pattern
+      label: Subscribe Email Form
+      description: The Email form of the Subscribe Block
+      preview:
+        id: email_form
+        settings:
+          icon: false
+  settings:
+    cta_banner_type:
+      type: select
+      label: CTA Banner type
+      required: true
+      default: type_1
+      options:
+        type_1: Type 1
+        type_2: Type 2
+        type_3: Type 3
+    cta_type:
+      type: select
+      label: CTA Type
+      required: true
+      default: button
+      options:
+        button: Button
+        email: Email form
+    width:
+      type: select
+      label: Banner width
+      required: true
+      default: boxed-width
+      options:
+        boxed-width: Till margin (Boxed)
+        full-width: Full
+    alignment:
+      type: select
+      label: Alignment
+      required: true
+      default: left-align
+      options:
+        left-align: Left
+        center-align: Center
+    image_type:
+      type: select
+      label: Image
+      required: true
+      default: large-image
+      options:
+        large-image: Large
+        small-image: Small

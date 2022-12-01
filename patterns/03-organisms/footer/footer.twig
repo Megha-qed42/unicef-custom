@@ -1,0 +1,80 @@
+{#
+/**
+ * @file
+ * footer
+ *
+ * Footer type: 1 to 17
+ */
+#}
+
+{{ attach_library('unicef_vf/footer') }}
+
+{# Classes #}
+{% if footer_top_left is not empty or footer_top_right is not empty %}
+  {% set pt = 'pt-48' %}
+{% endif %}
+
+{# Template #}
+{% block site_footer %}
+  <footer class="footer body-font text-text-body pt-48 md:pt-64 {{ colour }} {{ type }}">
+    {% if footer_top_left is not empty or footer_top_right is not empty %}
+      <section class="footer-top px-4 md:px-[1.875rem] xl:px-0 body-font text-text-body text-base {{ colour }}">
+        <div class="container mx-auto pb-48">
+          <div class="footer-top-wrapper flex flex-col md:flex-row md:flex-wrap gap-x-4 lg:gap-x-8 justify-between md:space-x-3">
+            {% if footer_top_left is not empty %}
+              <div class="footer-top-left grid grid-cols-1 gap-x-4 lg:gap-x-8 gap-y-0 md:flex md:flex-wrap justify-between">
+                {{ footer_top_left }}
+              </div>
+            {% endif %}
+
+            {% if footer_top_right is not empty %}
+              <div class="footer-top-right grid grid-cols-1 gap-x-4 lg:gap-x-8 gap-y-0 md:flex md:flex-wrap md:justify-end">
+                {{ footer_top_right }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+    {% if footer_middle_left is not empty or footer_middle_right is not empty %}
+      <section class="footer-middle px-4 md:px-[1.875rem] xl:px-0">
+        <div class="container mx-auto pb-48 md:pb-64 {{ pt }}">
+          <div class="footer-middle-wrapper flex flex-col md:flex-row flex-wrap gap-x-4 lg:gap-x-8 justify-between md:space-x-3">
+            {% if footer_middle_left is not empty %}
+              <div class="footer-middle-left block-wrapper grid grid-cols-1 gap-x-4 lg:gap-x-8 gap-y-0 md:flex md:flex-wrap justify-between">
+                {{ footer_middle_left }}
+              </div>
+            {% endif %}
+
+            {% if footer_middle_right is not empty %}
+              <div class="footer-middle-right block-wrapper grid grid-cols-1 gap-x-4 lg:gap-x-8 gap-y-0 md:flex md:flex-wrap md:justify-end">
+                {{ footer_middle_right }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+    {% if footer_bottom_left is not empty or footer_bottom_right is not empty %}
+      <section class="footer-bottom px-4 md:px-[1.875rem] xl:px-0 py-0 body-font text-text-body text-base {{ colour }}">
+        <div class="container mx-auto py-8">
+          <div class="footer-bottom-wrapper grid grid-cols-1 gap-y-6 md:gap-y-0 md:flex md:flex-row md:flex-wrap md:justify-between md:items-center">
+            {% if footer_bottom_left is not empty %}
+              <div class="footer-bottom-left flex-1">
+                {{ footer_bottom_left }}
+              </div>
+            {% endif %}
+
+            {% if footer_bottom_right is not empty %}
+              <div class="footer-bottom-right flex-1 flex md:justify-end">
+                {{ footer_bottom_right }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+  </footer>
+{% endblock %}

@@ -1,0 +1,100 @@
+{#
+/**
+ * @file
+ * text-media
+ *
+ * See text-media.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/text-media') }}
+
+{# Classes #}
+{% set classes = [    
+  'text-media-wrapper',
+  layout_type,
+  column_width,
+  alignment_column|render|striptags|trim,
+  extra_classes ? extra_classes
+] %}
+{% set full_column_image_width = '' %}
+{% set full_column_desc_width = '' %}
+{% set attributes = attributes|default(create_attribute()).addClass(classes| sort | join(' ') | trim) %}
+{% if heading|render|striptags|trim is empty and description|render|striptags|trim is empty and layout_type == "default-layout" %}
+  {% set full_column_image_width = 'full_column_width' %}
+{% endif %}
+{% if image|render|striptags is empty %}
+  {% set full_column_desc_width = 'full_column_width' %}
+{% endif %}
+
+{# Template #}
+{% block text_media_block %}
+  <div class="text-media">
+    <div class="container relative mx-auto">
+      <div {{ attributes }}>
+        <div class="text-media-col1 {{full_column_desc_width}}">
+        {% if layout_type != "withimages" %}    
+            {% if heading|render|striptags|trim is not empty %}
+              <div class="text-media-heading">
+                {{ heading }}
+              </div>
+            {% endif %}
+
+            {% if description|render|striptags|trim is not empty %}
+              <div class="text-media-description textMd-regular md:textXL-regular text-text-body">
+                {{ description }}
+              </div>
+            {% endif %}
+          {% endif %}
+
+          {% if layout_type == "withlink" %}
+            {% if link_1|render|striptags|trim or link_2|render|striptags|trim %}
+              <div class="text-media-links mt-48">
+                {% if link_1|render|striptags|trim %}
+                  {{ link_1 }}
+                {% endif %}
+                {% if link_2|render|striptags|trim %}
+                  {{ link_2 }}
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endif %}
+
+          {% if layout_type == "withstats" %}
+            {% if stats %}
+              <div class="text-media-stats mt-48 relative grid grid-cols-1 sm:grid-cols-2 gap-y-8 sm:gap-x-4 md:gap-x-5 lg:gap-x-8">
+                {% if stats %}
+                  {{ stats }}
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endif %}
+          
+          {% if layout_type == "withchecklist" %} 
+            {% if feature_items|length > 0 %}
+              <div class="text-media-checklist mt-48">
+              {% for item in feature_items %}
+                <div class="mb-4">
+                  {{ item }}
+                </div>
+              {% endfor %}
+              </div>
+            {% endif %}
+          {% endif %}    
+
+          {% if layout_type == "withimages" %}
+            {% if image2|render|trim is not empty %}    
+              <div {{ region_attributes.image|default(create_attribute()).addClass('text-media-image transition-all duration-200 ease-in-out scale-100') }}>{{ image2 }}</div>      
+            {% endif %}
+          {% endif %}
+        </div>
+
+        {% if image|render|trim is not empty %}
+          <div class="text-media-col2 {{ full_column_image_width }}">      
+            <div {{ region_attributes.image|default(create_attribute()).addClass('text-media-image transition-all duration-200 ease-in-out scale-100') }}>{{ image }}</div>      
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

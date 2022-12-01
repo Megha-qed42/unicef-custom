@@ -1,0 +1,161 @@
+slider:
+  use: "@organisms/slider/slider.twig"
+  label: Slider
+  icon_path: space-assets://images/slideshow.svg
+  description: Javascript slider with swipperjs (https://swiperjs.com/).
+    Change the slider behavior in slider.behavior.js.
+  fields:
+    header:
+      type: pattern
+      label: Section Header
+      description: Optional header
+      preview:
+        id: rich_text
+        variant: default
+        fields:
+          text: '<h2 class="text-center section-header">Headline</h2>'
+    items:
+      type: pattern
+      label: Slider items
+      multi_value_type: items
+      preview:
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: space-assets://images/perfume.png
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: space-assets://images/perfume.png
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: space-assets://images/perfume.png
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: space-assets://images/perfume.png
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: space-assets://images/perfume.png
+        - id: image_atom
+          variant: image
+          settings:
+            image_url: space-assets://images/perfume.png
+  settings:
+    slides_type:
+      type: select
+      label: Slides type
+      description: 'The type of the carousel.'
+      default_value: slide
+      options:
+        slide: Slide
+        loop: Loop
+    slide_focus:
+      type: select
+      label: Slide focus
+      description: 'Center slide will be active if Slide focus <b>Center</b> is selected. This will mostly work will Slides type <b>Loop</b>.'
+      default_value: none
+      options:
+        none: None
+        center: Center
+    slides_per_view:
+      type: select
+      label: Slides per view
+      default_value: '1'
+      options:
+        1: 1
+        2: 2
+        3: 3
+        4: 4
+        5: 5
+        6: 6
+    slides_on_tablet:
+      type: select
+      label: Slides on tablet
+      default_value: '1'
+      options:
+        1: 1
+        2: 2
+        3: 3
+        4: 4
+    slides_on_mobile:
+      type: select
+      label: Slides on mobile
+      default_value: '1'
+      options:
+        1: 1
+        2: 2
+        3: 3
+        4: 4
+    slide_padding_right:
+      type: select
+      label: Slides padding right
+      description: 'Add padding right to show half slide at last.'
+      default_value: '0'
+      options:
+        0: 0px
+        0.9375rem: 15px
+        5rem: 80px
+    slide_padding_left:
+      type: select
+      label: Slides padding left
+      description: 'Add padding left to show half slide at start.'
+      default_value: '0'
+      options:
+        0: 0px
+        0.9375rem: 15px
+        5rem: 80px
+    autoplay:
+      type: boolean
+      label: Autoplay
+      default_value: false
+    counter:
+      type: boolean
+      label: Counter
+      description: 'Enable when Pagination style <b>Numbers with Fractions (1/3)</b> is selected.'
+      default_value: false
+    arrows:
+      type: boolean
+      label: Arrows
+      default_value: true
+    arrows_color:
+      type: select
+      label: Arrows color
+      default_value: primary-dark-arrows
+      options:
+        primary-dark-arrows: Primary Dark
+        primary-light-arrows: Primary Light
+        primary-grey-arrows: Primary Grey
+        primary-white-arrows: White
+        transparent-arrows: Transparent
+    pagination_style:
+      type: select
+      label: Pagination style
+      description: '<b>Thumbnail slider</b> style is associated with Images & Video slideshow variant. Directly use this variant while creating content instead of selecting here.'
+      default_value: no-pagination
+      options:
+        no-pagination: None
+        dot-pagination: Dot
+        line-pagination: Line
+        number-dash-pagination: Numbers with Dash
+        number-fraction-pagination: Numbers with Fractions
+        thumbnail-slider: Thumbnail slider
+    pagination_color:
+      type: select
+      label: Pagination color
+      default_value: primary-light-background
+      options:
+        primary-light-background: Primary Light Background
+        primary-dark-background: Primary Dark Background
+        grey-light-background: Grey Light Background
+        grey-dark-background: Grey Dark Background
+    pagination_alignment:
+      type: select
+      label: Pagination alignment
+      default_value: center-align-pagination
+      options:
+        left-align-pagination: Left
+        right-align-pagination: Right
+        center-align-pagination: Center

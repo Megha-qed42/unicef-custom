@@ -1,0 +1,113 @@
+/* Navigation */
+
+.menu-navigation {
+
+  > li {
+
+    .link-element {
+      transition: color 0.3s ease-in-out 0s;
+    }
+  }
+
+  /* Color */
+  &.on-darkGrey-background {
+
+    > li {
+
+      .link-element {
+        @apply text-text-neutralLight;
+
+        &:hover {
+          @apply text-white;
+        }
+      }
+    }
+  }
+
+  &.on-darkPrimary-background {
+
+    > li {
+
+      .link-element {
+        @apply text-text-primaryLight;
+
+        &:hover {
+          @apply text-white;
+        }
+      }
+    }
+  }
+
+  /* Size */
+  &.font-small,
+  &.font-xsmall {
+    @apply space-y-3;
+  }
+
+  &.font-small {
+    
+    > li {
+
+      a {
+        @apply text-base font-secondary;
+      }
+    }
+  }
+
+  &.font-xsmall {
+
+    > li {
+
+      a {
+        @apply text-sm font-secondary;
+      }
+    }
+  }
+
+  &.font-large {
+    @apply space-y-6;
+
+    > li {
+
+      a {
+        @apply text-48 leading-60 font-primaryBold tracking-[-0.02em];
+      }
+    }
+  }
+
+  &.menu__horizontal {
+    @apply flex flex-wrap md:space-x-4 space-y-0;
+  }
+
+  /* Variant */
+  &.menu__with-arrow.font-small,
+  &.menu__with-arrow.font-xsmall {
+
+    > li svg {
+      @apply ml-2 w-4 h-4;
+    }
+  }
+
+  &.menu__with-arrow.font-large {
+
+    > li svg {
+      @apply ml-7 w-6 h-6;
+    }
+  }
+}
+
+/* Storybook */
+.space-body {
+
+  .menu-navigation {
+    @apply p-4;
+
+    &.on-darkGrey-background {
+      @apply bg-backgroundNeutral-neutralDark;
+    }
+
+    &.on-darkPrimary-background {
+      @apply bg-backgroundNeutral-neutralExtraDark;
+    }
+  }
+}

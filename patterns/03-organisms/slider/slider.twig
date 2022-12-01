@@ -1,0 +1,373 @@
+{#
+/**
+ * @file
+ * slider
+ *
+ * See slider.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/slider') }}
+
+{% if pagination_style == 'no-pagination' %}
+  {% set pagination_classes = ([
+    extra_classes,
+    pagination_color,
+    pagination_alignment,
+    'no-pagination'
+  ] | sort | join(' ') | trim ) %}
+
+  {% block slider_no_pagination %}
+    <div class="splide__container {{ counter ? 'splide-has-counter' }}">
+      <div id="splide" 
+        class="splide splide-slider overflow-hidden {{ (items|length <= slides_per_view and slides_type != "loop") ? 'less_variant' }} {{ pagination_classes }}" data-slides-per-view="{{ slides_per_view }}" 
+        data-slides-on-tablet="{{ slides_on_tablet ? slides_on_tablet : '1' }}" 
+        data-slides-on-mobile="{{ slides_on_mobile ? slides_on_mobile : '1' }}" 
+        data-slide-space-left="{{ slide_padding_left }}" 
+        data-slide-space-right="{{ slide_padding_right }}" 
+        data-slide-focus="{{ slide_focus }}" 
+        data-autoplay="{{ autoplay }}" 
+        data-arrows="{{ arrows }}" 
+        data-splide="{{ slides_type }}">
+        <div class="splide__track">
+          <ul class="splide__list flex">
+            {% for key, item in items %}
+              {%- set iterator -%}
+                {{- key -}}
+              {% endset %}
+              {% if iterator != "region_label" %}
+                <li class="splide__slide flex-shrink-0" data-slide-number="{{ key + 1 }}">{{ item }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+        {% if arrows %}
+          <div class="splide__arrows {{ arrows_color }}">
+            <div class="container mx-auto flex flex-wrap">
+              <button class="splide__arrow splide__arrow--prev bg-defaultGray-50 p-3 rounded-full mr-6">
+                <span class="sr-only">Previous</span>
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: "chevronRight",
+                  size: 'w-6 h-6',
+                } only %}
+              </button>
+              <button class="splide__arrow splide__arrow--next bg-defaultGray-50 p-3 rounded-full">
+                <span class="sr-only">Next</span>
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: "chevronRight",
+                  size: 'w-6 h-6',
+                } only %}
+              </button>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}
+
+{% elseif pagination_style == 'dot-pagination' %}
+  {% set pagination_classes = ([
+    extra_classes,
+    pagination_color,
+    pagination_alignment,
+    'dot-pagination'
+  ] | sort | join(' ') | trim ) %}
+
+  {% block slider_dot_pagination %}
+    <div class="splide__container {{ counter ? 'splide-has-counter' }}">
+      <div id="splide" 
+        class="splide splide-slider overflow-hidden {{ (items|length <= slides_per_view and slides_type != "loop") ? 'less_variant' }} {{ pagination_classes }}" data-slides-per-view="{{ slides_per_view }}" 
+        data-slides-on-tablet="{{ slides_on_tablet ? slides_on_tablet : '1' }}" 
+        data-slides-on-mobile="{{ slides_on_mobile ? slides_on_mobile : '1' }}"
+        data-slide-space-left="{{ slide_padding_left }}" 
+        data-slide-space-right="{{ slide_padding_right }}" 
+        data-slide-focus="{{ slide_focus }}" 
+        data-autoplay="{{ autoplay }}" 
+        data-arrows="{{ arrows }}" 
+        data-splide="{{ slides_type }}">
+        <div class="splide__track">
+          <ul class="splide__list flex">
+            {% for key, item in items %}
+              {%- set iterator -%}
+                {{- key -}}
+              {% endset %}
+              {% if iterator != "region_label" %}
+                <li class="splide__slide flex-shrink-0" data-slide-number="{{ key + 1 }}">{{ item }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+        {% if arrows %}
+          <div class="splide__arrows {{ arrows_color }}">
+            <div class="container mx-auto flex flex-wrap">
+              <button class="splide__arrow splide__arrow--prev bg-defaultGray-50 p-3 rounded-full mr-6">
+                <span class="sr-only">Previous</span>
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: "chevronRight",
+                  size: 'w-6 h-6',
+                } only %}
+              </button>
+              <button class="splide__arrow splide__arrow--next bg-defaultGray-50 p-3 rounded-full">
+                <span class="sr-only">Next</span>
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: "chevronRight",
+                  size: 'w-6 h-6',
+                } only %}
+              </button>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}
+
+{% elseif pagination_style == 'line-pagination' %}
+  {% set pagination_classes = ([
+    extra_classes,
+    pagination_color,
+    pagination_alignment,
+    'line-pagination'
+  ] | sort | join(' ') | trim ) %}
+
+  {% block slider_line_pagination %}
+    <div class="splide__container {{ counter ? 'splide-has-counter' }}">
+      <div id="splide" 
+        class="splide splide-slider overflow-hidden {{ (items|length <= slides_per_view and slides_type != "loop") ? 'less_variant' }} {{ pagination_classes }}" data-slides-per-view="{{ slides_per_view }}" 
+        data-slides-on-tablet="{{ slides_on_tablet ? slides_on_tablet : '1' }}" 
+        data-slides-on-mobile="{{ slides_on_mobile ? slides_on_mobile : '1' }}"
+        data-slide-space-left="{{ slide_padding_left }}" 
+        data-slide-space-right="{{ slide_padding_right }}" 
+        data-slide-focus="{{ slide_focus }}" 
+        data-autoplay="{{ autoplay }}" 
+        data-arrows="{{ arrows }}" 
+        data-splide="{{ slides_type }}">
+        <div class="splide__track">
+          <ul class="splide__list flex">
+            {% for key, item in items %}
+              {%- set iterator -%}
+                {{- key -}}
+              {% endset %}
+              {% if iterator != "region_label" %}
+                <li class="splide__slide flex-shrink-0" data-slide-number="{{ key + 1 }}">{{ item }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+        {% if arrows %}
+          <div class="splide__arrows {{ arrows_color }}">
+            <div class="container mx-auto flex flex-wrap">
+              <button class="splide__arrow splide__arrow--prev bg-defaultGray-50 p-3 rounded-full mr-6">
+                <span class="sr-only">Previous</span>
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: "chevronRight",
+                  size: 'w-6 h-6',
+                  fill_color: 'fill-grey',
+                } only %}
+              </button>
+              <button class="splide__arrow splide__arrow--next bg-defaultGray-50 p-3 rounded-full border border-transparent hover:border-defaultRed-100 hover:bg-defaultRed-100">
+                <span class="sr-only">Next</span>
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: "chevronRight",
+                  size: 'w-6 h-6',
+                  fill_color: 'fill-grey',
+                } only %}
+              </button>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}
+
+{% elseif pagination_style == 'number-dash-pagination' %}
+  {% set pagination_classes = ([
+    extra_classes,
+    pagination_color,
+    pagination_alignment,
+    'number-dash-pagination'
+  ] | sort | join(' ') | trim ) %}
+
+  {% block slider_number_dash_pagination %}
+    <div class="splide__container {{ counter ? 'splide-has-counter' }}">
+      <div id="splide" 
+        class="splide splide-slider overflow-hidden {{ (items|length <= slides_per_view and slides_type != "loop") ? 'less_variant' }} {{ pagination_classes }}" data-slides-per-view="{{ slides_per_view }}" 
+        data-slides-on-tablet="{{ slides_on_tablet ? slides_on_tablet : '1' }}" 
+        data-slides-on-mobile="{{ slides_on_mobile ? slides_on_mobile : '1' }}"
+        data-slide-space-left="{{ slide_padding_left }}" 
+        data-slide-space-right="{{ slide_padding_right }}" 
+        data-slide-focus="{{ slide_focus }}" 
+        data-autoplay="{{ autoplay }}" 
+        data-arrows="{{ arrows }}" 
+        data-splide="{{ slides_type }}">
+        <div class="splide__track">
+          <ul class="splide__list flex">
+            {% for key, item in items %}
+              {%- set iterator -%}
+                {{- key -}}
+              {% endset %}
+              {% if iterator != "region_label" %}
+                <li class="splide__slide flex-shrink-0" data-slide-number="{{ key + 1 }}">{{ item }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+        {% if arrows %}
+          <div class="splide__arrows {{ arrows_color }}">
+            <div class="container mx-auto flex flex-wrap">
+              <button class="splide__arrow splide__arrow--prev bg-defaultGray-50 p-3 rounded-full mr-6">
+                <span class="sr-only">Previous</span>
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: "chevronRight",
+                  size: 'w-6 h-6',
+                } only %}
+              </button>
+              <button class="splide__arrow splide__arrow--next bg-defaultGray-50 p-3 rounded-full">
+                <span class="sr-only">Next</span>
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: "chevronRight",
+                  size: 'w-6 h-6',
+                } only %}
+              </button>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}
+
+{% elseif pagination_style == 'number-fraction-pagination' %}
+  {% set pagination_classes = ([
+    extra_classes,
+    pagination_color,
+    pagination_alignment,
+    'has-counter',
+    'number-fraction-pagination'
+  ] | sort | join(' ') | trim ) %}
+
+  {% block slider_number_fraction_pagination %}
+    <div class="splide__container splide-has-counter">
+      <div id="splide" 
+        class="splide splide-slider overflow-hidden {{ (items|length <= slides_per_view and slides_type != "loop") ? 'less_variant' }} {{ pagination_classes }}" data-slides-per-view="{{ slides_per_view }}" 
+        data-slides-on-tablet="{{ slides_on_tablet ? slides_on_tablet : '1' }}" 
+        data-slides-on-mobile="{{ slides_on_mobile ? slides_on_mobile : '1' }}"
+        data-slide-space-left="{{ slide_padding_left }}" 
+        data-slide-space-right="{{ slide_padding_right }}" 
+        data-slide-focus="{{ slide_focus }}" 
+        data-autoplay="{{ autoplay }}" 
+        data-arrows="{{ arrows }}" 
+        data-splide="{{ slides_type }}">
+        <div class="splide__track">
+          <ul class="splide__list flex">
+            {% for key, item in items %}
+              {%- set iterator -%}
+                {{- key -}}
+              {% endset %}
+              {% if iterator != "region_label" %}
+                <li class="splide__slide flex-shrink-0" data-slide-number="{{ "%02d"|format(key + 1) }}">{{ item }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+        {% if arrows and counter == true  %}
+          <div class="splide__arrows {{ arrows_color }}">
+            <div class="container mx-auto flex flex-wrap">
+              <button class="splide__arrow splide__arrow--prev bg-defaultGray-50 p-3 rounded-full mr-6">
+                <span class="sr-only">Previous</span>
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: "chevronRight",
+                  size: 'w-6 h-6',
+                } only %}
+              </button>
+              <div class="splide__pagination">
+                <span class="splide__slide-index">01</span>
+                <span class="divider mx-1.5">/</span>
+                <span class="splide__slide-total">{{ "%02d"|format(items|length) }}</span>
+              </div>
+              <button class="splide__arrow splide__arrow--next bg-defaultGray-50 p-3 rounded-full">
+                <span class="sr-only">Next</span>
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: "chevronRight",
+                  size: 'w-6 h-6',
+                } only %}
+              </button>
+            </div>
+          </div>
+        {% elseif arrows %}
+          <div class="splide__arrows {{ arrows_color }}">
+            <div class="container mx-auto flex flex-wrap">
+              <button class="splide__arrow splide__arrow--prev bg-defaultGray-50 p-3 rounded-full mr-6">
+                <span class="sr-only">Previous</span>
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: "chevronRight",
+                  size: 'w-6 h-6',
+                } only %}
+              </button>
+              <button class="splide__arrow splide__arrow--next bg-defaultGray-50 p-3 rounded-full">
+                <span class="sr-only">Next</span>
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: "chevronRight",
+                  size: 'w-6 h-6',
+                } only %}
+              </button>
+            </div>
+          </div>
+        {% elseif counter == true and items|length > 1 %}
+          <div class="splide__pagination">
+            <div class="container mx-auto flex">
+              <span class="splide__slide-index">01</span>
+              <span class="divider mx-1.5">/</span>
+              <span class="splide__slide-total">{{ "%02d"|format(items|length) }}</span>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}
+
+{% elseif pagination_style == 'thumbnail-slider' %}
+  {% set pagination_classes = ([
+    extra_classes,
+    pagination_color,
+    pagination_alignment,
+    'thumbnail-sync-slider'
+  ] | sort | join(' ') | trim ) %}
+
+  {% block thumbnail_sync_slider %}
+    <div class="splide__container {{ counter ? 'splide-has-counter' }}">
+      <div id="thumbnail-sync-slider" class="splide splide-slider overflow-hidden {{ (items|length <= slides_per_view and slides_type != "loop") ? 'less_variant' }} {{ pagination_classes }}" data-slides-per-view="{{ slides_per_view }}" data-slides-on-tablet="{{ slides_on_tablet ? slides_on_tablet : '1' }}" data-slide-space-left="{{ slide_padding_left }}" data-slide-space-right="{{ slide_padding_right }}" data-autoplay="{{ autoplay }}" data-arrows="{{ arrows }}">
+        <div class="splide__track">
+          <ul class="splide__list flex">
+            {% for key, item in items %}
+              {%- set iterator -%}
+                {{- key -}}
+              {% endset %}
+              {% if iterator != "region_label" %}
+                <li class="splide__slide flex-shrink-0" data-slide-number="{{ key + 1 }}" aria-label="Go to slide {{ key + 1 }}">{{ item }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+        {% if arrows %}
+          <div class="splide__arrows {{ arrows_color }}">
+            <div class="container mx-auto flex flex-wrap">
+              <button class="splide__arrow splide__arrow--prev bg-defaultGray-50 p-3 rounded-full mr-6">
+                <span class="sr-only">Previous</span>
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: "chevronRight",
+                  size: 'w-6 h-6',
+                } only %}
+              </button>
+              <button class="splide__arrow splide__arrow--next bg-defaultGray-50 p-3 rounded-full">
+                <span class="sr-only">Next</span>
+                {% include "@atoms/svg/_svg--icon.twig" with {
+                  icon: "chevronRight",
+                  size: 'w-6 h-6',
+                } only %}
+              </button>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}
+{% endif %}

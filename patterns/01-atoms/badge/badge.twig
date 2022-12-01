@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ *  Badge template.
+ */
+#}
+
+{{ attach_library('unicef_vf/badge') }}
+
+{# Classes #}
+{% set classes = [
+	'badge bg-backgroundNeutral-neutralMedium rounded-2xl capitalize textSm-medium text-text-heading',
+	pattern_configuration('badge', variant, 'size')['text'][size],
+	type == "only-icon" ? 'badge-text-empty',
+	size == "small" ? 'icon-sm',
+	size == "medium" ? 'icon-md',
+	size == "large" ? 'icon-lg',
+] %}
+
+{% set icon_size = 'w-1.5 h-1.5 -mt-0.5 ml-px inline-block' %}
+
+{# Template #}
+{% block badge_block %}
+	<span {{ attributes.addClass(classes) }} >
+		{% if type == "text-only" %}
+			{{ text }}
+		{% endif %}
+		{% if type == "text-plus-icon" %}
+			{{ text }}
+			{% include "@atoms/svg/_svg--icon.twig" with {
+				icon: icon,
+				size: icon_size
+			} only %}
+		{% endif %}
+		{% if type == "only-icon" %}
+			<span class="only-icon">
+				{% include "@atoms/svg/_svg--icon.twig" with {
+					icon: icon,
+					size: icon_size
+				} only %}
+			</span>
+		{% endif %}
+	</span>
+{% endblock %}

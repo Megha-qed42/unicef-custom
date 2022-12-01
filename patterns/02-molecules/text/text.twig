@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * text
+ *
+ * See text.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/text') }}
+
+{# Default #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set heading_id = attributes.id|clean_id %}
+
+{# Classes #}
+{% set classes = [
+  'text text_block',
+  extra_classes
+] %}
+
+{# Template #}
+{% block text %}
+  <div {{ attributes|without('role', 'aria-labelledby').addClass(classes | sort | join(' ') | trim) }} aria-labelledby="{{ heading_id }}" role="contentinfo">
+    {{ title_suffix }}
+    {% if title|render|striptags|trim is not empty %}
+      <h2 class="block-title text-base {{ title_font_size }} {{ title_color }}">{{ title }}</h2>
+    {% endif %}
+    {% if content is not empty %}
+      <div class="block-content text-base {{ content_font_size }} {{ content_color }}">{{ content }}</div>
+    {% endif %}
+  </div>
+{% endblock %}

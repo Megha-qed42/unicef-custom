@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * hero-banner-style 1
+ *
+ * See hero-banner.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/hero-banner') }}
+
+{# Template #}
+{% block hero_banner_style_1_block %}
+  <section class="hero-banner body-font style-1" role="banner">
+    {% if background_image|render|trim is not empty %}
+      <div class="backgroundImage w-full h-full xl:h-screen absolute top-0 left-0 bg-cover bg-no-repeat bg-center">
+        {{ background_image }}
+      </div>
+    {% endif %}
+
+    <div class="container relative h-full mx-auto z-20">
+      {% if headline|render|striptags|trim is not empty %}
+        <div class="heading max-w-798">
+          {{ headline }}
+        </div>
+      {% endif %}
+
+      {% if sub_headline|render|striptags|trim is not empty %}
+        <div{{ region_attributes.sub_headline|default(create_attribute()).addClass('sub-headline textLG-regular lg:displayXs-regular text-text-heading w-full max-w-798 mb-10') }}>{{ sub_headline }}</div>
+      {% endif %}
+
+      {% if email_form is not empty %}
+        <div{{ region_attributes.email_form|default(create_attribute()).addClass('email-form max-w-480') }}>{{ email_form }}</div>
+      {% endif %}
+
+      {% if items is not empty %}
+        <div{{ region_attributes.items|default(create_attribute()).addClass('bottom-info') }}>{{ items }}</div>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

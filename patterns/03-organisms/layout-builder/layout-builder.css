@@ -1,0 +1,180 @@
+/* Layout - Container */
+
+.layout {
+  
+  > .layout-wrapper {
+    @apply maxLgMd:grid maxLgMd:grid-cols-1 gap-y-8 sm:gap-x-4 md:gap-x-5 lg:gap-x-8;
+
+    > .layout__region {
+      @apply flex w-full float-none flex-col;
+
+      > div,
+      .layout-builder-block {
+        @apply h-full;
+
+        > div[data-quickedit-entity-id] {
+          @apply h-full;
+        }
+      }
+
+      > .inner,
+      .content-wrap {
+        @apply flex w-auto flex-col gap-y-8 h-full;
+
+        > div[data-quickedit-entity-id] {
+          @apply h-full;
+        }
+      }
+    }
+
+    /* Auto height of component blocks */
+    &.height-auto {
+
+      > .layout__region {
+
+        > .inner > * {
+          @apply h-auto !important;
+        }
+      }
+    }
+  }
+
+  /* Two & Four column on ipad and mobile */
+  &.layout--twocol-section,
+  &.layout--fourcol-section {
+
+    > .layout-wrapper {
+      @apply grid-cols-1 md:grid-cols-2;
+    }
+  }
+
+  /* Three column on ipad and mobile */
+  &.layout--threecol-section {
+
+    > .layout-wrapper {
+      @apply flex maxLgMd:flex-wrap maxLgMd:justify-center;
+
+      > .layout__region {
+        @media screen(maxLgMd) {
+          flex: 0 1 calc(50% - 16px);
+        }
+
+        @media screen(maxLg) {
+          flex: 0 1 calc(50% - 10px);
+        }
+
+        @media screen(maxMd) {
+          flex: 0 1 100%;
+        }
+      }
+    }
+  }
+
+  /* In case - If layout inside layout */
+  .layout {
+    @apply m-0;
+
+    .layout-wrapper {
+      @apply w-full;
+    }
+
+    &.layout--onecol {
+
+      > .layout-wrapper {
+  
+        > .layout__region {
+          @apply flex-1;
+        }
+      }
+    }
+  }
+}
+
+/* Classes created for Layout builder
+ * to provide/add an class to Layout
+ * container through module settings.
+ * Classes can be added from 
+ * Path - site_url/admin/structure/layout_custom_section_classes/classes
+*/
+
+/* Margin - Top Bottom */
+.my_small {
+  @apply my-[3rem];
+}
+
+.my_medium {
+  @apply my-[4rem];
+}
+
+.my_large {
+  @apply my-[5rem];
+}
+
+.my_xlarge {
+  @apply my-[5rem] lg:my-[7rem];
+}
+
+.my_xxlarge {
+  @apply my-[5rem] lg:my-[7.5rem];
+}
+
+/* Margin - Top */
+.mt_small {
+  @apply mt-[3rem];
+}
+
+.mt_medium {
+  @apply mt-[4rem];
+}
+
+.mt_large {
+  @apply mt-[5rem];
+}
+
+.mt_xlarge {
+  @apply mt-[5rem] lg:mt-[7rem];
+}
+
+.mt_xxlarge {
+  @apply mt-[5rem] lg:mt-[7.5rem];
+}
+
+/* Margin - Bottom */
+.mb_small {
+  @apply mb-[3rem];
+}
+
+.mb_medium {
+  @apply mb-[4rem];
+}
+
+.mb_large {
+  @apply mb-[5rem];
+}
+
+.mb_xlarge {
+  @apply mb-[5rem] lg:mb-[7rem];
+}
+
+.mb_xxlarge {
+  @apply mb-[5rem] lg:mb-[7.5rem];
+}
+
+/* Mobile & Tablet horizontal spacing */
+.mx_mobile_tablet {
+  @apply px-4 md:px-[1.875rem] xl:px-0;
+}
+
+/* Background color */
+.light-grayish-cyan-1 {
+  @apply bg-backgroundPrimary-primaryExtraLight;
+}
+
+.light-grayish-cyan-2 {
+  @apply bg-backgroundNeutral-neutralLight;
+}
+
+/* Container custom */
+.container-800 {
+  @apply max-w-[50rem];
+}

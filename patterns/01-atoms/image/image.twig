@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Image component for images and background images.
+ */
+#}
+{# SETTINGS #}
+{% import '@atoms/image/_image-macro.twig' as imagemacro %}
+
+{% set variant = variant|default('image') %}
+{% set image_classes = [
+  'image-el',
+  corners == 'rounded' ? 'rounded-full': 'rounded-none'
+]| sort | join(' ') | trim %}
+
+{# TEMPLATES #}
+{% if variant == 'image' %}
+  {% if caption is not empty %}
+    <figure>
+      {{ imagemacro.image(style, image_url, image_classes, extra_classes) }}
+      {% if caption is not empty %}
+        <figcaption>{{ caption }}</figcaption>
+      {% endif %}
+    </figure>
+  {% else %}
+    {{ imagemacro.image(style, image_url, image_classes, extra_classes) }}
+  {% endif %}
+{% elseif variant == 'background' %}
+  {% include '@atoms/image/_image--background.twig' with {
+    url: image_url,
+    background_style: background_style
+  } only %}
+{% endif %}
+

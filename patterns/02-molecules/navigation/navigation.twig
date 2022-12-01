@@ -1,0 +1,93 @@
+{#
+/**
+ * @file
+ * navigation
+ *
+ * See navigation.space.yaml for documentation.
+ */
+#}
+{# Defaults #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set wrap_nav = wrap_nav|default(false) %}
+{% set footer_top_navigation_variation = footer_top_navigation_variation %}
+{% set footer_top_navigation_size = footer_top_navigation_size %}
+{% set footer_top_navigation_color = footer_top_navigation_color %}
+{% set footer_middle_navigation_variation = footer_middle_navigation_variation %}
+{% set footer_middle_navigation_size = footer_middle_navigation_size %}
+{% set footer_middle_navigation_color = footer_middle_navigation_color %}
+{% set footer_utility_navigation_variation = footer_utility_navigation_variation %}
+{% set footer_utility_navigation_size = footer_utility_navigation_size %}
+{% set footer_utility_navigation_color = footer_utility_navigation_color %}
+{% set footer_bottom_navigation_variation = footer_bottom_navigation_variation %}
+{% set footer_bottom_navigation_size = footer_bottom_navigation_size %}
+{% set footer_bottom_navigation_color = footer_bottom_navigation_color %}
+
+{# Template #}
+{% block navigation_items_block %}
+  {% import _self as menus %}
+
+  {{ menus.menu_links(items, attributes, 0, variant, wrap_nav, font_size, text_color) }}
+
+  {% macro menu_links(items, attributes, menu_level, variant, wrap_nav, font_size, text_color) %}
+    {% import _self as menus %}
+
+    {% if items %}
+
+      {% set wrap_nav = wrap_nav|default(false) %}
+      {% set variant = variant|default('default') %}
+
+      {% if wrap_nav %}
+        <nav role="navigation">
+      {% endif %}
+
+      {% set menu_modifiers = ([
+        'menu menu-navigation',
+        'menu__' ~ variant,
+        'text-base',
+        font_size,
+        text_color,
+      ]) %}
+
+      {% if menu_level == 0 %}
+        <ul{{ attributes.addClass(menu_modifiers) }}>
+      {% else %}
+        <ul class="menu__level-{{ menu_level + 1 }}">
+      {% endif %}
+
+        {% for item in items %}
+
+          {% set link_item_extra_classes = ([
+            'menu__' ~ variant ~ '--item',
+            menu_level ? 'menu__item-level-' ~ menu_level : 'menu__item-level-0',
+            item.in_active_trail ? 'active-trail',
+            item.is_active ? 'is-active',
+          ]| sort | join(' ') | trim) %}
+
+          {% if variant == 'with-arrow' %}
+            {% set icon = 'arrowUpRight' %}
+          {% endif %}
+
+          {% set item_attributes =  item.attributes|default(create_attribute()) %}
+
+          <li{{ item_attributes }} {{ item_attributes.addClass(link_item_extra_classes) }}>
+            {% include "@atoms/link/link.twig" with item|merge({
+              custom_style: true,
+              url: item.url|render,
+              content: item.title,
+              target: item.url.options.attributes.target,
+              extra_classes: 'text-text-body hover:text-text-heading ' ~ link_extra_classes,
+              icon: icon
+            }) only %}
+            {% if item.below %}
+              {{ menus.menu_links(item.below, attributes, menu_level + 1, variant, wrap_nav) }}
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% if wrap_nav %}
+        </nav>
+      {% endif %}
+    {% endif %}
+  {% endmacro %}
+{% endblock %}

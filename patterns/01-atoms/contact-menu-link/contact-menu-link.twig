@@ -1,0 +1,35 @@
+{{ attach_library('unicef_vf/contact-menu-link') }}
+
+{# Settings #}
+{% set attributes = attributes.setAttribute('target', '_' ~ target)  %}
+{% if title_text is not empty %}
+  {% set attributes = attributes.setAttribute('title', title_text)  %}
+{% endif %}
+
+{# Classes #}
+{% set link_classes = [
+  'contact-link text-text-primaryDark textMd-medium hover:text-text-heading no-underline'
+] %}
+
+{# Template #}
+{% block contact_menu_link_block %}
+  {% if variant == "only_link" %}
+    {% if link_label|render|striptags|trim %}
+      <span class="link-label mr-1 textMd-medium text-text-body">
+        {{ link_label }}
+      </span>
+    {% endif %}
+    <a href="{{ url }}" {{ attributes.addClass(link_classes|join(' ')|trim) }}>
+      {{ title_text }}
+    </a>
+
+  {% elseif variant == "link_with_icons" %}
+    <div class="link-with-icons-wrapper">
+      <div class="icon-link-wrapper">
+        {% for multiple_item in multiple_items %}
+          {{ multiple_item }}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

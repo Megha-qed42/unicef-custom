@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Toggle button theme for form elements like checkbox or radio.
+ */
+#}
+
+{# Classes #}
+{% set classes = ([
+	'form-element opacity-0 w-0 h-0'
+]) %}
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% block toggle_btn %}
+	<label class="toggles flex items-center relative {{ size }}">
+		<input {{ attributes }} />
+		<span class="slider rounded-full w-9 h-5 relative cursor-pointer top-0 left-0 right-0 bottom-0 bg-neutral-100 transition duration-300 hover:bg-text-neutralLight"></span>
+		
+		{% if text is not empty -%}
+			<span class='element-label text-sm ml-2'>{{ text }}</span>
+		{%- endif %}
+	</label>
+{% endblock %}

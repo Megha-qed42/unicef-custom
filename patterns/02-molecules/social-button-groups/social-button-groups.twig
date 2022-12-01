@@ -1,0 +1,18 @@
+
+{#
+/**
+ * @file
+ * Social Button Groups
+ */
+#}
+
+{# Template #}
+{% block social_btn_group %}
+	<div class="social-button-group-wrapper">
+    {% for social_button in social_buttons %}
+      <div v-for="(item, index) in items" :key="`item-${index}`" class="mb-2.5 last:mb-0">
+        {{ social_button }}
+      </div>
+    {% endfor %}
+	</div>
+{% endblock %}

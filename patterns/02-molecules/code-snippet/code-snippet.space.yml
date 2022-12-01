@@ -1,0 +1,18 @@
+code_snippet:
+  use: "@molecules/code-snippet/code-snippet.twig"
+  label: Code snippet
+  description: Code snippet
+  fields:
+    text:
+      type: text
+      label: Title
+      preview: I'm going to become a code snippet
+  settings:
+    background:
+      type: select
+      label: Background
+      default: light
+      options:
+        light: Light
+        colour: Colour    
+        dark: Dark

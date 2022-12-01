@@ -1,0 +1,176 @@
+.input_field {
+  @apply outline-none;
+}
+
+/* INTEGRATED SEARCH CSS START HERE */
+.integrated-search-block .input-icon {
+  @apply right-6;
+  left: inherit;
+}
+.integrated-search-block .input-atom-wrapper {
+  @apply block;
+}
+.integrated-search-block .inputput_field, .modal-search-block .inputput_field {
+  @apply w-full font-semibold text-base;
+}
+/* .integrated-search-block .inputput_field::placeholder {
+  @aaply font-semibold font-secondary text-base;
+}
+.integrated-search-block .inputput_field:-ms-input-placeholder {
+  @aaply font-semibold font-secondary text-base text-defaultGray-100;
+}
+.integrated-search-block .inputput_field::-ms-input-placeholder {
+  @aaply font-semibold font-secondary text-base text-defaultGray-100;
+} */
+.integrated-search-block input.show-icon {
+  @apply pl-6;
+}
+
+/* DROPDOWN SEARCH CSS START HERE */
+.dropdown-search-block .input-atom-wrapper, .modal-search-block .input-atom-wrapper {
+  @apply block w-full;
+}
+.dropdown-search-block .input-atom-wrapper .input-icon {
+  left: inherit;
+  right: 1rem;
+}
+.dropdown-search-block .input-atom-wrapper .inputput_field {
+  @apply font-semibold text-4xl	w-full rounded-none border-0 border-b border-textButtonLink-buttonLinkDisabled pl-0 pb-5;
+}
+
+.dropdown-search-block .input-atom-wrapper .inputput_field::placeholder,
+.modal-search-block .input-atom-wrapper .inputput_field::placeholder {
+  @apply text-4xl font-semibold font-primaryBold text-defaultGray-100 opacity-100;
+  letter-spacing: -0.02em;
+}
+
+.dropdown-search-block .input-atom-wrapper .inputput_field:-ms-input-placeholder
+.modal-search-block .input-atom-wrapper .inputput_field:-ms-input-placeholder {
+  @apply text-4xl font-semibold font-primaryBold text-defaultGray-100;
+  letter-spacing: -0.02em;
+}
+
+.dropdown-search-block .input-atom-wrapper .inputput_field::-ms-input-placeholder,
+.modal-search-block .input-atom-wrapper .inputput_field::-ms-input-placeholder {
+  @apply text-4xl font-semibold font-primaryBold text-defaultGray-100;
+  letter-spacing: -0.02em;
+}
+
+/* Modal Search */
+.modal-search-block .inputput_field {
+  @apply py-5 text-4xl;
+}
+.modal-search-block .svg, .dropdown-search-block .svg {
+  @apply w-9 h-9;
+}
+.modal-search-block .input-atom-wrapper .input-icon {
+  left: 2.7rem;
+  top: 22px;
+}
+.modal-search-block .input-atom-wrapper input.show-icon {
+  padding-left: 5.63rem;
+  border-radius: 3.5rem;
+}
+
+.search-filter-block {
+  @apply mt-9;
+}
+/* Mobile view */
+@media all and (max-width: 42em) {
+
+  .dropdown-search-block .input-atom-wrapper, .modal-search-block .input-atom-wrapper {
+    @apply flex w-80;
+  }
+  .modal-search-block .svg, .dropdown-search-block .svg {
+    @apply w-3.5 h-3.5;
+  }
+  .dropdown-search-block .input-atom-wrapper .inputput_field,
+  .modal-search-block .input-atom-wrapper .inputput_field {
+    @apply text-base text-text-body;
+  }
+
+  .dropdown-search-block .input-atom-wrapper .inputput_field::placeholder,
+  .modal-search-block .input-atom-wrapper .inputput_field::placeholder {
+    @apply text-base text-text-body;
+  }
+
+  .dropdown-search-block .input-atom-wrapper .inputput_field:-ms-input-placeholder
+  .modal-search-block .input-atom-wrapper .inputput_field:-ms-input-placeholder {
+    @apply text-base text-text-body;
+  }
+
+  .dropdown-search-block .input-atom-wrapper .inputput_field::-ms-input-placeholder,
+  .modal-search-block .input-atom-wrapper .inputput_field::-ms-input-placeholder {
+    @apply text-base text-text-body;
+  }
+
+  .modal-search-block .input-atom-wrapper input.show-icon {
+    padding-left: 2.63rem;
+  }
+
+  .modal-search-block .input-atom-wrapper .input-icon {
+    @apply left-6 top-3.5;
+  }
+  .modal-search-block .input-atom-wrapper input {
+    @apply py-2.5;
+  }
+
+}
+
+/* Nav tabs*/
+.tabs-nav ul {
+  @apply flex flex-wrap p-0 m-0;
+}
+
+.tabs-nav li {
+  @apply px-2.5 border-b-2 border-solid text-defaultGray-200;
+}
+
+.tabs-nav ul li a {
+  @apply text-sm font-normal text-center text-text-body;
+}
+
+/* Active tab */
+.tabs-nav .active {
+  @apply relative;
+}
+.tabs-nav .active:before {
+  @apply absolute w-full h-3.5 left-0 border-b-2 border-solid border-text-primaryDark;
+  content: "";
+  bottom: -2px;
+}
+.tabs-nav ul .active a {
+  @apply text-sm font-bold text-center text-text-primaryDark;
+}
+
+/* Tab content */
+.tabs-content {
+  @apply mt-8;
+}
+.tabs-content article {
+  @apply mb-0 rounded-none;
+}
+/* Hide all but first content div */
+
+.tabs-content .cards-block:not(:first-child) {
+  @apply hidden;
+}
+
+.tabs-content article {
+  -webkit-animation: fadeInScale 0.7s ease-in-out;
+  -moz-animation: fadeInScale 0.7s ease-in-out;
+  animation: fadeInScale 0.7s ease-in-out;
+}
+
+/*Content Animation*/
+@keyframes fadeInScale {
+  0% {
+  	transform: scale(0.9);
+  	opacity: 0;
+  }
+
+  100% {
+  	transform: scale(1);
+  	opacity: 1;
+  }
+}

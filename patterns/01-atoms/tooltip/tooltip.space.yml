@@ -1,0 +1,41 @@
+tooltip:
+  use: "@atoms/tooltip/tooltip.twig"
+  label: Tooltip
+  description: "Tooltips are used to describe or identify an element. In most scenarios, tooltips help the user understand the meaning or function of an icon, or display the alt text of an image.<br /><br /> <b>Use case</b> <br /> Tooltips can be attached to any active element (icons, text links, buttons, etc.) on a page. They provide descriptions or explanations for their paired element. Thus, tooltips are highly contextual and specific and don't explain the bigger picture or entire task flow."
+  fields:
+    header:
+      type: text
+      label: Header
+      description: Tooltip heading.
+      preview:
+        faker: lorem.word
+    content:
+      type: text
+      label: Content
+      description: Tooltip content.
+      preview:
+        faker: lorem.text
+  configuration:    
+    position:
+      bottom: 'bottom'
+      bottomleft: 'bottomleft'
+      bottomright: 'bottomright'
+      top: 'top'
+      left: 'left' 
+      right: 'right'
+  settings:    
+    arrowposition:
+      type: select
+      required: true
+      label: Arrow position
+      description: You can select arrow position with below values.<br /> <ul> <li><code>none</code></li> <li><code>bottom</code></li> <li><code>bottomleft</code></li> <li><code>bottomright</code></li> <li><code>top</code></li> <li><code>left</code></li> <li><code>right</code></li></ul>
+      preview: none
+      options:
+        none: None
+        bottom: Bottom-Center
+        bottomleft: Bottom-Left
+        bottomright: Bottom-Right
+        top: Top
+        left: Left
+        right: Right            
+  visibility: storybook

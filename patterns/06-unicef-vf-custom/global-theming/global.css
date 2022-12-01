@@ -1,0 +1,3 @@
+.container {
+    @apply max-w-[88.875rem] w-full;
+}

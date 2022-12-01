@@ -1,0 +1,68 @@
+/* Section heading */
+
+.section-heading {
+
+	.intro-section {
+		@apply md:max-w-[50rem];
+
+		&__label {
+			@apply block text-text-primaryDark mb-2;
+		}
+
+		&__title {
+
+			.headline {
+				@apply maxMd:text-30 maxMd:leading-40 m-0 text-text-heading;
+			}
+		}
+	}
+
+	.data-section {
+		@apply md:max-w-[50rem];
+
+		&__description {
+			@apply maxMd:text-18 maxMd:leading-28 mt-4;
+		}
+	}
+
+	/* Center alignment */
+	&.center-alignment {
+
+		.intro-section,
+		.data-section {
+			@apply md:mx-auto;
+
+			.intro-section__title {
+				@apply justify-center;
+			}
+		}
+	}
+
+	/* Split alignment */
+	&.split-section {
+
+		.container {
+			@apply md:grid md:grid-cols-2 md:gap-x-8 lg:gap-x-[8.5rem];
+		}
+
+		.intro-section {
+			@apply md:max-w-[30.5rem];
+		}
+
+		.data-section {
+			@apply md:max-w-[37rem];
+		}
+
+		&.no-description {
+
+			.container {
+				@apply md:block;
+			}
+
+			.intro-section,
+			.data-section {
+				@apply max-w-full;
+			}
+		}
+	}
+}

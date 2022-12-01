@@ -1,0 +1,59 @@
+text:
+  use: "@molecules/text/text.twig"
+  label: Text
+  description: Text block with title and description.
+  fields:
+    title:
+      type: text
+      label: Title
+      description: The block title.
+      preview:
+        'We Challenge Core Assumptions'
+    content:
+      type: text
+      label: Content
+      description: The block content.
+      preview:
+        '<p>Design amazing digital experiences that create more happy in the world.</p>'
+  settings:
+    title_font_size:
+      type: select
+      label: Title font size
+      default_value: size-96
+      options:
+        size-96: 3 XL - 96
+        size-72: 2 XL - 72
+        size-30: Large - 30
+        size-20: Medium - 20
+        size-18: Small - 18
+        size-14: X-Small - 14
+    title_color:
+      type: select
+      label: Text color
+      default_value: 'text-text-heading'
+      options:
+        text-text-heading: Heading
+        text-text-body: Body
+        text-text-primaryDark: Primary Dark
+    content_font_size:
+      type: select
+      label: Title font size
+      default_value: ''
+      options:
+        size-96: 3 XL - 96
+        size-72: 2 XL - 72
+        size-30: Large - 30
+        size-20: Medium - 20
+        size-18: Small - 18
+        size-14: X-Small - 14
+    content_color:
+      type: select
+      label: Content color
+      default_value: ''
+      options:
+        text-text-heading: Heading
+        text-text-primaryDark: Primary Dark
+    extra_classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''

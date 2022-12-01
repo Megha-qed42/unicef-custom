@@ -1,0 +1,146 @@
+/* Logo grid */
+
+.logo_grid_wrapper {
+  @apply py-6 md:py-60;
+
+  .logo__wrapper {
+    @apply relative px-4 md:px-[1.875rem] xl:px-0;
+
+    .logo__wrapper__items {
+
+      .splide__list {
+        @apply grid gap-y-10 gap-x-4 md:gap-x-5 lg:gap-x-8 flex-wrap flex-row;
+      }
+
+      .logo__image {
+        @apply flex justify-center items-center min-h-[5rem] md:min-h-[8rem];
+      }
+    }
+  }
+
+  &.columns-4 {
+
+    .logo__wrapper {
+
+      .logo__wrapper__items {
+
+        .splide__list {
+          @apply w-full grid-cols-2 lg:grid-cols-4;
+        }
+
+        .logo__image {
+
+          .drimage {
+            @apply lg:max-w-[11.25rem];
+          }
+        }
+      }
+    }
+  }
+
+  &.columns-5 {
+
+    .logo__wrapper {
+
+      .logo__wrapper__items {
+
+        .splide__list {
+          @apply w-full grid-cols-2 lg:grid-cols-5;
+        }
+
+        .logo__image {
+
+          .drimage {
+            @apply lg:max-w-[11.25rem];
+          }
+        }
+      }
+    }
+  }
+
+  &.columns-6 {
+
+    .logo__wrapper {
+
+      .logo__wrapper__items {
+
+        .splide__list {
+          @apply w-full grid-cols-3 lg:grid-cols-6;
+        }
+
+        .logo__image {
+
+          .drimage {
+            @apply lg:max-w-[10.5rem];
+          }
+        }
+      }
+    }
+  }
+
+  &.slider {
+    @apply pb-48;
+
+    .logo__wrapper {
+
+      .logo__wrapper__items {
+        @apply block;
+
+        .logo__image {
+          flex-basis: auto;
+          @apply inline-block shadow-lg rounded-2xl m-5;
+
+          img {
+            @apply my-0 mx-auto;
+          }
+        }
+      }
+    }
+  }
+
+  &.primaryExtraLight {
+    @apply bg-backgroundPrimary-primaryExtraLight;
+  }
+}
+
+/* Slider CSS */
+.logo_grid_wrapper {
+
+  .splide {
+
+    .splide__track {
+      @apply maxMd:px-[80px];
+
+      .splide_list {
+        margin: 0 -25% !important;
+      }
+    }
+
+    .splide__arrows {
+      @apply mt-64 mx-auto w-[7rem];
+
+      .container {
+        flex-direction: /*rtl:row-reverse*/;
+      }
+    }
+  }
+}
+
+/* Mobile View */
+@media all and (max-width: 480px) {
+  .logo_grid_wrapper {
+
+    &.slider {
+
+      .logo__wrapper {
+
+        .logo__wrapper__items {
+
+          .logo__image {
+            @apply m-1.5;
+          }
+        }
+      }
+    }
+  }
+}

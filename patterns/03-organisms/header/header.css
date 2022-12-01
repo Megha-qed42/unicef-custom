@@ -1,0 +1,349 @@
+/* Header styling */
+body {
+
+	&.scroll-freeze,
+	&.header-open {
+		@apply overflow-hidden;
+	}
+}
+
+/* Primary header */
+.primary-header {
+	@apply flex items-center min-h-[4.5rem] max-h-[4.5rem] lg:min-h-[5rem] lg:max-h-[5rem];
+	
+	.site_logo {
+		@apply mr-5 lg:mr-[3.25rem];
+	}
+
+	.header-menu-item-wrapper {
+		@apply px-4 md:px-[1.875rem] lg:px-0 pt-9 pb-6 lg:py-0 left-[-100vw] fixed top-[4.5625rem] lg:static;
+
+		transition: left .3s cubic-bezier(.79,.14,.15,.86);
+
+		@media screen and (max-width: 1023px) {
+		  height: calc(100vh - 73px);
+		}
+
+		&.center-position {
+			.ul-wrapper {
+				@apply justify-center;
+			}
+
+			.mega-menu-primary {
+				@apply flex justify-center;
+			}
+		}
+
+		&.right-position {
+			.ul-wrapper {
+				@apply justify-end;
+			}
+
+			.mega-menu-primary {
+				@apply flex justify-end;
+			}
+		}
+
+		&.left-position {
+			.ul-wrapper {
+				@apply justify-start;
+			}
+
+			.mega-menu-primary {
+				@apply flex justify-start;
+			}
+		}
+		
+		.menu-wrapper {
+			@apply maxLg:w-full;
+
+      .navigation__menu {
+
+        > li.navigation__item {
+
+					&.menu-active {
+
+						> a,
+						> .header-menu-item {
+							@apply text-text-primaryDark;
+						}
+					}
+	
+					&:last-child {
+						@apply mr-0;
+					}
+	
+					li:last-child {
+						@apply maxLg:mb-0 maxLg:mr-0;
+					}
+
+          > .header-menu-item {
+
+            > svg {
+              @apply pointer-events-none;
+            }
+          }
+        }
+      }
+		}
+
+		&.display-header {
+			@apply left-0 maxLg:overflow-y-auto;
+
+			transition: left .3s cubic-bezier(.79,.14,.15,.86);
+		}
+	}
+
+	/* Header types - 
+	* Only search,
+	* No search,
+	* Search and cta
+	*/
+	&.only_search,
+	&.no_search,
+	&.search_and_cta {
+
+		.header-menu-item-wrapper {
+
+			ul.mega-menu-primary {
+
+				> .navigation__item {
+
+					.menu-link-contentmain {
+						@apply hidden;
+
+						&.show-sub-menu {
+							@apply block;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.with-hamburger {
+
+		.site_logo {
+			@apply mr-0;
+		}
+
+		.ul-wrapper,
+		.mega-menu-primary {
+			
+			li {
+				&:last-child {
+					@apply mr-0;
+				}
+			}
+
+      .sticky-menu-item {
+
+        > a.navigation__link {
+          @apply font-secondary !important;
+        }
+      }
+		}
+
+		/* Header types with Hamburger - 
+		* Search + CTA, 
+		* Search + Hamburger, 
+		* Logo + Hamburger
+		*/
+		&.search_and_cta,
+		&.search_and_hamburger,
+		&.logo_and_hamburger {
+
+			.header-menu-item-wrapper {
+				@apply lg:absolute lg:top-[101%] lg:left-[-100vw] w-full bg-white bg-white pb-112 lg:py-0;
+
+				z-index: 2;
+
+				/* Viewport height minus Header height */
+				@media screen and (min-width: 1024px) {
+					height: calc(100vh - 80px);
+					
+				}
+
+				.menu-wrapper,
+				.container {
+					@apply h-full;
+				}
+
+				.container {
+					@apply relative;
+				}
+
+				.mega-menu-main-wrapper {
+					@apply lg:bg-backgroundNeutral-neutralMedium lg:pl-[100vw] lg:ml-[-100vw] h-full;
+				}
+
+				ul.mega-menu-primary {
+					@apply lg:py-10 lg:pl-[1.875rem] xl:pl-0 flex-col lg:h-full lg:w-[18.125rem] lg:overflow-y-auto;
+
+					&:before {
+						@apply lg:w-[70%] xl:w-[75%] bg-white absolute top-0 right-0 hidden lg:block;
+
+						content: '';
+						z-index: 0;
+
+						@media screen and (min-width: 1024px) {
+							height: calc(100vh - 80px);
+						}
+					}
+
+					> .navigation__item {
+						@apply lg:px-4 lg:py-3 w-full lg:max-w-[20rem] static lg:mb-2 mr-0;
+
+						transition: all 300ms ease-in-out;
+
+						&:hover {
+							@apply lg:bg-transparent;
+
+							> a {
+								@apply text-text-primaryDark;
+							}
+						}
+
+						> a,
+						> .header-menu-item {
+							@apply flex justify-between items-center flex-row text-24 leading-32 font-primaryBold static mb-0;
+
+							text-decoration: none;
+							transition: all 300ms ease-in-out;
+
+							&.active {
+								@apply text-text-primaryDark;
+							}
+
+							> svg {
+								@apply -rotate-90 ml-4 !important;
+							}
+						}
+
+						.menu-link-contentmain {
+							@apply fixed lg:absolute left-[-100vw] h-screen w-full lg:w-[70%] xl:w-[75%] top-0 lg:right-0 px-4 md:px-[1.875rem] pt-9 pb-112 lg:pl-8 lg:pr-0 lg:py-10 bg-white;
+
+							z-index: 2;
+							transition: left .3s cubic-bezier(.79,.14,.15,.86);
+
+							@media screen and (min-width: 1024px) {
+								height: calc(100vh - 80px);
+							}
+
+							.layout__region {
+								@apply py-0;
+							}
+
+							.menu {
+								li:last-child {
+									@apply mb-2;
+								}
+							}
+						}
+
+						&.menu-active {
+
+							> span.header-menu-item {
+								@apply mb-0;
+							}
+
+							.menu-link-contentmain {
+								@apply maxLg:left-0 maxLg:overflow-y-auto;
+
+								transition: left .3s cubic-bezier(.79,.14,.15,.86);
+
+								@media screen and (min-width: 1024px) {
+									left: inherit;
+								}
+							}
+						}
+					}
+				}
+
+				&.display-header {
+					@apply lg:left-0;
+
+					.sticky-menu-item {
+						@apply left-0 !important;
+					}
+				}
+			}
+		}
+	}
+
+	.button-wrapper {
+		@apply maxLg:flex-col-reverse w-full lg:w-auto;
+
+		.login-btn,
+		.signup-btn {
+
+			a {
+				@apply w-full;
+			}
+		}
+	}
+}
+
+body.header-open {
+	@apply overflow-hidden;
+}
+
+/* Default header */
+.defaultheader {
+	.input-atom-wrapper {
+		@apply w-auto;
+		.input-icon {
+			@apply left-auto right-4;
+		}
+		input.show-icon{
+			@apply text-sm py-3 px-6 pr-8 h-11;
+		}
+	}
+}
+
+@media all and (max-width: 1200px) {
+	.defaultheader {
+		@apply px-5 !important;
+	}	
+}
+
+@media all and (max-width: 1024px) {
+	.defaultheader {
+		@apply justify-end !important;
+	}
+	.defaultheader .hamburger-icon,
+	.defaultheader .mobile-search-btn {
+		@apply h-[45px] w-[45px] mb-0 ml-[30px] mr-0 float-right;
+	}
+	.defaultheader .mobile-search-btn {
+		@apply overflow-hidden;
+	}
+	.defaultheader .mobile-search-btn > a {
+		@apply pt-[11px] pl-[9px] !important;
+	}
+	.defaultheader .mobile-search-btn > a:focus,
+	.defaultheader .mobile-search-btn > a:hover {
+		@apply bg-transparent;
+	}
+	.defaultheader .mobile-search-btn .svg {
+		@apply h-[25px] w-[25px];
+	}
+	.defaultheader .hamburger-icon {
+		@apply ml-2.5 pt-[7px] pl-[11px];
+	}
+	.defaultheader .col-span-2 {
+		@apply mr-auto;
+	}
+	.defaultheader .mobile-search-input {
+		@apply absolute w-full top-[86px] pt-10 px-5 pb-8 left-0 bg-backgroundNeutral-neutralLight hidden;
+	}
+	.defaultheader .input-atom-wrapper input.show-icon {
+		@apply w-full;
+	}
+	.defaultheader .search-btn .input-atom-wrapper input.show-icon {
+		@apply hidden;
+	}
+	.defaultheader .menu-wrapper {
+		@apply w-full;
+	}
+}

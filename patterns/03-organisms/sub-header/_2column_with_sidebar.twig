@@ -1,0 +1,50 @@
+{{ attach_library('unicef_vf/header-styling') }}
+
+{# Template #}
+<div class="_2column_with_sidebar">
+  <div class="menu-link-contentmain">
+    <div class="{{ layout_width == 'boxed_width' ? 'container' : 'w-full' }} mx-auto flex flex-col lg:flex-row">
+      <div class="nav-col col_1 w-full lg:w-1/4 flex flex-col">
+        <div class="nav-col-title textSm-medium w-full">
+          {{ column1_title }}
+        </div>
+
+        <ul>
+          {% for navigation_item_1 in navigation_items_1 %}
+            {{ navigation_item_1 }}
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="nav-col col_2 w-full lg:w-1/4 flex flex-col">
+        <div class="nav-col-title textSm-medium w-full">
+          {{ column2_title }}
+        </div>
+
+        <ul>
+          {% for navigation_item_2 in navigation_items_2 %}
+            {{ navigation_item_2 }}
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="nav-col col_3 w-full lg:w-2/4 bg-backgroundNeutral-neutralLight flex flex-col">
+        <div class="inner">
+          <div class="content-wrap">  
+            <ul>
+              <div class="nav-col-title textSm-medium w-full">
+                {{ column3_title }}
+              </div>
+              
+              {% for video_card_item in video_card_items %}
+                <li class="items-data">
+                  {{ video_card_item }}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

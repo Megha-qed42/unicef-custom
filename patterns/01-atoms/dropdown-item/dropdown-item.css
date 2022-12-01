@@ -1,0 +1,29 @@
+@tailwind components;
+@tailwind utilities;
+
+.dropdown-item {
+	.checkbox-label {
+		padding-left: 0.375rem;
+	}
+	a {
+		@apply inline-block no-underline px-4 py-2.5 w-full hover:bg-backgroundPrimary-primaryExtraLight hover:text-text-primaryDark;
+	}
+	.text-only {
+		svg {
+			@apply hidden;
+		}
+	}
+}
+.dropdown-item.text-with-icon {
+	a {
+		@apply flex justify-start;
+	}
+}
+.dropdown-item.text-with-checkbox {
+	@apply px-4 py-2.5 hover:bg-backgroundPrimary-primaryExtraLight hover:text-text-primaryDark;
+}
+.dropdown-item.text-with-avatar {
+	@apply px-4 py-2.5 hover:bg-backgroundPrimary-primaryExtraLight hover:text-text-primaryDark;
+	figure { @apply p-0; }
+	.avatar-label-content-wrapper { margin-top: 0.188rem; }
+}

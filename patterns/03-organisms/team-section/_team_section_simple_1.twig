@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Team sections - Simple 1
+ * See team_section.space.yaml for documentation.
+ *
+ */
+#}
+
+{{ attach_library('unicef_vf/team-section') }}
+
+{# Default #}
+{% set element = element|default('section') %}
+
+{# Classes #}
+{% set classes = ([
+  'team-members-wrapper',
+  'team-sections-simple team-sections-simple-1',
+  background_color,
+] | sort | join(' ') | trim ) %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% block team_sections_simple_1_block %}
+  <{{ element }} {{ attributes }}>
+    {# Intro section - Section heading #}
+    {% if intro_section is not empty %}
+      <div class="intro-section-wrapper">
+        {{ intro_section }}
+      </div>
+    {% endif %}
+
+    {# Team members list #}
+    <div class="team-member-list">
+      <div class="container mx-auto">
+        <div class="team-members-block people-with-avatar-card">
+          {{ team_member }}
+        </div>
+      </div>
+    </div>
+  </{{ element }}>
+{% endblock %}

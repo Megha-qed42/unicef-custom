@@ -1,0 +1,32 @@
+{# Default #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set link_attributes = link_attributes|default(create_attribute()) %}
+{% set tag_name = tag_name|default('h1') %}
+{% set spacing_bottom = spacing_bottom|default('default') %}
+
+{% if url is not empty %}
+  {% set link_attributes = link_attributes.setAttribute('href', url) %}
+  {% set link_tag_name = 'a' %}
+{% endif %}
+
+{# Classes #}
+{% set classes = [
+  'headline',
+  pattern_configuration('headline', variant, 'spacing_bottom')[spacing_bottom],
+  font,
+] %}
+
+{# Template #}
+{% block headline_block %}
+  <{{ tag_name }} {{ attributes.addClass(classes| sort | join(' ') | trim) }}>
+    {%- if url is not empty -%}
+      <{{ link_tag_name }} {{ link_attributes}}>
+    {%- endif -%}
+      {{- title_prefix -}}
+      {{- title_suffix -}}
+      {{- headline -}}
+    {%- if url is not empty -%}
+      </{{ link_tag_name -}}>
+    {%- endif %}
+  </{{ tag_name }}>
+{% endblock %}

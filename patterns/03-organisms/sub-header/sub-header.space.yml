@@ -1,0 +1,1531 @@
+2column_with_sidebar:
+  use: "@organisms/sub-header/_2column_with_sidebar.twig"
+  namespace: "Organisms/Header Sub-navigation"
+  label: 2 Column with sidebar
+  description: The sub-header pattern with 3 column and media card in sidebar.
+  fields:
+    column1_title:
+      type: text
+      label: Column 1 title
+      preview: Resources
+    column2_title:
+      type: text
+      label: Column 2 title
+      preview: Company
+    column3_title:
+      type: text
+      label: Column 3 title
+      preview: Resources
+    navigation_items_1:
+      type: pattern
+      label: Navigation item 1
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: userCheck
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+        -
+          id: menu_item
+          settings:
+            icon: zap
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+        -
+          id: menu_item
+          settings:
+            icon: zap
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+    navigation_items_2:
+      type: pattern
+      label: Navigation item 2
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Customer Stories
+            menu_description: Learn how our customers.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Video tutorials
+            menu_description: New features and techniques.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+    video_card_items:
+      type: pattern
+      label: Video card items
+      multi_value_type: items
+      preview:
+        -
+          id: videocard
+          settings:
+            preheadline: 'Tutorial'
+            headline: <h3 class="displayXs-bold headline mb-8">How to get started</h3>
+            text: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            alignment: horizontal
+            card_layout: withoutcontainer
+            card_size: medium
+        -
+          id: videocard
+          settings:
+            preheadline: 'Tutorial'
+            headline: <h3 class="displayXs-bold headline mb-8">How to get started</h3>
+            text: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            alignment: horizontal
+            card_layout: withoutcontainer
+            card_size: medium
+  settings:
+    layout_width:
+      type: select
+      label: Layout width
+      default_value: boxed_width
+      options:
+        boxed_width: Boxed width
+        full_width: Full width
+
+3column_with_sidebar:
+  use: "@organisms/sub-header/_3column_with_sidebar.twig"
+  namespace: "Organisms/Header Sub-navigation"
+  label: 3 Column with sidebar
+  description: The sub-header pattern with 3 column and media card in sidebar.
+  fields:
+    column1_title:
+      type: text
+      label: Column 1 title
+      preview: Use cases
+    column2_title:
+      type: text
+      label: Column 2 title
+      preview: Company
+    column3_title:
+      type: text
+      label: Column 3 title
+      preview: Resources
+    navigation_items_1:
+      type: pattern
+      label: Navigation item 1
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: userCheck
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+        -
+          id: menu_item
+          settings:
+            icon: zap
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+        -
+          id: menu_item
+          settings:
+            icon: zap
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+    navigation_items_2:
+      type: pattern
+      label: Navigation item 2
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: userCheck
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+        -
+          id: menu_item
+          settings:
+            icon: zap
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+        -
+          id: menu_item
+          settings:
+            icon: zap
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+    navigation_items_3:
+      type: pattern
+      label: Navigation item 3
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Customer Stories
+            menu_description: Learn how our customers.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Video tutorials
+            menu_description: New features and techniques.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+    navigation_card_item:
+      type: pattern
+      label: navigation_card_item
+      preview:
+        -
+          id: imagecard
+          settings:
+            preheadline: 'Case study'
+            headline: <h3 class="displaySm-bold headline mb-8">Digital Experience Platforms — Designed for Digital Transformation</h3>
+            text: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            alignment: vertical
+            cells_1: false
+            link: false
+            card_layout: withoutcontainer
+            card_size: medium
+  settings:
+    layout_width:
+      type: select
+      label: Layout width
+      default_value: boxed_width
+      options:
+        boxed_width: Boxed width
+        full_width: Full width
+
+3column_large_text_with_card:
+  use: "@organisms/sub-header/_3-column-large-text-with-card.twig"
+  namespace: "Organisms/Header Sub-navigation"
+  label: 3 Column large text with card
+  description: The sub-header pattern.
+  fields:
+    column1_title:
+      type: text
+      label: Column 1 title
+      preview: Use cases
+    column2_title:
+      type: text
+      label: Column 2 title
+      preview: Company
+    column3_title:
+      type: text
+      label: Column 3 title
+      preview: Resources
+    navigation_only_link_items_1:
+      type: pattern
+      label: Navigation only link items 1
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: Video tutorials
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: Video tutorials
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: Video tutorials
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: Video tutorials
+            menu_description: ''
+            link_url: ""
+    navigation_only_link_items_2:
+      type: pattern
+      label: Navigation only link items 2
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: Video tutorials
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: Video tutorials
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: Video tutorials
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: Video tutorials
+            menu_description: ''
+            link_url: ""
+    navigation_only_link_items_3:
+      type: pattern
+      label: Navigation only link items 3
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: Video tutorials
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: Video tutorials
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: Video tutorials
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: Video tutorials
+            menu_description: ''
+            link_url: ""
+    navigation_card_title:
+      type: pattern
+      label: Card block title
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Featured Case Study'
+          font: displayXs-bold
+    navigation_card_item:
+      type: pattern
+      label: navigation_card_item
+      preview:
+        -
+          id: imagecard
+          settings:
+            preheadline: 'Case study'
+            headline: <h3 class="displaySm-bold headline mb-8">Digital Experience Platforms — Designed for Digital Transformation</h3>
+            text: ""
+            alignment: vertical
+            cells_1: false
+            link: false
+            card_layout: withcontainer
+            card_size: medium
+  settings:
+    layout_width:
+      type: select
+      label: Layout width
+      default_value: boxed_width
+      options:
+        boxed_width: Boxed width
+        full_width: Full width
+
+3column_with_links:
+  use: "@organisms/sub-header/_3column_with_links.twig"
+  namespace: "Organisms/Header Sub-navigation"
+  label: 3 Column with Links
+  description: The sub-header pattern.
+  fields:
+    column1_title:
+      type: text
+      label: Column 1 title
+      preview: Use cases
+    column2_title:
+      type: text
+      label: Column 2 title
+      preview: Company
+    column3_title:
+      type: text
+      label: Column 3 title
+      preview: Resources
+    column4_title:
+      type: text
+      label: Column 4 title
+      preview: Get started
+    navigation_items_1:
+      type: pattern
+      label: Navigation item 1
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: userCheck
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+        -
+          id: menu_item
+          settings:
+            icon: zap
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+        -
+          id: menu_item
+          settings:
+            icon: zap
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+    navigation_items_2:
+      type: pattern
+      label: Navigation item 2
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: userCheck
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+        -
+          id: menu_item
+          settings:
+            icon: zap
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+        -
+          id: menu_item
+          settings:
+            icon: zap
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news, updates and info.
+    navigation_items_3:
+      type: pattern
+      label: Navigation item 3
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Customer Stories
+            menu_description: Learn how our customers.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Video tutorials
+            menu_description: New features and techniques.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+    navigation_only_link_items:
+      type: pattern
+      label: Navigation only link items
+      multi_value_type: items
+      preview:
+        -
+          id: link
+          settings:
+            title_text: Setup 101
+            content: Setup 101
+            url: "#"
+            extra_classes: 'textMd-medium no-underline hover:text-text-primaryDark'
+        -
+          id: link
+          settings:
+            title_text: Setup 101
+            content: Setup 101
+            url: "#"
+            extra_classes: 'textMd-medium no-underline hover:text-text-primaryDark'
+        -
+          id: link
+          settings:
+            title_text: Setup 101
+            content: Setup 101
+            url: "#"
+            extra_classes: 'textMd-medium no-underline hover:text-text-primaryDark'
+  settings:
+    layout_width:
+      type: select
+      label: Layout width
+      default_value: boxed_width
+      options:
+        boxed_width: Boxed width
+        full_width: Full width
+
+4column_with_footer:
+  use: "@organisms/sub-header/_4column_with_footer.twig"
+  namespace: "Organisms/Header Sub-navigation"
+  label: 4 Column with footer
+  description: The sub-header pattern.
+  fields:
+    column1_title:
+      type: text
+      label: Column 1 title
+      preview: Products
+    column2_title:
+      type: text
+      label: Column 2 title
+      preview: Use cases
+    column3_title:
+      type: text
+      label: Column 3 title
+      preview: Resources
+    column4_title:
+      type: text
+      label: Column 4 title
+      preview: Company
+    navigation_items_1:
+      type: pattern
+      label: Navigation item 1
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+    navigation_items_2:
+      type: pattern
+      label: Navigation item 2
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+    navigation_items_3:
+      type: pattern
+      label: Navigation item 3
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+    navigation_items_4:
+      type: pattern
+      label: Navigation item 4
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Documentation
+            menu_description: New features and techniques.
+            link_url: ""
+    footer_data_left:
+      type: pattern
+      label: Footer data left
+      preview:
+        id: contact_menu_link
+        variant: only_link
+        settings:
+          title_text: 'Sign up for free'
+          url: "#"
+    footer_data_right:
+      type: pattern
+      label: Footer data right
+      preview:
+        id: contact_menu_link
+        variant: link_with_icons
+  settings:
+    layout_width:
+      type: select
+      label: Layout width
+      default_value: boxed_width
+      options:
+        boxed_width: Boxed width
+        full_width: Full width
+
+4column_slim_with_footer:
+  use: "@organisms/sub-header/_4column_slim_with_footer.twig"
+  namespace: "Organisms/Header Sub-navigation"
+  label: 4 Column slim with footer
+  description: The sub-header pattern.
+  fields:
+    footer_data:
+      type: pattern
+      label: Footer data
+      preview:
+        id: contact_menu_link
+        variant: only_link
+        settings:
+          title_text: 'Get in touch'
+          url: "#"
+    navigation_items_1:
+      type: pattern
+      label: Navigation item 1
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news.
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon: checkCircle
+            icon_type: icon_featured
+            menu_size: menu_small
+            menu_title: Blog
+            menu_description: The latest industry news.
+            link_url: ""
+  settings:
+    layout_width:
+      type: select
+      label: Layout width
+      default_value: boxed_width
+      options:
+        boxed_width: Boxed width
+        full_width: Full width
+
+4column_large_text_with_card_on_footer:
+  use: "@organisms/sub-header/_4column_large_text_with_card_on_footer.twig"
+  namespace: "Organisms/Header Sub-navigation"
+  label: 4 Column large text with card on footer
+  description: The sub-header pattern.
+  fields:
+    column1_title:
+      type: text
+      label: Column 1 title
+      preview: Products
+    column2_title:
+      type: text
+      label: Column 2 title
+      preview: Use cases
+    column3_title:
+      type: text
+      label: Column 3 title
+      preview: Company
+    column4_title:
+      type: text
+      label: Column 4 title
+      preview: Resources
+    navigation_items_1:
+      type: pattern
+      label: Navigation item 1
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+    navigation_items_2:
+      type: pattern
+      label: Navigation item 2
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Use cases'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Use cases'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Use cases'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Use cases'
+            menu_description: ''
+            link_url: ""
+    navigation_items_3:
+      type: pattern
+      label: Navigation item 3
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Company'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Company'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Company'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Company'
+            menu_description: ''
+            link_url: ""
+    navigation_items_4:
+      type: pattern
+      label: Navigation item 4
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Resources'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Resources'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Resources'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Resources'
+            menu_description: ''
+            link_url: ""
+    navigation_card_items:
+      type: pattern
+      label: Navigation card items
+      multi_value_type: items
+      preview:
+        -
+          id: imagecard
+          settings:
+            preheadline: 'Case study'
+            headline: <h3 class="displaySm-bold headline mb-8">Digital Experience Platforms — Designed for Digital Transformation</h3>
+            text: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+            alignment: horizontal
+            cells_1: false
+            card_layout: withoutcontainer
+            card_size: medium
+        -
+          id: imagecard
+          settings:
+            preheadline: 'Case study'
+            headline: <h3 class="displaySm-bold headline mb-8">Digital Experience Platforms — Designed for Digital Transformation</h3>
+            text: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+            alignment: horizontal
+            cells_1: false
+            card_layout: withoutcontainer
+            card_size: medium
+  settings:
+    layout_width:
+      type: select
+      label: Layout width
+      default_value: boxed_width
+      options:
+        boxed_width: Boxed width
+        full_width: Full width
+
+4column_with_large_text:
+  use: "@organisms/sub-header/_4column-with-large-text.twig"
+  namespace: "Organisms/Header Sub-navigation"
+  label: 4 Columns with large text
+  description: The sub-header pattern.
+  fields:
+    column1_title:
+      type: text
+      label: What we Do
+      preview: What we do
+    column2_title:
+      type: text
+      label: Who we Are
+      preview: what we are
+    column3_title:
+      type: text
+      label: Content + Resources
+      preview: Content + resources
+    column4_title:
+      type: text
+      label: Company
+      preview: company
+    navigation_items_1:
+      type: pattern
+      label: Navigation items 1
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+    navigation_items_2:
+      type: pattern
+      label: Navigation items 2
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+    navigation_items_3:
+      type: pattern
+      label: Navigation items 3
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+    navigation_items_4:
+      type: pattern
+      label: Navigation items 4
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+  settings:
+    layout_width:
+      type: select
+      label: Layout width
+      default_value: boxed_width
+      options:
+        boxed_width: Boxed width
+        full_width: Full width
+
+branched_navigation:
+  use: "@organisms/sub-header/_branched_navigation.twig"
+  namespace: "Organisms/Header Sub-navigation"
+  label: Branched navigation
+  description: Branched navigation for hamburger menu.
+  fields:
+    navigation_button:
+      type: pattern
+      label: navigation button
+      preview:
+        id: button
+        variant: primary
+        settings:
+          text: contact
+          size: large
+          button_type: only_text
+          url: "#"
+    primary_menu:
+      type: pattern
+      label: Primary menu
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Industries'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Functions'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Featured insight'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+    navigation_items_1:
+      type: pattern
+      label: Navigation item 1
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Products'
+            menu_description: 'Find the best solution for you.'
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Products'
+            menu_description: 'Find the best solution for you.'
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Products'
+            menu_description: 'Find the best solution for you.'
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Products'
+            menu_description: 'Find the best solution for you.'
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Products'
+            menu_description: 'Find the best solution for you.'
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Products'
+            menu_description: 'Find the best solution for you.'
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Products'
+            menu_description: 'Find the best solution for you.'
+            link_url: ""
+  settings:
+    layout_width:
+      type: select
+      label: Layout width
+      default_value: boxed_width
+      options:
+        boxed_width: Boxed width
+        full_width: Full width
+
+branched_navigation_with_card:
+  use: "@organisms/sub-header/_branched_navigation_with_card.twig"
+  namespace: "Organisms/Header Sub-navigation"
+  label: Branched navigation with Card
+  description: Branched navigation with card for hamburger menu.
+  fields:
+    navigation_button:
+      type: pattern
+      label: navigation button
+      preview:
+        id: button
+        variant: primary
+        settings:
+          text: contact
+          size: large
+          button_type: only_text
+          url: "#"
+    primary_menu:
+      type: pattern
+      label: Primary menu
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Industries'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Functions'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Featured insight'
+            menu_description: ''
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_large
+            menu_title: 'Products'
+            menu_description: ''
+            link_url: ""
+    navigation_items_1:
+      type: pattern
+      label: Navigation item 1
+      multi_value_type: items
+      preview:
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Products'
+            menu_description: 'Find the best solution for you.'
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Products'
+            menu_description: 'Find the best solution for you.'
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Products'
+            menu_description: 'Find the best solution for you.'
+            link_url: ""
+        -
+          id: menu_item
+          settings:
+            icon_type: icon_false
+            menu_size: menu_small
+            menu_title: 'Products'
+            menu_description: 'Find the best solution for you.'
+            link_url: ""
+    navigation_card_title:
+      type: pattern
+      label: Card block title
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Featured Case Study'
+          font: displayXs-bold
+    card_item:
+      type: pattern
+      label: Card item
+      preview:
+        -
+          id: imagecard
+          settings:
+            preheadline: 'Case study'
+            headline: <h3 class="displaySm-bold headline mb-8">Digital Experience Platforms — Designed for Digital Transformation</h3>
+            text: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            alignment: vertical
+            cells_1: false
+            link: false
+            card_layout: withcontainer
+            card_size: medium
+  settings:
+    layout_width:
+      type: select
+      label: Layout width
+      default_value: boxed_width
+      options:
+        boxed_width: Boxed width
+        full_width: Full width

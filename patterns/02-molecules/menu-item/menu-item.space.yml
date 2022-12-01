@@ -1,0 +1,25 @@
+menu_item:
+  use: "@molecules/menu-item/menu-item.twig"
+  label: Menu item
+  description: "Menu item"
+  fields:
+    menu_title:
+      type: text
+      label: Menu title
+      description: 'The Menu option title.'
+      preview: 'Products'
+    menu_description:
+      type: text
+      label: Menu description
+      description: 'The Menu option description.'
+      preview: 'Find the best solution for you.'
+    link_url:
+      type: url
+      label: Menu URL
+      description: 'The action url of your button'
+      preview: 'https://www.qed42.com/contact'
+    icon:
+      type: text
+      label: Icon name
+      description: 'Icon beside menu title.'
+      preview: 'box'

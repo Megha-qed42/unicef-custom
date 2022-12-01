@@ -1,0 +1,28 @@
+body {
+  @apply text-text-body font-primary;
+}
+
+/* Heading fallback */
+h1 {
+  @apply text-72 leading-76 font-primary mb-10 md:mb-12;
+}
+
+h2 {
+  @apply text-60 leading-72 font-primary mb-8 md:mb-10;
+}
+
+h3 {
+  @apply text-48 leading-60 font-primary mb-6 md:mb-8;
+}
+
+h4 {
+  @apply text-36 leading-44 font-primary mb-5 md:mb-6;
+}
+
+h5 {
+  @apply text-30 leading-40 font-primary mb-4 md:mb-5;
+}
+
+h6 {
+  @apply text-24 leading-32 font-primary mb-3 md:mb-4;
+}

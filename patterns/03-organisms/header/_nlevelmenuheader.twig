@@ -1,0 +1,64 @@
+{#
+/**
+ * @file
+ * Header
+ *
+ * See header.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/global-styling') }}
+{{ attach_library('unicef_vf/header-styling') }}
+
+{# Classes #}
+{% set header_classes = ([
+  'header-offset bg-white defaultheader',
+  'flex justify-between items-center border-b w-full border-stroke-dividerLight relative  mx-auto p-4 py-5 lg:py-6 px-5 lg:px-[112px]',
+]) | sort | join(' ') | trim %}
+
+{% set header_menu_classes = ([
+  'header-menu-item-wrapper left-position w-full flex-grow hidden text-black z-20 bg-white absolute px-4 lg:px-0 left-0 lg:static lg:left-6 top-11 lg:flex lg:w-auto mt-9 lg:mt-0 mb-0 lg:pr-0 lg:bg-transparent items-center justify-start',
+]) | sort | join(' ') | trim %}
+
+{# Template #}
+{% block site_nlevel_menu_header %}
+  <header class="{{ header_classes }}">  
+    <div class="w-[142px] h-7 col-span-2">
+      {% include "@atoms/logo/logo.twig" only %}
+    </div>
+
+    {% if searchbtn %}
+      <div class="mobile-search-btn block lg:hidden">
+        {{ searchbtn }}
+      </div> 
+    {% endif %}
+
+    {% if search %}
+      <div class="mobile-search-input lg:hidden">
+        {{ search }}
+      </div> 
+    {% endif %}
+
+    <div class="hamburger-icon block mr-7 mb-4 lg:hidden" @click="menuIsOpen = !menuIsOpen">
+      {% include "@atoms/hamburger/hamburger.twig" only %}
+    </div>
+
+    <div class="{{ header_menu_classes }}">
+      <div class="w-1/2 menu-wrapper">
+        {{ menu }}
+      </div>
+
+      <div class="button-wrapper flex flex-wrap lg:flex-nowrap border-t border-stroke-borderLight lg:border-0 pt-6 lg:pt-0 mx-[-16px] lg:mx-0 px-4 lg:px-0 lg:ml-auto">
+        {% if search %}
+          <div class="search-btn lg:block lg:mr-4">
+            {{ search }}
+          </div> 
+        {% endif %}
+
+        <div class="signup-btn w-full lg:w-auto">
+          {{ signup }}
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock %}

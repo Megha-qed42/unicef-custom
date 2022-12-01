@@ -1,0 +1,135 @@
+/* Accordion and Accordion items */
+.accordion {
+  @apply px-4 md:px-[1.875rem] xl:px-0;
+}
+
+.closed {
+
+  .vertical {
+    @apply -rotate-90;
+    
+    transition: all 0.5s ease-in-out;
+  }
+
+  .horizontal {
+    @apply opacity-100 -rotate-90;
+    
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .chevronDown svg {
+    @apply opacity-100 rotate-0;
+
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.accordion-item-inner {
+
+  &.opened {
+    @apply opacity-100;
+
+    .vertical {
+      @apply rotate-90;
+
+      transition: all 0.5s ease-in-out;
+    }
+
+    .horizontal {
+      @apply opacity-0 rotate-90;
+
+      transition: all 0.5s ease-in-out;
+    }
+
+    .chevronDown svg {
+      @apply opacity-100 rotate-180;
+
+      transition: all 0.5s ease-in-out;
+    }
+    
+    > .accordion-content {
+      @apply h-auto opacity-100 pb-3;
+    }
+  }
+}
+
+.circle-plus {
+  @apply text-[1.1rem] opacity-100;
+  
+  .circle {
+    @apply relative w-[1.1rem] h-[1.1rem] rounded-full;
+  
+    border: solid .13rem currentColor;
+
+    .horizontal {
+      @apply left-1/4 ml-[-0.05rem] absolute w-2 h-[0.094rem] top-[0.4rem] bg-backgroundNeutral-neutralDark;
+    }
+
+    .vertical {
+      @apply absolute w-[0.1rem] h-2 top-[0.45rem] left-1/2 ml-[-1px] mt-[-4px] bg-backgroundNeutral-neutralDark;
+    }
+  }
+}
+
+.accordion-item {
+  .ac-title {
+    @apply text-lg;
+
+    .icons {
+      @apply pl-6 mt-1 mr-3;
+
+      .icon {
+        svg {
+          @apply w-20 h-20;
+        }
+      }
+    }
+  }
+
+  .accordion-content {
+    @apply h-0 opacity-0 transition-all duration-300 ease-in-out;
+  }
+}
+
+/* No Accordion Icon */
+.noIcon {
+  .ac-title {
+    .icons {
+      @apply hidden;
+    }
+  }
+}
+
+/* Accordion Left Side Icon */
+.icon-left {
+  .ac-title {
+    .icons {
+      @apply order-first mx-0 ml-3 pl-0 pr-6;
+    }
+  }
+
+  .accordion-item-inner {
+    .accordion-content {
+      @apply px-11;
+    }
+  }
+}
+
+/* Accordion No Icon Icon */
+.noIcon {
+  .accordion-item-inner {
+    .accordion-content {
+      @apply px-0;
+    }
+  }
+}
+
+/* Accordion With Icon */
+.with-border {
+  @apply border-t;
+}
+
+/* Container custom */
+.container-800 {
+  @apply max-w-[50rem];
+}

@@ -1,0 +1,74 @@
+notification:
+  use: "@molecules/notification-banner/notification-banner.twig"
+  label: Notification
+  description: Notification with variation.
+  fields:
+    headline:
+      type: pattern
+      label: Title
+      description: The title of the section.
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: div
+          headline: Trusted by some of the most reknowned brand
+          font: textMd-regular
+    description:
+      type: text
+      label: Description
+      preview:
+        faker: lorem.text
+    icon:
+      type: text
+      label: Icon name
+      description: A short headline above the headline.
+      preview: "globe"    
+    link:
+      type: pattern
+      label: Link
+      description: An optional button at the bottom of the card.
+      preview:
+        id: link
+        settings:          
+          url: "https://eldon.info"
+          content: "Lorem more"
+          title_text: ""
+          icon_size: 5
+          icon_position: "right"
+          icon: "arrowRight"
+          extra_classes: "font-secondary rounded-md text-background-white no-underline hover:text-background-white focus:text-background-white text-sm inline-block mt-0 font-bold px-4 mb-0 md:mb-0"
+  settings:
+    size:
+      type: select
+      label: Size
+      default: small
+      options:
+        small: Small       
+        large: Large
+    align:
+      type: select
+      label: Align
+      default: small
+      options:
+        center: Center       
+        left: Left
+    background:
+      type: select
+      label: Background
+      default: dark
+      options:
+        dark: Dark    
+        light: Light
+        black: Black
+    layout:
+      type: select
+      label: Layout
+      default: dark
+      options:
+        oneline: One line    
+        twoline: Two line
+    icon_visibility:
+      type: boolean
+      label: Hide icon
+      default_value: true

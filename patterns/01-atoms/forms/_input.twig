@@ -1,0 +1,70 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+
+{{ attach_library('unicef_vf/forms') }}
+
+{# Default #}
+{% set emailIcon = icon ? 'email-icon-show' : 'email-icon-hide' %}
+
+{# Classes #}
+{% set classes = ([
+  variant == 'textfield' or
+  variant == 'password' or
+  variant == 'email' or
+  variant == 'date' or
+  variant == 'file' or
+  variant == 'tel' ? 'form-input w-full py-2.5 px-3.5 rounded-lg border-stroke-borderDefault bg-white text-body placeholder-body mb-4 md:mb-0 md:mr-4 text-body',
+  variant == 'radio' ? 'form-radio mr-1',
+  variant == 'checkbox' ? 'form-checkbox mr-1',
+  variant == 'submit' ? 'border-text-primaryDark bg-backgroundButtonPrimary-buttonPrimaryActive text-white hover:bg-backgroundButtonPrimary-buttonPrimaryHover focus:bg-backgroundButtonPrimary-buttonPrimaryDefault disabled:bg-textButtonSecondary-buttonSecondaryDisabled disabled:text-primaryLight btn btn-submit flex items-center justify-center inline-flex capitalize focus:outline-none transition-colors duration-500 rounded-lg flex-row medium only_text textMd-medium py-2.5 px-4 cursor-pointer'
+] | sort | join(' ') | trim )%}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% block input_element_block %}
+	{% if variant == 'email' %}
+
+		<span class="email-input-wrapper relative flex-1 {{ emailIcon }}">
+			{% if icon == true %}
+				<span class="input-icon">
+					{% include "@atoms/svg/_svg--icon.twig" with {
+            icon: 'mail',
+            size: 'w-4 h-4',
+            fill_color: 'text-text-body'
+          } only %}
+				</span>
+			{% endif %}
+
+			<input {{ attributes }}/>{{ children }}
+		</span>
+	{% else %}
+		<input {{ attributes }}/>{{ children }}
+	{% endif %}
+
+	{% if variant == 'file' %}
+
+		<span class="file-input-wrapper relative">
+			{% if icon == true %}
+				<span class="input-icon upload-icon">
+					{% include "@atoms/svg/_svg--icon.twig" with {
+            icon: 'upload',
+            size: 'w-4 h-4',
+            fill_color: 'text-text-body'
+          } only %}
+				</span>
+			{% endif %}
+		</span>
+	{% endif %}
+
+{% endblock %}

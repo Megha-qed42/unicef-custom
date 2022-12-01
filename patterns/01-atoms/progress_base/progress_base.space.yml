@@ -1,0 +1,25 @@
+progress_base:
+  use: "@atoms/progress_base/progress_base.twig"
+  label: Progress (Base)
+  description: To show the progress in three different stages
+  fields:
+    title:
+      type: text
+      label: Title
+      preview: 'Your details'
+    desc:
+      type: text
+      label: Description
+      preview: 'Please provide your name and email'
+  settings:
+    icon_type:
+      type: select
+      label: icon
+      options:
+        circle: Circle
+        icon-primary-1x: Tick
+      preview: circle
+    extra_classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''

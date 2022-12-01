@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * _sticky-horizontal
+ *
+ * See sticky-image.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/sticky-component') }}
+
+{# Default #}
+{% set element = element|default('section') %}
+
+{# Classes #}
+{% set classes = [
+  'sticky-component', 
+  'sticky-image-horizontal-container',
+  alignment
+] %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes| sort | join(' ') | trim) %}
+
+{# Template #}
+{% block sticky_image_horizontal_block %}
+  <{{ element }} {{ attributes }}>
+    <div class="sticky-wrapper">
+      <div class="row-outer">
+        <div class="col scroll-text-wrapper">
+          <div class="list-wrapper">
+            <div class="space-holder">
+              <div class="sticky-el">
+                <div class="horizontal-el">
+                  {{ items }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </{{ element }}>
+{% endblock %}

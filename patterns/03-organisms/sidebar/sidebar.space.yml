@@ -1,0 +1,182 @@
+# Links List
+links_list:
+  use: "@organisms/sidebar/links_list.twig"
+  namespace: "Organisms/Sidebar"
+  label: Sidebar link
+  description: A sidebar link component with default (vertical) and horizontal variations.
+  fields:
+    items:
+      type: object
+      label: Sidebar link Items (Each sidebar link item object contains link properties)
+      multi_value_type: items
+      preview:
+        -
+          id: link
+          title: 'Link list item'
+          url: 'https://qed42.com/services'
+          title_text: 'Services'
+        -
+          id: link
+          title: 'Link list item'
+          url: 'https://qed42.com/services'
+          title_text: 'Services'
+        -
+          id: link
+          title: 'Link list item'
+          url: 'https://qed42.com/services'
+          title_text: 'Services'
+        -
+          id: link
+          title: 'Link list item'
+          url: 'https://qed42.com/services'
+          title_text: 'Services'
+        -
+          id: link
+          title: 'Link list item'
+          url: 'https://qed42.com/services'
+          title_text: 'Services'
+        -
+          id: link
+          title: 'Link list item'
+          url: 'https://qed42.com/services'
+          title_text: 'Services'
+
+# Category List
+category_list:
+  use: "@organisms/sidebar/category_list.twig"
+  namespace: "Organisms/Sidebar"
+  label: Category List
+  description: A category List.
+  fields:
+    items:
+      type: object
+      label: Sidebar link Items (Each sidebar link item object contains link properties)
+      multi_value_type: items
+      preview:
+        -
+          id: link
+          title: 'Link list item'
+          url: '#'
+          title_text: 'Services'
+          below:
+            - title: Child 1
+              url: "#"
+              in_active_trail: false
+
+            - title: Child 2
+              url: "#"
+              in_active_trail: false
+        -
+          id: link
+          title: 'Link list item'
+          url: '#'
+          title_text: 'Services'
+          below:
+            - title: Child 1
+              url: "#"
+              in_active_trail: false
+
+            - title: Child 2
+              url: "#"
+              in_active_trail: false
+        -
+          id: link
+          title: 'Link list item'
+          url: '#'
+          title_text: 'Services'
+        -
+          id: link
+          title: 'Link list item'
+          url: 'https://qed42.com/services'
+          title_text: 'Services'
+        -
+          id: link
+          title: 'Link list item'
+          url: 'https://qed42.com/services'
+          title_text: 'Services'
+        -
+          id: link
+          title: 'Link list item'
+          url: 'https://qed42.com/services'
+          title_text: 'Services'
+  settings:
+    category_style:
+      type: select
+      label: Category style
+      default_value: simple_style
+      options:
+        simple_style: 'Simple Style'
+        underline_style: 'Underline Style'
+        filled_style: 'Filled Style'
+    custom_wrapper_classes: 
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''
+
+# Sidebar Menu
+sidebar_menu:
+  use: "@organisms/sidebar/sidebar_menu.twig"
+  namespace: "Organisms/Sidebar"
+  label: Sidebar menu link
+  description: A sidebar menu link component with default (vertical) and horizontal variations.
+  fields:
+    items:
+      type: object
+      label: Sidebar link Items (Each sidebar link item object contains link properties)
+      multi_value_type: items
+      preview:
+        -
+          id: link
+          title: 'Link list item'
+          url: 'https://qed42.com/services'
+          title_text: 'Services'
+          below:
+            - title: Child 1
+              url: "#"
+              in_active_trail: false
+            - title: Child 2
+              url: "#"
+              in_active_trail: false
+              below:
+                - title: Child 1
+                  url: "#"
+                  in_active_trail: false
+                - title: Child 2
+                  url: "#"
+                  in_active_trail: false
+        -
+          id: link
+          title: 'Link list item'
+          url: 'https://qed42.com/services'
+          title_text: 'Services'
+          below:
+            - title: Child 1
+              url: "#"
+              in_active_trail: false
+              below:
+                - title: Child 1
+                  url: "#"
+                  in_active_trail: false
+                - title: Child 2
+                  url: "#"
+                  in_active_trail: false
+            - title: Child 2
+              url: "#"
+              in_active_trail: false
+        -
+          id: link
+          title: 'Link list item'
+          url: 'https://qed42.com/services'
+          title_text: 'Services'
+  settings:
+    category_style:
+      type: select
+      label: Category style
+      default_value: border_style
+      options:
+        border_style: 'Border Style'
+        filled: 'Filled'
+    custom_wrapper_classes: 
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''

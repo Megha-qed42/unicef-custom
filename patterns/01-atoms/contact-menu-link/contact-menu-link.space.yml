@@ -1,0 +1,65 @@
+contact_menu_link:
+  use: "@atoms/contact-menu-link/contact-menu-link.twig"
+  label: Contact menu link
+  description: Simple link component with optional icon. You can use this either with an url to display a link, or without to just display text with an icon.
+  fields:
+    url:
+      type: token
+      label: URL
+      preview:
+        faker: internet.url
+    title_text:
+      type: text
+      label: Link text
+      preview: 'Get in touch'
+    link_label: 
+      type: text
+      label: Contact link label
+      preview: 'Looking for a new career?'
+    multiple_items:
+      type: pattern
+      label: Link with icons
+      multi_value_type: items
+      preview:
+        - 
+          id: menu_item
+          settings:
+            icon: dollar
+            icon_type: icon_small
+            menu_size: menu_small
+            menu_title: 'Pricing'
+            menu_description: ''
+            link_url: "#"
+        - 
+          id: menu_item
+          settings:
+            icon: play-video
+            icon_type: icon_small
+            menu_size: menu_small
+            menu_title: 'Watch video'
+            menu_description: ''
+            link_url: "#"
+        - 
+          id: menu_item
+          settings:
+            icon: chat
+            icon_type: icon_small
+            menu_size: menu_small
+            menu_title: 'Chat to sales'
+            menu_description: ''
+            link_url: "#"
+  settings:
+    target:
+      type: select
+      label: Target
+      default_value: ''
+      options:
+        self: Self
+        blank: Blank
+        parent: Parent
+        top: Top  
+  variants:
+    only_link:
+      label: Contact menu only link
+    link_with_icons:
+      label: Contact menu link with icon

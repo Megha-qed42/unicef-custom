@@ -1,0 +1,18 @@
+footer_logo_content:
+  use: "@molecules/footer-logo-content/footer-logo-content.twig"
+  label: Footer logo content
+  description: Footer logo content
+  fields:
+    logo:
+      type: pattern
+      label: Logo
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/logo.svg
+          style: 160x160_xs_sc
+    text:
+      type: text
+      label: Title
+      preview: Design amazing digital experiences that create more happy in the world.

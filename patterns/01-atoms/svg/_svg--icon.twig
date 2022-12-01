@@ -1,0 +1,18 @@
+{# Default #}
+{% set fill_color = fill_color|default('fill-current') %}
+
+{# Classes #}
+{% set classes = ([
+  'svg',
+  fill_color,
+  size,
+] | sort | join(' ') | trim )%}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% block svg_icon_block %}
+  <svg {{ attributes }}>
+    <use xlink:href="{{ file_url('space-assets://images/spritemap.svg') }}#{{ icon }}"></use>
+  </svg>
+{% endblock %}

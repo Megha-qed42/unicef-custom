@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Secondary Header
+ *
+ * See header.space.yaml for documentation.
+ */
+#}
+
+{# Classes #}
+{% set header_classes = ([
+  'header-menu-item-wrapper secondaryheader-wrapper header-offset',
+  secondary_header_position == 'center' ? 'center-position',
+  secondary_header_position == 'left' ? 'left-position',
+  secondary_header_position == 'right' ? 'right-position',
+  'flex w-full relative',
+]) | sort | join(' ') | trim %}
+
+{# Template #}
+{% block site_secondary_header %}
+  <div class="mega-menu-secondary bg-backgroundNeutral-neutralLight lg:bg-backgroundNeutral-neutralMedium px-4 md:px-[1.875rem] xl:px-0 py-5 md:py-2 w-full flex flex-wrap">
+    <div class="{{ header_classes }}">
+      <div class="container mx-auto">
+        {{ menu }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

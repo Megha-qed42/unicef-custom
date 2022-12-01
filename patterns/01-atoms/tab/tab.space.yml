@@ -1,0 +1,8 @@
+tabs:
+  use: "@atoms/tabs/tab.twig"
+  label: Tab
+  description: Individual Tab item
+  fields:
+    link:
+      type: link
+      label: Tab link

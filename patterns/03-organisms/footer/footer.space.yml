@@ -1,0 +1,73 @@
+footer:
+  use: "@organisms/footer/footer.twig"
+  label: Footer
+  description: The footer pattern with menu, logo and copyright having four type variations.
+  fields:
+    footer_top_left:
+      type: pattern
+      label: Footer top - Left
+      preview:
+        - id: block_footer_text
+          settings:
+            title_font_size: 'size-72'
+            title_color: 'text-text-heading'
+            content_font_size: ''
+            content_color: ''
+    footer_top_right:
+      type: pattern
+      label: Footer top - Right
+    footer_middle_left:
+      type: pattern
+      label: Footer middle - Left
+      preview:
+        - id: block_navigation
+        - id: block_navigation
+        - id: block_navigation
+    footer_middle_right:
+      type: pattern
+      label: Footer middle - Right
+      preview:
+        - id: subscribe_block_icon
+        - id: social_media_navigation
+          variant: default
+    footer_bottom_left:
+      type: pattern
+      label: Footer bottom - Left
+      preview:
+        - id: logo
+          variant: logo_with_text_dark
+    footer_bottom_right:
+      type: pattern
+      label: Footer bottom - Right
+      preview:
+        id: block_navigation_horizontal
+  settings:
+    colour:
+      type: select
+      required: true
+      preview: white
+      options:
+        white: White
+        dark: Dark
+    type:
+      type: select
+      required: true
+      preview: type-5
+      options:
+        type-1: Type 1
+        type-2: Type 2
+        type-3: Type 3
+        type-4: Type 4
+        type-5: Type 5
+        type-6: Type 6
+        type-7: Type 7
+        type-8: Type 8
+        type-9: Type 9
+        type-10: Type 10
+        type-11: Type 11
+        type-12: Type 12
+        type-13: Type 13
+        type-14: Type 14
+        type-15: Type 15
+        type-16: Type 16
+        type-17: Type 17

@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * carousel
+ *
+ * See carousel.space.yaml for documentation.
+ * For storybook only.
+ */
+#}
+
+{{ attach_library('unicef_vf/slider') }}
+{{ attach_library('unicef_vf/hero-banner-carousel') }}
+
+{# Classes #}
+{% set main_slider_classes = ([
+  'carousel carousel-main-slider'
+] | sort | join(' ') | trim ) %}
+
+{% set thumbnail_slider_classes = ([
+  'carousel carousel-thumbnail-slider'
+] | sort | join(' ') | trim ) %}
+
+{# Template #}
+{% block carousel_image_video_slideshow_block %}
+  <div class="images-and-video-slideshow-wrapper">
+    <div class="main-slider">
+      <div class="container mx-auto">
+        {% include '@organisms/slider/slider.twig' with {
+          variant: 1,
+          slides_type: 'slide',
+          items: content_items,
+          autoplay: autoplay,
+          extra_classes: main_slider_classes,
+          pagination_style: 'thumbnail-slider',
+        } only %}
+      </div>
+    </div>
+
+    <div class="thumbnail-slider">
+      {% include '@organisms/slider/slider.twig' with {
+        variant: 1,
+        slides_type: 'slide',
+        arrows: true,
+        arrows_color: 'primary-dark-arrows',
+        items: image_items,
+        autoplay: autoplay,
+        extra_classes: thumbnail_slider_classes,
+        pagination_style: 'thumbnail-slider',
+      } only %}
+    </div>
+  </div>
+{% endblock %}

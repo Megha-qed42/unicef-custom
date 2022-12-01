@@ -1,0 +1,71 @@
+{#
+/**
+ * @file
+ * stats-kpi
+ *
+ * See stats-kpi.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/stats-kpi') }}
+
+{# Classes #}
+{% set classes = [
+  alignment == 'center' ? 'text-center center-layout': '',  
+  'stats-kpi md:max-w-xs md:flex-1',
+  layout_type,
+  extra_classes ? extra_classes
+] %}
+{% set attributes = attributes|default(create_attribute()).addClass(classes| sort | join(' ') | trim) %}
+
+{# Template #}
+{% block stats_and_kpi_block %}
+  <div class="stats-kpi-main-wrapper">
+    <div {{ attributes }}>
+      {% if layout_type == "withicon" %}
+        {% if icon|render|striptags|trim %}
+          <span class="inline-block mb-0 icon">{% include "@atoms/svg/_svg--icon.twig" with {
+            icon: icon,
+            size: "h-[48px] w-[48px]",
+          } only %}</span>
+        {% endif %}
+      {% endif %}
+
+      <div class="stats-kpi-wrapper">
+        {% if keynumber|render|striptags|trim is not empty %}
+          <div class="keyfact-figure counter text-text-primaryDark">
+            {{ keynumber }}
+          </div> 
+        {% endif %}
+
+        {% if subheading|render|striptags|trim is not empty %}
+          <div class="keyfact-subheading textLG-medium text-text-heading mb-2">
+            {{ subheading }}
+          </div>
+        {% endif %}
+        
+        {% if description|render|striptags|trim is not empty %}
+          <div class="keyfact-description textMd-regular text-text-body">
+            {{ description }}
+          </div>
+        {% endif %}
+
+        {% if layout_type == "withicon" %}
+          {% if link|render|striptags|trim %}
+            <div class="cta-btn">
+              {{ link }}
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>
+
+      {% if layout_type != "withicon" %}
+        {% if link|render|striptags|trim %}
+          <div class="cta-btn">
+            {{ link }}
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

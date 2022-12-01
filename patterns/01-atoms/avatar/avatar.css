@@ -1,0 +1,80 @@
+.avatar-link a svg {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+.avatar-label-image-wrapper,
+.avatar-image-wrapper {
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.rounded {
+  .avatar-label-image-wrapper,
+  .avatar-image-wrapper {
+    img {
+      @apply rounded-full;
+    }
+  }
+}
+.xxl-64-x-64 {
+  .avatar-label-image-wrapper,
+  .avatar-image-wrapper {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+.xxxl-80-x-80 {
+  .avatar-label-image-wrapper,
+  .avatar-image-wrapper {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+.xxxxl-96-x-96 {
+  .avatar-label-image-wrapper,
+  .avatar-image-wrapper {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+.xxxxxl-160-x-160 {
+  .avatar-label-image-wrapper,
+  .avatar-image-wrapper {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+.xs-24-x-24 {
+  .avatar-label-image-wrapper,
+  .avatar-image-wrapper {
+    @apply w-6 h-6;
+  }
+}
+.sm-32-x-32 {
+  .avatar-label-image-wrapper,
+  .avatar-image-wrapper {
+    @apply w-8 h-8;
+  }
+}
+.md-40-x-40 {
+  .avatar-label-image-wrapper,
+  .avatar-image-wrapper {
+    @apply w-10 h-10;
+  }
+}
+.lg-48-x-48 {
+  .avatar-label-image-wrapper,
+  .avatar-image-wrapper {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+.xl-56-x-56 {
+  .avatar-label-image-wrapper,
+  .avatar-image-wrapper {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}

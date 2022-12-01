@@ -1,0 +1,17 @@
+{# Template #}
+{% block video_block %}
+  {% if video is empty and src is not empty %}
+    <video controls>
+      <source src="{{ file_url('space-assets://videos/' ~ src ) }}" type="video/mp4">
+      Your brospaceer does not support the video tag.
+    </video>
+  {% else %}
+    {{ video }}
+  {% endif %}
+
+  {% if caption is not empty %}
+    <div>
+      {{ caption }}
+    </div>
+  {% endif %}
+{% endblock %}

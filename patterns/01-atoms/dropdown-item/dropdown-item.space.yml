@@ -1,0 +1,38 @@
+dropdown_item:
+  use: "@atoms/dropdown-item/dropdown-item.twig"
+  namespace: "Atoms/Dropdown-item"
+  label: Dropdown Item
+  fields:
+    list_text:
+      type: text
+      label: list item
+      preview: list item
+  settings:
+    dropdown_type:
+      type: select
+      description: Dropdown type like text, icon with text checkbox with text.
+      preview: text
+      options:
+        text: Text only
+        text-with-icon: Text with icon
+        text-with-checkbox: Text with checkbox
+        text-with-avatar: Text with avatar
+    checkbox_attribute:
+      type: attributes
+      label: Attributes
+      preview: "type=\"checkbox\""    
+    icon:
+      type: select
+      label: Icon
+      description: Go with an icon alongside your text.
+      preview: circle
+      options:
+        settings: Settings
+        user: User
+        zap: Keyboard shortcuts
+        users: Team
+        home: Company profile
+        userPlus: Invite Colleagues
+        2Layers: Changelog
+        slack: Slack Community
+  visibility: storybook

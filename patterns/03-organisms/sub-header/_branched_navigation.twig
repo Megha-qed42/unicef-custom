@@ -1,0 +1,45 @@
+{{ attach_library('unicef_vf/header-styling') }}
+
+{# Template #}
+<div class="_branched-navigation">
+  <div class="menu-link-contentmain">
+    <div class="{{ layout_width == 'boxed_width' ? 'container' : 'w-full' }} mx-auto flex flex-col lg:flex-row">
+      <div class="nav-col primary-col w-full lg:w-30/100">
+        <div class="primary-menu-wrapper">
+          <ul>
+            {% for item in primary_menu %}
+              {{ item }}
+            {% endfor %}
+          </ul>
+
+          <div class="sticky-menu-item">
+            {{ navigation_button }}
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-col secondary-col w-full">
+        <div class="block-navigation">
+          <h3 class="block-title displaySm-bold text-text-heading w-full flex items-center">
+            {% include "@atoms/svg/_svg--icon.twig" with {
+              icon: 'arrowLeft',
+              size: 'w-[0.875rem] h-[0.875rem]',
+              fill_color: 'text-textButtonTertiary-buttonTertiaryDefault',
+            } only %}
+            Industries
+          </h3>
+
+          <div class="col-container flex flex-col lg:flex-row">
+            <div class="nav-col block-navigation-content col_1 w-full">
+              <ul class="menu">
+                {% for navigation_item_1 in navigation_items_1 %}
+                  {{ navigation_item_1 }}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

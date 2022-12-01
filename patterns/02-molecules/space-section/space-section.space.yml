@@ -1,0 +1,31 @@
+space_section:
+  use: "@molecules/space-section/space-section.twig"
+  label: Section
+  description: Section component with title and description.
+  fields:
+    headline:
+      type: pattern
+      label: Headline
+      description: The main headline.
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+    text:
+      type: text
+      label: Text
+      description: A long text under the headline.
+      preview:
+        faker: lorem.paragraph
+  settings:
+    alignment:
+      type: select
+      label: Alignment
+      required: true
+      default: left
+      options:
+        left: Left
+        center: Center
+  parameters:
+    layout: centered

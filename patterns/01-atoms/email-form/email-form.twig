@@ -1,0 +1,57 @@
+{#
+/**
+ * @file
+ * email-form
+ *
+ * See email-form.space.yaml for documentation.
+ */
+#}
+
+{# Default #}
+{% set checkIcon = icon ? 'with-icon' : 'without-icon' %}
+
+{# Classes #}
+{% set classes = ([
+  "form email-form",
+])| sort | join(' ') | trim %}
+
+{% set input_classes = ([
+  "form-input w-full py-2.5 px-3.5 rounded-lg border-stroke-borderDefault bg-white textMd-medium text-body placeholder-body",
+])| sort | join(' ') | trim %}
+
+{% set label_classes = ([
+  "block mb-4 leading-none field-label"
+])| sort | join(' ') | trim %}
+
+{# Template #}
+{% block email_form_block %}
+  <form action="{{ action }}" method="POST" enctype="multipart/form-data" name="EmailForm" class="{{ classes }} {{ checkIcon }}">
+    {% if label is not empty %}  
+      <label class="{{ label_classes }}">{{ label }}</label>
+    {% endif %}
+    
+    <div class="wrapper relative md:flex">
+      <span class="input-wrapper relative flex-1">
+        {% if icon == true %} 
+          <span class="input-icon">
+            {% include "@atoms/svg/_svg--icon.twig" with {
+              icon: 'mail',
+              size: 'w-4 h-4',
+              fill_color: 'text-text-body'
+            } only %}
+          </span>
+        {% endif %}
+
+        <input type="email" placeholder="{{ placeholder }}" class="{{ input_classes }} w-full mb-4 md:mb-0 md:mr-4 text-body">
+      </span>
+
+      {% include "@atoms/button/button.twig" with {
+        'tag_name': 'button',
+        'text': 'Subscribe',
+        'variant': 'primary',
+        'size': 'large',
+        'button_type': 'only_text'
+      } only %}
+    </div>
+  </form>
+{% endblock %}

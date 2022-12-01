@@ -1,0 +1,9 @@
+/* Get the app */
+
+.block-get-the-app .block-content .image-link {
+  @apply mr-4 md:mr-0 md:mb-4;
+}
+
+.block-get-the-app .block-content .image-link img {
+  @apply max-w-[135px] max-h-[40px] w-full;
+}

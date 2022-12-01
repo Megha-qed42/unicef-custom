@@ -1,0 +1,15 @@
+features:
+  use: "@atoms/features/features.twig"
+  label: Features
+  description: features with icon
+  fields:
+    content:
+      type: text
+      label: Content
+      preview:
+        faker: lorem.sentence       
+    icon:
+      type: text
+      label: Icon name
+      description: 'Icon beside content.'
+      preview: 'icon-primary-1x'

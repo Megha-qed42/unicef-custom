@@ -1,0 +1,74 @@
+{#
+/**
+ * @file
+ * featured card
+ *
+ * See card.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/card') }}
+
+{# Default #}
+{% set element = element|default('article') %}
+
+{# Classes #}
+{% set classes = [
+  alignment,
+  card_layout,
+  card_size,
+  'media__card video w-full h-auto overflow-hidden flex flex-col flex-wrap items-start',
+  card_layout == 'withcontainer' ? 'p-4 bg-white rounded-lg shadow-lg',
+  full_box_link ? 'full_box_link' : '',
+  extra_classes ? extra_classes
+] %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes| sort | join(' ') | trim) %}
+
+{# Template #}
+{% block video_card_block %}
+  <{{ element }} {{ attributes }}>
+    <div class="top-section w-full">
+      {% if video is not empty %}
+        <div {{ region_attributes.video|default(create_attribute()).addClass('card_video') }}>
+          {{ video }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="bottom-section">
+      {% if preheadline|render|striptags|trim is not empty %}
+        <div {{ region_attributes.preheadline|default(create_attribute()).addClass('card_preheadline uppercase textSm-bold text-text-primaryDark  tracking-widest') }}>
+          {{ preheadline }}
+        </div>
+      {% endif %}
+
+      {% if headline|render|striptags|trim %}
+        <div class="card_title text-text-heading">
+          {{ headline }}
+        </div>
+      {% endif %}
+
+      {% if text|render|striptags|trim %}
+        <div {{ region_attributes.text|default(create_attribute()).addClass('card_text textMd-regular text-text-body mt-5') }}>
+          {{ text }}
+        </div>
+      {% endif %}
+
+      {% if link|render|striptags|trim %}
+        <div class="bottom-cta mt-5">
+          {{ link }}
+        </div>
+      {% endif %}
+
+      {% for cell in cells_1 %}
+        {% set count = count + 1 %}
+        {% if count < 10 %}
+          <div class="avatar-item-wrap mt-3">
+            {{ cell }}
+          </div>
+        {% endif %}
+      {%  endfor %}
+    </div>
+  </{{ element }}>
+{% endblock %}

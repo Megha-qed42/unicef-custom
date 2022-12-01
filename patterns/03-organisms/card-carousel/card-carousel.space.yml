@@ -1,0 +1,536 @@
+# Pricing Card Carousel
+pricingcard_carousel:
+  use: '@organisms/card-carousel/_pricing-card-carousel.twig'
+  namespace: 'Organisms/Card carousel'
+  label: Pricing Card Carousel
+  description: The Pricing card carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: pricingcard
+        - id: pricingcard
+        - id: pricingcard
+        - id: pricingcard
+        - id: pricingcard
+
+# Pricing featured card carousel
+pricingfeaturedcard_carousel:
+  use: '@organisms/card-carousel/_pricing-featured-card-carousel.twig'
+  namespace: 'Organisms/Card carousel'
+  label: Pricing Featured Card Carousel
+  description: The Pricing Featured card carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: pricingfeaturedcard
+        - id: pricingfeaturedcard
+        - id: pricingfeaturedcard
+        - id: pricingfeaturedcard
+        - id: pricingfeaturedcard
+        - id: pricingfeaturedcard
+        - id: pricingfeaturedcard
+
+# Image card Carousel
+imagecard_carousel:
+  use: '@organisms/card-carousel/_image-card-carousel.twig'
+  namespace: 'Organisms/Card carousel'
+  label: Image Card Carousel
+  description: The Image Featured card carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items_large:
+      type: pattern
+      label: Items large
+      multi_value_type: items
+      preview:
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "large"
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "large"
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "large"
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "large"
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "large"
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "large"
+    items_medium:
+      type: pattern
+      label: Items medium
+      multi_value_type: items
+      preview:
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "medium"
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "medium"
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "medium"
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "medium"
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "medium"
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "medium"
+    items_small:
+      type: pattern
+      label: Items small
+      multi_value_type: items
+      preview:
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "small"
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "small"
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "small"
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "small"
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "small"
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "small"
+    items_horizontal:
+      type: pattern
+      label: Items horizontal
+      multi_value_type: items
+      preview:
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "medium"
+            alignment: horizontal
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "medium"
+            alignment: horizontal
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "medium"
+            alignment: horizontal
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "medium"
+            alignment: horizontal
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "medium"
+            alignment: horizontal
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "medium"
+            alignment: horizontal
+    items_horizontal_large:
+      type: pattern
+      label: Items horizontal large
+      multi_value_type: items
+      preview:
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "large"
+            alignment: horizontal
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "large"
+            alignment: horizontal
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "large"
+            alignment: horizontal
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "large"
+            alignment: horizontal
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "large"
+            alignment: horizontal
+        - id: imagecard
+          fields:
+            text: ''
+            cells_1: ''
+          settings:
+            card_size: "large"
+            alignment: horizontal
+  settings:
+    carousel_layout:
+      type: select
+      label: Layout of card
+      required: true
+      default: small-card-carousel
+      options:
+        small-card-carousel: 'Small Card Carousel'
+        medium-card-carousel: 'Medium Card Carousel'
+        large-card-carousel: 'Large Card Carousel'
+        horizontal-card-carousel: 'Horizontal Card Carousel'
+        horizontal-large-card-carousel: 'Horizontal Large Card Carousel'
+
+# Quicklink Card carousel
+quicklinkcard_carousel:
+  use: '@organisms/card-carousel/_quicklink-card-carousel.twig'
+  namespace: 'Organisms/Card carousel'
+  label: Quicklink Card Carousel
+  description: The Quick card carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items_large:
+      type: pattern
+      label: Items large
+      multi_value_type: items
+      preview:
+        - id: quicklinkcard
+          settings:
+            card_size: large
+        - id: quicklinkcard
+          settings:
+            card_size: large
+        - id: quicklinkcard
+          settings:
+            card_size: large
+        - id: quicklinkcard
+          settings:
+            card_size: large
+        - id: quicklinkcard
+          settings:
+            card_size: large
+        - id: quicklinkcard
+          settings:
+            card_size: large
+    items_medium:
+      type: pattern
+      label: Items medium
+      multi_value_type: items
+      preview:
+        - id: quicklinkcard
+          settings:
+            card_size: medium
+        - id: quicklinkcard
+          settings:
+            card_size: medium
+        - id: quicklinkcard
+          settings:
+            card_size: medium
+        - id: quicklinkcard
+          settings:
+            card_size: medium
+        - id: quicklinkcard
+          settings:
+            card_size: medium
+        - id: quicklinkcard
+          settings:
+            card_size: medium
+    items_small:
+      type: pattern
+      label: Items small
+      multi_value_type: items
+      preview:
+        - id: quicklinkcard
+          settings:
+            card_size: small
+        - id: quicklinkcard
+          settings:
+            card_size: small
+        - id: quicklinkcard
+          settings:
+            card_size: small
+        - id: quicklinkcard
+          settings:
+            card_size: small
+        - id: quicklinkcard
+          settings:
+            card_size: small
+        - id: quicklinkcard
+          settings:
+            card_size: small
+  settings:
+    carousel_layout:
+      type: select
+      label: Layout of card
+      required: true
+      default: small-quicklink-card-carousel
+      options:
+        small-quicklink-card-carousel: 'Small Quicklink Card Carousel'
+        medium-quicklink-card-carousel: 'Medium Quicklink Card Carousel'
+        large-quicklink-card-carousel: 'Large Quicklink Card Carousel'
+
+# Featured Card carousel
+featuredcard_carousel:
+  use: '@organisms/card-carousel/_featured-card-carousel.twig'
+  namespace: 'Organisms/Card carousel'
+  label: Featured Card Carousel
+  description: The Featured card carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items_large:
+      type: pattern
+      label: Items large
+      multi_value_type: items
+      preview:
+        - id: featuredcard
+          settings:
+            card_size: large
+        - id: featuredcard
+          settings:
+            card_size: large
+        - id: featuredcard
+          settings:
+            card_size: large
+        - id: featuredcard
+          settings:
+            card_size: large
+        - id: featuredcard
+          settings:
+            card_size: large
+        - id: featuredcard
+          settings:
+            card_size: large
+    items_medium:
+      type: pattern
+      label: Items medium
+      multi_value_type: items
+      preview:
+        - id: featuredcard
+          settings:
+            card_size: medium
+        - id: featuredcard
+          settings:
+            card_size: medium
+        - id: featuredcard
+          settings:
+            card_size: medium
+        - id: featuredcard
+          settings:
+            card_size: medium
+        - id: featuredcard
+          settings:
+            card_size: medium
+        - id: featuredcard
+          settings:
+            card_size: medium
+    items_small:
+      type: pattern
+      label: Items small
+      multi_value_type: items
+      preview:
+        - id: featuredcard
+          settings:
+            card_size: small
+        - id: featuredcard
+          settings:
+            card_size: small
+        - id: featuredcard
+          settings:
+            card_size: small
+        - id: featuredcard
+          settings:
+            card_size: small
+        - id: featuredcard
+          settings:
+            card_size: small
+        - id: featuredcard
+          settings:
+            card_size: small
+  settings:
+    carousel_layout:
+      type: select
+      label: Layout of card
+      required: true
+      default: small-card-carousel
+      options:
+        small-card-carousel: 'Small Card Carousel'
+        medium-card-carousel: 'Medium Card Carousel'
+        large-card-carousel: 'Large Card Carousel'
+
+# Icon Card carousel
+iconcard_carousel:
+  use: '@organisms/card-carousel/_icon-card-carousel.twig'
+  namespace: 'Organisms/Card carousel'
+  label: Icon Card Carousel
+  description: The Icon card carousel pattern.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: iconcard
+          settings:
+            layout: 'withicon'
+            alignment: 'center'
+        - id: iconcard
+          settings:
+            layout: 'withicon'
+            alignment: 'center'
+        - id: iconcard
+          settings:
+            layout: 'withicon'
+            alignment: 'center'
+        - id: iconcard
+          settings:
+            layout: 'withicon'
+            alignment: 'center'
+        - id: iconcard
+          settings:
+            layout: 'withicon'
+            alignment: 'center'
+        - id: iconcard
+          settings:
+            layout: 'withicon'
+            alignment: 'center'
+
+# People Card carousel
+peoplecard_carousel:
+  use: '@organisms/card-carousel/_people-card-carousel.twig'
+  namespace: 'Organisms/Card carousel'
+  label: People Card Carousel - People with image bio
+  description: The People card carousel pattern - people with image bio for Team sections image card 3.
+  extends:
+    - slider.settings
+  fields:
+    items:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image-bio
+            card_size: small
+        - id: peoplecard
+          settings:
+            card_layout: people-with-image-bio
+            card_size: small

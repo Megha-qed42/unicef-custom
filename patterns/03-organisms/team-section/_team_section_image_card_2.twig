@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Team sections - Image card 2
+ * See team_section.space.yaml for documentation.
+ *
+ */
+#}
+
+{{ attach_library('unicef_vf/team-section') }}
+
+{# Default #}
+{% set element = element|default('section') %}
+
+{# Classes #}
+{% set classes = ([
+  'team-members-wrapper',
+  'team-sections-image-card team-sections-image-card-2',
+  background_color,
+] | sort | join(' ') | trim ) %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% block team_sections_image_card_2_block %}
+  <{{ element }} {{ attributes }}>
+    <div class="container mx-auto">
+      <div class="intro-section-wrapper">
+        {# Intro section - Section heading #}
+        {% if intro_section is not empty %}
+          {{ intro_section }}
+        {% endif %}
+
+        {# CTA #}
+        {% if link_1|render|striptags|trim is not empty or link_2|render|striptags|trim is not empty %}
+          <div class="cta-button flex flex-col md:flex-row">
+            {% if link_1|render|striptags|trim is not empty %}
+              <div{{ region_attributes.link_1|default(create_attribute()).addClass('mt-3 md:mb-0 md:mt-0 md:mr-3') }}>{{ link_1 }}</div>
+            {% endif %}
+
+            {% if link_2|render|striptags|trim is not empty %}
+              <div{{ region_attributes.link_2 }}>{{ link_2 }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+      {# Team members list #}
+      <div class="team-member-list">
+        <div class="team-members-block people-with-image">
+          {{ team_member }}
+        </div>
+      </div>
+    </div>
+  </{{ element }}>
+{% endblock %}

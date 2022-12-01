@@ -1,0 +1,25 @@
+{{ attach_library('unicef_vf/header-styling') }}
+
+{# Classes #}
+{% set url = link_url %}
+
+{# Template #}
+{% block menu_item_block %}
+  {% include "@atoms/link/link.twig" with {
+    "url": url,
+    "title_text": menu_title,
+    "content": menu_title,
+    "icon_size": 5,
+    "icon": icon_type == 'icon_false' ? '' : icon,
+    "icon_position": 'left',
+    "custom_style": true,
+    "extra_classes": 'flex',
+    "target": target
+  } %}
+  
+  {% if menu_description|render|striptags|trim is not empty %}
+    <span class="menu-item-description textSm-regular text-text-body block">
+      {{ menu_description }}
+    </span>
+  {% endif %}
+{% endblock %}

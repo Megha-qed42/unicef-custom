@@ -1,0 +1,53 @@
+.buttons {
+  @apply pt-11 flex gap-3;
+}
+.buttons a {
+  @apply py-4 px-12 flex flex-row;
+}
+.buttons a svg {
+  @apply ml-0 mr-2;
+}
+
+.error-block h1{
+  @apply text-6xl;
+}
+.error-block .buttons a {
+  @apply px-9;
+}
+
+.center .buttons {
+  justify-content: center;
+}
+@media all and (max-width: 40em) {
+  .error-block h1{
+    @apply text-4xl;
+  }
+  .buttons {
+    @apply flex-col-reverse; 
+  }
+  .buttons a {
+    @apply py-1 px-12; 
+  }
+}
+
+
+.text-image-404-section .text-404-error {
+  @apply py-0 px-8;
+}
+.text-image-404-section .buttons a {
+  @apply py-2.5 px-8;
+}
+.center-image img {
+  height: 16rem;
+}
+@media all and (max-width: 40em) {
+  .text-image-404-section .text-404-error {
+    @apply py-0 px-0;
+  }
+  .text-image-404-section .text-404-error h1{
+    @apply text-4xl; 
+  }
+  .error-image {
+      margin-top: 4rem;
+  }
+}

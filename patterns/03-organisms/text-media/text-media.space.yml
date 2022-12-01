@@ -1,0 +1,127 @@
+text_media:
+  use: "@organisms/text-media/text-media.twig"
+  label: Text and Media
+  description: This organisms contain Media with title and description.
+  fields:    
+    heading:
+      type: pattern
+      label: Headline
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Train your body to crave for healthy requires food'
+          font: displayMd-bold
+    description:
+      type: text
+      label: Content
+      preview: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est</p>"
+    image:
+      type: pattern
+      label: Image 1
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: "space-assets://images/2x_592x592.png"
+          style: scale_592w
+          default: true
+          extra_classes: 'w-full'
+    image2:
+      type: pattern
+      label: Image 2
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: "space-assets://images/2x_592x592.png"
+          style: scale_592w
+          default: true
+          extra_classes: 'w-full'
+    link_1:
+      type: pattern
+      label: Button 1
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Get Started
+        settings:
+          icon: ''
+          size: xlarge
+          classes: 'mb-2 md:mb-0 md:mr-2'
+    link_2:
+      type: pattern
+      label: Button 2
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: Learn more
+        settings:
+          icon: ''
+          size: xlarge
+    stats:
+      type: pattern
+      label: Stats/KPI
+      description: An optional Stats/KPI.
+      preview:
+        - id: stats_kpi
+          settings:
+            keynumber: '<h3 class="displayLG-semibold headline">4000+</h3>'
+            subheading: 'Global customers'
+            description: ''
+            link: false
+            layout_type: default
+        - id: stats_kpi
+          settings:
+            keynumber: '<h3 class="displayLG-semibold headline">600%</h3>'
+            subheading: 'Return on investment'
+            description: ''
+            link: false
+            layout_type: default
+    feature_items:
+      type: pattern
+      label: Features
+      description: List of features items.
+      multi_value_type: items
+      preview:
+        - id: features
+        - id: features
+        - id: features
+        - id: features
+    alignment_column:
+      type: select
+      label: Column alignment
+      default: default
+      options:
+        default: Left text-Right image
+        leftimage: Left image-Right text
+  settings:
+    column_width:
+      type: select
+      label: Select column width
+      required: true
+      default: column_50-50
+      options:
+        column_50-50: 50-50
+        column_34-66: 34-66
+        column_25-75: 25-75
+        column_66-34: 66-34
+        column_75-25: 75-25
+    layout_type:
+      type: select
+      label: Select layout
+      required: true
+      default: default
+      options:
+        default-layout: default
+        withlink: With links
+        withstats: With stats
+        withchecklist: With checklist
+        withimages: With images
+    extra_classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''

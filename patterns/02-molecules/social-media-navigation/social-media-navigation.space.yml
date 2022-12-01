@@ -1,0 +1,35 @@
+social_media_navigation:
+  use: "@molecules/social-media-navigation/social-media-navigation.twig"
+  label: Social media navigation
+  description: A navigation component with default (vertical) and horizontal variations.
+  fields:
+    items:
+      type: object
+      label: Navigation Items (Each navigation item object contains link properties)
+      multi_value_type: items
+      preview:
+        -
+          id: link
+          content: 'facebook'
+          url: 'https://qed42.com/services'
+          title_text: 'facebook'
+        -
+          id: link
+          content: 'twitter'
+          url: 'https://qed42.com/solutions'
+        -
+          id: link
+          content: 'github'
+          url: 'https://qed42.com/work'
+        -
+          id: link
+          content: 'linkedin'
+          url: 'https://qed42.com/blog'
+  variants:
+    default:
+      label: Default 
+  settings:
+    wrap_nav:
+      type: boolean
+      label: Wrap with nav Element (&lt;nav&gt;&lt;/nav&gt;)
+      default_value: false

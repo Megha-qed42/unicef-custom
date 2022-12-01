@@ -1,0 +1,834 @@
+# Icon card
+iconcard:
+  use: '@molecules/card/_iconcard.twig'
+  namespace: 'Molecules/Card'
+  label: Icon Card
+  description: Icon card component with icon, titles, body and link.
+  fields:
+    headline:
+      type: pattern
+      label: Headline
+      description: The main headline.
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Deliver instant answers'
+          font: textXL-medium
+    text:
+      type: text
+      label: Text
+      description: A long text under the headline.
+      preview: '<p>An all-in-one customer service platform that helps you balance everything your customers need to be happy.</p>'
+    icon:
+      type: text
+      label: Icon name
+      description: 'Icon name'
+      preview: 'chrome'
+    link:
+      type: pattern
+      label: Link
+      description: An optional button at the bottom of the card.
+      preview:
+        id: button
+        variant: link
+        fields:
+          text: Learn more
+        settings:
+          icon: 'arrowRight'
+          size: small
+          button_type: text_with_icon
+          classes: ''
+  settings:
+    alignment:
+      type: select
+      label: Alignment
+      required: true
+      default: left
+      options:
+        left: Left
+        center: Center
+    card_layout:
+      type: select
+      label: Layout of the card
+      required: true
+      default: withouticon
+      options:
+        withouticon: Without icon
+        withicon: With icon
+        withbackground: Without Featured Icon
+        withiconbackground: With Featured icon
+    full_box_link:
+      label: Full box link
+      type: boolean
+      default_value: false
+    extra_classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''
+
+# Quicklink card
+quicklinkcard:
+  use: '@molecules/card/_quicklinkcard.twig'
+  namespace: 'Molecules/Card'
+  label: Quick Link Card
+  description: Quick link card component with image, titles, body and link.
+  fields:
+    image:
+      type: pattern
+      label: Image
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: 'images/airways.png'
+          style: 16x9_md_sc
+          default: false
+    headline:
+      type: pattern
+      label: Headline
+      description: The main headline.
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Improve Outreach to Maximise Conversion'
+          font: displayXs-bold
+    text:
+      type: text
+      label: Text
+      description: A long text under the headline.
+      preview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem ultrices quam id sit aliquam.'
+    link:
+      type: pattern
+      label: Link
+      description: An optional button at the bottom of the card.
+      preview:
+        id: button
+        variant: primary
+        fields:
+          text: Learn More
+        settings:
+          icon: 'arrowRight'
+          size: large
+          button_type: text_with_icon
+          classes: ''
+    on_scroll_animation:
+      type: text
+      label: On Scroll Animation
+      preview: 'fade-up'
+    on_scroll_animation_duration:
+      type: text
+      label: On Scroll Animation Duration
+      preview: 1500
+    vertical_column_alignment:
+      type: select
+      label: Vertical column alignment
+      default: topimage
+      options:
+        bottomimage: Top text-Bottom image
+        topimage: Top image-Bottom text
+    image_hover:
+      type: boolean
+      label: Image zoom when hover
+      default_value: false
+  settings:
+    card_layout:
+      type: select
+      label: Layout of card
+      required: true
+      default: withoutbackground
+      options:
+        withoutbackground: Without Background
+        withbackground: With Background
+    card_size:
+      type: select
+      label: Card size
+      required: true
+      default: halfwidth
+      options:
+        large: Large
+        medium: Medium
+        small: Small
+    full_box_link:
+      label: Full box link
+      type: boolean
+      default_value: false
+    extra_classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''
+
+# Featured card
+featuredcard:
+  use: '@molecules/card/_featuredcard.twig'
+  namespace: 'Molecules/Card'
+  label: Featured Card
+  description: Featured card component with image, titles and link.
+  fields:
+    card_label:
+      type: text
+      label: Card Label
+      preview: 'Our Mission'
+    headline:
+      type: pattern
+      label: Headline
+      description: 'The main headline.'
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Improve Outreach to Maximise Conversion'
+          font: displayLG-semibold
+    image:
+      type: pattern
+      label: Image
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: 'images/city.png'
+          style: 16x9_md_sc
+          required: true
+    link:
+      type: pattern
+      label: Button
+      description: 'An optional button at the bottom of the card.'
+      preview:
+        id: button
+        variant: secondary
+        fields:
+          text: Learn more
+        settings:
+          icon: 'arrowUpRight'
+          size: medium
+          button_type: text_with_icon
+          classes: ''
+    on_scroll_animation:
+      type: text
+      label: On Scroll Animation
+      preview: 'fade-up'
+    on_scroll_animation_duration:
+      type: text
+      label: On Scroll Animation Duration
+      preview: 1500
+    image_hover:
+      type: boolean
+      label: Image zoom when hover
+      default_value: false
+  settings:
+    card_layout:
+      type: select
+      label: Layout of card
+      required: true
+      default: horizontal
+      options:
+        horizontal: Horizontal
+        vertical: Vertical
+    card_size:
+      type: select
+      label: Card size
+      required: true
+      default: large
+      options:
+        large: Large
+        medium: Medium
+        small: Small
+    extra_classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''
+
+# Pricing card
+pricingcard:
+  use: '@molecules/card/_pricingcard.twig'
+  namespace: 'Molecules/Card'
+  label: Pricing Card
+  description: Pricing Card component with title and button.
+  fields:
+    icon_name:
+      type: text
+      label: Icon name
+      description: 'Icon for the card.'
+      preview: 'icon-primary-light-circle-outline-1x'
+    headline:
+      type: pattern
+      label: Headline
+      description: The title of the Card.
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: '$10/month'
+          font: displayLG-semibold
+    badge:
+      type: pattern
+      label: Badge
+      description: Badge of the Card.
+      preview:
+        id: badge
+        settings:
+          size: medium
+          type: text-only
+          text: 'Popular'
+    plan:
+      type: text
+      label: Plan title
+      preview: "Basic plan"
+    desc:
+      type: text
+      label: Plan description
+      preview: '<p>Our most popular plan.</p>'
+    items:
+      type: pattern
+      label: Featured list
+      description: The featured list.
+      multi_value_type: items
+      preview:
+        - id: features
+        - id: features
+        - id: features
+        - id: features
+    button:
+      type: pattern
+      label: Button
+      preview:
+        id: button
+        variant: primary
+        settings:
+          text: Get started
+          size: xlarge
+          button_type: only_text
+          classes: 'w-full hover:bg-primary-600'
+  settings:
+    background:
+      type: select
+      label: Background of card
+      required: true
+      default: light
+      options:
+        light: Light
+        primary: Primary
+    card_layout:
+      type: select
+      label: Layout of card
+      required: true
+      default: featuredlist
+      options:
+        withicon: With icon
+        withouticon: Without Icon
+    extra_classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''
+
+# Pricing Featured card
+pricingfeaturedcard:
+  use: '@molecules/card/_pricing-featured-card.twig'
+  namespace: 'Molecules/Card'
+  label: Pricing Featured Card
+  description: Pricing Card component with title and button.
+  fields:
+    price:
+      type: text
+      label: Price
+      description: 'Price in $, ₹ etc.'
+      preview: "$"
+    headline:
+      type: pattern
+      label: Headline
+      description: The title of the Card.
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: '10'
+          font: displayXL-semibold
+    plan_package:
+      type: text
+      label: Plan package
+      description: 'Package like monthly, quarterly or yearly etc.'
+      preview: "per month"
+    badge:
+      type: pattern
+      label: Badge
+      description: Badge of the Card.
+      preview:
+        id: badge
+        settings:
+          size: medium
+          type: text-only
+          text: 'Popular'
+    plan:
+      type: text
+      label: Plan title
+      preview: "Basic plan"
+    desc:
+      type: text
+      label: Plan description
+      preview: 'Our most popular plan for small teams.'
+    features_list_title:
+      type: text
+      label: Features list title
+      preview: Features
+    features_list_description:
+      type: text
+      label: Features list description
+      preview: 'Everything in our free plan plus....' 
+    details:
+      type: pattern
+      label: Features list
+      description: Feature list.
+      preview:
+        - id: features
+        - id: features
+        - id: features
+        - id: features
+    button:
+      type: pattern
+      label: Button
+      preview:
+        id: button
+        variant: primary
+        settings:
+          text: Get started
+          size: xlarge
+          button_type: only_text
+          classes: 'w-full hover:bg-primary-600'
+  configuration:
+    background:
+      light: 'light'
+      primary: 'primary'
+  settings:
+    background:
+      type: select
+      label: Background of card
+      required: true
+      default: light
+      options:
+        light: Light
+        primary: Primary
+    extra_classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''
+
+# People card
+peoplecard:
+  use: '@molecules/card/_peoplecard.twig'
+  namespace: 'Molecules/Card'
+  label: People Card
+  description: People card component with image, titles, body and link.
+  fields:
+    image:
+      type: pattern
+      label: Avatar Image
+      preview:
+        id: avatar
+        variant: avatar_label
+        settings:
+          image_style: 'xxxl-80-x-80'
+          corner_style: rounded
+          full_name: 'Oliva Rhye'
+          link_text: 'oliva@space.com'
+          icon: ''
+    rating:
+      type: text
+      label: Star rating
+      description: 'Star rating.'
+    text:
+      type: text
+      label: Description
+      description: A long text under the headline.
+      preview:
+        faker: lorem.paragraph
+    headline:
+      type: pattern
+      label: Headline
+      description: The main headline.
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Alicia King'
+          font: textLG-bold
+    job_description:
+      type: text
+      label: Job description
+      description: A long text under the headline.
+      preview: 'Sales Manager'
+    role:
+      type: text
+      label: Role
+      description: Role the avatar image
+      preview: 'Founder & CEO'
+    social_media:
+      type: pattern
+      label: Social media
+      description: An optional button at the bottom of the card.
+      preview:
+        - id: link
+          settings:
+            url: 'https://eldon.info'
+            content: ' '
+            title_text: ''
+            icon_size: 4
+            icon_position: 'right'
+            icon: 'twitter-grey'
+            extra_classes: 'social-media-icon'
+        - id: link
+          settings:
+            url: 'https://eldon.info'
+            content: ' '
+            title_text: ''
+            icon_size: 4
+            icon_position: 'right'
+            icon: 'linkedin-grey'
+            extra_classes: 'social-media-icon'
+        - id: link
+          settings:
+            url: 'https://eldon.info'
+            content: ' '
+            title_text: ''
+            icon_size: 4
+            icon_position: 'right'
+            icon: 'globe'
+            extra_classes: 'social-media-icon'
+  settings:
+    card_layout:
+      type: select
+      label: Layout of card
+      required: true
+      default: testimony-with-avatar
+      options:
+        testimony-with-avatar: 'testimony-with-avatar'
+        testimony-with-image: 'testimony-with-image'
+        people-with-avatar: 'people-with-avatar'
+        people-with-avatar-bio: 'people-with-avatar-bio'
+        people-with-image: 'people-with-image'
+        people-with-image-bio: 'people-with-image-bio'
+    card_size:
+      type: select
+      label: Card size
+      required: true
+      default: small
+      options:
+        medium: Medium
+        small: Small
+    card_corner:
+      type: select
+      label: Card Corner
+      description: Card with rounded corners edges.
+      default: rounded-none
+      options:
+        rounded-none: Square
+        rounded: Rounded
+    full_box_link:
+      label: Full box link
+      type: boolean
+      default_value: false
+    extra_classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''
+
+# Video card
+videocard:
+  use: '@molecules/card/_videocard.twig'
+  namespace: 'Molecules/Card'
+  label: Video Card
+  description: video card component with video, title, description, video link.
+  fields:
+    video:
+      type: pattern
+      label: Video
+      preview:
+        id: video
+        visibility: storybook
+    preheadline:
+      type: text
+      label: Preheadline
+      description: A short headline above the headline.
+      preview: 'Tutorial'
+    headline:
+      type: pattern
+      label: Headline
+      description: The main headline.
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'How to get started'
+          font: displayXs-bold
+    text:
+      type: text
+      label: Text
+      description: A long text under the headline.
+      preview:
+        faker: lorem.paragraph
+    link:
+      type: pattern
+      label: Link
+      description: An optional button at the bottom of the card.
+      preview:
+        id: button
+        variant: link
+        fields:
+          text: Watch Video
+        settings:
+          icon: 'video-play-grey'
+          icon_alignment: left
+          size: small
+          button_type: text_with_icon
+          classes: ''
+  settings:
+    alignment:
+      type: select
+      label: Alignment
+      required: true
+      default: horizontal
+      options:
+        vertical: Vertical
+        horizontal: Horizontal
+    card_layout:
+      type: select
+      label: Layout of card
+      required: true
+      default: withcontainer
+      options:
+        withcontainer: With Container
+        withoutcontainer: Without Container    
+    card_size:
+      type: select
+      label: Card size
+      required: true
+      default: large
+      options:
+        large: Large
+        medium: Medium
+    full_box_link:
+      label: Full box link
+      type: boolean
+      default_value: false
+    extra_classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''    
+
+# Image card
+imagecard:
+  use: '@molecules/card/_imagecard.twig'
+  namespace: 'Molecules/Card'
+  label: Image Card
+  description: Image card component with image, titles, body and link.
+  fields:
+    image:
+      type: pattern
+      label: Image
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: 'images/pen_sketch.png'
+          style: 16x9_md_sc
+          required: true
+    preheadline:
+      type: text
+      label: Preheadline
+      description: A short headline above the headline.
+      preview: 'CASE STUDY'
+    headline:
+      type: pattern
+      label: Headline
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Digital Experience Platforms — Designed for Digital Transformation'
+          font: displaySm-bold
+    text:
+      type: text
+      label: Text
+      description: A long text under the headline.
+      preview: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna ullamcorper laoreet in sagittis, sed aenean felis, a. Varius mauris elerisque lectus tincidunt venenatis placerat velit accumsan.</p>'
+    link:
+      type: pattern
+      label: Link
+      description: An optional button at the bottom of the card.
+      preview:
+        id: button
+        variant: link
+        fields:
+          text: Learn more
+        settings:
+          icon: 'chevronRight'
+          icon_alignment: right
+          size: small
+          button_type: text_with_icon
+          classes: ''
+    cells_1:
+      type: pattern
+      label: Items
+      preview:
+        - id: avatar
+          variant: avatar_label
+          settings:
+            image_url: './images/avatar-12.jpg'
+            image_style: sm-32-x-32
+            corner_style: rounded
+            full_name: 'Oliva Rhye'
+            link_text: 'oliva@space.com'
+            icon: ''
+    badge_items:
+      type: pattern
+      label: Badge items
+      preview:
+        - id: badge
+          settings:
+            text: 'Label'
+            size: medium
+        - id: badge
+          settings:
+            text: 'Label'
+            size: medium
+    on_scroll_animation:
+      type: text
+      label: On Scroll Animation
+      preview: 'fade-up'
+    on_scroll_animation_duration:
+      type: text
+      label: On Scroll Animation Duration
+      preview: 1500
+    horizontal_column_alignment:
+      type: select
+      label: Horizontal column alignment
+      default: leftimage
+      options:
+        rightimage: Left text-Right image
+        leftimage: Left image-Right text
+    vertical_column_alignment:
+      type: select
+      label: Vertical column alignment
+      default: topimage
+      options:
+        bottomimage: Top text-Bottom image
+        topimage: Top image-Bottom text
+    image_hover:
+      type: boolean
+      label: Image zoom when hover
+      default_value: false
+  settings: 
+    alignment:
+      type: select
+      label: Alignment
+      required: true
+      default: vertical
+      options:
+        vertical: Vertical
+        horizontal: Horizontal
+    card_layout:
+      type: select
+      label: Layout of card
+      required: true
+      default: withcontainer
+      options:
+        withcontainer: With Container
+        withoutcontainer: Without Container    
+    card_size:
+      type: select
+      label: Card size
+      required: true
+      default: halfwidth
+      options:
+        large: Large
+        medium: Medium
+        small: Small
+    full_box_link:
+      label: Full box link
+      type: boolean
+      default_value: false
+    extra_classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''
+
+# Testimony card
+testimonycard:
+  use: '@molecules/card/_testimonycard.twig'
+  namespace: 'Molecules/Card'
+  label: Testimony Card
+  description: Testimony Card component with image, titles, body and link.
+  fields:
+    company_logo:
+      type: pattern
+      label: Branding logo
+      preview:
+        id: logo
+        variant: logo_with_text_dark
+    image:
+      type: pattern
+      label: Avatar image
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: './images/avatar.png'
+          style: 64x64_xxs_sc
+          default: false
+    text:
+      type: text
+      label: Description
+      description: A long text under the headline.
+      preview:
+        faker: lorem.paragraph
+    name:
+      type: pattern
+      label: Headline - Name
+      description: The main headline.
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          headline: 'Alicia King'
+          font: textLG-bold
+    designation:
+      type: text
+      label: Designation
+      description: A long text under the headline.
+      preview: 'Sales Manager'
+  settings:
+    card_layout:
+      type: select
+      label: Layout of card
+      required: true
+      default: avatar
+      options:
+        large-avatar: 'Large avatar'
+        avatar: 'Avatar'
+        company-logo-and-avatar: 'Company logo and avatar'
+        login-logo-and-avatar: 'Login logo and avatar'
+    alignment:
+      type: select
+      label: Alignment
+      required: true
+      default: center
+      options:
+        center: Center
+        simple: Simple
+    full_box_link:
+      label: Full box link
+      type: boolean
+      default_value: false
+    extra_classes:
+      type: textfield
+      label: Class names (multiple class names separated by space). Only applied when custom style enabled.
+      preview: ''

@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * _sticky-item-slim-thumbnails-image
+ *
+ * See sticky-item.space.yaml for documentation.
+ */
+#}
+
+<div class="splide__container">
+  <div id="slim-thumbnails-image" class="splide splide-slider splide-img-slider">
+    <div class="splide__track">
+      <ul class="splide__list sticky-image-wrapper">
+        {% for key, item in items %}
+          <li class="splide__slide list-item-sticky">{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

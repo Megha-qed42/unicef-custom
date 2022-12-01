@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * hero-banner-style 4
+ *
+ * See hero-banner.space.yaml for documentation.
+ */
+#}
+
+{{ attach_library('unicef_vf/hero-banner') }}
+
+{# Template #}
+{% block hero_banner_style_4_block %}
+  <section class="hero-banner body-font style-4" role="banner">
+    <div class="container relative h-full mx-auto">
+      {% if headline|render|striptags|trim is not empty %}
+        <div class="heading max-w-screen-lg mx-auto">
+          {{ headline }}
+        </div>
+      {% endif %}
+
+      {% if sub_headline|render|striptags|trim is not empty %}
+        <div{{ region_attributes.sub_headline|default(create_attribute()).addClass('sub-headline textLG-regular lg:textXL-regular text-text-body w-full max-w-screen-md mx-auto mb-8 lg:mb-48') }}>{{ sub_headline }}</div>
+      {% endif %}
+
+      {% if button_1|render|striptags|trim is not empty or button_2|render|striptags|trim is not empty %}
+        <div class="cta-button flex flex-col md:flex-row md:justify-center mb-64">
+          {% if button_1|render|striptags|trim is not empty %}
+            <div{{ region_attributes.button_1|default(create_attribute()).addClass('mb-3 md:mb-0 md:mr-3') }}>{{ button_1 }}</div>
+          {% endif %}
+
+          {% if button_2|render|striptags|trim is not empty %}
+            <div{{ region_attributes.button_2 }}>{{ button_2 }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if image_1|render|trim is not empty %}
+        <div class="flex flex-col md:flex-row md:justify-center">
+          <div {{ region_attributes.image_1|default(create_attribute()).addClass('md:w-fit md:max-w-[50rem]') }}>
+            {{ image_1 }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

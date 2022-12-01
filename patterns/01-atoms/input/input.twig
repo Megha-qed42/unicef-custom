@@ -1,0 +1,80 @@
+{#
+/**
+ * @file
+ * Theme override for a 'Input' #type form element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - input_icon: Suitable input icon based on input type element.
+ * - tooltip_icon: Help text icon or error icon.
+ * - hint_text: Help text or error text.
+ *
+ */
+#}
+
+{# Classes #}
+{% set classes = ([
+	'input-atom border border-stroke-borderDefault placeholder-text-body hover:placeholder-text-heading active:placeholder-text-heading rounded-lg active:border-stroke-borderFocused disabled:bg-backgroundNeutral-neutralLight',
+	icon == true ? 'show-icon',
+	corner_style == "rounded-3xl" ? 'rounded-3xl',
+	input_type == 'inputput_field' and input_state == 'hover' ? 'placeholder-text-heading',
+	input_type == 'inputput_textarea' and input_state == 'hover' ? 'placeholder-text-heading',
+	input_type == 'inputput_field' and input_state == 'active' ? 'placeholder-text-heading border-stroke-borderFocused',
+	input_type == 'inputput_textarea' and input_state == 'active' ? 'placeholder-text-heading border-stroke-borderFocused',
+	input_type == 'inputput_field' and input_state == 'disabled' ? 'bg-backgroundNeutral-neutralLight',
+	input_type == 'inputput_textarea' and input_state == 'disabled' ? 'bg-backgroundNeutral-neutralLight',
+	input_type,
+]) %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% block input_block %}
+	<div class="input-label text-text-heading">{{ input_label }}</div>
+	<div class="input-atom-wrapper">
+		{% if input_type == 'inputput_field' or input_type == 'errorinput_field' %}
+			{% if icon == true %} 
+				<span class="input-icon">
+					{% include "@atoms/svg/_svg--icon.twig" with {
+						icon: input_icon,
+						size: 'w-4 h-4',
+						fill_color: 'text-white'
+					} only %}
+				</span>
+			{% endif %}		
+			<input {{ attributes }} name= {{ placeholder }} placeholder= "{{ placeholder }}" />
+				{% if tooltip_icon == true %}
+					<span class="help-text-icon">
+						{% if input_type == 'inputput_field' %}
+							{% include "@atoms/svg/_svg--icon.twig" with {
+								icon: 'tooltip',
+								size: 'w-4 h-4',
+								fill_color: 'text-white'
+							} only %}
+						{% else %}
+							{% include "@atoms/svg/_svg--icon.twig" with {
+								icon: 'error',
+								size: 'w-4 h-4',
+								fill_color: 'text-white'
+							} only %}
+						{% endif %}	
+					</span>
+				{% endif %}
+		{% else %}
+			{% if input_type == 'inputput_textarea' or input_type == 'error_textarea' %}
+				<textarea {{ attributes }} name= {{ input_label}} placeholder={{ placeholder }}></textarea>
+			{% endif %}	
+		{% endif %}
+		{% if hint_text is not empty %}
+			{% if input_type == 'error_textarea' or input_type == 'errorinput_field' %}
+				<div class="hint-text text-danger-400 pt-1.5">
+					{{ hint_text }}
+				</div>
+			{% else %}
+				<div class="hint-text text-text-body pt-1.5">
+					{{ hint_text }}
+				</div>
+			{% endif %}
+		{% endif %}	
+	</div>
+{% endblock %}

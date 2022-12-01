@@ -1,0 +1,49 @@
+tabs:
+  use: "@molecules/tabs/tabs.twig"
+  label: Tabs
+  fields:
+    tab_1:
+      type: pattern
+      label: Items
+      multi_value_type: items
+      preview:
+        -
+          id: tab-item
+        -
+          id: tab-item
+        -
+          id: tab-item
+        -
+          id: tab-item
+        -
+          id: tab-item
+    icon:
+      type: text
+      label: Icon name
+      description: 'Icon beside tab item.'
+      preview: 'circle'
+  settings:
+    tab_item_size:
+      type: select
+      required: true
+      label: Tab Item Size
+      preview: default_size
+      options:
+        default_size: Default
+        large_size: Large
+    tab_item_type:
+      type: select
+      required: true
+      label: Tab Item Type
+      preview: underlined
+      options:
+        underlined: Underlined
+        underline_filled: Underlined Filled
+        filled_light: Filled Light
+        filled_dark: Filled Dark
+        container_1_light: Container 1 Light
+        container_1_light_icon: Container 1 Light + Icon
+        container_1_dark: Container 1 Dark
+        container_1_dark_icon: Container 1 Dark + Icon
+        container_2: Container 2
+        container_2_icon: Container 2 + Icon

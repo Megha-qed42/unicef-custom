@@ -1,0 +1,67 @@
+navigation:
+  use: "@molecules/navigation/navigation.twig"
+  label: Navigation
+  description: A navigation component with Default (vertical), Horizontal and With arrows variations.
+  fields:
+    title:
+      type: text
+      label: Content
+      preview: Text
+    items:
+      type: object
+      label: Navigation Items (Each navigation item object contains link properties)
+      multi_value_type: items
+      preview:
+        -
+          id: link
+          title: 'Services'
+          url: 'https://qed42.com/services'
+          title_text: 'Services'
+        -
+          id: link
+          title: 'Solutions'
+          url: 'https://qed42.com/solutions'
+        -
+          id: link
+          title: 'Work'
+          url: 'https://qed42.com/work'
+        -
+          id: link
+          title: 'Blog'
+          url: 'https://qed42.com/blog'
+        -
+          id: link
+          title: 'Careers'
+          url: 'https://qed42.com/careers'
+        -
+          id: link
+          title: 'Open Source'
+          url: 'https://qed42.com/open-source'
+  variants:
+    default:
+      label: Default
+    horizontal:
+      label: Horizontal
+    with-arrow:
+      label: With Arrow
+  settings:
+    font_size:
+      type: select
+      label: Font size
+      default_value: font-small
+      options:
+        font-large: Large
+        font-small: Small
+        font-xsmall: Extra small
+    text_color:
+      type: select
+      label: Text color
+      default_value: on-white-background
+      options:
+        on-white-background: For white background
+        on-darkGrey-background: For darkGrey background
+        on-darkPrimary-background: For darkPrimary background
+    wrap_nav:
+      type: boolean
+      label: Wrap with nav Element (&lt;nav&gt;&lt;/nav&gt;)
+      default_value: false

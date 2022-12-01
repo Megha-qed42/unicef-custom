@@ -1,0 +1,140 @@
+modal:
+  use: '@molecules/modal/modal.twig'
+  label: Modal
+  description: modal component with icon setting and button positioning.
+  fields:
+    icon:
+      type: text
+      label: Icon name
+      description: 'Icon name'
+      preview: 'featured-icon'
+    headline:
+      type: pattern
+      label: Headline
+      description: The main headline.
+      preview:
+        id: headline
+        variant: h3
+        settings:
+          tag_name: h3
+          font: textLG-medium
+    text:
+      type: text
+      label: Text
+      description: A long text under the headline.
+      preview:
+        faker: lorem.paragraph
+    email:
+      type: pattern
+      label: Email
+      preview:
+        id: form_input
+        variant: email
+    email_label:
+      type: pattern
+      label: Email
+      title: Email
+      preview:
+        id: form_label
+        title: Email
+    password_label:
+      type: pattern
+      label: Password
+      title: Password
+      preview:
+        id: form_label
+        title: Password
+    password:
+      type: pattern
+      label: Password
+      preview:
+        id: form_input
+        variant: password
+    confirm_btn:
+      type: pattern
+      label: Button
+      preview:
+        id: button
+        variant: primary
+        settings:
+          text: 'Confirm'
+          classes: 'sm:w-full md:w-3/6'
+    cancel_btn:
+      type: pattern
+      label: Button
+      preview:
+        id: button
+        variant: secondary
+        settings:
+          color: secondary
+          text: 'Cancel'
+          classes: 'cancel-btn'
+    disclaimer:
+      type: pattern
+      label: Dont Show Checkbox
+      preview:
+        id: checkbox
+        settings:
+          size: small
+          text: 'Dont show again'
+    plan_title:
+      type: text
+      label: Text
+      description: A short text under the headline.
+      preview: Basic plan
+    plan_month:
+      type: text
+      label: Text
+      description: A short text under the headline.
+      preview: $10/month
+    plan_description:
+      type: text
+      label: Text
+      description: A long text under the headline.
+      preview: Up to 10 users and 20GB individual data.
+    select_plan:
+      type: pattern
+      preview:
+        id: checkbox
+        size: small
+        settings:
+          state: rounded
+          size: small
+          text: ''
+  settings:
+    modal_layout:
+      type: select
+      label: Layout of modal
+      required: true
+      default: stacked_left_aligned
+      options:
+        stacked_left_aligned: 'stacked_left_aligned'
+        stacked_centered: 'stacked_centered'
+        horizontal: 'horizontal'
+        password_prompt: 'password_prompt'
+        plan: 'plan'
+    icon_position:
+      type: select
+      label: Icon Position
+      required: true
+      default: topleft
+      options:
+        topleft: TopLeft
+        topcenter: TopCenter
+        left: Left
+    text_center:
+      type: boolean
+      label: Text Centered
+      default_value: false
+    enable_disclaimer:
+      type: boolean
+      label: Enable Disclaimer
+      default_value: false
+    sign_in:
+      type: boolean
+      label: Login form
+      default_value: false
+    plan:
+      type: boolean
+      label: Plan
+      default_value: false
