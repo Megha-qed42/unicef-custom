@@ -3,28 +3,32 @@ stats_unicef_vf:
   label: Stats
   description: Stats value , title and description .
   fields:
-    stats_numeric_value:
+    Stats_Numeric_Value:
       type: pattern
       label: Numeric Value
-      description: 'Regular heading'
+      description: 'Stats Value'
       preview:
         id: headline
         variant: h4
         settings:
           tag_name: h4
           headline: '30'
-    stats_title:
+    Stats_Title:
       type: text
       label: Stats Title
       preview: '<p>COMMITS </p>'
-    stats_desc: 
+    Stats_Desc: 
       type: pattern
       label: Stats Description
-      description: 'Regular heading'
+      description: 'Stats Description'
       preview:
         id: headline
         variant: h4
         settings:
           tag_name: h4
           headline: INVESTMENTS MADE IN EMERGING ECONOMICS  
-        
+  settings:
+    enable_border:
+      type: boolean
+      label: Enable Border
+      default_value: false   
