@@ -1,6 +1,6 @@
 logo_unicef_vf:
   use: "@unicefvfCustom/logo/logo.twig"
-  label: Logo
+  label: Logo Unicef
   description: Simple component to display the site logo.
   variants:
     only_logo:

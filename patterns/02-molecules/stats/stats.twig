@@ -9,6 +9,37 @@
 
 {# Template #}
 
-{{ Stats_Numeric_Value }}
-{{ Stats_Title }}
-{{ Stats_Desc }}
+{% block stats_block %}
+  {% if variant == 'stats_with_border_and_desc' %}
+    <div class="stats-value {{ stats_value_color ? stats_value_color }}">
+      {{ stats_numeric_value }}
+    </div>
+    <div class="stats-desc">
+			{{ stats_desc }}
+    </div>
+
+  {% elseif variant == 'stats_without_border' %}
+    <div class="stats-value">
+      {{ stats_numeric_value }}
+    </div>
+		<div class="stats-desc">
+			{{ stats_desc }}
+    </div>
+
+  {% elseif variant == 'stats_with_border_title_and_desc' %}
+    <div class="stats-value">
+      {{ stats_numeric_value }}
+    </div>
+		<div class="stats-title">
+			{{ stats_title }}
+		</div>
+		<div class="stats-desc">
+			{{ stats_desc }}
+    </div>
+  {% endif %}
+{% endblock %}
+
+
+
+
+{{ enable_border }}

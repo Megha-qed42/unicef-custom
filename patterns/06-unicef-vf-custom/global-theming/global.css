@@ -1,3 +1,30 @@
 .container {
-    @apply max-w-[88.875rem] w-full;
+  @apply max-w-[88.875rem] w-full px-4;
+}
+
+.primary-header {
+  .header-menu-item-wrapper {
+    &.left-position{
+      .mega-menu-primary {
+        @apply justify-center;
+      }
+    }
+
+    @apply maxLg:top-[8.125rem] !px-4 !pt-0;
+  }
+}
+
+.header_right {
+  ul li a {
+    &.link-element {
+      @apply bg-backgroundNeutral-neutralLight !text-white uppercase text-sm px-3.5 py-3 rounded lg:ml-[2.1875rem] hover:underline; 
+    }
+  }
+}
+.mega-menu-primary {
+  > .navigation__item {
+    > .navigation__link {
+      @apply uppercase text-sm font-medium;
+    }
+  }
 }

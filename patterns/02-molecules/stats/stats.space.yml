@@ -3,7 +3,7 @@ stats_unicef_vf:
   label: Stats
   description: Stats value , title and description .
   fields:
-    Stats_Numeric_Value:
+    stats_numeric_value:
       type: pattern
       label: Numeric Value
       description: 'Stats Value'
@@ -13,11 +13,12 @@ stats_unicef_vf:
         settings:
           tag_name: h4
           headline: '30'
-    Stats_Title:
+          font: font-secondary
+    stats_title:
       type: text
       label: Stats Title
-      preview: '<p>COMMITS </p>'
-    Stats_Desc: 
+      preview: '<p>COMMITS</p>'
+    stats_desc: 
       type: pattern
       label: Stats Description
       description: 'Stats Description'
@@ -27,8 +28,50 @@ stats_unicef_vf:
         settings:
           tag_name: h4
           headline: INVESTMENTS MADE IN EMERGING ECONOMICS  
+  variants:
+    stats_with_border_and_desc:
+      label: Stats with Desc
+    stats_without_border:
+      label: Stats without Border
+    stats_with_border_title_and_desc:
+      label: Stats with Title and Desc  
   settings:
     enable_border:
       type: boolean
       label: Enable Border
-      default_value: false   
+      default_value: false  
+    border_color:
+      type: select
+      label: Border Color
+      default: black
+      options:
+        border-black: Black
+        border-dark-purple: Dark Purple
+        border-dark-red: Dark Red
+        border-dark-orange: Dark Orange
+        border-dark-green: Dark Green
+        border-dark-blue: Dark Blue 
+    stats_value_color:
+      type: select
+      label: Stats Value Color
+      default: black
+      options:
+        stats-value-black: Black
+        stats-value-dark-purple: Dark Purple
+        stats-value-white: White 
+    stats_desc_color:
+      type: select
+      label: Stats Value Color
+      default: black
+      options:
+        stats-desc-black: Black
+        stats-desc-white: White     
+    alignment:
+      type: select
+      label: Text Alignment
+      default: center-align
+      options:
+        left-align: Left
+        righr-align: Right
+        center-align: Center
+      preview: center-align  

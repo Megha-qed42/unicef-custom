@@ -1,0 +1,17 @@
+header_logo_block:
+  use: "@unicefvfCustom/header-logo-block/header-logo-block.twig"
+  label: Header logo block
+  description: Simple logo with link
+  fields:
+    link:
+      type: text
+      label: Link
+    logo_image:
+      type: pattern
+      label: Logo image
+      preview:
+        id: image_atom
+        variant: image
+        settings:
+          image_url: space-assets://images/2x_1440x900.png
+          style: '160x220_xs_sc'

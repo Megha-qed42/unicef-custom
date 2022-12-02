@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * blockquote
+ * See blockquote.space.yaml for documentation.
+ */
+#}
+
+{% set classes = (['w-full blockquote'
+] | sort | join(' ') | trim ) %}
+
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# TEMPLATE #}
+<div {{attributes}}>
+  <div class="container">
+    {% if blockquote_text is not empty %}
+      <div class="text-text-primaryDark text-[1.6875rem] leading-[1.875rem] md:text-[3rem] md:leading-[3.3125rem] font-medium relative text-center">
+        {{ blockquote_text }}
+      </div>
+    {% endif %}
+
+    {% if author is not empty %}
+      <div class="mt-4 font-medium text-center">
+        {{ author }}
+      </div>
+    {% endif %}
+  </div>
+</div>

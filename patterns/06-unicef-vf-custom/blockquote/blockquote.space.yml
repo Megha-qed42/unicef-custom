@@ -1,0 +1,13 @@
+blockquote:
+  use: "@unicefvfCustom/blockquote/blockquote.twig"
+  label: Blockquote card
+  description: Component to add blockquote text with author name
+  fields:
+    blockquote_text:
+      type: text
+      label: Blockquote text
+      preview: 'Train your body to crave for healthy requires food'
+    author:
+      type: text
+      label: Author name
+      preview: 'John sinha'

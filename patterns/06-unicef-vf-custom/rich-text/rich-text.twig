@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * rich-text
+ * with the rich-text we can use to creat different types of text as you can see in storybook.
+ * Ex. headlines, list and more.
+ * See rich-text.space.yaml for documentation.
+ */
+#}
+
+{% set classes = (['w-full rich-text'
+] | sort | join(' ') | trim ) %}
+
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# TEMPLATE #}
+<div {{attributes}}>
+  <div class="container">
+    {% if heading is not empty %}
+      {{ heading }}
+    {% endif %}
+
+    {% if main_content is not empty %}
+      {{ main_content }}
+    {% endif %}
+  </div>
+</div>
