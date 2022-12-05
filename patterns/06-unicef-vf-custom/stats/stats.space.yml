@@ -27,7 +27,8 @@ stats_unicef_vf:
         variant: h4
         settings:
           tag_name: h4
-          headline: INVESTMENTS MADE IN EMERGING ECONOMICS  
+          headline: INVESTMENTS MADE IN EMERGING ECONOMICS
+          font: textLG-medium 
   variants:
     stats_with_border_and_desc:
       label: Stats with Desc
@@ -65,7 +66,14 @@ stats_unicef_vf:
       default: black
       options:
         stats-desc-black: Black
-        stats-desc-white: White     
+        stats-desc-white: White 
+    stats_title_color:
+      type: select
+      label: Stats Value Color
+      default: black
+      options:
+        stats-title-black: Black
+        stats-title-white: White         
     alignment:
       type: select
       label: Text Alignment

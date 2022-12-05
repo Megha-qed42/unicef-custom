@@ -2,7 +2,23 @@
 
 .stats-value {
     h4 {
-        @apply text-[4.4rem];
+        @apply text-[4.4rem] leading-[4.156rem] m-0;
     }
+}
+
+.stats-value-dark-purple {
+    color: #832090;
+}
+
+.stats-value-black,
+.stats-desc-black,
+.stats-title-black {
+    color: #000000;
+}
+
+.stats-value-white,
+.stats-desc-white,
+.stats-title-white {
+    color: #ffffff;
 }
 

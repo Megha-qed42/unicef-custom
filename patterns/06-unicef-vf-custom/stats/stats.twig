@@ -14,29 +14,29 @@
 
 {% block stats_block %}
   {% if variant == 'stats_with_border_and_desc' %}
-    <div class="stats-value {{ stats_value_color ? stats_value_color }}">
+    <div class="stats-var-1 stats-value {{ stats_value_color ? stats_value_color }}">
       {{ stats_numeric_value }}
     </div>
-    <div class="stats-desc">
+    <div class="stats-desc {{ stats_desc_color ? stats_desc_color }}">
 			{{ stats_desc }}
     </div>
 
   {% elseif variant == 'stats_without_border' %}
-    <div class="stats-value">
+    <div class="stats-var-2 stats-value {{ stats_value_color ? stats_value_color }}">
       {{ stats_numeric_value }}
     </div>
-		<div class="stats-desc">
+		<div class="stats-desc {{ stats_desc_color ? stats_desc_color }}">
 			{{ stats_desc }}
     </div>
 
   {% elseif variant == 'stats_with_border_title_and_desc' %}
-    <div class="stats-value">
+    <div class="stats-var-3 stats-value {{ stats_value_color ? stats_value_color }}">
       {{ stats_numeric_value }}
     </div>
-		<div class="stats-title">
+		<div class="stats-title {{ stats_title_color ? stats_title_color }}">
 			{{ stats_title }}
 		</div>
-		<div class="stats-desc">
+		<div class="stats-desc {{ stats_desc_color ? stats_desc_color }}">
 			{{ stats_desc }}
     </div>
   {% endif %}
