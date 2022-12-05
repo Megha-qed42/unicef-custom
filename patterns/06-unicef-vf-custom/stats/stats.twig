@@ -9,6 +9,9 @@
 
 {# Template #}
 
+{# Attach Library #}
+{{ attach_library('unicef_vf/stats') }}
+
 {% block stats_block %}
   {% if variant == 'stats_with_border_and_desc' %}
     <div class="stats-value {{ stats_value_color ? stats_value_color }}">

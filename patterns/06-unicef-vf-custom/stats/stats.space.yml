@@ -1,5 +1,5 @@
 stats_unicef_vf:
-  use: "@molecules/stats/stats.twig"
+  use: "@unicefvfCustom/stats/stats.twig"
   label: Stats
   description: Stats value , title and description .
   fields:

@@ -1,0 +1,8 @@
+/* Stats */
+
+.stats-value {
+    h4 {
+        @apply text-[4.4rem];
+    }
+}
+
